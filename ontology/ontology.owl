@@ -1,7 +1,6 @@
 <?xml version="1.0"?>
 <rdf:RDF xmlns="http://vocab.linkeddata.es/datosabiertos/def/common/zone#"
      xml:base="http://vocab.linkeddata.es/datosabiertos/def/common/zone"
-     xmlns:dc="http://purl.org/dc/elements/1.1/"
      xmlns:ns="http://creativecommons.org/ns#"
      xmlns:sf="http://www.opengis.net/ont/sf#"
      xmlns:geo="http://www.opengis.net/ont/geosparql#"
@@ -13,17 +12,19 @@
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
      xmlns:vann="http://purl.org/vocab/vann/"
      xmlns:esadm="http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio#"
-     xmlns:terms="http://purl.org/dc/terms/"
+     xmlns:dcterms="http://purl.org/dc/terms/"
      xmlns:edintzone="http://vocab.linkeddata.es/datosabiertos/def/common/zone#">
     <owl:Ontology rdf:about="http://vocab.linkeddata.es/datosabiertos/def/common/zone#">
         <owl:imports rdf:resource="http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio_v0.5"/>
         <owl:imports rdf:resource="http://vocab.linkeddata.es/datosabiertos/def/urbanismo-infraestructuras/callejero_v0.3"/>
-        <dc:abstract xml:lang="es">Esta ontología tiene como propósito definir, categorizar y relacionar las Zonas Regulatorias en el contexto de la movilidad inteligente y la gestión urbana (Smart Cities). Se ha diseñado como una extensión modular de la ontología del Sector Público de España (esadm).</dc:abstract>
-        <dc:abstract xml:lang="en">This ontology aims to define, categorize, and relate Regulatory Zones in the context of smart mobility and urban management (Smart Cities). It is designed as a modular extension of the Spanish Public Sector ontology (esadm).</dc:abstract>
-        <dc:creator>OEG-UPM</dc:creator>
-        <dc:title xml:lang="en">Base Zoning Ontology</dc:title>
-        <dc:title xml:lang="es">Ontología base de Zonas</dc:title>
-        <terms:issued rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2026-01-27</terms:issued>
+        <dcterms:description xml:lang="es">Esta ontología tiene como propósito definir, categorizar y relacionar las Zonas Regulatorias en el contexto de la movilidad inteligente y la gestión urbana (Smart Cities). Se ha diseñado como una extensión modular de la ontología del Sector Público de España (esadm).</dcterms:description>
+        <dcterms:description xml:lang="en">This ontology aims to define, categorize, and relate Regulatory Zones in the context of smart mobility and urban management (Smart Cities). It is designed as a modular extension of the Spanish Public Sector ontology (esadm).</dcterms:description>
+        <dcterms:creator>OEG-UPM</dcterms:creator>
+        <dcterms:title xml:lang="en">Base Zoning Ontology</dcterms:title>
+        <dcterms:title xml:lang="es">Ontología base de Zonas</dcterms:title>
+        <dcterms:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2026-01-27</dcterms:created>
+        <dcterms:issued rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2026-01-27</dcterms:issued>
+        <dcterms:license rdf:resource="https://creativecommons.org/licenses/by/4.0/"/>
         <vann:preferredNamespacePrefix>edintzone</vann:preferredNamespacePrefix>
         <vann:preferredNamespaceUri>http://vocab.linkeddata.es/datosabiertos/def/common/zone#</vann:preferredNamespaceUri>
         <rdfs:comment xml:lang="es">Actualmente, existen vocabularios para divisiones administrativas (esadm) y geometrías (GeoSPARQL), pero existía un vacío semántico para representar entidades funcionales que se superponen a la trama urbana (ZBE, Carga y Descarga, etc...) sin responder a límites administrativos fijos. Esta ontología cubre dicho hueco.</rdfs:comment>
