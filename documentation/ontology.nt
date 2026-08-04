@@ -183,133 +183,21 @@
 # 
 # http://dbpedia.org/ontology/GovernmentalAdministrativeRegion
 # 
-# http://vocab.linkeddata.es/datosabiertos/def/common/zone#CommercialZone
-<http://vocab.linkeddata.es/datosabiertos/def/common/zone#CommercialZone> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<http://vocab.linkeddata.es/datosabiertos/def/common/zone#CommercialZone> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://vocab.linkeddata.es/datosabiertos/def/common/zone#EconomicInterestZone> .
-<http://vocab.linkeddata.es/datosabiertos/def/common/zone#CommercialZone> <http://www.w3.org/2000/01/rdf-schema#comment> "Urban area or axis characterized by a high density of commercial and service activity, frequently supported by regional commerce regulations under the figure of Open Commercial Zone."@en .
-<http://vocab.linkeddata.es/datosabiertos/def/common/zone#CommercialZone> <http://www.w3.org/2000/01/rdf-schema#comment> "Área o eje urbano caracterizado por una alta densidad de actividad comercial y de servicios, frecuentemente amparada por normativas autonómicas de comercio bajo la figura de Zona Comercial Abierta (ZCA)."@es .
-<http://vocab.linkeddata.es/datosabiertos/def/common/zone#CommercialZone> <http://www.w3.org/2000/01/rdf-schema#label> "Commercial Zone"@en .
-<http://vocab.linkeddata.es/datosabiertos/def/common/zone#CommercialZone> <http://www.w3.org/2000/01/rdf-schema#label> "Zona Comercial"@es .
 # 
-# http://vocab.linkeddata.es/datosabiertos/def/common/zone#EconomicInterestZone
-<http://vocab.linkeddata.es/datosabiertos/def/common/zone#EconomicInterestZone> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<http://vocab.linkeddata.es/datosabiertos/def/common/zone#EconomicInterestZone> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://vocab.linkeddata.es/datosabiertos/def/common/zone#RegulatedZone> .
-<http://vocab.linkeddata.es/datosabiertos/def/common/zone#EconomicInterestZone> <http://www.w3.org/2000/01/rdf-schema#comment> "Area delimited by municipal regulations to promote commercial or tourist activities."@en .
-<http://vocab.linkeddata.es/datosabiertos/def/common/zone#EconomicInterestZone> <http://www.w3.org/2000/01/rdf-schema#comment> "Área delimitada por normativas municipales para fomentar actividades comerciales o turísticas."@es .
-<http://vocab.linkeddata.es/datosabiertos/def/common/zone#EconomicInterestZone> <http://www.w3.org/2000/01/rdf-schema#label> "Economic Interest Zone"@en .
-<http://vocab.linkeddata.es/datosabiertos/def/common/zone#EconomicInterestZone> <http://www.w3.org/2000/01/rdf-schema#label> "Zona de Interés Económico"@es .
 # 
-# http://vocab.linkeddata.es/datosabiertos/def/common/zone#FreeTradeZone
-<http://vocab.linkeddata.es/datosabiertos/def/common/zone#FreeTradeZone> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<http://vocab.linkeddata.es/datosabiertos/def/common/zone#FreeTradeZone> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://vocab.linkeddata.es/datosabiertos/def/common/zone#EconomicInterestZone> .
-<http://vocab.linkeddata.es/datosabiertos/def/common/zone#FreeTradeZone> <http://www.w3.org/2000/01/rdf-schema#comment> "Area of the Union customs territory where non-Community goods are considered not situated within customs territory."@en .
-<http://vocab.linkeddata.es/datosabiertos/def/common/zone#FreeTradeZone> <http://www.w3.org/2000/01/rdf-schema#comment> "Área del territorio aduanero de la Unión donde las mercancías no comunitarias se consideran no situadas en territorio aduanero."@es .
-<http://vocab.linkeddata.es/datosabiertos/def/common/zone#FreeTradeZone> <http://www.w3.org/2000/01/rdf-schema#label> "Free Trade Zone"@en .
-<http://vocab.linkeddata.es/datosabiertos/def/common/zone#FreeTradeZone> <http://www.w3.org/2000/01/rdf-schema#label> "Zona Franca"@es .
 # 
-# http://vocab.linkeddata.es/datosabiertos/def/common/zone#GreenSpaceZone
-<http://vocab.linkeddata.es/datosabiertos/def/common/zone#GreenSpaceZone> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<http://vocab.linkeddata.es/datosabiertos/def/common/zone#GreenSpaceZone> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://vocab.linkeddata.es/datosabiertos/def/common/zone#RegulatedZone> .
-<http://vocab.linkeddata.es/datosabiertos/def/common/zone#GreenSpaceZone> <http://www.w3.org/2000/01/rdf-schema#comment> "Espacio libre, parque o área natural urbana sujeta a un régimen de protección urbanística que limita su edificabilidad y regula su uso público, vital para estrategias de mitigación climática y calidad del aire."@es .
-<http://vocab.linkeddata.es/datosabiertos/def/common/zone#GreenSpaceZone> <http://www.w3.org/2000/01/rdf-schema#comment> "Open space, park, or urban natural area subject to a spatial planning protection regime that limits buildability and regulates public use, vital for climate mitigation and air quality strategies."@en .
-<http://vocab.linkeddata.es/datosabiertos/def/common/zone#GreenSpaceZone> <http://www.w3.org/2000/01/rdf-schema#label> "Green Space Zone"@en .
-<http://vocab.linkeddata.es/datosabiertos/def/common/zone#GreenSpaceZone> <http://www.w3.org/2000/01/rdf-schema#label> "Zona Verde"@es .
 # 
-# http://vocab.linkeddata.es/datosabiertos/def/common/zone#HighTourismInfluxZone
-<http://vocab.linkeddata.es/datosabiertos/def/common/zone#HighTourismInfluxZone> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<http://vocab.linkeddata.es/datosabiertos/def/common/zone#HighTourismInfluxZone> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://vocab.linkeddata.es/datosabiertos/def/common/zone#EconomicInterestZone> .
-<http://vocab.linkeddata.es/datosabiertos/def/common/zone#HighTourismInfluxZone> <http://www.w3.org/2000/01/rdf-schema#comment> "Zonas con gran afluencia turística donde se aplica plena libertad de apertura comercial en domingos y festivos."@es .
-<http://vocab.linkeddata.es/datosabiertos/def/common/zone#HighTourismInfluxZone> <http://www.w3.org/2000/01/rdf-schema#comment> "Zones with high tourist influx where full freedom of commercial opening on Sundays and holidays applies."@en .
-<http://vocab.linkeddata.es/datosabiertos/def/common/zone#HighTourismInfluxZone> <http://www.w3.org/2000/01/rdf-schema#label> "High Tourism Influx Zone"@en .
-<http://vocab.linkeddata.es/datosabiertos/def/common/zone#HighTourismInfluxZone> <http://www.w3.org/2000/01/rdf-schema#label> "Zona de Gran Afluencia Turística"@es .
 # 
-# http://vocab.linkeddata.es/datosabiertos/def/common/zone#HistoricalCenter
-<http://vocab.linkeddata.es/datosabiertos/def/common/zone#HistoricalCenter> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<http://vocab.linkeddata.es/datosabiertos/def/common/zone#HistoricalCenter> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://vocab.linkeddata.es/datosabiertos/def/common/zone#RegulatedZone> .
-<http://vocab.linkeddata.es/datosabiertos/def/common/zone#HistoricalCenter> <http://www.w3.org/2000/01/rdf-schema#comment> "Urban area with special heritage protection where strict restrictions on access, circulation, and parking apply to preserve the historical fabric."@en .
-<http://vocab.linkeddata.es/datosabiertos/def/common/zone#HistoricalCenter> <http://www.w3.org/2000/01/rdf-schema#comment> "Área urbana de especial protección patrimonial donde se aplican restricciones estrictas de acceso, circulación y estacionamiento para preservar la trama histórica."@es .
-<http://vocab.linkeddata.es/datosabiertos/def/common/zone#HistoricalCenter> <http://www.w3.org/2000/01/rdf-schema#label> "Casco Histórico"@es .
-<http://vocab.linkeddata.es/datosabiertos/def/common/zone#HistoricalCenter> <http://www.w3.org/2000/01/rdf-schema#label> "Historical Center"@en .
 # 
-# http://vocab.linkeddata.es/datosabiertos/def/common/zone#IndustrialZone
-<http://vocab.linkeddata.es/datosabiertos/def/common/zone#IndustrialZone> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<http://vocab.linkeddata.es/datosabiertos/def/common/zone#IndustrialZone> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://vocab.linkeddata.es/datosabiertos/def/common/zone#EconomicInterestZone> .
-<http://vocab.linkeddata.es/datosabiertos/def/common/zone#IndustrialZone> <http://www.w3.org/2000/01/rdf-schema#comment> "Area delimited by urban planning and Cadastre intended predominantly to host industrial, logistics, and business activities."@en .
-<http://vocab.linkeddata.es/datosabiertos/def/common/zone#IndustrialZone> <http://www.w3.org/2000/01/rdf-schema#comment> "Área delimitada por el planeamiento urbanístico (PGOU) y el Catastro destinada predominantemente a albergar actividades industriales, logísticas y empresariales."@es .
-<http://vocab.linkeddata.es/datosabiertos/def/common/zone#IndustrialZone> <http://www.w3.org/2000/01/rdf-schema#label> "Industrial Zone"@en .
-<http://vocab.linkeddata.es/datosabiertos/def/common/zone#IndustrialZone> <http://www.w3.org/2000/01/rdf-schema#label> "Polígono Industrial"@es .
 # 
-# http://vocab.linkeddata.es/datosabiertos/def/common/zone#LeisureZone
-<http://vocab.linkeddata.es/datosabiertos/def/common/zone#LeisureZone> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<http://vocab.linkeddata.es/datosabiertos/def/common/zone#LeisureZone> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://vocab.linkeddata.es/datosabiertos/def/common/zone#RegulatedZone> .
-<http://vocab.linkeddata.es/datosabiertos/def/common/zone#LeisureZone> <http://www.w3.org/2000/01/rdf-schema#comment> "Area with a high concentration of leisure and hospitality establishments. Frequently subject to specific urban and environmental regulations, such as Special Acoustic Protection Zones."@en .
-<http://vocab.linkeddata.es/datosabiertos/def/common/zone#LeisureZone> <http://www.w3.org/2000/01/rdf-schema#comment> "Área con alta concentración de establecimientos de ocio y hostelería. Frecuentemente sujeta a regulaciones urbanísticas y medioambientales específicas, como las Zonas de Protección Acústica Especial (ZPAE)."@es .
-<http://vocab.linkeddata.es/datosabiertos/def/common/zone#LeisureZone> <http://www.w3.org/2000/01/rdf-schema#label> "Leisure Zone"@en .
-<http://vocab.linkeddata.es/datosabiertos/def/common/zone#LeisureZone> <http://www.w3.org/2000/01/rdf-schema#label> "Zona de Ocio"@es .
 # 
-# http://vocab.linkeddata.es/datosabiertos/def/common/zone#LoadingUnloadingZone
-<http://vocab.linkeddata.es/datosabiertos/def/common/zone#LoadingUnloadingZone> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<http://vocab.linkeddata.es/datosabiertos/def/common/zone#LoadingUnloadingZone> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://vocab.linkeddata.es/datosabiertos/def/common/zone#RegulatedParkingZone> .
-<http://vocab.linkeddata.es/datosabiertos/def/common/zone#LoadingUnloadingZone> <http://www.w3.org/2000/01/rdf-schema#comment> "Zona reservada exclusivamente para la parada técnica de vehículos profesionales dedicados a la Distribución Urbana de Mercancías (DUM)."@es .
-<http://vocab.linkeddata.es/datosabiertos/def/common/zone#LoadingUnloadingZone> <http://www.w3.org/2000/01/rdf-schema#comment> "Zone reserved exclusively for the technical stop of professional vehicles dedicated to Urban Goods Distribution."@en .
-<http://vocab.linkeddata.es/datosabiertos/def/common/zone#LoadingUnloadingZone> <http://www.w3.org/2000/01/rdf-schema#label> "Loading and Unloading Zone"@en .
-<http://vocab.linkeddata.es/datosabiertos/def/common/zone#LoadingUnloadingZone> <http://www.w3.org/2000/01/rdf-schema#label> "Zona de Carga y Descarga"@es .
 # 
-# http://vocab.linkeddata.es/datosabiertos/def/common/zone#LogisticsActivityZone
-<http://vocab.linkeddata.es/datosabiertos/def/common/zone#LogisticsActivityZone> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<http://vocab.linkeddata.es/datosabiertos/def/common/zone#LogisticsActivityZone> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://vocab.linkeddata.es/datosabiertos/def/common/zone#EconomicInterestZone> .
-<http://vocab.linkeddata.es/datosabiertos/def/common/zone#LogisticsActivityZone> <http://www.w3.org/2000/01/rdf-schema#comment> "Infraestructura especializada en actividades de transporte y logística. Definida legalmente como 'Centro de Transporte y Logística'."@es .
-<http://vocab.linkeddata.es/datosabiertos/def/common/zone#LogisticsActivityZone> <http://www.w3.org/2000/01/rdf-schema#comment> "Infrastructure specialized in transport and logistics activities. Legally defined as 'Transport and Logistics Center'."@en .
-<http://vocab.linkeddata.es/datosabiertos/def/common/zone#LogisticsActivityZone> <http://www.w3.org/2000/01/rdf-schema#label> "Logistics Activity Zone"@en .
-<http://vocab.linkeddata.es/datosabiertos/def/common/zone#LogisticsActivityZone> <http://www.w3.org/2000/01/rdf-schema#label> "Zona de Actividad Logística"@es .
 # 
-# http://vocab.linkeddata.es/datosabiertos/def/common/zone#LowEmissionZone
-<http://vocab.linkeddata.es/datosabiertos/def/common/zone#LowEmissionZone> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<http://vocab.linkeddata.es/datosabiertos/def/common/zone#LowEmissionZone> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://vocab.linkeddata.es/datosabiertos/def/common/zone#RegulatedZone> .
-<http://vocab.linkeddata.es/datosabiertos/def/common/zone#LowEmissionZone> <http://www.w3.org/2000/01/rdf-schema#comment> "Zona definida por la administración donde se aplican restricciones de acceso, circulación y estacionamiento de vehículos con el objetivo de mejorar la calidad del aire."@es .
-<http://vocab.linkeddata.es/datosabiertos/def/common/zone#LowEmissionZone> <http://www.w3.org/2000/01/rdf-schema#comment> "Zone defined by the administration where restrictions on vehicle access, circulation, and parking apply to improve air quality."@en .
-<http://vocab.linkeddata.es/datosabiertos/def/common/zone#LowEmissionZone> <http://www.w3.org/2000/01/rdf-schema#label> "Low Emission Zone"@en .
-<http://vocab.linkeddata.es/datosabiertos/def/common/zone#LowEmissionZone> <http://www.w3.org/2000/01/rdf-schema#label> "Zona de Bajas Emisiones"@es .
 # 
-# http://vocab.linkeddata.es/datosabiertos/def/common/zone#LowNoiseEmissionZone
-<http://vocab.linkeddata.es/datosabiertos/def/common/zone#LowNoiseEmissionZone> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<http://vocab.linkeddata.es/datosabiertos/def/common/zone#LowNoiseEmissionZone> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://vocab.linkeddata.es/datosabiertos/def/common/zone#RegulatedZone> .
-<http://vocab.linkeddata.es/datosabiertos/def/common/zone#LowNoiseEmissionZone> <http://www.w3.org/2000/01/rdf-schema#comment> "Zona definida por la administración donde se aplican restricciones de ruido y límites de emisión acústica para proteger la salud pública y el bienestar ciudadano."@es .
-<http://vocab.linkeddata.es/datosabiertos/def/common/zone#LowNoiseEmissionZone> <http://www.w3.org/2000/01/rdf-schema#comment> "Zone defined by the administration where noise restrictions and acoustic emission limits apply to protect public health and citizen well-being."@en .
-<http://vocab.linkeddata.es/datosabiertos/def/common/zone#LowNoiseEmissionZone> <http://www.w3.org/2000/01/rdf-schema#label> "Low Noise Emission Zone"@en .
-<http://vocab.linkeddata.es/datosabiertos/def/common/zone#LowNoiseEmissionZone> <http://www.w3.org/2000/01/rdf-schema#label> "Zona de Bajas Emisiones de Ruido"@es .
 # 
-# http://vocab.linkeddata.es/datosabiertos/def/common/zone#ParkAndRideZone
-<http://vocab.linkeddata.es/datosabiertos/def/common/zone#ParkAndRideZone> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<http://vocab.linkeddata.es/datosabiertos/def/common/zone#ParkAndRideZone> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://vocab.linkeddata.es/datosabiertos/def/common/zone#RegulatedParkingZone> .
-<http://vocab.linkeddata.es/datosabiertos/def/common/zone#ParkAndRideZone> <http://www.w3.org/2000/01/rdf-schema#comment> "Strategic parking zone located on the periphery and connected to public transport networks."@en .
-<http://vocab.linkeddata.es/datosabiertos/def/common/zone#ParkAndRideZone> <http://www.w3.org/2000/01/rdf-schema#comment> "Zona de estacionamiento estratégico situado en la periferia y conectado con redes de transporte público."@es .
-<http://vocab.linkeddata.es/datosabiertos/def/common/zone#ParkAndRideZone> <http://www.w3.org/2000/01/rdf-schema#label> "Park and Ride Zone"@en .
-<http://vocab.linkeddata.es/datosabiertos/def/common/zone#ParkAndRideZone> <http://www.w3.org/2000/01/rdf-schema#label> "Zona de Estacionamiento Disuasorio"@es .
 # 
-# http://vocab.linkeddata.es/datosabiertos/def/common/zone#PedestrianZone
-<http://vocab.linkeddata.es/datosabiertos/def/common/zone#PedestrianZone> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<http://vocab.linkeddata.es/datosabiertos/def/common/zone#PedestrianZone> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://vocab.linkeddata.es/datosabiertos/def/common/zone#RegulatedZone> .
-<http://vocab.linkeddata.es/datosabiertos/def/common/zone#PedestrianZone> <http://www.w3.org/2000/01/rdf-schema#comment> "Road or area reserved entirely or partially for pedestrian traffic, with strict speed regulations for permitted vehicles and a general prohibition on parking."@en .
-<http://vocab.linkeddata.es/datosabiertos/def/common/zone#PedestrianZone> <http://www.w3.org/2000/01/rdf-schema#comment> "Vía o área reservada total o parcialmente para la circulación de peatones, con regulaciones estrictas de velocidad para los vehículos permitidos y prohibición general de estacionamiento."@es .
-<http://vocab.linkeddata.es/datosabiertos/def/common/zone#PedestrianZone> <http://www.w3.org/2000/01/rdf-schema#label> "Pedestrian Zone"@en .
-<http://vocab.linkeddata.es/datosabiertos/def/common/zone#PedestrianZone> <http://www.w3.org/2000/01/rdf-schema#label> "Zona Peatonal"@es .
 # 
-# http://vocab.linkeddata.es/datosabiertos/def/common/zone#ReducedMobilityParkingZone
-<http://vocab.linkeddata.es/datosabiertos/def/common/zone#ReducedMobilityParkingZone> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<http://vocab.linkeddata.es/datosabiertos/def/common/zone#ReducedMobilityParkingZone> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://vocab.linkeddata.es/datosabiertos/def/common/zone#RegulatedParkingZone> .
-<http://vocab.linkeddata.es/datosabiertos/def/common/zone#ReducedMobilityParkingZone> <http://www.w3.org/2000/01/rdf-schema#comment> "Parking zone legally reserved for vehicles transporting Persons with Reduced Mobility (PRM), regulated by municipal and national accessibility laws."@en .
-<http://vocab.linkeddata.es/datosabiertos/def/common/zone#ReducedMobilityParkingZone> <http://www.w3.org/2000/01/rdf-schema#comment> "Zona de estacionamiento reservada legalmente para vehículos que transportan a Personas con Movilidad Reducida (PMR), regulada por normativas municipales y estatales de accesibilidad."@es .
-<http://vocab.linkeddata.es/datosabiertos/def/common/zone#ReducedMobilityParkingZone> <http://www.w3.org/2000/01/rdf-schema#label> "Reduced Mobility Parking Zone"@en .
-<http://vocab.linkeddata.es/datosabiertos/def/common/zone#ReducedMobilityParkingZone> <http://www.w3.org/2000/01/rdf-schema#label> "Zona de Estacionamiento PMR"@es .
 # 
-# http://vocab.linkeddata.es/datosabiertos/def/common/zone#RegulatedParkingZone
-<http://vocab.linkeddata.es/datosabiertos/def/common/zone#RegulatedParkingZone> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<http://vocab.linkeddata.es/datosabiertos/def/common/zone#RegulatedParkingZone> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://vocab.linkeddata.es/datosabiertos/def/common/zone#RegulatedZone> .
-<http://vocab.linkeddata.es/datosabiertos/def/common/zone#RegulatedParkingZone> <http://www.w3.org/2000/01/rdf-schema#comment> "Public road zone where parking is subject to time regulation, fee payment, or other restrictions."@en .
-<http://vocab.linkeddata.es/datosabiertos/def/common/zone#RegulatedParkingZone> <http://www.w3.org/2000/01/rdf-schema#comment> "Zona de la vía pública donde el estacionamiento está sujeto a regulación horaria, pago de tasas u otras restricciones."@es .
-<http://vocab.linkeddata.es/datosabiertos/def/common/zone#RegulatedParkingZone> <http://www.w3.org/2000/01/rdf-schema#label> "Regulated Parking Zone"@en .
-<http://vocab.linkeddata.es/datosabiertos/def/common/zone#RegulatedParkingZone> <http://www.w3.org/2000/01/rdf-schema#label> "Zona de Estacionamiento Regulado"@es .
 # 
 # http://vocab.linkeddata.es/datosabiertos/def/common/zone#RegulatedZone
 <http://vocab.linkeddata.es/datosabiertos/def/common/zone#RegulatedZone> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
@@ -328,53 +216,11 @@ _:genid2 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/20
 <http://vocab.linkeddata.es/datosabiertos/def/common/zone#RegulatedZone> <http://www.w3.org/2000/01/rdf-schema#label> "Regulated Zone"@en .
 <http://vocab.linkeddata.es/datosabiertos/def/common/zone#RegulatedZone> <http://www.w3.org/2000/01/rdf-schema#label> "Zona regulatoria"@es .
 # 
-# http://vocab.linkeddata.es/datosabiertos/def/common/zone#RegulatorySandbox
-<http://vocab.linkeddata.es/datosabiertos/def/common/zone#RegulatorySandbox> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<http://vocab.linkeddata.es/datosabiertos/def/common/zone#RegulatorySandbox> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://vocab.linkeddata.es/datosabiertos/def/common/zone#EconomicInterestZone> .
-<http://vocab.linkeddata.es/datosabiertos/def/common/zone#RegulatorySandbox> <http://www.w3.org/2000/01/rdf-schema#comment> "Controlled testing environment authorized for research trials with automated vehicles or new forms of mobility."@en .
-<http://vocab.linkeddata.es/datosabiertos/def/common/zone#RegulatorySandbox> <http://www.w3.org/2000/01/rdf-schema#comment> "Espacio controlado de pruebas autorizado para la realización de ensayos de investigación con vehículos automatizados o nuevas formas de movilidad."@es .
-<http://vocab.linkeddata.es/datosabiertos/def/common/zone#RegulatorySandbox> <http://www.w3.org/2000/01/rdf-schema#label> "Regulatory Sandbox"@en .
-<http://vocab.linkeddata.es/datosabiertos/def/common/zone#RegulatorySandbox> <http://www.w3.org/2000/01/rdf-schema#label> "Sandbox Regulatorio"@es .
 # 
-# http://vocab.linkeddata.es/datosabiertos/def/common/zone#ResidentialParkingZone
-<http://vocab.linkeddata.es/datosabiertos/def/common/zone#ResidentialParkingZone> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<http://vocab.linkeddata.es/datosabiertos/def/common/zone#ResidentialParkingZone> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://vocab.linkeddata.es/datosabiertos/def/common/zone#RegulatedParkingZone> .
-<http://vocab.linkeddata.es/datosabiertos/def/common/zone#ResidentialParkingZone> <http://www.w3.org/2000/01/rdf-schema#comment> "Zona destinada prioritaria o exclusivamente al estacionamiento de vehículos de residentes empadronados."@es .
-<http://vocab.linkeddata.es/datosabiertos/def/common/zone#ResidentialParkingZone> <http://www.w3.org/2000/01/rdf-schema#comment> "Zone intended primarily or exclusively for parking vehicles of registered residents."@en .
-<http://vocab.linkeddata.es/datosabiertos/def/common/zone#ResidentialParkingZone> <http://www.w3.org/2000/01/rdf-schema#label> "Residential Parking Zone"@en .
-<http://vocab.linkeddata.es/datosabiertos/def/common/zone#ResidentialParkingZone> <http://www.w3.org/2000/01/rdf-schema#label> "Zona de Estacionamiento Residencial"@es .
 # 
-# http://vocab.linkeddata.es/datosabiertos/def/common/zone#RestrictedAccessZone
-<http://vocab.linkeddata.es/datosabiertos/def/common/zone#RestrictedAccessZone> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<http://vocab.linkeddata.es/datosabiertos/def/common/zone#RestrictedAccessZone> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://vocab.linkeddata.es/datosabiertos/def/common/zone#RegulatedZone> .
-<http://vocab.linkeddata.es/datosabiertos/def/common/zone#RestrictedAccessZone> <http://www.w3.org/2000/01/rdf-schema#comment> "Urban area (such as Residential Priority Areas) where vehicle access is limited to residents, public transport, or authorized vehicles for reasons of traffic flow, safety, or road capacity."@en .
-<http://vocab.linkeddata.es/datosabiertos/def/common/zone#RestrictedAccessZone> <http://www.w3.org/2000/01/rdf-schema#comment> "Área urbana (como las Áreas de Prioridad Residencial - APR) donde el acceso de vehículos está limitado a residentes, transporte público o vehículos autorizados por motivos de fluidez, seguridad o capacidad viaria."@es .
-<http://vocab.linkeddata.es/datosabiertos/def/common/zone#RestrictedAccessZone> <http://www.w3.org/2000/01/rdf-schema#label> "Restricted Access Zone"@en .
-<http://vocab.linkeddata.es/datosabiertos/def/common/zone#RestrictedAccessZone> <http://www.w3.org/2000/01/rdf-schema#label> "Zona de Acceso Restringido"@es .
 # 
-# http://vocab.linkeddata.es/datosabiertos/def/common/zone#ScienceTechnologyPark
-<http://vocab.linkeddata.es/datosabiertos/def/common/zone#ScienceTechnologyPark> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<http://vocab.linkeddata.es/datosabiertos/def/common/zone#ScienceTechnologyPark> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://vocab.linkeddata.es/datosabiertos/def/common/zone#EconomicInterestZone> .
-<http://vocab.linkeddata.es/datosabiertos/def/common/zone#ScienceTechnologyPark> <http://www.w3.org/2000/01/rdf-schema#comment> "Espacio físico para el fomento de la I+D+i y la transferencia de conocimiento."@es .
-<http://vocab.linkeddata.es/datosabiertos/def/common/zone#ScienceTechnologyPark> <http://www.w3.org/2000/01/rdf-schema#comment> "Physical space for promoting R&D&I and knowledge transfer."@en .
-<http://vocab.linkeddata.es/datosabiertos/def/common/zone#ScienceTechnologyPark> <http://www.w3.org/2000/01/rdf-schema#label> "Parque Científico y Tecnológico"@es .
-<http://vocab.linkeddata.es/datosabiertos/def/common/zone#ScienceTechnologyPark> <http://www.w3.org/2000/01/rdf-schema#label> "Science and Technology Park"@en .
 # 
-# http://vocab.linkeddata.es/datosabiertos/def/common/zone#ShortTermParkingZone
-<http://vocab.linkeddata.es/datosabiertos/def/common/zone#ShortTermParkingZone> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<http://vocab.linkeddata.es/datosabiertos/def/common/zone#ShortTermParkingZone> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://vocab.linkeddata.es/datosabiertos/def/common/zone#RegulatedParkingZone> .
-<http://vocab.linkeddata.es/datosabiertos/def/common/zone#ShortTermParkingZone> <http://www.w3.org/2000/01/rdf-schema#comment> "Zona destinada principalmente a usuarios visitantes con limitación temporal estricta y tarificación para favorecer la alta rotación."@es .
-<http://vocab.linkeddata.es/datosabiertos/def/common/zone#ShortTermParkingZone> <http://www.w3.org/2000/01/rdf-schema#comment> "Zone intended primarily for visitors with strict time limits and fees to encourage high vehicle turnover."@en .
-<http://vocab.linkeddata.es/datosabiertos/def/common/zone#ShortTermParkingZone> <http://www.w3.org/2000/01/rdf-schema#label> "Short-term Parking Zone"@en .
-<http://vocab.linkeddata.es/datosabiertos/def/common/zone#ShortTermParkingZone> <http://www.w3.org/2000/01/rdf-schema#label> "Zona de Estacionamiento de Rotación"@es .
 # 
-# http://vocab.linkeddata.es/datosabiertos/def/common/zone#StreetVendingZone
-<http://vocab.linkeddata.es/datosabiertos/def/common/zone#StreetVendingZone> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<http://vocab.linkeddata.es/datosabiertos/def/common/zone#StreetVendingZone> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://vocab.linkeddata.es/datosabiertos/def/common/zone#EconomicInterestZone> .
-<http://vocab.linkeddata.es/datosabiertos/def/common/zone#StreetVendingZone> <http://www.w3.org/2000/01/rdf-schema#comment> "Zona acotada para la modalidad de venta realizada fuera de establecimiento comercial permanente (mercadillos)."@es .
-<http://vocab.linkeddata.es/datosabiertos/def/common/zone#StreetVendingZone> <http://www.w3.org/2000/01/rdf-schema#comment> "Zone demarcated for sales conducted outside of permanent commercial establishments (street markets)."@en .
-<http://vocab.linkeddata.es/datosabiertos/def/common/zone#StreetVendingZone> <http://www.w3.org/2000/01/rdf-schema#label> "Street Vending Zone"@en .
-<http://vocab.linkeddata.es/datosabiertos/def/common/zone#StreetVendingZone> <http://www.w3.org/2000/01/rdf-schema#label> "Zona de Venta Ambulante"@es .
 # 
 # http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio#Municipio
 # 
