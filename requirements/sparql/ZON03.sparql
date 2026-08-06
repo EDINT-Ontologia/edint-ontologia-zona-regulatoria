@@ -1,0 +1,30 @@
+# Query: ZON03
+# Question: ¿Cuáles son las zonas de estacionamiento y sus horarios?
+
+# --- Query 1 ---
+PREFIX edintzone: <http://vocab.linkeddata.es/datosabiertos/def/common/zone#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+SELECT DISTINCT ?zona ?tipo ?horario
+WHERE {
+    ?zona rdf:type ?tipo .
+    ?tipo rdfs:subClassOf* edintzone:RegulatedParkingZone .
+    OPTIONAL { ?zona edintzone:scheduleDescription ?horario . }
+}
+ORDER BY ?tipo ?zona ?horario
+
+# --- Query 2 ---
+PREFIX edintzone: <http://vocab.linkeddata.es/datosabiertos/def/common/zone#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+SELECT DISTINCT ?zona ?tipo ?municipio ?horario
+WHERE {
+    ?zona rdf:type ?tipo .
+    ?tipo rdfs:subClassOf* edintzone:RegulatedParkingZone .
+    OPTIONAL { ?zona edintzone:scheduleDescription ?horario . }
+    OPTIONAL { ?zona edintzone:locatedIn ?municipio . }
+}
+ORDER BY ?tipo ?zona ?horario
+

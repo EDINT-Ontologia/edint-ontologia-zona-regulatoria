@@ -1,8 +1,7 @@
-# ¿Cuáles son las zonas activas actualmente?
+# Query: ZON05
+# Question: ¿Cuáles son las zonas activas actualmente?
 
-## Obtener zonas activas actualmente sin fechas
-
-```sparql
+# --- Query 1 ---
 PREFIX edintzone: <http://vocab.linkeddata.es/datosabiertos/def/common/zone#>
 PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
@@ -15,11 +14,8 @@ WHERE {
     FILTER NOT EXISTS { ?zona edintzone:endDate ?fin }
 }
 ORDER BY ?zona
-```
 
-## Obtener zonas activas actualmente con fechas
-
-```sparql
+# --- Query 2 ---
 PREFIX edintzone: <http://vocab.linkeddata.es/datosabiertos/def/common/zone#>
 PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
@@ -38,27 +34,4 @@ WHERE {
     )
 }
 ORDER BY ?zona
-```
 
-## Obtener zonas activas actualmente con nombres
-
-```sparql
-PREFIX edintzone: <http://vocab.linkeddata.es/datosabiertos/def/common/zone#>
-PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
-PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
-PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
-
-SELECT DISTINCT ?zona ?tipo ?nombre ?inicio ?fin
-WHERE {
-    ?zona rdf:type ?tipo .
-    ?tipo rdfs:subClassOf* edintzone:RegulatedZone .
-    OPTIONAL { ?zona rdfs:label ?nombre . }
-    OPTIONAL { ?zona edintzone:startDate ?inicio . }
-    OPTIONAL { ?zona edintzone:endDate ?fin . }
-    FILTER (
-        (!BOUND(?inicio) || xsd:date(?inicio) <= xsd:date(NOW()))
-        &&
-        (!BOUND(?fin) || xsd:date(?fin) >= xsd:date(NOW()))
-    )
-}
-ORDER BY ?tipo ?zona

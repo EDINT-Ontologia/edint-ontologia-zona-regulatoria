@@ -1,0 +1,19 @@
+# Query: ZON07
+# Question: ¿Cuál es la geometría de cada zona?
+
+# --- Query 1 ---
+PREFIX edintzone: <http://vocab.linkeddata.es/datosabiertos/def/common/zone#>
+PREFIX geo: <http://www.opengis.net/ont/geosparql#>
+PREFIX sf: <http://www.opengis.net/ont/sf#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+SELECT DISTINCT ?zona ?tipoZona ?geom ?wkt
+WHERE {
+    ?zona rdf:type ?tipoZona .
+    ?tipoZona rdfs:subClassOf* edintzone:RegulatedZone .
+    ?zona geo:hasGeometry ?geom .
+    ?geom geo:asWKT ?wkt .
+}
+ORDER BY ?zona
+

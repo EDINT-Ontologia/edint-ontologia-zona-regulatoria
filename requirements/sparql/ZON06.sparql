@@ -1,0 +1,17 @@
+# Query: ZON06
+# Question: ¿Cuántas zonas reguladas hay por municipio?
+
+# --- Query 1 ---
+PREFIX edintzone: <http://vocab.linkeddata.es/datosabiertos/def/common/zone#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+SELECT ?municipio ?tipoZona (COUNT(?zona) AS ?numZonas)
+WHERE {
+    ?zona rdf:type ?tipoZona .
+    ?tipoZona rdfs:subClassOf* edintzone:RegulatedZone .
+    ?zona edintzone:locatedIn ?municipio .
+}
+GROUP BY ?municipio ?tipoZona
+ORDER BY ?municipio ?tipoZona
+
