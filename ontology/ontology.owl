@@ -127,7 +127,7 @@
 
     <owl:ObjectProperty rdf:about="http://vocab.linkeddata.es/datosabiertos/def/common/zone#composedOf">
         <rdfs:domain rdf:resource="http://vocab.linkeddata.es/datosabiertos/def/common/zone#RegulatedZone"/>
-        <rdfs:range rdf:resource="http://dbpedia.org/ontology/GovernmentalAdministrativeRegion"/>
+        <rdfs:range rdf:resource="http://vocab.linkeddata.es/datosabiertos/def/urbanismo-infraestructuras/callejero#Via"/>
         <rdfs:range rdf:resource="http://www.geonames.org/ontology#Feature"/>
         <rdfs:comment xml:lang="es">Relación que permite definir una Zona Regulatoria mediante uno o más entidades administrativas (Via, Distrito, Municipio...).</rdfs:comment>
         <rdfs:comment xml:lang="en">Relationship that allows defining a Regulated Zone via one or more administrative entities (Street, District, Municipality...).</rdfs:comment>
@@ -302,9 +302,9 @@
     
 
 
-    <!-- http://dbpedia.org/ontology/GovernmentalAdministrativeRegion -->
+    <!-- http://vocab.linkeddata.es/datosabiertos/def/urbanismo-infraestructuras/callejero#Via -->
 
-    <owl:Class rdf:about="http://dbpedia.org/ontology/GovernmentalAdministrativeRegion"/>
+    <owl:Class rdf:about="http://vocab.linkeddata.es/datosabiertos/def/urbanismo-infraestructuras/callejero#Via"/>
 <!-- http://vocab.linkeddata.es/datosabiertos/def/common/zone#RegulatedZone -->
 
     <owl:Class rdf:about="http://vocab.linkeddata.es/datosabiertos/def/common/zone#RegulatedZone">

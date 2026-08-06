@@ -74,10 +74,11 @@ xsd:date rdf:type rdfs:Datatype .
 ###  http://vocab.linkeddata.es/datosabiertos/def/common/zone#composedOf
 :composedOf rdf:type owl:ObjectProperty ;
             rdfs:domain :RegulatedZone ;
-            rdfs:range <http://dbpedia.org/ontology/GovernmentalAdministrativeRegion> ,
+            rdfs:range <http://vocab.linkeddata.es/datosabiertos/def/urbanismo-infraestructuras/callejero#Via> ,
+                       <http://vocab.linkeddata.es/datosabiertos/def/urbanismo-infraestructuras/callejero#TramoVia> ,
                        <http://www.geonames.org/ontology#Feature> ;
-            rdfs:comment "Relación que permite definir una Zona Regulatoria mediante uno o más entidades administrativas (Via, Distrito, Municipio...)."@es ,
-                         "Relationship that allows defining a Regulated Zone via one or more administrative entities (Street, District, Municipality...)."@en ;
+            rdfs:comment "Relación que permite definir una Zona Regulatoria mediante una o más vías o tramos de vía del vocabulario Callejero."@es ,
+                         "Relationship that allows defining a Regulated Zone via one or more streets or street segments from the Callejero vocabulary."@en ;
             rdfs:label "composed of"@en ,
                        "compuesta por"@es .
 
@@ -200,8 +201,8 @@ xsd:date rdf:type rdfs:Datatype .
 #    Classes
 #################################################################
 
-###  http://dbpedia.org/ontology/GovernmentalAdministrativeRegion
-<http://dbpedia.org/ontology/GovernmentalAdministrativeRegion> rdf:type owl:Class .
+###  http://vocab.linkeddata.es/datosabiertos/def/urbanismo-infraestructuras/callejero#Via
+<http://vocab.linkeddata.es/datosabiertos/def/urbanismo-infraestructuras/callejero#Via> rdf:type owl:Class .
 
 
 
