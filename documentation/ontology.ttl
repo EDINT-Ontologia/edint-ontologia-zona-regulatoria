@@ -119,7 +119,14 @@ xsd:date rdf:type rdfs:Datatype .
 ###  http://vocab.linkeddata.es/datosabiertos/def/common/zone#hasRegulatedZoneType
 :hasRegulatedZoneType rdf:type owl:ObjectProperty ;
                       rdfs:domain :RegulatedZone ;
-                      rdfs:range <http://www.w3.org/2004/02/skos/core#Concept> ;
+                      rdfs:range [ rdf:type owl:Class ;
+                                   owl:intersectionOf ( <http://www.w3.org/2004/02/skos/core#Concept>
+                                                       [ rdf:type owl:Restriction ;
+                                                         owl:onProperty <http://www.w3.org/2004/02/skos/core#inScheme> ;
+                                                         owl:hasValue <http://vocab.linkeddata.es/datosabiertos/kos/edint/RegulatedZoneType>
+                                                       ]
+                                                     )
+                                 ] ;
                       rdfs:comment "Links a regulated zone to its type classification from the RegulatedZoneType SKOS concept scheme."@en ,
                                    "Vincula una zona regulada a su clasificación de tipo del esquema de conceptos SKOS RegulatedZoneType."@es ;
                       rdfs:label "has regulated zone type"@en ,

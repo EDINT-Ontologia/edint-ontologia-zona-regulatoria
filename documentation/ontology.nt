@@ -1,238 +1,132 @@
-<http://vocab.linkeddata.es/datosabiertos/def/common/zone#> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Ontology> .
-<http://vocab.linkeddata.es/datosabiertos/def/common/zone#> <http://www.w3.org/2002/07/owl#imports> <http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio_v0.5> .
-<http://vocab.linkeddata.es/datosabiertos/def/common/zone#> <http://www.w3.org/2002/07/owl#imports> <http://vocab.linkeddata.es/datosabiertos/def/urbanismo-infraestructuras/callejero_v0.3> .
-<http://vocab.linkeddata.es/datosabiertos/def/common/zone#> <http://purl.org/dc/elements/1.1/abstract> "Esta ontología tiene como propósito definir, categorizar y relacionar las Zonas Regulatorias en el contexto de la movilidad inteligente y la gestión urbana (Smart Cities). Se ha diseñado como una extensión modular de la ontología del Sector Público de España (esadm)."@es .
-<http://vocab.linkeddata.es/datosabiertos/def/common/zone#> <http://purl.org/dc/elements/1.1/abstract> "This ontology aims to define, categorize, and relate Regulatory Zones in the context of smart mobility and urban management (Smart Cities). It is designed as a modular extension of the Spanish Public Sector ontology (esadm)."@en .
-<http://vocab.linkeddata.es/datosabiertos/def/common/zone#> <http://purl.org/dc/elements/1.1/creator> "OEG-UPM" .
-<http://vocab.linkeddata.es/datosabiertos/def/common/zone#> <http://purl.org/dc/elements/1.1/title> "Base Zoning Ontology"@en .
-<http://vocab.linkeddata.es/datosabiertos/def/common/zone#> <http://purl.org/dc/elements/1.1/title> "Ontología base de Zonas"@es .
-<http://vocab.linkeddata.es/datosabiertos/def/common/zone#> <http://purl.org/dc/terms/issued> "2026-01-27"^^<http://www.w3.org/2001/XMLSchema#date> .
-<http://vocab.linkeddata.es/datosabiertos/def/common/zone#> <http://purl.org/vocab/vann/preferredNamespacePrefix> "edintzone" .
-<http://vocab.linkeddata.es/datosabiertos/def/common/zone#> <http://purl.org/vocab/vann/preferredNamespaceUri> "http://vocab.linkeddata.es/datosabiertos/def/common/zone#" .
-<http://vocab.linkeddata.es/datosabiertos/def/common/zone#> <http://www.w3.org/2000/01/rdf-schema#comment> "Actualmente, existen vocabularios para divisiones administrativas (esadm) y geometrías (GeoSPARQL), pero existía un vacío semántico para representar entidades funcionales que se superponen a la trama urbana (ZBE, Carga y Descarga, etc...) sin responder a límites administrativos fijos. Esta ontología cubre dicho hueco."@es .
-<http://vocab.linkeddata.es/datosabiertos/def/common/zone#> <http://www.w3.org/2000/01/rdf-schema#comment> "Currently, vocabularies exist for administrative divisions (esadm) and geometries (GeoSPARQL), but there was a semantic gap for representing functional entities that overlay the urban grid (LEZ, Loading/Unloading, etc.) without adhering to fixed administrative boundaries. This ontology fills that gap."@en .
-<http://vocab.linkeddata.es/datosabiertos/def/common/zone#> <http://www.w3.org/2000/01/rdf-schema#label> "Base Zoning Ontology for Smart Mobility Use Case."@en .
-<http://vocab.linkeddata.es/datosabiertos/def/common/zone#> <http://www.w3.org/2000/01/rdf-schema#label> "Ontología base de Zonas para el Caso de Uso de Movilidad Inteligente."@es .
-<http://vocab.linkeddata.es/datosabiertos/def/common/zone#> <http://www.w3.org/2002/07/owl#versionInfo> "0.1.0" .
-# 
-# 
-# #################################################################
-# #
-# #    Annotation properties
-# #
-# #################################################################
-# 
-# 
-# http://purl.org/dc/elements/1.1/abstract
-<http://purl.org/dc/elements/1.1/abstract> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
-# 
-# http://purl.org/dc/elements/1.1/creator
-<http://purl.org/dc/elements/1.1/creator> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
-# 
-# http://purl.org/dc/elements/1.1/description
-<http://purl.org/dc/elements/1.1/description> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
-# 
-# http://purl.org/dc/elements/1.1/title
-<http://purl.org/dc/elements/1.1/title> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
-# 
-# http://purl.org/dc/terms/issued
-<http://purl.org/dc/terms/issued> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
-# 
-# http://purl.org/vocab/vann/preferredNamespacePrefix
-<http://purl.org/vocab/vann/preferredNamespacePrefix> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
-# 
-# http://purl.org/vocab/vann/preferredNamespaceUri
-<http://purl.org/vocab/vann/preferredNamespaceUri> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
-# 
-# 
-# 
-# #################################################################
-# #
-# #    Datatypes
-# #
-# #################################################################
-# 
-# 
-# http://www.opengis.net/ont/geosparql#wktLiteral
-<http://www.opengis.net/ont/geosparql#wktLiteral> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2000/01/rdf-schema#Datatype> .
-# 
-# http://www.w3.org/2001/XMLSchema#date
-<http://www.w3.org/2001/XMLSchema#date> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2000/01/rdf-schema#Datatype> .
-# 
-# 
-# 
-# #################################################################
-# #
-# #    Object Properties
-# #
-# #################################################################
-# 
-# 
-# http://vocab.linkeddata.es/datosabiertos/def/common/zone#composedOf
-<http://vocab.linkeddata.es/datosabiertos/def/common/zone#composedOf> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
-<http://vocab.linkeddata.es/datosabiertos/def/common/zone#composedOf> <http://www.w3.org/2000/01/rdf-schema#domain> <http://vocab.linkeddata.es/datosabiertos/def/common/zone#RegulatedZone> .
-<http://vocab.linkeddata.es/datosabiertos/def/common/zone#composedOf> <http://www.w3.org/2000/01/rdf-schema#range> <http://dbpedia.org/ontology/GovernmentalAdministrativeRegion> .
-<http://dbpedia.org/ontology/GovernmentalAdministrativeRegion> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<http://vocab.linkeddata.es/datosabiertos/def/common/zone#composedOf> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.geonames.org/ontology#Feature> .
-<http://www.geonames.org/ontology#Feature> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<http://vocab.linkeddata.es/datosabiertos/def/common/zone#composedOf> <http://www.w3.org/2000/01/rdf-schema#comment> "Relación que permite definir una Zona Regulatoria mediante uno o más entidades administrativas (Via, Distrito, Municipio...)."@es .
-<http://vocab.linkeddata.es/datosabiertos/def/common/zone#composedOf> <http://www.w3.org/2000/01/rdf-schema#comment> "Relationship that allows defining a Regulated Zone via one or more administrative entities (Street, District, Municipality...)."@en .
-<http://vocab.linkeddata.es/datosabiertos/def/common/zone#composedOf> <http://www.w3.org/2000/01/rdf-schema#label> "composed of"@en .
-<http://vocab.linkeddata.es/datosabiertos/def/common/zone#composedOf> <http://www.w3.org/2000/01/rdf-schema#label> "compuesta por"@es .
-# 
-# http://vocab.linkeddata.es/datosabiertos/def/common/zone#hasRegulatedZone
-<http://vocab.linkeddata.es/datosabiertos/def/common/zone#hasRegulatedZone> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
-<http://vocab.linkeddata.es/datosabiertos/def/common/zone#hasRegulatedZone> <http://www.w3.org/2002/07/owl#inverseOf> <http://vocab.linkeddata.es/datosabiertos/def/common/zone#locatedIn> .
-<http://vocab.linkeddata.es/datosabiertos/def/common/zone#hasRegulatedZone> <http://www.w3.org/2000/01/rdf-schema#domain> <http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio#Municipio> .
-<http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio#Municipio> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<http://vocab.linkeddata.es/datosabiertos/def/common/zone#hasRegulatedZone> <http://www.w3.org/2000/01/rdf-schema#range> <http://vocab.linkeddata.es/datosabiertos/def/common/zone#RegulatedZone> .
-<http://vocab.linkeddata.es/datosabiertos/def/common/zone#hasRegulatedZone> <http://www.w3.org/2000/01/rdf-schema#comment> "Inverse property of 'locatedIn'. Links a municipality with the regulated zones it contains."@en .
-<http://vocab.linkeddata.es/datosabiertos/def/common/zone#hasRegulatedZone> <http://www.w3.org/2000/01/rdf-schema#comment> "Propiedad inversa de 'ubicado'. Vincula un municipio con las zonas regulatorias que contiene."@es .
-<http://vocab.linkeddata.es/datosabiertos/def/common/zone#hasRegulatedZone> <http://www.w3.org/2000/01/rdf-schema#label> "has regulated zone"@en .
-<http://vocab.linkeddata.es/datosabiertos/def/common/zone#hasRegulatedZone> <http://www.w3.org/2000/01/rdf-schema#label> "tiene zona regulatoria"@es .
-# 
-# http://vocab.linkeddata.es/datosabiertos/def/common/zone#locatedIn
-<http://vocab.linkeddata.es/datosabiertos/def/common/zone#locatedIn> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
-<http://vocab.linkeddata.es/datosabiertos/def/common/zone#locatedIn> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.opengis.net/ont/geosparql#sfWithin> .
-<http://www.opengis.net/ont/geosparql#sfWithin> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
-<http://vocab.linkeddata.es/datosabiertos/def/common/zone#locatedIn> <http://www.w3.org/2000/01/rdf-schema#domain> <http://vocab.linkeddata.es/datosabiertos/def/common/zone#RegulatedZone> .
-<http://vocab.linkeddata.es/datosabiertos/def/common/zone#locatedIn> <http://www.w3.org/2000/01/rdf-schema#range> <http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio#Municipio> .
-<http://vocab.linkeddata.es/datosabiertos/def/common/zone#locatedIn> <http://www.w3.org/2000/01/rdf-schema#comment> "Relaciona una zona regulatoria con el municipio administrativo al que pertenece."@es .
-<http://vocab.linkeddata.es/datosabiertos/def/common/zone#locatedIn> <http://www.w3.org/2000/01/rdf-schema#comment> "Relates a regulated zone to the administrative municipality it belongs to."@en .
-<http://vocab.linkeddata.es/datosabiertos/def/common/zone#locatedIn> <http://www.w3.org/2000/01/rdf-schema#label> "located in municipality"@en .
-<http://vocab.linkeddata.es/datosabiertos/def/common/zone#locatedIn> <http://www.w3.org/2000/01/rdf-schema#label> "ubicado en municipio"@es .
-# 
-# http://vocab.linkeddata.es/datosabiertos/def/common/zone#managedBy
-<http://vocab.linkeddata.es/datosabiertos/def/common/zone#managedBy> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
-<http://vocab.linkeddata.es/datosabiertos/def/common/zone#managedBy> <http://www.w3.org/2000/01/rdf-schema#domain> <http://vocab.linkeddata.es/datosabiertos/def/common/zone#RegulatedZone> .
-<http://vocab.linkeddata.es/datosabiertos/def/common/zone#managedBy> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/ns/org#Organization> .
-<http://vocab.linkeddata.es/datosabiertos/def/common/zone#managedBy> <http://www.w3.org/2000/01/rdf-schema#comment> "Organización (pública o privada) encargada de la gestión y operación de la zona."@es .
-<http://vocab.linkeddata.es/datosabiertos/def/common/zone#managedBy> <http://www.w3.org/2000/01/rdf-schema#comment> "Organization (public or private) responsible for the management and operation of the zone."@en .
-<http://vocab.linkeddata.es/datosabiertos/def/common/zone#managedBy> <http://www.w3.org/2000/01/rdf-schema#label> "entidad gestora"@es .
-<http://vocab.linkeddata.es/datosabiertos/def/common/zone#managedBy> <http://www.w3.org/2000/01/rdf-schema#label> "managed by"@en .
-# 
-# http://www.opengis.net/ont/geosparql#hasGeometry
-<http://www.opengis.net/ont/geosparql#hasGeometry> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
-<http://www.opengis.net/ont/geosparql#hasGeometry> <http://www.w3.org/2000/01/rdf-schema#label> "has geometry"@en .
-<http://www.opengis.net/ont/geosparql#hasGeometry> <http://www.w3.org/2000/01/rdf-schema#label> "tiene geometría"@es .
-# 
-# http://www.opengis.net/ont/geosparql#sfWithin
-# 
-# 
-# 
-# #################################################################
-# #
-# #    Data properties
-# #
-# #################################################################
-# 
-# 
-# http://vocab.linkeddata.es/datosabiertos/def/common/zone#endDate
-<http://vocab.linkeddata.es/datosabiertos/def/common/zone#endDate> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
-<http://vocab.linkeddata.es/datosabiertos/def/common/zone#endDate> <http://www.w3.org/2000/01/rdf-schema#domain> <http://vocab.linkeddata.es/datosabiertos/def/common/zone#RegulatedZone> .
-<http://vocab.linkeddata.es/datosabiertos/def/common/zone#endDate> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#date> .
-<http://vocab.linkeddata.es/datosabiertos/def/common/zone#endDate> <http://www.w3.org/2000/01/rdf-schema#comment> "Date when the zone regulation ceases to be effective."@en .
-<http://vocab.linkeddata.es/datosabiertos/def/common/zone#endDate> <http://www.w3.org/2000/01/rdf-schema#comment> "Fecha en la que la regulación de la zona deja de ser efectiva (derogación o fin de periodo)."@es .
-<http://vocab.linkeddata.es/datosabiertos/def/common/zone#endDate> <http://www.w3.org/2000/01/rdf-schema#label> "end date"@en .
-<http://vocab.linkeddata.es/datosabiertos/def/common/zone#endDate> <http://www.w3.org/2000/01/rdf-schema#label> "fecha de fin de vigor"@es .
-# 
-# http://vocab.linkeddata.es/datosabiertos/def/common/zone#legalReference
-<http://vocab.linkeddata.es/datosabiertos/def/common/zone#legalReference> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
-<http://vocab.linkeddata.es/datosabiertos/def/common/zone#legalReference> <http://www.w3.org/2000/01/rdf-schema#domain> <http://vocab.linkeddata.es/datosabiertos/def/common/zone#RegulatedZone> .
-<http://vocab.linkeddata.es/datosabiertos/def/common/zone#legalReference> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#anyURI> .
-<http://vocab.linkeddata.es/datosabiertos/def/common/zone#legalReference> <http://www.w3.org/2000/01/rdf-schema#comment> "Enlace al documento oficial (Boletín, Ordenanza) que establece la creación de la zona."@es .
-<http://vocab.linkeddata.es/datosabiertos/def/common/zone#legalReference> <http://www.w3.org/2000/01/rdf-schema#comment> "Link to the official document (Bulletin, Ordinance) establishing the zone."@en .
-<http://vocab.linkeddata.es/datosabiertos/def/common/zone#legalReference> <http://www.w3.org/2000/01/rdf-schema#label> "legal reference"@en .
-<http://vocab.linkeddata.es/datosabiertos/def/common/zone#legalReference> <http://www.w3.org/2000/01/rdf-schema#label> "referencia legal"@es .
-# 
-# http://vocab.linkeddata.es/datosabiertos/def/common/zone#scheduleDescription
-<http://vocab.linkeddata.es/datosabiertos/def/common/zone#scheduleDescription> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
-<http://vocab.linkeddata.es/datosabiertos/def/common/zone#scheduleDescription> <http://www.w3.org/2000/01/rdf-schema#domain> <http://vocab.linkeddata.es/datosabiertos/def/common/zone#RegulatedZone> .
-<http://vocab.linkeddata.es/datosabiertos/def/common/zone#scheduleDescription> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
-<http://vocab.linkeddata.es/datosabiertos/def/common/zone#scheduleDescription> <http://www.w3.org/2000/01/rdf-schema#comment> "Descripción textual del horario de funcionamiento de la zona (ej. \"Lunes a Viernes de 07:00 a 20:00\")."@es .
-<http://vocab.linkeddata.es/datosabiertos/def/common/zone#scheduleDescription> <http://www.w3.org/2000/01/rdf-schema#comment> "Textual description of the zone's operating schedule (e.g., \"Monday to Friday from 07:00 to 20:00\")."@en .
-<http://vocab.linkeddata.es/datosabiertos/def/common/zone#scheduleDescription> <http://www.w3.org/2000/01/rdf-schema#label> "horario descriptivo"@es .
-<http://vocab.linkeddata.es/datosabiertos/def/common/zone#scheduleDescription> <http://www.w3.org/2000/01/rdf-schema#label> "schedule description"@en .
-# 
-# http://vocab.linkeddata.es/datosabiertos/def/common/zone#startDate
-<http://vocab.linkeddata.es/datosabiertos/def/common/zone#startDate> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
-<http://vocab.linkeddata.es/datosabiertos/def/common/zone#startDate> <http://www.w3.org/2000/01/rdf-schema#domain> <http://vocab.linkeddata.es/datosabiertos/def/common/zone#RegulatedZone> .
-<http://vocab.linkeddata.es/datosabiertos/def/common/zone#startDate> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#date> .
-<http://vocab.linkeddata.es/datosabiertos/def/common/zone#startDate> <http://www.w3.org/2000/01/rdf-schema#comment> "Date from which the zone regulation becomes effective."@en .
-<http://vocab.linkeddata.es/datosabiertos/def/common/zone#startDate> <http://www.w3.org/2000/01/rdf-schema#comment> "Fecha a partir de la cual la regulación de la zona comienza a ser efectiva."@es .
 <http://vocab.linkeddata.es/datosabiertos/def/common/zone#startDate> <http://www.w3.org/2000/01/rdf-schema#label> "entry into force date"@en .
-<http://vocab.linkeddata.es/datosabiertos/def/common/zone#startDate> <http://www.w3.org/2000/01/rdf-schema#label> "fecha de entrada en vigor"@es .
-# 
-# http://www.opengis.net/ont/geosparql#asWKT
+<http://vocab.linkeddata.es/datosabiertos/def/common/zone#locatedIn> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.opengis.net/ont/geosparql#sfWithin> .
+<http://vocab.linkeddata.es/datosabiertos/def/common/zone#RegulatedZone> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.opengis.net/ont/geosparql#Feature> .
+<http://vocab.linkeddata.es/datosabiertos/def/common/zone#composedOf> <http://www.w3.org/2000/01/rdf-schema#comment> "Relación que permite definir una Zona Regulatoria mediante uno o más entidades administrativas (Via, Distrito, Municipio...)."@es .
+<http://www.opengis.net/ont/sf#Geometry> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://purl.org/vocab/vann/preferredNamespacePrefix> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+<http://vocab.linkeddata.es/datosabiertos/def/common/zone#> <http://www.w3.org/2000/01/rdf-schema#comment> "Actualmente, existen vocabularios para divisiones administrativas (esadm) y geometrías (GeoSPARQL), pero existía un vacío semántico para representar entidades funcionales que se superponen a la trama urbana (ZBE, Carga y Descarga, etc...) sin responder a límites administrativos fijos. Esta ontología cubre dicho hueco."@es .
+<http://vocab.linkeddata.es/datosabiertos/def/common/zone#> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Ontology> .
+<http://vocab.linkeddata.es/datosabiertos/def/common/zone#managedBy> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://vocab.linkeddata.es/datosabiertos/def/common/zone#scheduleDescription> <http://www.w3.org/2000/01/rdf-schema#domain> <http://vocab.linkeddata.es/datosabiertos/def/common/zone#RegulatedZone> .
+<http://vocab.linkeddata.es/datosabiertos/def/common/zone#managedBy> <http://www.w3.org/2000/01/rdf-schema#label> "managed by"@en .
+<http://vocab.linkeddata.es/datosabiertos/def/common/zone#legalReference> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+_:n3c331c3a3b8242c1b255352741f6793cb6 <http://www.w3.org/2002/07/owl#onClass> <http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio#Municipio> .
+<http://dbpedia.org/ontology/GovernmentalAdministrativeRegion> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+_:n3c331c3a3b8242c1b255352741f6793cb5 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<http://vocab.linkeddata.es/datosabiertos/def/common/zone#endDate> <http://www.w3.org/2000/01/rdf-schema#comment> "Date when the zone regulation ceases to be effective."@en .
+<http://vocab.linkeddata.es/datosabiertos/def/common/zone#hasRegulatedZoneType> <http://www.w3.org/2000/01/rdf-schema#domain> <http://vocab.linkeddata.es/datosabiertos/def/common/zone#RegulatedZone> .
+<http://vocab.linkeddata.es/datosabiertos/def/common/zone#RegulatedZone> <http://www.w3.org/2000/01/rdf-schema#label> "Zona regulatoria"@es .
+<http://www.opengis.net/ont/geosparql#hasGeometry> <http://www.w3.org/2000/01/rdf-schema#label> "tiene geometría"@es .
+<http://vocab.linkeddata.es/datosabiertos/def/common/zone#composedOf> <http://www.w3.org/2000/01/rdf-schema#domain> <http://vocab.linkeddata.es/datosabiertos/def/common/zone#RegulatedZone> .
+<http://vocab.linkeddata.es/datosabiertos/def/common/zone#hasRegulatedZone> <http://www.w3.org/2000/01/rdf-schema#label> "has regulated zone"@en .
+<http://vocab.linkeddata.es/datosabiertos/def/common/zone#managedBy> <http://www.w3.org/2000/01/rdf-schema#comment> "Organización (pública o privada) encargada de la gestión y operación de la zona."@es .
+<http://vocab.linkeddata.es/datosabiertos/def/common/zone#startDate> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://vocab.linkeddata.es/datosabiertos/def/common/zone#> <http://purl.org/vocab/vann/preferredNamespacePrefix> "edintzone" .
+_:n3c331c3a3b8242c1b255352741f6793cb3 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:n3c331c3a3b8242c1b255352741f6793cb4 .
+<http://vocab.linkeddata.es/datosabiertos/def/common/zone#> <http://purl.org/dc/terms/issued> "2026-01-27"^^<http://www.w3.org/2001/XMLSchema#date> .
+<http://vocab.linkeddata.es/datosabiertos/def/common/zone#endDate> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#date> .
+<http://vocab.linkeddata.es/datosabiertos/def/common/zone#managedBy> <http://www.w3.org/2000/01/rdf-schema#comment> "Organization (public or private) responsible for the management and operation of the zone."@en .
+_:n3c331c3a3b8242c1b255352741f6793cb3 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://www.w3.org/2004/02/skos/core#Concept> .
+<http://vocab.linkeddata.es/datosabiertos/def/common/zone#scheduleDescription> <http://www.w3.org/2000/01/rdf-schema#label> "schedule description"@en .
+<http://vocab.linkeddata.es/datosabiertos/def/common/zone#> <http://www.w3.org/2000/01/rdf-schema#label> "Base Zoning Ontology for Smart Mobility Use Case."@en .
+<http://vocab.linkeddata.es/datosabiertos/def/common/zone#legalReference> <http://www.w3.org/2000/01/rdf-schema#domain> <http://vocab.linkeddata.es/datosabiertos/def/common/zone#RegulatedZone> .
+<http://www.opengis.net/ont/geosparql#asWKT> <http://www.w3.org/2000/01/rdf-schema#comment> "Representación de la geometría en formato Well-Known Text."@es .
+<http://vocab.linkeddata.es/datosabiertos/def/common/zone#startDate> <http://www.w3.org/2000/01/rdf-schema#comment> "Fecha a partir de la cual la regulación de la zona comienza a ser efectiva."@es .
+<http://vocab.linkeddata.es/datosabiertos/def/common/zone#scheduleDescription> <http://www.w3.org/2000/01/rdf-schema#comment> "Descripción textual del horario de funcionamiento de la zona (ej. \"Lunes a Viernes de 07:00 a 20:00\")."@es .
+<http://vocab.linkeddata.es/datosabiertos/def/common/zone#endDate> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
 <http://www.opengis.net/ont/geosparql#asWKT> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://vocab.linkeddata.es/datosabiertos/def/common/zone#managedBy> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/ns/org#Organization> .
+<http://vocab.linkeddata.es/datosabiertos/def/common/zone#legalReference> <http://www.w3.org/2000/01/rdf-schema#comment> "Enlace al documento oficial (Boletín, Ordenanza) que establece la creación de la zona."@es .
+<http://vocab.linkeddata.es/datosabiertos/def/common/zone#> <http://www.w3.org/2000/01/rdf-schema#comment> "Currently, vocabularies exist for administrative divisions (esadm) and geometries (GeoSPARQL), but there was a semantic gap for representing functional entities that overlay the urban grid (LEZ, Loading/Unloading, etc.) without adhering to fixed administrative boundaries. This ontology fills that gap."@en .
+_:n3c331c3a3b8242c1b255352741f6793cb2 <http://www.w3.org/2002/07/owl#hasValue> <http://vocab.linkeddata.es/datosabiertos/kos/edint/RegulatedZoneType> .
+<http://vocab.linkeddata.es/datosabiertos/def/common/zone#hasRegulatedZone> <http://www.w3.org/2002/07/owl#inverseOf> <http://vocab.linkeddata.es/datosabiertos/def/common/zone#locatedIn> .
+<http://vocab.linkeddata.es/datosabiertos/def/common/zone#> <http://www.w3.org/2002/07/owl#versionInfo> "0.1.0" .
+<http://vocab.linkeddata.es/datosabiertos/def/common/zone#hasRegulatedZoneType> <http://www.w3.org/2000/01/rdf-schema#label> "tiene tipo de zona regulada"@es .
+<http://vocab.linkeddata.es/datosabiertos/def/common/zone#locatedIn> <http://www.w3.org/2000/01/rdf-schema#comment> "Relates a regulated zone to the administrative municipality it belongs to."@en .
+<http://vocab.linkeddata.es/datosabiertos/def/common/zone#hasRegulatedZoneType> <http://www.w3.org/2000/01/rdf-schema#comment> "Links a regulated zone to its type classification from the RegulatedZoneType SKOS concept scheme."@en .
+<http://vocab.linkeddata.es/datosabiertos/def/common/zone#locatedIn> <http://www.w3.org/2000/01/rdf-schema#label> "located in municipality"@en .
+<http://vocab.linkeddata.es/datosabiertos/def/common/zone#> <http://www.w3.org/2002/07/owl#imports> <http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio_v0.5> .
+<http://purl.org/dc/elements/1.1/title> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+<http://www.opengis.net/ont/geosparql#Feature> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.geonames.org/ontology#Feature> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://vocab.linkeddata.es/datosabiertos/def/common/zone#RegulatedZone> <http://www.w3.org/2000/01/rdf-schema#label> "Regulated Zone"@en .
+<http://vocab.linkeddata.es/datosabiertos/def/common/zone#> <http://purl.org/dc/elements/1.1/title> "Ontología base de Zonas"@es .
+<http://vocab.linkeddata.es/datosabiertos/def/common/zone#endDate> <http://www.w3.org/2000/01/rdf-schema#domain> <http://vocab.linkeddata.es/datosabiertos/def/common/zone#RegulatedZone> .
+<http://vocab.linkeddata.es/datosabiertos/def/common/zone#scheduleDescription> <http://www.w3.org/2000/01/rdf-schema#label> "horario descriptivo"@es .
+<http://www.w3.org/2001/XMLSchema#date> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2000/01/rdf-schema#Datatype> .
+<http://vocab.linkeddata.es/datosabiertos/def/common/zone#composedOf> <http://www.w3.org/2000/01/rdf-schema#comment> "Relationship that allows defining a Regulated Zone via one or more administrative entities (Street, District, Municipality...)."@en .
+<http://www.opengis.net/ont/geosparql#hasGeometry> <http://www.w3.org/2000/01/rdf-schema#label> "has geometry"@en .
+<http://vocab.linkeddata.es/datosabiertos/def/common/zone#> <http://purl.org/vocab/vann/preferredNamespaceUri> "http://vocab.linkeddata.es/datosabiertos/def/common/zone#" .
+<http://vocab.linkeddata.es/datosabiertos/def/common/zone#composedOf> <http://www.w3.org/2000/01/rdf-schema#range> <http://dbpedia.org/ontology/GovernmentalAdministrativeRegion> .
+<http://vocab.linkeddata.es/datosabiertos/def/common/zone#RegulatedZone> <http://www.w3.org/2000/01/rdf-schema#comment> "Area to which a particular regulation or policy applies"@en .
+<http://vocab.linkeddata.es/datosabiertos/def/common/zone#scheduleDescription> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+<http://vocab.linkeddata.es/datosabiertos/def/common/zone#hasRegulatedZoneType> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://www.opengis.net/ont/geosparql#asWKT> <http://www.w3.org/2000/01/rdf-schema#label> "as WKT"@en .
+<http://vocab.linkeddata.es/datosabiertos/def/common/zone#> <http://purl.org/dc/elements/1.1/abstract> "This ontology aims to define, categorize, and relate Regulatory Zones in the context of smart mobility and urban management (Smart Cities). It is designed as a modular extension of the Spanish Public Sector ontology (esadm)."@en .
+<http://vocab.linkeddata.es/datosabiertos/def/common/zone#hasRegulatedZone> <http://www.w3.org/2000/01/rdf-schema#comment> "Propiedad inversa de 'ubicado'. Vincula un municipio con las zonas regulatorias que contiene."@es .
+<http://vocab.linkeddata.es/datosabiertos/def/common/zone#scheduleDescription> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://vocab.linkeddata.es/datosabiertos/def/common/zone#hasRegulatedZoneType> <http://www.w3.org/2000/01/rdf-schema#range> _:n3c331c3a3b8242c1b255352741f6793cb1 .
+<http://vocab.linkeddata.es/datosabiertos/def/common/zone#composedOf> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.geonames.org/ontology#Feature> .
+<http://vocab.linkeddata.es/datosabiertos/def/common/zone#composedOf> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://purl.org/dc/elements/1.1/creator> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+<http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio#Municipio> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <http://www.opengis.net/ont/geosparql#asWKT> <http://www.w3.org/2000/01/rdf-schema#domain> <http://www.opengis.net/ont/sf#Geometry> .
 <http://www.opengis.net/ont/geosparql#asWKT> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.opengis.net/ont/geosparql#wktLiteral> .
+<http://www.opengis.net/ont/geosparql#hasGeometry> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://vocab.linkeddata.es/datosabiertos/def/common/zone#RegulatedZone> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:n3c331c3a3b8242c1b255352741f6793cb5 .
+<http://vocab.linkeddata.es/datosabiertos/def/common/zone#legalReference> <http://www.w3.org/2000/01/rdf-schema#label> "legal reference"@en .
+_:n3c331c3a3b8242c1b255352741f6793cb1 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://vocab.linkeddata.es/datosabiertos/def/common/zone#> <http://purl.org/dc/elements/1.1/title> "Base Zoning Ontology"@en .
+_:n3c331c3a3b8242c1b255352741f6793cb4 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:n3c331c3a3b8242c1b255352741f6793cb2 .
+<http://purl.org/dc/terms/issued> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+_:n3c331c3a3b8242c1b255352741f6793cb5 <http://www.w3.org/2002/07/owl#someValuesFrom> <http://www.opengis.net/ont/sf#Geometry> .
+<http://purl.org/vocab/vann/preferredNamespaceUri> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+_:n3c331c3a3b8242c1b255352741f6793cb1 <http://www.w3.org/2002/07/owl#intersectionOf> _:n3c331c3a3b8242c1b255352741f6793cb3 .
 <http://www.opengis.net/ont/geosparql#asWKT> <http://www.w3.org/2000/01/rdf-schema#comment> "Geometry representation in Well-Known Text format."@en .
-<http://www.opengis.net/ont/geosparql#asWKT> <http://www.w3.org/2000/01/rdf-schema#comment> "Representación de la geometría en formato Well-Known Text."@es .
-<http://www.opengis.net/ont/geosparql#asWKT> <http://www.w3.org/2000/01/rdf-schema#label> "as WKT"@en .
-<http://www.opengis.net/ont/geosparql#asWKT> <http://www.w3.org/2000/01/rdf-schema#label> "como WKT"@es .
-# 
-# 
-# 
-# #################################################################
-# #
-# #    Classes
-# #
-# #################################################################
-# 
-# 
-# http://dbpedia.org/ontology/GovernmentalAdministrativeRegion
-# 
-# 
-# 
-# 
-# 
-# 
-# 
-# 
-# 
-# 
-# 
-# 
-# 
-# 
-# 
-# 
-# 
-# http://vocab.linkeddata.es/datosabiertos/def/common/zone#RegulatedZone
-<http://vocab.linkeddata.es/datosabiertos/def/common/zone#RegulatedZone> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<http://vocab.linkeddata.es/datosabiertos/def/common/zone#RegulatedZone> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.opengis.net/ont/geosparql#Feature> .
-<http://vocab.linkeddata.es/datosabiertos/def/common/zone#RegulatedZone> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid1 .
-_:genid1 <http://www.w3.org/2002/07/owl#someValuesFrom> <http://www.opengis.net/ont/sf#Geometry> .
-_:genid1 <http://www.w3.org/2002/07/owl#onProperty> <http://www.opengis.net/ont/geosparql#hasGeometry> .
-_:genid1 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
-<http://vocab.linkeddata.es/datosabiertos/def/common/zone#RegulatedZone> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid2 .
-_:genid2 <http://www.w3.org/2002/07/owl#onClass> <http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio#Municipio> .
-_:genid2 <http://www.w3.org/2002/07/owl#qualifiedCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
-_:genid2 <http://www.w3.org/2002/07/owl#onProperty> <http://vocab.linkeddata.es/datosabiertos/def/common/zone#locatedIn> .
-_:genid2 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
-<http://vocab.linkeddata.es/datosabiertos/def/common/zone#RegulatedZone> <http://www.w3.org/2000/01/rdf-schema#comment> "Area a la que se aplica una regulacion o normativa particular"@es .
-<http://vocab.linkeddata.es/datosabiertos/def/common/zone#RegulatedZone> <http://www.w3.org/2000/01/rdf-schema#comment> "Area to which a particular regulation or policy applies"@en .
-<http://vocab.linkeddata.es/datosabiertos/def/common/zone#RegulatedZone> <http://www.w3.org/2000/01/rdf-schema#label> "Regulated Zone"@en .
-<http://vocab.linkeddata.es/datosabiertos/def/common/zone#RegulatedZone> <http://www.w3.org/2000/01/rdf-schema#label> "Zona regulatoria"@es .
-# 
-# 
-# 
-# 
-# 
-# 
-# 
-# http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio#Municipio
-# 
-# http://www.geonames.org/ontology#Feature
-# 
-# http://www.opengis.net/ont/geosparql#Feature
-<http://www.opengis.net/ont/geosparql#Feature> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-# 
-# http://www.opengis.net/ont/sf#Geometry
-<http://www.opengis.net/ont/sf#Geometry> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-# 
-# http://www.w3.org/ns/org#Organization
 <http://www.w3.org/ns/org#Organization> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-# 
-# Generated by the OWL API (version 5.1.18) https://github.com/owlcs/owlapi/
+<http://vocab.linkeddata.es/datosabiertos/def/common/zone#hasRegulatedZone> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://www.opengis.net/ont/geosparql#wktLiteral> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2000/01/rdf-schema#Datatype> .
+<http://vocab.linkeddata.es/datosabiertos/def/common/zone#RegulatedZone> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://vocab.linkeddata.es/datosabiertos/def/common/zone#endDate> <http://www.w3.org/2000/01/rdf-schema#label> "end date"@en .
+<http://vocab.linkeddata.es/datosabiertos/def/common/zone#legalReference> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#anyURI> .
+<http://vocab.linkeddata.es/datosabiertos/def/common/zone#startDate> <http://www.w3.org/2000/01/rdf-schema#label> "fecha de entrada en vigor"@es .
+<http://vocab.linkeddata.es/datosabiertos/def/common/zone#endDate> <http://www.w3.org/2000/01/rdf-schema#comment> "Fecha en la que la regulación de la zona deja de ser efectiva (derogación o fin de periodo)."@es .
+<http://vocab.linkeddata.es/datosabiertos/def/common/zone#startDate> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#date> .
+<http://vocab.linkeddata.es/datosabiertos/def/common/zone#composedOf> <http://www.w3.org/2000/01/rdf-schema#label> "compuesta por"@es .
+<http://vocab.linkeddata.es/datosabiertos/def/common/zone#hasRegulatedZoneType> <http://www.w3.org/2000/01/rdf-schema#label> "has regulated zone type"@en .
+<http://vocab.linkeddata.es/datosabiertos/def/common/zone#hasRegulatedZone> <http://www.w3.org/2000/01/rdf-schema#domain> <http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio#Municipio> .
+_:n3c331c3a3b8242c1b255352741f6793cb6 <http://www.w3.org/2002/07/owl#onProperty> <http://vocab.linkeddata.es/datosabiertos/def/common/zone#locatedIn> .
+_:n3c331c3a3b8242c1b255352741f6793cb2 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:n3c331c3a3b8242c1b255352741f6793cb6 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:n3c331c3a3b8242c1b255352741f6793cb6 <http://www.w3.org/2002/07/owl#qualifiedCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+<http://vocab.linkeddata.es/datosabiertos/def/common/zone#> <http://purl.org/dc/elements/1.1/creator> "OEG-UPM" .
+<http://vocab.linkeddata.es/datosabiertos/def/common/zone#RegulatedZone> <http://www.w3.org/2000/01/rdf-schema#comment> "Area a la que se aplica una regulacion o normativa particular"@es .
+<http://vocab.linkeddata.es/datosabiertos/def/common/zone#locatedIn> <http://www.w3.org/2000/01/rdf-schema#comment> "Relaciona una zona regulatoria con el municipio administrativo al que pertenece."@es .
+<http://vocab.linkeddata.es/datosabiertos/def/common/zone#hasRegulatedZoneType> <http://www.w3.org/2000/01/rdf-schema#comment> "Vincula una zona regulada a su clasificación de tipo del esquema de conceptos SKOS RegulatedZoneType."@es .
+<http://vocab.linkeddata.es/datosabiertos/def/common/zone#endDate> <http://www.w3.org/2000/01/rdf-schema#label> "fecha de fin de vigor"@es .
+<http://vocab.linkeddata.es/datosabiertos/def/common/zone#composedOf> <http://www.w3.org/2000/01/rdf-schema#label> "composed of"@en .
+<http://vocab.linkeddata.es/datosabiertos/def/common/zone#> <http://www.w3.org/2000/01/rdf-schema#label> "Ontología base de Zonas para el Caso de Uso de Movilidad Inteligente."@es .
+<http://vocab.linkeddata.es/datosabiertos/def/common/zone#locatedIn> <http://www.w3.org/2000/01/rdf-schema#label> "ubicado en municipio"@es .
+<http://vocab.linkeddata.es/datosabiertos/def/common/zone#hasRegulatedZone> <http://www.w3.org/2000/01/rdf-schema#comment> "Inverse property of 'locatedIn'. Links a municipality with the regulated zones it contains."@en .
+<http://vocab.linkeddata.es/datosabiertos/def/common/zone#locatedIn> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://vocab.linkeddata.es/datosabiertos/def/common/zone#scheduleDescription> <http://www.w3.org/2000/01/rdf-schema#comment> "Textual description of the zone's operating schedule (e.g., \"Monday to Friday from 07:00 to 20:00\")."@en .
+<http://vocab.linkeddata.es/datosabiertos/def/common/zone#startDate> <http://www.w3.org/2000/01/rdf-schema#comment> "Date from which the zone regulation becomes effective."@en .
+<http://purl.org/dc/elements/1.1/abstract> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+<http://vocab.linkeddata.es/datosabiertos/def/common/zone#hasRegulatedZone> <http://www.w3.org/2000/01/rdf-schema#label> "tiene zona regulatoria"@es .
+<http://vocab.linkeddata.es/datosabiertos/def/common/zone#startDate> <http://www.w3.org/2000/01/rdf-schema#domain> <http://vocab.linkeddata.es/datosabiertos/def/common/zone#RegulatedZone> .
+<http://vocab.linkeddata.es/datosabiertos/def/common/zone#RegulatedZone> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:n3c331c3a3b8242c1b255352741f6793cb6 .
+<http://vocab.linkeddata.es/datosabiertos/def/common/zone#hasRegulatedZone> <http://www.w3.org/2000/01/rdf-schema#range> <http://vocab.linkeddata.es/datosabiertos/def/common/zone#RegulatedZone> .
+<http://purl.org/dc/elements/1.1/description> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+<http://www.opengis.net/ont/geosparql#sfWithin> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://vocab.linkeddata.es/datosabiertos/def/common/zone#legalReference> <http://www.w3.org/2000/01/rdf-schema#comment> "Link to the official document (Bulletin, Ordinance) establishing the zone."@en .
+_:n3c331c3a3b8242c1b255352741f6793cb5 <http://www.w3.org/2002/07/owl#onProperty> <http://www.opengis.net/ont/geosparql#hasGeometry> .
+<http://vocab.linkeddata.es/datosabiertos/def/common/zone#managedBy> <http://www.w3.org/2000/01/rdf-schema#label> "entidad gestora"@es .
+<http://vocab.linkeddata.es/datosabiertos/def/common/zone#> <http://www.w3.org/2002/07/owl#imports> <http://vocab.linkeddata.es/datosabiertos/def/urbanismo-infraestructuras/callejero_v0.3> .
+<http://www.opengis.net/ont/geosparql#asWKT> <http://www.w3.org/2000/01/rdf-schema#label> "como WKT"@es .
+<http://vocab.linkeddata.es/datosabiertos/def/common/zone#legalReference> <http://www.w3.org/2000/01/rdf-schema#label> "referencia legal"@es .
+_:n3c331c3a3b8242c1b255352741f6793cb2 <http://www.w3.org/2002/07/owl#onProperty> <http://www.w3.org/2004/02/skos/core#inScheme> .
+_:n3c331c3a3b8242c1b255352741f6793cb4 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+<http://vocab.linkeddata.es/datosabiertos/def/common/zone#locatedIn> <http://www.w3.org/2000/01/rdf-schema#range> <http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio#Municipio> .
+<http://vocab.linkeddata.es/datosabiertos/def/common/zone#locatedIn> <http://www.w3.org/2000/01/rdf-schema#domain> <http://vocab.linkeddata.es/datosabiertos/def/common/zone#RegulatedZone> .
+<http://vocab.linkeddata.es/datosabiertos/def/common/zone#managedBy> <http://www.w3.org/2000/01/rdf-schema#domain> <http://vocab.linkeddata.es/datosabiertos/def/common/zone#RegulatedZone> .
+<http://vocab.linkeddata.es/datosabiertos/def/common/zone#> <http://purl.org/dc/elements/1.1/abstract> "Esta ontología tiene como propósito definir, categorizar y relacionar las Zonas Regulatorias en el contexto de la movilidad inteligente y la gestión urbana (Smart Cities). Se ha diseñado como una extensión modular de la ontología del Sector Público de España (esadm)."@es .
