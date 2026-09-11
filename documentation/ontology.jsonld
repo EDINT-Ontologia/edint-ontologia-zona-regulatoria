@@ -44,6 +44,12 @@
     ]
   },
   {
+    "@id": "http://vocab.linkeddata.es/datosabiertos/def/urbanismo-infraestructuras/callejero#TramoVia",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ]
+  },
+  {
     "@id": "http://purl.org/dc/elements/1.1/abstract",
     "@type": [
       "http://www.w3.org/2002/07/owl#AnnotationProperty"
@@ -869,6 +875,9 @@
     "http://www.w3.org/2000/01/rdf-schema#range": [
       {
         "@id": "http://vocab.linkeddata.es/datosabiertos/def/urbanismo-infraestructuras/callejero#Via"
+      },
+      {
+        "@id": "http://vocab.linkeddata.es/datosabiertos/def/urbanismo-infraestructuras/callejero#TramoVia"
       },
       {
         "@id": "http://www.geonames.org/ontology#Feature"

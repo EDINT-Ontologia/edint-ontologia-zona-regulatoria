@@ -205,6 +205,10 @@ xsd:date rdf:type rdfs:Datatype .
 <http://vocab.linkeddata.es/datosabiertos/def/urbanismo-infraestructuras/callejero#Via> rdf:type owl:Class .
 
 
+###  http://vocab.linkeddata.es/datosabiertos/def/urbanismo-infraestructuras/callejero#TramoVia
+<http://vocab.linkeddata.es/datosabiertos/def/urbanismo-infraestructuras/callejero#TramoVia> rdf:type owl:Class .
+
+
 
 
 
