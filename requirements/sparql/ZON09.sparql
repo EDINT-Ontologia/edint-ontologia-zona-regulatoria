@@ -8,8 +8,8 @@ PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 
 SELECT DISTINCT ?zona ?tipoZona ?entidad ?nombreEntidad
 WHERE {
-    ?zona rdf:type ?tipoZona .
-    ?tipoZona rdfs:subClassOf* edintzone:RegulatedZone .
+    ?zona rdf:type edintzone:RegulatedZone ;
+          edintzone:hasRegulatedZoneType ?tipoZona .
     ?zona edintzone:composedOf ?entidad .
     OPTIONAL { ?entidad rdfs:label ?nombreEntidad . }
 }

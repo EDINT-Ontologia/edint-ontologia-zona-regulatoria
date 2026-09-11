@@ -8,8 +8,8 @@ PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 
 SELECT DISTINCT ?zona ?tipo
 WHERE {
-    ?zona rdf:type ?tipo .
-    ?tipo rdfs:subClassOf* edintzone:RegulatedZone .
+    ?zona rdf:type edintzone:RegulatedZone ;
+          edintzone:hasRegulatedZoneType ?tipo .
     FILTER NOT EXISTS { ?zona edintzone:startDate ?inicio }
     FILTER NOT EXISTS { ?zona edintzone:endDate ?fin }
 }
@@ -23,8 +23,8 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 
 SELECT DISTINCT ?zona ?tipo ?inicio ?fin
 WHERE {
-    ?zona rdf:type ?tipo .
-    ?tipo rdfs:subClassOf* edintzone:RegulatedZone .
+    ?zona rdf:type edintzone:RegulatedZone ;
+          edintzone:hasRegulatedZoneType ?tipo .
     OPTIONAL { ?zona edintzone:startDate ?inicio . }
     OPTIONAL { ?zona edintzone:endDate ?fin . }
     FILTER (

@@ -17,8 +17,8 @@ PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 
 SELECT DISTINCT ?zona
 WHERE {
-    ?zona rdf:type ?tipo .
-    ?tipo rdfs:subClassOf* edintzone:RegulatedZone .
+    ?zona rdf:type edintzone:RegulatedZone ;
+          edintzone:hasRegulatedZoneType ?tipo .
 }
 ORDER BY ?zona
 

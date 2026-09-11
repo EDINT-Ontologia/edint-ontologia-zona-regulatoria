@@ -33,7 +33,7 @@ Incluya recursos en los siguientes formatos:
 - Mantenga los requisitos **trazables** — vincule cada uno a los elementos de la ontología (clases, propiedades, etc. Ver plantilla).
 - Mantenga un historial de versiones a medida que los requisitos evolucionan.
 - Asegure la coherencia entre los requisitos, los diagramas de conceptualización y la implementación.
-- Revise y valide los requisitos con expertos del dominio antes de que comience el desarrollo de la ontología. La [metodología LOT] (https://doi.org/10.1016/j.engappai.2022.104755) propone algunas guías:
+- Revise y valide los requisitos con expertos del dominio antes de que comience el desarrollo de la ontología. La [metodología LOT](https://doi.org/10.1016/j.engappai.2022.104755) propone algunas guías:
   - Un conjunto de requisitos es correcto si cada requisito se refiere a alguna característica de la ontología que se va a desarrollar.
   - Un conjunto de requisitos es completo si los usuarios y expertos del dominio revisan los requisitos y confirman que no conocen requisitos adicionales.
   - Un conjunto de requisitos es internamente consistente si no existen conflictos entre ellos.

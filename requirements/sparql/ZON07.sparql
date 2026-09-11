@@ -10,8 +10,8 @@ PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 
 SELECT DISTINCT ?zona ?tipoZona ?geom ?wkt
 WHERE {
-    ?zona rdf:type ?tipoZona .
-    ?tipoZona rdfs:subClassOf* edintzone:RegulatedZone .
+    ?zona rdf:type edintzone:RegulatedZone ;
+          edintzone:hasRegulatedZoneType ?tipoZona .
     ?zona geo:hasGeometry ?geom .
     ?geom geo:asWKT ?wkt .
 }

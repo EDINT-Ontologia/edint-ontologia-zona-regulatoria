@@ -9,8 +9,8 @@ PREFIX geo: <http://www.opengis.net/ont/geosparql#>
 
 SELECT ?zona ?tipoZona ?calle
 WHERE {
-    ?zona rdf:type ?tipoZona .
-    ?tipoZona rdfs:subClassOf* edintzone:RegulatedZone .
+    ?zona rdf:type edintzone:RegulatedZone ;
+          edintzone:hasRegulatedZoneType ?tipoZona .
     ?zona edintzone:composedOf ?calle .
 }
 ORDER BY ?tipoZona ?zona ?calle
@@ -23,8 +23,8 @@ PREFIX geo: <http://www.opengis.net/ont/geosparql#>
 
 SELECT ?zona ?tipoZona ?calle ?nombreCalle
 WHERE {
-    ?zona rdf:type ?tipoZona .
-    ?tipoZona rdfs:subClassOf* edintzone:RegulatedZone .
+    ?zona rdf:type edintzone:RegulatedZone ;
+          edintzone:hasRegulatedZoneType ?tipoZona .
     ?zona edintzone:composedOf ?calle .
     OPTIONAL { ?calle rdfs:label ?nombreCalle . }
 }
@@ -38,8 +38,8 @@ PREFIX geo: <http://www.opengis.net/ont/geosparql#>
 
 SELECT ?zona ?tipoZona ?calle ?nombreCalle ?geometria
 WHERE {
-    ?zona rdf:type ?tipoZona .
-    ?tipoZona rdfs:subClassOf* edintzone:RegulatedZone .
+    ?zona rdf:type edintzone:RegulatedZone ;
+          edintzone:hasRegulatedZoneType ?tipoZona .
     ?zona edintzone:composedOf ?calle .
     OPTIONAL { ?calle rdfs:label ?nombreCalle . }
     OPTIONAL {
