@@ -1,15 +1,15 @@
 Identifier;Responsible partner;Sprint (optional);Competency Question / Natural language sentence (fact);Answer (For Competency Questions);Status (Proposed, Accepted, Rejected, Deprecated);Comments (optional);Extracted from (provenance);Priority (High, Medium, Low) (optional);Relation with other requirements (optional);Associated ontology elements;Relation to ontology elements in other domains
-ZON01;OEG-UPM;Sprint 1;¿Cuáles son las zonas reguladas?;Lista de todas las zonas reguladas con su tipo;Proposed;;High;;edintzone:RegulatedZone;-
-ZON02;OEG-UPM;Sprint 1;¿Cuál es el municipio de cada zona de bajas emisiones?;Municipio donde se encuentra cada zona de bajas emisiones;Proposed;Core administrative link;High;;edintzone:locatedIn;esadm:Municipio
-ZON03;OEG-UPM;Sprint 1;¿Cuáles son las zonas de estacionamiento y sus horarios?;Zonas de estacionamiento y sus horarios de funcionamiento;Proposed;;Medium;;edintzone:RegulatedParkingZone;-
-ZON04;OEG-UPM;Sprint 1;¿Qué organización gestiona cada zona?;Organización responsable de gestionar cada zona;Proposed;Supports public-private management scenarios;Medium;;edintzone:managedBy;org:Organization
-ZON05;OEG-UPM;Sprint 1;¿Cuáles son las zonas activas actualmente?;Zonas que están activas en la fecha actual;Proposed;Handles temporal validity;Medium;;edintzone:startDate; edintzone:endDate;xsd:date
-ZON06;OEG-UPM;Sprint 1;¿Cuántas zonas reguladas hay por municipio?;Cantidad de zonas reguladas agrupadas por municipio;Proposed;;Low;;,-
-ZON07;OEG-UPM;Sprint 1;¿Cuál es la geometría de cada zona?;Geometría espacial (WKT) de cada zona regulada;Proposed;Required for GIS visualization;High;;geo:hasGeometry; geo:asWKT;geo:Feature; sf:Geometry
-ZON08;OEG-UPM;Sprint 1;¿Cuáles son las zonas de interés económico y su referencia legal?;Zonas de interés económico con su referencia legal;Proposed;Covers commercial urban management;Medium;;edintzone:EconomicInterestZone;-
-ZON09;OEG-UPM;Sprint 1;¿Qué entidades administrativas (distritos, barrios, etc.) componen cada zona?;Entidades administrativas que componen cada zona;Proposed;;Medium;;edintzone:composedOf;-
-ZON10;OEG-UPM;Sprint 1;¿Cuáles son las zonas de carga y descarga de un municipio concreto?;Zonas de carga y descarga de un municipio específico;Proposed;;Low;;,-
-ZON11;OEG-UPM;Sprint 1;¿Qué zonas comparten entidad gestora?;Zonas que comparten la misma entidad gestora;Proposed;;Low;;,-
-ZON12;OEG-UPM;Sprint 1;¿Qué calles específicas componen una zona regulada?;Calles específicas que componen una zona regulada;Proposed;Necessary because zones often overlay multiple streets;High;;edintzone:composedOf;esadm:Via; dbpedia:GovernmentalAdministrativeRegion
-ZON13;OEG-UPM;Sprint 1;¿Cuáles son los horarios de funcionamiento o la programación de la regulación?;Horarios de funcionamiento o programación de la regulación;Proposed;Required for end-user apps;High;;edintzone:scheduleDescription;xsd:string
-ZON14;OEG-UPM;Sprint 1;¿Cuál es la base legal u ordenanza que creó esta zona?;Base legal u ordenanza que creó cada zona;Proposed;Important for legal transparency;Medium;;edintzone:legalReference;xsd:anyURI
+ZON01;OEG-UPM;Sprint 1;¿Cuáles son las zonas reguladas?;Lista de todas las zonas reguladas con su tipo;Proposed;;;High;;edintzone:RegulatedZone;-
+ZON02;OEG-UPM;Sprint 1;¿Cuál es el municipio de cada zona de bajas emisiones?;Municipio donde se encuentra cada zona de bajas emisiones;Proposed;Core administrative link;;High;;edintzone:locatedIn;esadm:Municipio
+ZON03;OEG-UPM;Sprint 1;¿Cuáles son las zonas de estacionamiento y sus horarios?;Zonas de estacionamiento y sus horarios de funcionamiento;Proposed;;;Medium;;edintkos-rztype:RegulatedParkingZone (skos:Concept);-
+ZON04;OEG-UPM;Sprint 1;¿Qué organización gestiona cada zona?;Organización responsable de gestionar cada zona;Proposed;Supports public-private management scenarios;;Medium;;edintzone:managedBy;org:Organization
+ZON05;OEG-UPM;Sprint 1;¿Cuáles son las zonas activas actualmente?;Zonas que están activas en la fecha actual;Proposed;Handles temporal validity;;Medium;;"edintzone:startDate; edintzone:endDate";xsd:date
+ZON06;OEG-UPM;Sprint 1;¿Cuántas zonas reguladas hay por municipio?;Cantidad de zonas reguladas agrupadas por municipio;Proposed;;;Low;;"edintzone:RegulatedZone; edintzone:locatedIn";-
+ZON07;OEG-UPM;Sprint 1;¿Cuál es la geometría de cada zona?;Geometría espacial (WKT) de cada zona regulada;Proposed;Required for GIS visualization;;High;;"geo:hasGeometry; geo:asWKT";-
+ZON08;OEG-UPM;Sprint 1;¿Cuáles son las zonas de interés económico y su referencia legal?;Zonas de interés económico con su referencia legal;Proposed;Covers commercial urban management;;Medium;;edintkos-rztype:EconomicInterestZone (skos:Concept);-
+ZON09;OEG-UPM;Sprint 1;¿Qué vías o tramos de vía componen cada zona?;Vías o tramos de vía que componen cada zona;Proposed;;;Medium;;"edintzone:composedOf; escjr:Via; escjr:TramoVia";-
+ZON10;OEG-UPM;Sprint 1;¿Cuáles son las zonas de carga y descarga de un municipio concreto?;Zonas de carga y descarga de un municipio específico;Proposed;;;Low;;"edintzone:locatedIn; edintzone:composedOf";-
+ZON11;OEG-UPM;Sprint 1;¿Qué zonas comparten entidad gestora?;Zonas que comparten la misma entidad gestora;Proposed;;;Low;;edintzone:managedBy;-
+ZON12;OEG-UPM;Sprint 1;¿Qué calles específicas componen una zona regulada?;Calles específicas que componen una zona regulada;Proposed;Necessary because zones often overlay multiple streets;;High;;"edintzone:composedOf; escjr:Via; escjr:TramoVia";-
+ZON13;OEG-UPM;Sprint 1;¿Cuáles son los horarios de funcionamiento o la programación de la regulación?;Horarios de funcionamiento o programación de la regulación;Proposed;Required for end-user apps;;High;;edintzone:scheduleDescription;xsd:string
+ZON14;OEG-UPM;Sprint 1;¿Cuál es la base legal u ordenanza que creó esta zona?;Base legal u ordenanza que creó cada zona;Proposed;Important for legal transparency;;Medium;;edintzone:legalReference;xsd:anyURI

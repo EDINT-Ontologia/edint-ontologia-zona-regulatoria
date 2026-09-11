@@ -1,0 +1,734 @@
+
+    <!DOCTYPE html>
+    <html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <title>Documentación SPARQL - Zonas Regulatorias</title>
+        <style>
+            /* Reset y Estructura Base */
+            body { font-family: 'Segoe UI', Tahoma, sans-serif; margin: 0; display: flex; height: 100vh; background-color: #fcfcfc; color: #333; }
+
+            /* Sidebar Izquierda Fija */
+            .sidebar { 
+                width: 280px; 
+                background-color: #004a99; 
+                color: white; 
+                height: 100vh; 
+                position: fixed; 
+                overflow-y: auto; 
+                box-shadow: 2px 0 5px rgba(0,0,0,0.1);
+                z-index: 1000;
+            }
+            .sidebar-header { padding: 25px 20px; border-bottom: 1px solid #0056b3; text-align: center; }
+            .sidebar-header h2 { margin: 0; font-size: 1.1rem; text-transform: uppercase; letter-spacing: 1px; color: #e0f0ff; }
+
+            .sidebar ul { list-style: none; padding: 0; margin: 0; }
+            .sidebar li { border-bottom: 1px solid #0056b3; }
+            .sidebar a { 
+                display: block; 
+                padding: 15px 20px; 
+                color: #add8e6; 
+                text-decoration: none; 
+                transition: all 0.2s;
+                font-size: 0.9rem;
+            }
+            .sidebar a:hover { background-color: #003366; color: white; padding-left: 25px; }
+
+            /* Contenido Principal Derecho */
+            .main-content { 
+                margin-left: 280px; 
+                flex-grow: 1; 
+                padding: 40px; 
+                overflow-y: auto; 
+            }
+
+            .file-card { 
+                background: white; 
+                border: 1px solid #d1d9e0; 
+                border-radius: 8px; 
+                margin-bottom: 60px; 
+                box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+                overflow: hidden;
+            }
+            .file-header { 
+                background-color: #f0f7ff; 
+                padding: 15px 25px; 
+                border-bottom: 2px solid #004a99; 
+                color: #004a99; 
+                font-weight: bold; 
+                font-size: 1.2rem; 
+            }
+
+            /* Metadatos (Pregunta y Respuesta) */
+            .metadata-block {
+                background-color: #e8f4f8;
+                padding: 20px 25px;
+                border-left: 4px solid #004a99;
+                margin: 0;
+                font-size: 0.95rem;
+                border-bottom: 1px solid #d1d9e0;
+            }
+            .metadata-block p { margin: 8px 0; line-height: 1.5; }
+            .metadata-block strong { color: #003366; }
+
+            .query-block { padding: 25px; border-bottom: 1px solid #eee; }
+            .query-block:last-child { border-bottom: none; }
+
+            .query-title { 
+                color: #004a99; 
+                font-weight: bold; 
+                margin-bottom: 12px; 
+                font-size: 1.05rem; 
+                display: block;
+                border-left: 3px solid #004a99;
+                padding-left: 10px;
+                line-height: 1.4;
+            }
+
+            /* Formato de Código Estilo SQL */
+            pre { 
+                background-color: #f8f9fa !important; 
+                border: 1px solid #e1e4e8; 
+                padding: 20px; 
+                border-radius: 5px; 
+                overflow-x: auto; 
+                font-family: 'Consolas', 'Monaco', monospace; 
+                font-size: 13px; 
+                line-height: 1.6;
+                margin: 0;
+            }
+
+            /* Inserción de estilos de Pygments + el Fix custom */
+            pre { line-height: 125%; }
+td.linenos .normal { color: #666666; background-color: transparent; padding-left: 5px; padding-right: 5px; }
+span.linenos { color: #666666; background-color: transparent; padding-left: 5px; padding-right: 5px; }
+td.linenos .special { color: #000000; background-color: #ffffc0; padding-left: 5px; padding-right: 5px; }
+span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 5px; padding-right: 5px; }
+.sparql-code .hll { background-color: #ffffcc }
+.sparql-code { background: #f0f0f0; }
+.sparql-code .c { color: #60A0B0; font-style: italic } /* Comment */
+.sparql-code .err { border: 1px solid #F00 } /* Error */
+.sparql-code .k { color: #007020; font-weight: bold } /* Keyword */
+.sparql-code .o { color: #666 } /* Operator */
+.sparql-code .ch { color: #60A0B0; font-style: italic } /* Comment.Hashbang */
+.sparql-code .cm { color: #60A0B0; font-style: italic } /* Comment.Multiline */
+.sparql-code .cp { color: #007020 } /* Comment.Preproc */
+.sparql-code .cpf { color: #60A0B0; font-style: italic } /* Comment.PreprocFile */
+.sparql-code .c1 { color: #60A0B0; font-style: italic } /* Comment.Single */
+.sparql-code .cs { color: #60A0B0; background-color: #FFF0F0 } /* Comment.Special */
+.sparql-code .gd { color: #A00000 } /* Generic.Deleted */
+.sparql-code .ge { font-style: italic } /* Generic.Emph */
+.sparql-code .ges { font-weight: bold; font-style: italic } /* Generic.EmphStrong */
+.sparql-code .gr { color: #F00 } /* Generic.Error */
+.sparql-code .gh { color: #000080; font-weight: bold } /* Generic.Heading */
+.sparql-code .gi { color: #00A000 } /* Generic.Inserted */
+.sparql-code .go { color: #888 } /* Generic.Output */
+.sparql-code .gp { color: #C65D09; font-weight: bold } /* Generic.Prompt */
+.sparql-code .gs { font-weight: bold } /* Generic.Strong */
+.sparql-code .gu { color: #800080; font-weight: bold } /* Generic.Subheading */
+.sparql-code .gt { color: #04D } /* Generic.Traceback */
+.sparql-code .kc { color: #007020; font-weight: bold } /* Keyword.Constant */
+.sparql-code .kd { color: #007020; font-weight: bold } /* Keyword.Declaration */
+.sparql-code .kn { color: #007020; font-weight: bold } /* Keyword.Namespace */
+.sparql-code .kp { color: #007020 } /* Keyword.Pseudo */
+.sparql-code .kr { color: #007020; font-weight: bold } /* Keyword.Reserved */
+.sparql-code .kt { color: #902000 } /* Keyword.Type */
+.sparql-code .m { color: #40A070 } /* Literal.Number */
+.sparql-code .s { color: #4070A0 } /* Literal.String */
+.sparql-code .na { color: #4070A0 } /* Name.Attribute */
+.sparql-code .nb { color: #007020 } /* Name.Builtin */
+.sparql-code .nc { color: #0E84B5; font-weight: bold } /* Name.Class */
+.sparql-code .no { color: #60ADD5 } /* Name.Constant */
+.sparql-code .nd { color: #555; font-weight: bold } /* Name.Decorator */
+.sparql-code .ni { color: #D55537; font-weight: bold } /* Name.Entity */
+.sparql-code .ne { color: #007020 } /* Name.Exception */
+.sparql-code .nf { color: #06287E } /* Name.Function */
+.sparql-code .nl { color: #002070; font-weight: bold } /* Name.Label */
+.sparql-code .nn { color: #0E84B5; font-weight: bold } /* Name.Namespace */
+.sparql-code .nt { color: #062873; font-weight: bold } /* Name.Tag */
+.sparql-code .nv { color: #BB60D5 } /* Name.Variable */
+.sparql-code .ow { color: #007020; font-weight: bold } /* Operator.Word */
+.sparql-code .w { color: #BBB } /* Text.Whitespace */
+.sparql-code .mb { color: #40A070 } /* Literal.Number.Bin */
+.sparql-code .mf { color: #40A070 } /* Literal.Number.Float */
+.sparql-code .mh { color: #40A070 } /* Literal.Number.Hex */
+.sparql-code .mi { color: #40A070 } /* Literal.Number.Integer */
+.sparql-code .mo { color: #40A070 } /* Literal.Number.Oct */
+.sparql-code .sa { color: #4070A0 } /* Literal.String.Affix */
+.sparql-code .sb { color: #4070A0 } /* Literal.String.Backtick */
+.sparql-code .sc { color: #4070A0 } /* Literal.String.Char */
+.sparql-code .dl { color: #4070A0 } /* Literal.String.Delimiter */
+.sparql-code .sd { color: #4070A0; font-style: italic } /* Literal.String.Doc */
+.sparql-code .s2 { color: #4070A0 } /* Literal.String.Double */
+.sparql-code .se { color: #4070A0; font-weight: bold } /* Literal.String.Escape */
+.sparql-code .sh { color: #4070A0 } /* Literal.String.Heredoc */
+.sparql-code .si { color: #70A0D0; font-style: italic } /* Literal.String.Interpol */
+.sparql-code .sx { color: #C65D09 } /* Literal.String.Other */
+.sparql-code .sr { color: #235388 } /* Literal.String.Regex */
+.sparql-code .s1 { color: #4070A0 } /* Literal.String.Single */
+.sparql-code .ss { color: #517918 } /* Literal.String.Symbol */
+.sparql-code .bp { color: #007020 } /* Name.Builtin.Pseudo */
+.sparql-code .fm { color: #06287E } /* Name.Function.Magic */
+.sparql-code .vc { color: #BB60D5 } /* Name.Variable.Class */
+.sparql-code .vg { color: #BB60D5 } /* Name.Variable.Global */
+.sparql-code .vi { color: #BB60D5 } /* Name.Variable.Instance */
+.sparql-code .vm { color: #BB60D5 } /* Name.Variable.Magic */
+.sparql-code .il { color: #40A070 } /* Literal.Number.Integer.Long */
+            
+            /* Fix para quitar los recuadros rojos de error sintáctico */
+            .sparql-code .err { border: none !important; color: inherit; }
+            
+
+            /* Scrollbar personalizada para la sidebar */
+            .sidebar::-webkit-scrollbar { width: 6px; }
+            .sidebar::-webkit-scrollbar-thumb { background: #003366; }
+        </style>
+    </head>
+    <body>
+        <div class="sidebar">
+            <div class="sidebar-header">
+                <h2>Zonas Regulatorias</h2>
+            </div>
+            <ul>
+    <li><a href="#ZON01_sparql">ZON01.sparql</a></li>
+<li><a href="#ZON02_sparql">ZON02.sparql</a></li>
+<li><a href="#ZON03_sparql">ZON03.sparql</a></li>
+<li><a href="#ZON04_sparql">ZON04.sparql</a></li>
+<li><a href="#ZON05_sparql">ZON05.sparql</a></li>
+<li><a href="#ZON06_sparql">ZON06.sparql</a></li>
+<li><a href="#ZON07_sparql">ZON07.sparql</a></li>
+<li><a href="#ZON08_sparql">ZON08.sparql</a></li>
+<li><a href="#ZON09_sparql">ZON09.sparql</a></li>
+<li><a href="#ZON10_sparql">ZON10.sparql</a></li>
+<li><a href="#ZON11_sparql">ZON11.sparql</a></li>
+<li><a href="#ZON12_sparql">ZON12.sparql</a></li>
+<li><a href="#ZON13_sparql">ZON13.sparql</a></li>
+<li><a href="#ZON14_sparql">ZON14.sparql</a></li>
+            </ul>
+        </div>
+        <div class="main-content">
+    <section class="file-card" id="ZON01_sparql"><div class="file-header">ZON01 - ¿Cuáles son las zonas reguladas?</div><div class="metadata-block"><p><strong>Pregunta:</strong> ¿Cuáles son las zonas reguladas?</p><p><strong>Respuesta:</strong> Lista de todas las zonas reguladas con su tipo</p></div>
+                    <div class="query-block">
+                        <span class="query-title"></span>
+                        <div class="sparql-code"><div class="highlight"><pre><span></span><span class="c"># --- Query 1 ---</span>
+<span class="k">PREFIX</span> <span class="nn">edintzone</span><span class="p">:</span> <span class="nl">&lt;http://vocab.linkeddata.es/datosabiertos/def/common/zone#&gt;</span>
+<span class="k">PREFIX</span> <span class="nn">rdf</span><span class="p">:</span> <span class="nl">&lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt;</span>
+
+<span class="k">SELECT</span> <span class="nv">?zona</span>
+<span class="k">WHERE</span> <span class="p">{</span>
+    <span class="nv">?zona</span> <span class="nn">rdf</span><span class="p">:</span><span class="nt">type</span> <span class="nn">edintzone</span><span class="p">:</span><span class="nt">RegulatedZone</span> <span class="p">.</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+
+                    </div>
+                    <div class="query-block">
+                        <span class="query-title"></span>
+                        <div class="sparql-code"><div class="highlight"><pre><span></span><span class="c"># --- Query 2 ---</span>
+<span class="k">PREFIX</span> <span class="nn">edintzone</span><span class="p">:</span> <span class="nl">&lt;http://vocab.linkeddata.es/datosabiertos/def/common/zone#&gt;</span>
+<span class="k">PREFIX</span> <span class="nn">rdf</span><span class="p">:</span> <span class="nl">&lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt;</span>
+<span class="k">PREFIX</span> <span class="nn">rdfs</span><span class="p">:</span> <span class="nl">&lt;http://www.w3.org/2000/01/rdf-schema#&gt;</span>
+
+<span class="k">SELECT</span> <span class="k">DISTINCT</span> <span class="nv">?zona</span>
+<span class="k">WHERE</span> <span class="p">{</span>
+    <span class="nv">?zona</span> <span class="nn">rdf</span><span class="p">:</span><span class="nt">type</span> <span class="nn">edintzone</span><span class="p">:</span><span class="nt">RegulatedZone</span> <span class="p">;</span>
+          <span class="nn">edintzone</span><span class="p">:</span><span class="nt">hasRegulatedZoneType</span> <span class="nv">?tipo</span> <span class="p">.</span>
+<span class="p">}</span>
+<span class="k">ORDER BY</span> <span class="nv">?zona</span>
+</pre></div>
+</div>
+
+                    </div>
+                    </section>
+    <section class="file-card" id="ZON02_sparql"><div class="file-header">ZON02 - ¿Cuál es el municipio de cada zona de bajas emisiones?</div><div class="metadata-block"><p><strong>Pregunta:</strong> ¿Cuál es el municipio de cada zona de bajas emisiones?</p><p><strong>Respuesta:</strong> Municipio donde se encuentra cada zona de bajas emisiones</p></div>
+                    <div class="query-block">
+                        <span class="query-title"></span>
+                        <div class="sparql-code"><div class="highlight"><pre><span></span><span class="c"># --- Query 1 ---</span>
+<span class="k">PREFIX</span> <span class="nn">edintkos-rztype</span><span class="p">:</span> <span class="nl">&lt;http://vocab.linkeddata.es/datosabiertos/kos/edint/RegulatedZoneType/&gt;</span>
+<span class="k">PREFIX</span> <span class="nn">edintzone</span><span class="p">:</span> <span class="nl">&lt;http://vocab.linkeddata.es/datosabiertos/def/common/zone#&gt;</span>
+<span class="k">PREFIX</span> <span class="nn">esadm</span><span class="p">:</span> <span class="nl">&lt;http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio#&gt;</span>
+<span class="k">PREFIX</span> <span class="nn">rdf</span><span class="p">:</span> <span class="nl">&lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt;</span>
+
+<span class="k">SELECT</span> <span class="nv">?zbe</span> <span class="nv">?municipio</span>
+<span class="k">WHERE</span> <span class="p">{</span>
+    <span class="nv">?zbe</span> <span class="nn">rdf</span><span class="p">:</span><span class="nt">type</span> <span class="nn">edintzone</span><span class="p">:</span><span class="nt">RegulatedZone</span> <span class="p">;</span>
+         <span class="nn">edintzone</span><span class="p">:</span><span class="nt">hasRegulatedZoneType</span> <span class="nn">edintkos-rztype</span><span class="p">:</span><span class="nt">LowEmissionZone</span> <span class="p">;</span>
+         <span class="nn">edintzone</span><span class="p">:</span><span class="nt">locatedIn</span> <span class="nv">?municipio</span> <span class="p">.</span>
+<span class="p">}</span>
+<span class="k">ORDER BY</span> <span class="nv">?zbe</span>
+</pre></div>
+</div>
+
+                    </div>
+                    <div class="query-block">
+                        <span class="query-title"></span>
+                        <div class="sparql-code"><div class="highlight"><pre><span></span><span class="c"># --- Query 2 ---</span>
+<span class="k">PREFIX</span> <span class="nn">edintkos-rztype</span><span class="p">:</span> <span class="nl">&lt;http://vocab.linkeddata.es/datosabiertos/kos/edint/RegulatedZoneType/&gt;</span>
+<span class="k">PREFIX</span> <span class="nn">edintzone</span><span class="p">:</span> <span class="nl">&lt;http://vocab.linkeddata.es/datosabiertos/def/common/zone#&gt;</span>
+<span class="k">PREFIX</span> <span class="nn">esadm</span><span class="p">:</span> <span class="nl">&lt;http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio#&gt;</span>
+<span class="k">PREFIX</span> <span class="nn">rdf</span><span class="p">:</span> <span class="nl">&lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt;</span>
+<span class="k">PREFIX</span> <span class="nn">rdfs</span><span class="p">:</span> <span class="nl">&lt;http://www.w3.org/2000/01/rdf-schema#&gt;</span>
+
+<span class="k">SELECT</span> <span class="nv">?zbe</span> <span class="nv">?municipio</span> <span class="nv">?nombreMunicipio</span>
+<span class="k">WHERE</span> <span class="p">{</span>
+    <span class="nv">?zbe</span> <span class="nn">rdf</span><span class="p">:</span><span class="nt">type</span> <span class="nn">edintzone</span><span class="p">:</span><span class="nt">RegulatedZone</span> <span class="p">;</span>
+         <span class="nn">edintzone</span><span class="p">:</span><span class="nt">hasRegulatedZoneType</span> <span class="nn">edintkos-rztype</span><span class="p">:</span><span class="nt">LowEmissionZone</span> <span class="p">;</span>
+         <span class="nn">edintzone</span><span class="p">:</span><span class="nt">locatedIn</span> <span class="nv">?municipio</span> <span class="p">.</span>
+    <span class="nv">?municipio</span> <span class="nn">rdfs</span><span class="p">:</span><span class="nt">label</span> <span class="nv">?nombreMunicipio</span> <span class="p">.</span>
+<span class="p">}</span>
+<span class="k">ORDER BY</span> <span class="nv">?zbe</span> <span class="nv">?nombreMunicipio</span>
+</pre></div>
+</div>
+
+                    </div>
+                    <div class="query-block">
+                        <span class="query-title"></span>
+                        <div class="sparql-code"><div class="highlight"><pre><span></span><span class="c"># --- Query 3 ---</span>
+<span class="k">PREFIX</span> <span class="nn">edintkos-rztype</span><span class="p">:</span> <span class="nl">&lt;http://vocab.linkeddata.es/datosabiertos/kos/edint/RegulatedZoneType/&gt;</span>
+<span class="k">PREFIX</span> <span class="nn">edintzone</span><span class="p">:</span> <span class="nl">&lt;http://vocab.linkeddata.es/datosabiertos/def/common/zone#&gt;</span>
+<span class="k">PREFIX</span> <span class="nn">esadm</span><span class="p">:</span> <span class="nl">&lt;http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio#&gt;</span>
+<span class="k">PREFIX</span> <span class="nn">rdf</span><span class="p">:</span> <span class="nl">&lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt;</span>
+<span class="k">PREFIX</span> <span class="nn">rdfs</span><span class="p">:</span> <span class="nl">&lt;http://www.w3.org/2000/01/rdf-schema#&gt;</span>
+<span class="k">PREFIX</span> <span class="nn">xsd</span><span class="p">:</span> <span class="nl">&lt;http://www.w3.org/2001/XMLSchema#&gt;</span>
+
+<span class="k">SELECT</span> <span class="nv">?zbe</span> <span class="nv">?municipio</span> <span class="nv">?nombreMunicipio</span>
+<span class="k">WHERE</span> <span class="p">{</span>
+    <span class="nv">?zbe</span> <span class="nn">rdf</span><span class="p">:</span><span class="nt">type</span> <span class="nn">edintzone</span><span class="p">:</span><span class="nt">RegulatedZone</span> <span class="p">;</span>
+         <span class="nn">edintzone</span><span class="p">:</span><span class="nt">hasRegulatedZoneType</span> <span class="nn">edintkos-rztype</span><span class="p">:</span><span class="nt">LowEmissionZone</span> <span class="p">;</span>
+         <span class="nn">edintzone</span><span class="p">:</span><span class="nt">locatedIn</span> <span class="nv">?municipio</span> <span class="p">.</span>
+    <span class="nv">?municipio</span> <span class="nn">rdfs</span><span class="p">:</span><span class="nt">label</span> <span class="nv">?nombreMunicipio</span> <span class="p">.</span>
+    <span class="k">FILTER</span> <span class="p">(</span><span class="nf">lang</span><span class="p">(</span><span class="nv">?nombreMunicipio</span><span class="p">)</span> <span class="o">=</span> <span class="s">&quot;&quot;</span> <span class="o">||</span> <span class="nf">lang</span><span class="p">(</span><span class="nv">?nombreMunicipio</span><span class="p">)</span> <span class="o">=</span> <span class="s">&quot;es&quot;</span><span class="p">)</span>
+<span class="p">}</span>
+<span class="k">ORDER BY</span> <span class="nv">?zbe</span> <span class="nv">?nombreMunicipio</span>
+</pre></div>
+</div>
+
+                    </div>
+                    </section>
+    <section class="file-card" id="ZON03_sparql"><div class="file-header">ZON03 - ¿Cuáles son las zonas de estacionamiento y sus horarios?</div><div class="metadata-block"><p><strong>Pregunta:</strong> ¿Cuáles son las zonas de estacionamiento y sus horarios?</p><p><strong>Respuesta:</strong> Zonas de estacionamiento y sus horarios de funcionamiento</p></div>
+                    <div class="query-block">
+                        <span class="query-title"></span>
+                        <div class="sparql-code"><div class="highlight"><pre><span></span><span class="c"># --- Query 1 ---</span>
+<span class="k">PREFIX</span> <span class="nn">edintkos-rztype</span><span class="p">:</span> <span class="nl">&lt;http://vocab.linkeddata.es/datosabiertos/kos/edint/RegulatedZoneType/&gt;</span>
+<span class="k">PREFIX</span> <span class="nn">edintzone</span><span class="p">:</span> <span class="nl">&lt;http://vocab.linkeddata.es/datosabiertos/def/common/zone#&gt;</span>
+<span class="k">PREFIX</span> <span class="nn">rdf</span><span class="p">:</span> <span class="nl">&lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt;</span>
+<span class="k">PREFIX</span> <span class="nn">skos</span><span class="p">:</span> <span class="nl">&lt;http://www.w3.org/2004/02/skos/core#&gt;</span>
+
+<span class="k">SELECT</span> <span class="k">DISTINCT</span> <span class="nv">?zona</span> <span class="nv">?tipo</span> <span class="nv">?horario</span>
+<span class="k">WHERE</span> <span class="p">{</span>
+    <span class="nv">?zona</span> <span class="nn">rdf</span><span class="p">:</span><span class="nt">type</span> <span class="nn">edintzone</span><span class="p">:</span><span class="nt">RegulatedZone</span> <span class="p">;</span>
+          <span class="nn">edintzone</span><span class="p">:</span><span class="nt">hasRegulatedZoneType</span> <span class="nv">?tipo</span> <span class="p">.</span>
+    <span class="nv">?tipo</span> <span class="nn">skos</span><span class="p">:</span><span class="nt">broader</span><span class="o">*</span> <span class="nn">edintkos-rztype</span><span class="p">:</span><span class="nt">RegulatedParkingZone</span> <span class="p">.</span>
+    <span class="k">OPTIONAL</span> <span class="p">{</span> <span class="nv">?zona</span> <span class="nn">edintzone</span><span class="p">:</span><span class="nt">scheduleDescription</span> <span class="nv">?horario</span> <span class="p">.</span> <span class="p">}</span>
+<span class="p">}</span>
+<span class="k">ORDER BY</span> <span class="nv">?tipo</span> <span class="nv">?zona</span> <span class="nv">?horario</span>
+</pre></div>
+</div>
+
+                    </div>
+                    <div class="query-block">
+                        <span class="query-title"></span>
+                        <div class="sparql-code"><div class="highlight"><pre><span></span><span class="c"># --- Query 2 ---</span>
+<span class="k">PREFIX</span> <span class="nn">edintkos-rztype</span><span class="p">:</span> <span class="nl">&lt;http://vocab.linkeddata.es/datosabiertos/kos/edint/RegulatedZoneType/&gt;</span>
+<span class="k">PREFIX</span> <span class="nn">edintzone</span><span class="p">:</span> <span class="nl">&lt;http://vocab.linkeddata.es/datosabiertos/def/common/zone#&gt;</span>
+<span class="k">PREFIX</span> <span class="nn">rdf</span><span class="p">:</span> <span class="nl">&lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt;</span>
+<span class="k">PREFIX</span> <span class="nn">skos</span><span class="p">:</span> <span class="nl">&lt;http://www.w3.org/2004/02/skos/core#&gt;</span>
+
+<span class="k">SELECT</span> <span class="k">DISTINCT</span> <span class="nv">?zona</span> <span class="nv">?tipo</span> <span class="nv">?municipio</span> <span class="nv">?horario</span>
+<span class="k">WHERE</span> <span class="p">{</span>
+    <span class="nv">?zona</span> <span class="nn">rdf</span><span class="p">:</span><span class="nt">type</span> <span class="nn">edintzone</span><span class="p">:</span><span class="nt">RegulatedZone</span> <span class="p">;</span>
+          <span class="nn">edintzone</span><span class="p">:</span><span class="nt">hasRegulatedZoneType</span> <span class="nv">?tipo</span> <span class="p">.</span>
+    <span class="nv">?tipo</span> <span class="nn">skos</span><span class="p">:</span><span class="nt">broader</span><span class="o">*</span> <span class="nn">edintkos-rztype</span><span class="p">:</span><span class="nt">RegulatedParkingZone</span> <span class="p">.</span>
+    <span class="k">OPTIONAL</span> <span class="p">{</span> <span class="nv">?zona</span> <span class="nn">edintzone</span><span class="p">:</span><span class="nt">scheduleDescription</span> <span class="nv">?horario</span> <span class="p">.</span> <span class="p">}</span>
+    <span class="k">OPTIONAL</span> <span class="p">{</span> <span class="nv">?zona</span> <span class="nn">edintzone</span><span class="p">:</span><span class="nt">locatedIn</span> <span class="nv">?municipio</span> <span class="p">.</span> <span class="p">}</span>
+<span class="p">}</span>
+<span class="k">ORDER BY</span> <span class="nv">?tipo</span> <span class="nv">?zona</span> <span class="nv">?horario</span>
+</pre></div>
+</div>
+
+                    </div>
+                    </section>
+    <section class="file-card" id="ZON04_sparql"><div class="file-header">ZON04 - ¿Qué organización gestiona cada zona?</div><div class="metadata-block"><p><strong>Pregunta:</strong> ¿Qué organización gestiona cada zona?</p><p><strong>Respuesta:</strong> Organización responsable de gestionar cada zona</p></div>
+                    <div class="query-block">
+                        <span class="query-title"></span>
+                        <div class="sparql-code"><div class="highlight"><pre><span></span><span class="c"># --- Query 1 ---</span>
+<span class="k">PREFIX</span> <span class="nn">edintzone</span><span class="p">:</span> <span class="nl">&lt;http://vocab.linkeddata.es/datosabiertos/def/common/zone#&gt;</span>
+<span class="k">PREFIX</span> <span class="nn">org</span><span class="p">:</span> <span class="nl">&lt;http://www.w3.org/ns/org#&gt;</span>
+<span class="k">PREFIX</span> <span class="nn">rdf</span><span class="p">:</span> <span class="nl">&lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt;</span>
+<span class="k">PREFIX</span> <span class="nn">rdfs</span><span class="p">:</span> <span class="nl">&lt;http://www.w3.org/2000/01/rdf-schema#&gt;</span>
+
+<span class="k">SELECT</span> <span class="nv">?zona</span> <span class="nv">?organizacion</span>
+<span class="k">WHERE</span> <span class="p">{</span>
+    <span class="nv">?zona</span> <span class="nn">rdf</span><span class="p">:</span><span class="nt">type</span> <span class="nn">edintzone</span><span class="p">:</span><span class="nt">RegulatedZone</span> <span class="p">;</span>
+          <span class="nn">edintzone</span><span class="p">:</span><span class="nt">hasRegulatedZoneType</span> <span class="nv">?tipoZona</span> <span class="p">.</span>
+    <span class="nv">?zona</span> <span class="nn">edintzone</span><span class="p">:</span><span class="nt">managedBy</span> <span class="nv">?organizacion</span> <span class="p">.</span>
+<span class="p">}</span>
+<span class="k">ORDER BY</span> <span class="nv">?tipoZona</span> <span class="nv">?zona</span> <span class="nv">?organizacion</span>
+</pre></div>
+</div>
+
+                    </div>
+                    </section>
+    <section class="file-card" id="ZON05_sparql"><div class="file-header">ZON05 - ¿Cuáles son las zonas activas actualmente?</div><div class="metadata-block"><p><strong>Pregunta:</strong> ¿Cuáles son las zonas activas actualmente?</p><p><strong>Respuesta:</strong> Zonas que están activas en la fecha actual</p></div>
+                    <div class="query-block">
+                        <span class="query-title"></span>
+                        <div class="sparql-code"><div class="highlight"><pre><span></span><span class="c"># --- Query 1 ---</span>
+<span class="k">PREFIX</span> <span class="nn">edintzone</span><span class="p">:</span> <span class="nl">&lt;http://vocab.linkeddata.es/datosabiertos/def/common/zone#&gt;</span>
+<span class="k">PREFIX</span> <span class="nn">rdf</span><span class="p">:</span> <span class="nl">&lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt;</span>
+<span class="k">PREFIX</span> <span class="nn">rdfs</span><span class="p">:</span> <span class="nl">&lt;http://www.w3.org/2000/01/rdf-schema#&gt;</span>
+
+<span class="k">SELECT</span> <span class="k">DISTINCT</span> <span class="nv">?zona</span> <span class="nv">?tipo</span>
+<span class="k">WHERE</span> <span class="p">{</span>
+    <span class="nv">?zona</span> <span class="nn">rdf</span><span class="p">:</span><span class="nt">type</span> <span class="nn">edintzone</span><span class="p">:</span><span class="nt">RegulatedZone</span> <span class="p">;</span>
+          <span class="nn">edintzone</span><span class="p">:</span><span class="nt">hasRegulatedZoneType</span> <span class="nv">?tipo</span> <span class="p">.</span>
+    <span class="k">FILTER</span> <span class="nf">NOT EXISTS</span> <span class="p">{</span> <span class="nv">?zona</span> <span class="nn">edintzone</span><span class="p">:</span><span class="nt">startDate</span> <span class="nv">?inicio</span> <span class="p">}</span>
+    <span class="k">FILTER</span> <span class="nf">NOT EXISTS</span> <span class="p">{</span> <span class="nv">?zona</span> <span class="nn">edintzone</span><span class="p">:</span><span class="nt">endDate</span> <span class="nv">?fin</span> <span class="p">}</span>
+<span class="p">}</span>
+<span class="k">ORDER BY</span> <span class="nv">?zona</span>
+</pre></div>
+</div>
+
+                    </div>
+                    <div class="query-block">
+                        <span class="query-title"></span>
+                        <div class="sparql-code"><div class="highlight"><pre><span></span><span class="c"># --- Query 2 ---</span>
+<span class="k">PREFIX</span> <span class="nn">edintzone</span><span class="p">:</span> <span class="nl">&lt;http://vocab.linkeddata.es/datosabiertos/def/common/zone#&gt;</span>
+<span class="k">PREFIX</span> <span class="nn">rdf</span><span class="p">:</span> <span class="nl">&lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt;</span>
+<span class="k">PREFIX</span> <span class="nn">rdfs</span><span class="p">:</span> <span class="nl">&lt;http://www.w3.org/2000/01/rdf-schema#&gt;</span>
+<span class="k">PREFIX</span> <span class="nn">xsd</span><span class="p">:</span> <span class="nl">&lt;http://www.w3.org/2001/XMLSchema#&gt;</span>
+
+<span class="k">SELECT</span> <span class="k">DISTINCT</span> <span class="nv">?zona</span> <span class="nv">?tipo</span> <span class="nv">?inicio</span> <span class="nv">?fin</span>
+<span class="k">WHERE</span> <span class="p">{</span>
+    <span class="nv">?zona</span> <span class="nn">rdf</span><span class="p">:</span><span class="nt">type</span> <span class="nn">edintzone</span><span class="p">:</span><span class="nt">RegulatedZone</span> <span class="p">;</span>
+          <span class="nn">edintzone</span><span class="p">:</span><span class="nt">hasRegulatedZoneType</span> <span class="nv">?tipo</span> <span class="p">.</span>
+    <span class="k">OPTIONAL</span> <span class="p">{</span> <span class="nv">?zona</span> <span class="nn">edintzone</span><span class="p">:</span><span class="nt">startDate</span> <span class="nv">?inicio</span> <span class="p">.</span> <span class="p">}</span>
+    <span class="k">OPTIONAL</span> <span class="p">{</span> <span class="nv">?zona</span> <span class="nn">edintzone</span><span class="p">:</span><span class="nt">endDate</span> <span class="nv">?fin</span> <span class="p">.</span> <span class="p">}</span>
+    <span class="k">FILTER</span> <span class="p">(</span>
+        <span class="p">(</span><span class="o">!</span><span class="nf">BOUND</span><span class="p">(</span><span class="nv">?inicio</span><span class="p">)</span> <span class="o">||</span> <span class="nn">xsd</span><span class="p">:</span><span class="nt">date</span><span class="p">(</span><span class="nv">?inicio</span><span class="p">)</span> <span class="o">&lt;=</span> <span class="nn">xsd</span><span class="p">:</span><span class="nt">date</span><span class="p">(</span><span class="nf">NOW</span><span class="p">()))</span>
+        <span class="o">&amp;&amp;</span>
+        <span class="p">(</span><span class="o">!</span><span class="nf">BOUND</span><span class="p">(</span><span class="nv">?fin</span><span class="p">)</span> <span class="o">||</span> <span class="nn">xsd</span><span class="p">:</span><span class="nt">date</span><span class="p">(</span><span class="nv">?fin</span><span class="p">)</span> <span class="o">&gt;=</span> <span class="nn">xsd</span><span class="p">:</span><span class="nt">date</span><span class="p">(</span><span class="nf">NOW</span><span class="p">()))</span>
+    <span class="p">)</span>
+<span class="p">}</span>
+<span class="k">ORDER BY</span> <span class="nv">?zona</span>
+</pre></div>
+</div>
+
+                    </div>
+                    </section>
+    <section class="file-card" id="ZON06_sparql"><div class="file-header">ZON06 - ¿Cuántas zonas reguladas hay por municipio?</div><div class="metadata-block"><p><strong>Pregunta:</strong> ¿Cuántas zonas reguladas hay por municipio?</p><p><strong>Respuesta:</strong> Cantidad de zonas reguladas agrupadas por municipio</p></div>
+                    <div class="query-block">
+                        <span class="query-title"></span>
+                        <div class="sparql-code"><div class="highlight"><pre><span></span><span class="c"># --- Query 1 ---</span>
+<span class="k">PREFIX</span> <span class="nn">edintzone</span><span class="p">:</span> <span class="nl">&lt;http://vocab.linkeddata.es/datosabiertos/def/common/zone#&gt;</span>
+<span class="k">PREFIX</span> <span class="nn">rdf</span><span class="p">:</span> <span class="nl">&lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt;</span>
+<span class="k">PREFIX</span> <span class="nn">rdfs</span><span class="p">:</span> <span class="nl">&lt;http://www.w3.org/2000/01/rdf-schema#&gt;</span>
+
+<span class="k">SELECT</span> <span class="nv">?municipio</span> <span class="nv">?tipoZona</span> <span class="p">(</span><span class="nf">COUNT</span><span class="p">(</span><span class="nv">?zona</span><span class="p">)</span> <span class="k">AS</span> <span class="nv">?numZonas</span><span class="p">)</span>
+<span class="k">WHERE</span> <span class="p">{</span>
+    <span class="nv">?zona</span> <span class="nn">rdf</span><span class="p">:</span><span class="nt">type</span> <span class="nn">edintzone</span><span class="p">:</span><span class="nt">RegulatedZone</span> <span class="p">;</span>
+          <span class="nn">edintzone</span><span class="p">:</span><span class="nt">hasRegulatedZoneType</span> <span class="nv">?tipoZona</span> <span class="p">.</span>
+    <span class="nv">?zona</span> <span class="nn">edintzone</span><span class="p">:</span><span class="nt">locatedIn</span> <span class="nv">?municipio</span> <span class="p">.</span>
+<span class="p">}</span>
+<span class="k">GROUP BY</span> <span class="nv">?municipio</span> <span class="nv">?tipoZona</span>
+<span class="k">ORDER BY</span> <span class="nv">?municipio</span> <span class="nv">?tipoZona</span>
+</pre></div>
+</div>
+
+                    </div>
+                    </section>
+    <section class="file-card" id="ZON07_sparql"><div class="file-header">ZON07 - ¿Cuál es la geometría de cada zona?</div><div class="metadata-block"><p><strong>Pregunta:</strong> ¿Cuál es la geometría de cada zona?</p><p><strong>Respuesta:</strong> Geometría espacial (WKT) de cada zona regulada</p></div>
+                    <div class="query-block">
+                        <span class="query-title"></span>
+                        <div class="sparql-code"><div class="highlight"><pre><span></span><span class="c"># --- Query 1 ---</span>
+<span class="k">PREFIX</span> <span class="nn">edintzone</span><span class="p">:</span> <span class="nl">&lt;http://vocab.linkeddata.es/datosabiertos/def/common/zone#&gt;</span>
+<span class="k">PREFIX</span> <span class="nn">geo</span><span class="p">:</span> <span class="nl">&lt;http://www.opengis.net/ont/geosparql#&gt;</span>
+<span class="k">PREFIX</span> <span class="nn">sf</span><span class="p">:</span> <span class="nl">&lt;http://www.opengis.net/ont/sf#&gt;</span>
+<span class="k">PREFIX</span> <span class="nn">rdf</span><span class="p">:</span> <span class="nl">&lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt;</span>
+<span class="k">PREFIX</span> <span class="nn">rdfs</span><span class="p">:</span> <span class="nl">&lt;http://www.w3.org/2000/01/rdf-schema#&gt;</span>
+
+<span class="k">SELECT</span> <span class="k">DISTINCT</span> <span class="nv">?zona</span> <span class="nv">?tipoZona</span> <span class="nv">?geom</span> <span class="nv">?wkt</span>
+<span class="k">WHERE</span> <span class="p">{</span>
+    <span class="nv">?zona</span> <span class="nn">rdf</span><span class="p">:</span><span class="nt">type</span> <span class="nn">edintzone</span><span class="p">:</span><span class="nt">RegulatedZone</span> <span class="p">;</span>
+          <span class="nn">edintzone</span><span class="p">:</span><span class="nt">hasRegulatedZoneType</span> <span class="nv">?tipoZona</span> <span class="p">.</span>
+    <span class="nv">?zona</span> <span class="nn">geo</span><span class="p">:</span><span class="nt">hasGeometry</span> <span class="nv">?geom</span> <span class="p">.</span>
+    <span class="nv">?geom</span> <span class="nn">geo</span><span class="p">:</span><span class="nt">asWKT</span> <span class="nv">?wkt</span> <span class="p">.</span>
+<span class="p">}</span>
+<span class="k">ORDER BY</span> <span class="nv">?zona</span>
+</pre></div>
+</div>
+
+                    </div>
+                    </section>
+    <section class="file-card" id="ZON08_sparql"><div class="file-header">ZON08 - ¿Cuáles son las zonas de interés económico y su referencia legal?</div><div class="metadata-block"><p><strong>Pregunta:</strong> ¿Cuáles son las zonas de interés económico y su referencia legal?</p><p><strong>Respuesta:</strong> Zonas de interés económico con su referencia legal</p></div>
+                    <div class="query-block">
+                        <span class="query-title"></span>
+                        <div class="sparql-code"><div class="highlight"><pre><span></span><span class="c"># --- Query 1 ---</span>
+<span class="k">PREFIX</span> <span class="nn">skos</span><span class="p">:</span> <span class="nl">&lt;http://www.w3.org/2004/02/skos/core#&gt;</span>
+<span class="k">PREFIX</span> <span class="nn">edintkos-rztype</span><span class="p">:</span> <span class="nl">&lt;http://vocab.linkeddata.es/datosabiertos/kos/edint/RegulatedZoneType/&gt;</span>
+<span class="k">PREFIX</span> <span class="nn">edintzone</span><span class="p">:</span> <span class="nl">&lt;http://vocab.linkeddata.es/datosabiertos/def/common/zone#&gt;</span>
+<span class="k">PREFIX</span> <span class="nn">rdf</span><span class="p">:</span> <span class="nl">&lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt;</span>
+<span class="k">PREFIX</span> <span class="nn">rdfs</span><span class="p">:</span> <span class="nl">&lt;http://www.w3.org/2000/01/rdf-schema#&gt;</span>
+
+<span class="k">SELECT</span> <span class="k">DISTINCT</span> <span class="nv">?zona</span> <span class="nv">?tipoZona</span> <span class="nv">?refLegal</span>
+<span class="k">WHERE</span> <span class="p">{</span>
+    <span class="nv">?zona</span> <span class="nn">rdf</span><span class="p">:</span><span class="nt">type</span> <span class="nn">edintzone</span><span class="p">:</span><span class="nt">RegulatedZone</span> <span class="p">;</span>
+          <span class="nn">edintzone</span><span class="p">:</span><span class="nt">hasRegulatedZoneType</span> <span class="nv">?tipoZona</span> <span class="p">.</span>
+    <span class="nv">?tipoZona</span> <span class="nn">skos</span><span class="p">:</span><span class="nt">broader</span><span class="o">*</span> <span class="nn">edintkos-rztype</span><span class="p">:</span><span class="nt">EconomicInterestZone</span> <span class="p">.</span>
+    <span class="k">OPTIONAL</span> <span class="p">{</span> <span class="nv">?zona</span> <span class="nn">edintzone</span><span class="p">:</span><span class="nt">legalReference</span> <span class="nv">?refLegal</span> <span class="p">.</span> <span class="p">}</span>
+<span class="p">}</span>
+<span class="k">ORDER BY</span> <span class="nv">?tipoZona</span> <span class="nv">?zona</span>
+</pre></div>
+</div>
+
+                    </div>
+                    </section>
+    <section class="file-card" id="ZON09_sparql"><div class="file-header">ZON09 - ¿Qué vías o tramos de vía componen cada zona?</div><div class="metadata-block"><p><strong>Pregunta:</strong> ¿Qué vías o tramos de vía componen cada zona?</p><p><strong>Respuesta:</strong> Vías o tramos de vía que componen cada zona</p></div>
+                    <div class="query-block">
+                        <span class="query-title"></span>
+                        <div class="sparql-code"><div class="highlight"><pre><span></span><span class="c"># --- Query 1 ---</span>
+<span class="k">PREFIX</span> <span class="nn">edintzone</span><span class="p">:</span> <span class="nl">&lt;http://vocab.linkeddata.es/datosabiertos/def/common/zone#&gt;</span>
+<span class="k">PREFIX</span> <span class="nn">rdf</span><span class="p">:</span> <span class="nl">&lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt;</span>
+<span class="k">PREFIX</span> <span class="nn">rdfs</span><span class="p">:</span> <span class="nl">&lt;http://www.w3.org/2000/01/rdf-schema#&gt;</span>
+
+<span class="k">SELECT</span> <span class="k">DISTINCT</span> <span class="nv">?zona</span> <span class="nv">?tipoZona</span> <span class="nv">?via</span> <span class="nv">?nombreVia</span>
+<span class="k">WHERE</span> <span class="p">{</span>
+    <span class="nv">?zona</span> <span class="nn">rdf</span><span class="p">:</span><span class="nt">type</span> <span class="nn">edintzone</span><span class="p">:</span><span class="nt">RegulatedZone</span> <span class="p">;</span>
+          <span class="nn">edintzone</span><span class="p">:</span><span class="nt">hasRegulatedZoneType</span> <span class="nv">?tipoZona</span> <span class="p">.</span>
+    <span class="nv">?zona</span> <span class="nn">edintzone</span><span class="p">:</span><span class="nt">composedOf</span> <span class="nv">?via</span> <span class="p">.</span>
+    <span class="k">OPTIONAL</span> <span class="p">{</span> <span class="nv">?via</span> <span class="nn">rdfs</span><span class="p">:</span><span class="nt">label</span> <span class="nv">?nombreVia</span> <span class="p">.</span> <span class="p">}</span>
+<span class="p">}</span>
+<span class="k">ORDER BY</span> <span class="nv">?zona</span> <span class="nv">?via</span>
+</pre></div>
+</div>
+
+                    </div>
+                    </section>
+    <section class="file-card" id="ZON10_sparql"><div class="file-header">ZON10 - ¿Cuáles son las zonas de carga y descarga de un municipio concreto?</div><div class="metadata-block"><p><strong>Pregunta:</strong> ¿Cuáles son las zonas de carga y descarga de un municipio concreto?</p><p><strong>Respuesta:</strong> Zonas de carga y descarga de un municipio específico</p></div>
+                    <div class="query-block">
+                        <span class="query-title"></span>
+                        <div class="sparql-code"><div class="highlight"><pre><span></span><span class="c"># --- Query 1 ---</span>
+<span class="k">PREFIX</span> <span class="nn">edintkos-rztype</span><span class="p">:</span> <span class="nl">&lt;http://vocab.linkeddata.es/datosabiertos/kos/edint/RegulatedZoneType/&gt;</span>
+<span class="k">PREFIX</span> <span class="nn">edintzone</span><span class="p">:</span> <span class="nl">&lt;http://vocab.linkeddata.es/datosabiertos/def/common/zone#&gt;</span>
+<span class="k">PREFIX</span> <span class="nn">rdf</span><span class="p">:</span> <span class="nl">&lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt;</span>
+
+<span class="k">SELECT</span> <span class="k">DISTINCT</span> <span class="nv">?zona</span>
+<span class="k">WHERE</span> <span class="p">{</span>
+    <span class="nv">?zona</span> <span class="nn">rdf</span><span class="p">:</span><span class="nt">type</span> <span class="nn">edintzone</span><span class="p">:</span><span class="nt">RegulatedZone</span> <span class="p">;</span>
+          <span class="nn">edintzone</span><span class="p">:</span><span class="nt">hasRegulatedZoneType</span> <span class="nn">edintkos-rztype</span><span class="p">:</span><span class="nt">LoadingUnloadingZone</span> <span class="p">;</span>
+          <span class="nn">edintzone</span><span class="p">:</span><span class="nt">locatedIn</span> <span class="nl">&lt;URI_DEL_MUNICIPIO&gt;</span> <span class="p">.</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+
+                    </div>
+                    </section>
+    <section class="file-card" id="ZON11_sparql"><div class="file-header">ZON11 - ¿Qué zonas comparten entidad gestora?</div><div class="metadata-block"><p><strong>Pregunta:</strong> ¿Qué zonas comparten entidad gestora?</p><p><strong>Respuesta:</strong> Zonas que comparten la misma entidad gestora</p></div>
+                    <div class="query-block">
+                        <span class="query-title"></span>
+                        <div class="sparql-code"><div class="highlight"><pre><span></span><span class="c"># --- Query 1 ---</span>
+<span class="k">PREFIX</span> <span class="nn">edintzone</span><span class="p">:</span> <span class="nl">&lt;http://vocab.linkeddata.es/datosabiertos/def/common/zone#&gt;</span>
+<span class="k">PREFIX</span> <span class="nn">rdf</span><span class="p">:</span> <span class="nl">&lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt;</span>
+<span class="k">PREFIX</span> <span class="nn">rdfs</span><span class="p">:</span> <span class="nl">&lt;http://www.w3.org/2000/01/rdf-schema#&gt;</span>
+
+<span class="k">SELECT</span> <span class="nv">?entidadGestora</span> <span class="p">(</span><span class="nf">GROUP_CONCAT</span><span class="p">(</span><span class="nf">STR</span><span class="p">(</span><span class="nv">?zona</span><span class="p">);</span> <span class="nf">SEPARATOR</span><span class="o">=</span><span class="s">&quot;, &quot;</span><span class="p">)</span> <span class="k">AS</span> <span class="nv">?zonas</span><span class="p">)</span>
+<span class="k">WHERE</span> <span class="p">{</span>
+    <span class="nv">?zona</span> <span class="nn">rdf</span><span class="p">:</span><span class="nt">type</span> <span class="nn">edintzone</span><span class="p">:</span><span class="nt">RegulatedZone</span> <span class="p">;</span>
+          <span class="nn">edintzone</span><span class="p">:</span><span class="nt">hasRegulatedZoneType</span> <span class="nv">?tipoZona</span> <span class="p">.</span>
+    <span class="nv">?zona</span> <span class="nn">edintzone</span><span class="p">:</span><span class="nt">managedBy</span> <span class="nv">?entidadGestora</span> <span class="p">.</span>
+<span class="p">}</span>
+<span class="k">GROUP BY</span> <span class="nv">?entidadGestora</span>
+<span class="k">HAVING</span> <span class="p">(</span><span class="nf">COUNT</span><span class="p">(</span><span class="nv">?zona</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">)</span>
+<span class="k">ORDER BY</span> <span class="nv">?entidadGestora</span>
+</pre></div>
+</div>
+
+                    </div>
+                    </section>
+    <section class="file-card" id="ZON12_sparql"><div class="file-header">ZON12 - ¿Qué calles específicas componen una zona regulada?</div><div class="metadata-block"><p><strong>Pregunta:</strong> ¿Qué calles específicas componen una zona regulada?</p><p><strong>Respuesta:</strong> Calles específicas que componen una zona regulada</p></div>
+                    <div class="query-block">
+                        <span class="query-title"></span>
+                        <div class="sparql-code"><div class="highlight"><pre><span></span><span class="c"># --- Query 1 ---</span>
+<span class="k">PREFIX</span> <span class="nn">edintzone</span><span class="p">:</span> <span class="nl">&lt;http://vocab.linkeddata.es/datosabiertos/def/common/zone#&gt;</span>
+<span class="k">PREFIX</span> <span class="nn">rdf</span><span class="p">:</span> <span class="nl">&lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt;</span>
+<span class="k">PREFIX</span> <span class="nn">rdfs</span><span class="p">:</span> <span class="nl">&lt;http://www.w3.org/2000/01/rdf-schema#&gt;</span>
+<span class="k">PREFIX</span> <span class="nn">geo</span><span class="p">:</span> <span class="nl">&lt;http://www.opengis.net/ont/geosparql#&gt;</span>
+
+<span class="k">SELECT</span> <span class="nv">?zona</span> <span class="nv">?tipoZona</span> <span class="nv">?calle</span>
+<span class="k">WHERE</span> <span class="p">{</span>
+    <span class="nv">?zona</span> <span class="nn">rdf</span><span class="p">:</span><span class="nt">type</span> <span class="nn">edintzone</span><span class="p">:</span><span class="nt">RegulatedZone</span> <span class="p">;</span>
+          <span class="nn">edintzone</span><span class="p">:</span><span class="nt">hasRegulatedZoneType</span> <span class="nv">?tipoZona</span> <span class="p">.</span>
+    <span class="nv">?zona</span> <span class="nn">edintzone</span><span class="p">:</span><span class="nt">composedOf</span> <span class="nv">?calle</span> <span class="p">.</span>
+<span class="p">}</span>
+<span class="k">ORDER BY</span> <span class="nv">?tipoZona</span> <span class="nv">?zona</span> <span class="nv">?calle</span>
+</pre></div>
+</div>
+
+                    </div>
+                    <div class="query-block">
+                        <span class="query-title"></span>
+                        <div class="sparql-code"><div class="highlight"><pre><span></span><span class="c"># --- Query 2 ---</span>
+<span class="k">PREFIX</span> <span class="nn">edintzone</span><span class="p">:</span> <span class="nl">&lt;http://vocab.linkeddata.es/datosabiertos/def/common/zone#&gt;</span>
+<span class="k">PREFIX</span> <span class="nn">rdf</span><span class="p">:</span> <span class="nl">&lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt;</span>
+<span class="k">PREFIX</span> <span class="nn">rdfs</span><span class="p">:</span> <span class="nl">&lt;http://www.w3.org/2000/01/rdf-schema#&gt;</span>
+<span class="k">PREFIX</span> <span class="nn">geo</span><span class="p">:</span> <span class="nl">&lt;http://www.opengis.net/ont/geosparql#&gt;</span>
+
+<span class="k">SELECT</span> <span class="nv">?zona</span> <span class="nv">?tipoZona</span> <span class="nv">?calle</span> <span class="nv">?nombreCalle</span>
+<span class="k">WHERE</span> <span class="p">{</span>
+    <span class="nv">?zona</span> <span class="nn">rdf</span><span class="p">:</span><span class="nt">type</span> <span class="nn">edintzone</span><span class="p">:</span><span class="nt">RegulatedZone</span> <span class="p">;</span>
+          <span class="nn">edintzone</span><span class="p">:</span><span class="nt">hasRegulatedZoneType</span> <span class="nv">?tipoZona</span> <span class="p">.</span>
+    <span class="nv">?zona</span> <span class="nn">edintzone</span><span class="p">:</span><span class="nt">composedOf</span> <span class="nv">?calle</span> <span class="p">.</span>
+    <span class="k">OPTIONAL</span> <span class="p">{</span> <span class="nv">?calle</span> <span class="nn">rdfs</span><span class="p">:</span><span class="nt">label</span> <span class="nv">?nombreCalle</span> <span class="p">.</span> <span class="p">}</span>
+<span class="p">}</span>
+<span class="k">ORDER BY</span> <span class="nv">?tipoZona</span> <span class="nv">?zona</span> <span class="nv">?nombreCalle</span>
+</pre></div>
+</div>
+
+                    </div>
+                    <div class="query-block">
+                        <span class="query-title"></span>
+                        <div class="sparql-code"><div class="highlight"><pre><span></span><span class="c"># --- Query 3 ---</span>
+<span class="k">PREFIX</span> <span class="nn">edintzone</span><span class="p">:</span> <span class="nl">&lt;http://vocab.linkeddata.es/datosabiertos/def/common/zone#&gt;</span>
+<span class="k">PREFIX</span> <span class="nn">rdf</span><span class="p">:</span> <span class="nl">&lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt;</span>
+<span class="k">PREFIX</span> <span class="nn">rdfs</span><span class="p">:</span> <span class="nl">&lt;http://www.w3.org/2000/01/rdf-schema#&gt;</span>
+<span class="k">PREFIX</span> <span class="nn">geo</span><span class="p">:</span> <span class="nl">&lt;http://www.opengis.net/ont/geosparql#&gt;</span>
+
+<span class="k">SELECT</span> <span class="nv">?zona</span> <span class="nv">?tipoZona</span> <span class="nv">?calle</span> <span class="nv">?nombreCalle</span> <span class="nv">?geometria</span>
+<span class="k">WHERE</span> <span class="p">{</span>
+    <span class="nv">?zona</span> <span class="nn">rdf</span><span class="p">:</span><span class="nt">type</span> <span class="nn">edintzone</span><span class="p">:</span><span class="nt">RegulatedZone</span> <span class="p">;</span>
+          <span class="nn">edintzone</span><span class="p">:</span><span class="nt">hasRegulatedZoneType</span> <span class="nv">?tipoZona</span> <span class="p">.</span>
+    <span class="nv">?zona</span> <span class="nn">edintzone</span><span class="p">:</span><span class="nt">composedOf</span> <span class="nv">?calle</span> <span class="p">.</span>
+    <span class="k">OPTIONAL</span> <span class="p">{</span> <span class="nv">?calle</span> <span class="nn">rdfs</span><span class="p">:</span><span class="nt">label</span> <span class="nv">?nombreCalle</span> <span class="p">.</span> <span class="p">}</span>
+    <span class="k">OPTIONAL</span> <span class="p">{</span>
+        <span class="nv">?calle</span> <span class="nn">geo</span><span class="p">:</span><span class="nt">hasGeometry</span> <span class="nv">?geoCalle</span> <span class="p">.</span>
+        <span class="nv">?geoCalle</span> <span class="nn">geo</span><span class="p">:</span><span class="nt">asWKT</span> <span class="nv">?geometria</span> <span class="p">.</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+<span class="k">ORDER BY</span> <span class="nv">?tipoZona</span> <span class="nv">?zona</span> <span class="nv">?nombreCalle</span>
+</pre></div>
+</div>
+
+                    </div>
+                    </section>
+    <section class="file-card" id="ZON13_sparql"><div class="file-header">ZON13 - ¿Cuáles son los horarios de funcionamiento o la programación de la regulación?</div><div class="metadata-block"><p><strong>Pregunta:</strong> ¿Cuáles son los horarios de funcionamiento o la programación de la regulación?</p><p><strong>Respuesta:</strong> Horarios de funcionamiento o programación de la regulación</p></div>
+                    <div class="query-block">
+                        <span class="query-title"></span>
+                        <div class="sparql-code"><div class="highlight"><pre><span></span><span class="c"># --- Query 1 ---</span>
+<span class="k">PREFIX</span> <span class="nn">edintzone</span><span class="p">:</span> <span class="nl">&lt;http://vocab.linkeddata.es/datosabiertos/def/common/zone#&gt;</span>
+<span class="k">PREFIX</span> <span class="nn">rdf</span><span class="p">:</span> <span class="nl">&lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt;</span>
+<span class="k">PREFIX</span> <span class="nn">rdfs</span><span class="p">:</span> <span class="nl">&lt;http://www.w3.org/2000/01/rdf-schema#&gt;</span>
+
+<span class="k">SELECT</span> <span class="nv">?zona</span> <span class="nv">?tipoZona</span> <span class="nv">?horario</span>
+<span class="k">WHERE</span> <span class="p">{</span>
+    <span class="nv">?zona</span> <span class="nn">rdf</span><span class="p">:</span><span class="nt">type</span> <span class="nn">edintzone</span><span class="p">:</span><span class="nt">RegulatedZone</span> <span class="p">;</span>
+          <span class="nn">edintzone</span><span class="p">:</span><span class="nt">hasRegulatedZoneType</span> <span class="nv">?tipoZona</span> <span class="p">.</span>
+    <span class="nv">?zona</span> <span class="nn">edintzone</span><span class="p">:</span><span class="nt">scheduleDescription</span> <span class="nv">?horario</span> <span class="p">.</span>
+<span class="p">}</span>
+<span class="k">ORDER BY</span> <span class="nv">?tipoZona</span> <span class="nv">?zona</span> <span class="nv">?horario</span>
+</pre></div>
+</div>
+
+                    </div>
+                    <div class="query-block">
+                        <span class="query-title"></span>
+                        <div class="sparql-code"><div class="highlight"><pre><span></span><span class="c"># --- Query 2 ---</span>
+<span class="k">PREFIX</span> <span class="nn">edintzone</span><span class="p">:</span> <span class="nl">&lt;http://vocab.linkeddata.es/datosabiertos/def/common/zone#&gt;</span>
+<span class="k">PREFIX</span> <span class="nn">rdf</span><span class="p">:</span> <span class="nl">&lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt;</span>
+<span class="k">PREFIX</span> <span class="nn">rdfs</span><span class="p">:</span> <span class="nl">&lt;http://www.w3.org/2000/01/rdf-schema#&gt;</span>
+
+<span class="k">SELECT</span> <span class="nv">?zona</span> <span class="nv">?tipoZona</span> <span class="nv">?nombreZona</span> <span class="nv">?horario</span>
+<span class="k">WHERE</span> <span class="p">{</span>
+    <span class="nv">?zona</span> <span class="nn">rdf</span><span class="p">:</span><span class="nt">type</span> <span class="nn">edintzone</span><span class="p">:</span><span class="nt">RegulatedZone</span> <span class="p">;</span>
+          <span class="nn">edintzone</span><span class="p">:</span><span class="nt">hasRegulatedZoneType</span> <span class="nv">?tipoZona</span> <span class="p">.</span>
+    <span class="nv">?zona</span> <span class="nn">edintzone</span><span class="p">:</span><span class="nt">scheduleDescription</span> <span class="nv">?horario</span> <span class="p">.</span>
+    <span class="k">OPTIONAL</span> <span class="p">{</span> <span class="nv">?zona</span> <span class="nn">rdfs</span><span class="p">:</span><span class="nt">label</span> <span class="nv">?nombreZona</span> <span class="p">.</span> <span class="p">}</span>
+<span class="p">}</span>
+<span class="k">ORDER BY</span> <span class="nv">?tipoZona</span> <span class="nv">?zona</span> <span class="nv">?horario</span>
+</pre></div>
+</div>
+
+                    </div>
+                    <div class="query-block">
+                        <span class="query-title"></span>
+                        <div class="sparql-code"><div class="highlight"><pre><span></span><span class="c"># --- Query 3 ---</span>
+<span class="k">PREFIX</span> <span class="nn">edintzone</span><span class="p">:</span> <span class="nl">&lt;http://vocab.linkeddata.es/datosabiertos/def/common/zone#&gt;</span>
+<span class="k">PREFIX</span> <span class="nn">rdf</span><span class="p">:</span> <span class="nl">&lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt;</span>
+<span class="k">PREFIX</span> <span class="nn">rdfs</span><span class="p">:</span> <span class="nl">&lt;http://www.w3.org/2000/01/rdf-schema#&gt;</span>
+
+<span class="k">SELECT</span> <span class="nv">?zona</span> <span class="nv">?tipoZona</span> <span class="nv">?nombreZona</span> <span class="nv">?horario</span>
+<span class="k">WHERE</span> <span class="p">{</span>
+    <span class="nv">?zona</span> <span class="nn">rdf</span><span class="p">:</span><span class="nt">type</span> <span class="nn">edintzone</span><span class="p">:</span><span class="nt">RegulatedZone</span> <span class="p">;</span>
+          <span class="nn">edintzone</span><span class="p">:</span><span class="nt">hasRegulatedZoneType</span> <span class="nv">?tipoZona</span> <span class="p">.</span>
+    <span class="nv">?zona</span> <span class="nn">edintzone</span><span class="p">:</span><span class="nt">scheduleDescription</span> <span class="nv">?horario</span> <span class="p">.</span>
+    <span class="k">OPTIONAL</span> <span class="p">{</span> <span class="nv">?zona</span> <span class="nn">rdfs</span><span class="p">:</span><span class="nt">label</span> <span class="nv">?nombreZona</span> <span class="p">.</span> <span class="p">}</span>
+    <span class="k">FILTER</span> <span class="p">(</span><span class="o">!</span><span class="nf">BOUND</span><span class="p">(</span><span class="nv">?nombreZona</span><span class="p">)</span> <span class="o">||</span> <span class="nf">lang</span><span class="p">(</span><span class="nv">?nombreZona</span><span class="p">)</span> <span class="o">=</span> <span class="s">&quot;&quot;</span> <span class="o">||</span> <span class="nf">lang</span><span class="p">(</span><span class="nv">?nombreZona</span><span class="p">)</span> <span class="o">=</span> <span class="s">&quot;es&quot;</span><span class="p">)</span>
+<span class="p">}</span>
+<span class="k">ORDER BY</span> <span class="nv">?tipoZona</span> <span class="nv">?zona</span> <span class="nv">?horario</span>
+</pre></div>
+</div>
+
+                    </div>
+                    </section>
+    <section class="file-card" id="ZON14_sparql"><div class="file-header">ZON14 - ¿Cuál es la base legal u ordenanza que creó esta zona?</div><div class="metadata-block"><p><strong>Pregunta:</strong> ¿Cuál es la base legal u ordenanza que creó esta zona?</p><p><strong>Respuesta:</strong> Base legal u ordenanza que creó cada zona</p></div>
+                    <div class="query-block">
+                        <span class="query-title"></span>
+                        <div class="sparql-code"><div class="highlight"><pre><span></span><span class="c"># --- Query 1 ---</span>
+<span class="k">PREFIX</span> <span class="nn">edintzone</span><span class="p">:</span> <span class="nl">&lt;http://vocab.linkeddata.es/datosabiertos/def/common/zone#&gt;</span>
+<span class="k">PREFIX</span> <span class="nn">rdf</span><span class="p">:</span> <span class="nl">&lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt;</span>
+<span class="k">PREFIX</span> <span class="nn">rdfs</span><span class="p">:</span> <span class="nl">&lt;http://www.w3.org/2000/01/rdf-schema#&gt;</span>
+
+<span class="k">SELECT</span> <span class="nv">?zona</span> <span class="nv">?tipoZona</span> <span class="nv">?referenciaLegal</span>
+<span class="k">WHERE</span> <span class="p">{</span>
+    <span class="nv">?zona</span> <span class="nn">rdf</span><span class="p">:</span><span class="nt">type</span> <span class="nn">edintzone</span><span class="p">:</span><span class="nt">RegulatedZone</span> <span class="p">;</span>
+          <span class="nn">edintzone</span><span class="p">:</span><span class="nt">hasRegulatedZoneType</span> <span class="nv">?tipoZona</span> <span class="p">.</span>
+    <span class="nv">?zona</span> <span class="nn">edintzone</span><span class="p">:</span><span class="nt">legalReference</span> <span class="nv">?referenciaLegal</span> <span class="p">.</span>
+<span class="p">}</span>
+<span class="k">ORDER BY</span> <span class="nv">?tipoZona</span> <span class="nv">?zona</span> <span class="nv">?referenciaLegal</span>
+</pre></div>
+</div>
+
+                    </div>
+                    <div class="query-block">
+                        <span class="query-title"></span>
+                        <div class="sparql-code"><div class="highlight"><pre><span></span><span class="c"># --- Query 2 ---</span>
+<span class="k">PREFIX</span> <span class="nn">edintzone</span><span class="p">:</span> <span class="nl">&lt;http://vocab.linkeddata.es/datosabiertos/def/common/zone#&gt;</span>
+<span class="k">PREFIX</span> <span class="nn">rdf</span><span class="p">:</span> <span class="nl">&lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt;</span>
+<span class="k">PREFIX</span> <span class="nn">rdfs</span><span class="p">:</span> <span class="nl">&lt;http://www.w3.org/2000/01/rdf-schema#&gt;</span>
+
+<span class="k">SELECT</span> <span class="nv">?zona</span> <span class="nv">?tipoZona</span> <span class="nv">?nombreZona</span> <span class="nv">?referenciaLegal</span>
+<span class="k">WHERE</span> <span class="p">{</span>
+    <span class="nv">?zona</span> <span class="nn">rdf</span><span class="p">:</span><span class="nt">type</span> <span class="nn">edintzone</span><span class="p">:</span><span class="nt">RegulatedZone</span> <span class="p">;</span>
+          <span class="nn">edintzone</span><span class="p">:</span><span class="nt">hasRegulatedZoneType</span> <span class="nv">?tipoZona</span> <span class="p">.</span>
+    <span class="nv">?zona</span> <span class="nn">edintzone</span><span class="p">:</span><span class="nt">legalReference</span> <span class="nv">?referenciaLegal</span> <span class="p">.</span>
+    <span class="k">OPTIONAL</span> <span class="p">{</span> <span class="nv">?zona</span> <span class="nn">rdfs</span><span class="p">:</span><span class="nt">label</span> <span class="nv">?nombreZona</span> <span class="p">.</span> <span class="p">}</span>
+<span class="p">}</span>
+<span class="k">ORDER BY</span> <span class="nv">?tipoZona</span> <span class="nv">?zona</span> <span class="nv">?referenciaLegal</span>
+</pre></div>
+</div>
+
+                    </div>
+                    <div class="query-block">
+                        <span class="query-title"></span>
+                        <div class="sparql-code"><div class="highlight"><pre><span></span><span class="c"># --- Query 3 ---</span>
+<span class="k">PREFIX</span> <span class="nn">edintzone</span><span class="p">:</span> <span class="nl">&lt;http://vocab.linkeddata.es/datosabiertos/def/common/zone#&gt;</span>
+<span class="k">PREFIX</span> <span class="nn">rdf</span><span class="p">:</span> <span class="nl">&lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt;</span>
+<span class="k">PREFIX</span> <span class="nn">rdfs</span><span class="p">:</span> <span class="nl">&lt;http://www.w3.org/2000/01/rdf-schema#&gt;</span>
+
+<span class="k">SELECT</span> <span class="nv">?zona</span> <span class="nv">?tipoZona</span> <span class="nv">?nombreZona</span> <span class="nv">?referenciaLegal</span>
+<span class="k">WHERE</span> <span class="p">{</span>
+    <span class="nv">?zona</span> <span class="nn">rdf</span><span class="p">:</span><span class="nt">type</span> <span class="nn">edintzone</span><span class="p">:</span><span class="nt">RegulatedZone</span> <span class="p">;</span>
+          <span class="nn">edintzone</span><span class="p">:</span><span class="nt">hasRegulatedZoneType</span> <span class="nv">?tipoZona</span> <span class="p">.</span>
+    <span class="nv">?zona</span> <span class="nn">edintzone</span><span class="p">:</span><span class="nt">legalReference</span> <span class="nv">?referenciaLegal</span> <span class="p">.</span>
+    <span class="k">OPTIONAL</span> <span class="p">{</span> <span class="nv">?zona</span> <span class="nn">rdfs</span><span class="p">:</span><span class="nt">label</span> <span class="nv">?nombreZona</span> <span class="p">.</span> <span class="p">}</span>
+    <span class="k">FILTER</span> <span class="p">(</span><span class="o">!</span><span class="nf">BOUND</span><span class="p">(</span><span class="nv">?nombreZona</span><span class="p">)</span> <span class="o">||</span> <span class="nf">lang</span><span class="p">(</span><span class="nv">?nombreZona</span><span class="p">)</span> <span class="o">=</span> <span class="s">&quot;&quot;</span> <span class="o">||</span> <span class="nf">lang</span><span class="p">(</span><span class="nv">?nombreZona</span><span class="p">)</span> <span class="o">=</span> <span class="s">&quot;es&quot;</span><span class="p">)</span>
+<span class="p">}</span>
+<span class="k">ORDER BY</span> <span class="nv">?tipoZona</span> <span class="nv">?zona</span> <span class="nv">?referenciaLegal</span>
+</pre></div>
+</div>
+
+                    </div>
+                    </section>
+
+    </div>
+
+</body>
+</html>

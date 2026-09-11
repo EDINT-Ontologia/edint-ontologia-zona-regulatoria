@@ -1,17 +1,17 @@
 # Query: ZON09
-# Question: ¿Qué entidades administrativas (distritos, barrios, etc.) componen cada zona?
+# Question: ¿Qué vías o tramos de vía componen cada zona?
 
 # --- Query 1 ---
 PREFIX edintzone: <http://vocab.linkeddata.es/datosabiertos/def/common/zone#>
 PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 
-SELECT DISTINCT ?zona ?tipoZona ?entidad ?nombreEntidad
+SELECT DISTINCT ?zona ?tipoZona ?via ?nombreVia
 WHERE {
     ?zona rdf:type edintzone:RegulatedZone ;
           edintzone:hasRegulatedZoneType ?tipoZona .
-    ?zona edintzone:composedOf ?entidad .
-    OPTIONAL { ?entidad rdfs:label ?nombreEntidad . }
+    ?zona edintzone:composedOf ?via .
+    OPTIONAL { ?via rdfs:label ?nombreVia . }
 }
-ORDER BY ?zona ?entidad
+ORDER BY ?zona ?via
 
