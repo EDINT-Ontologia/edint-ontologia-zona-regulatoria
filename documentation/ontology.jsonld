@@ -38,7 +38,7 @@
     ]
   },
   {
-    "@id": "http://dbpedia.org/ontology/GovernmentalAdministrativeRegion",
+    "@id": "http://vocab.linkeddata.es/datosabiertos/def/urbanismo-infraestructuras/callejero#Via",
     "@type": [
       "http://www.w3.org/2002/07/owl#Class"
     ]
@@ -868,7 +868,7 @@
     ],
     "http://www.w3.org/2000/01/rdf-schema#range": [
       {
-        "@id": "http://dbpedia.org/ontology/GovernmentalAdministrativeRegion"
+        "@id": "http://vocab.linkeddata.es/datosabiertos/def/urbanismo-infraestructuras/callejero#Via"
       },
       {
         "@id": "http://www.geonames.org/ontology#Feature"
