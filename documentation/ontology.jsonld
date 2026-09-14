@@ -1,834 +1,1298 @@
-[ {
-  "@id" : "_:genid1",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
-  "http://www.w3.org/2002/07/owl#onProperty" : [ {
-    "@id" : "http://www.opengis.net/ont/geosparql#hasGeometry"
-  } ],
-  "http://www.w3.org/2002/07/owl#someValuesFrom" : [ {
-    "@id" : "http://www.opengis.net/ont/sf#Geometry"
-  } ]
-}, {
-  "@id" : "_:genid2",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
-  "http://www.w3.org/2002/07/owl#onClass" : [ {
-    "@id" : "http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio#Municipio"
-  } ],
-  "http://www.w3.org/2002/07/owl#onProperty" : [ {
-    "@id" : "https://edint.es/def/zone#locatedIn"
-  } ],
-  "http://www.w3.org/2002/07/owl#qualifiedCardinality" : [ {
-    "@type" : "http://www.w3.org/2001/XMLSchema#nonNegativeInteger",
-    "@value" : "1"
-  } ]
-}, {
-  "@id" : "http://dbpedia.org/ontology/GovernmentalAdministrativeRegion",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ]
-}, {
-  "@id" : "http://purl.org/dc/elements/1.1/abstract",
-  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
-}, {
-  "@id" : "http://purl.org/dc/elements/1.1/creator",
-  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
-}, {
-  "@id" : "http://purl.org/dc/elements/1.1/description",
-  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
-}, {
-  "@id" : "http://purl.org/dc/elements/1.1/title",
-  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
-}, {
-  "@id" : "http://purl.org/dc/terms/created",
-  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
-}, {
-  "@id" : "http://purl.org/dc/terms/creator",
-  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
-}, {
-  "@id" : "http://purl.org/dc/terms/description",
-  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
-}, {
-  "@id" : "http://purl.org/dc/terms/issued",
-  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
-}, {
-  "@id" : "http://purl.org/dc/terms/license",
-  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
-}, {
-  "@id" : "http://purl.org/dc/terms/title",
-  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
-}, {
-  "@id" : "http://purl.org/vocab/vann/preferredNamespacePrefix",
-  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
-}, {
-  "@id" : "http://purl.org/vocab/vann/preferredNamespaceUri",
-  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
-}, {
-  "@id" : "https://edint.es/def/zone#",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Ontology" ],
-  "http://purl.org/dc/terms/created" : [ {
-    "@type" : "http://www.w3.org/2001/XMLSchema#date",
-    "@value" : "2026-01-27"
-  } ],
-  "http://purl.org/dc/terms/creator" : [ {
-    "@value" : "OEG-UPM"
-  } ],
-  "http://purl.org/dc/terms/description" : [ {
-    "@language" : "es",
-    "@value" : "Esta ontología tiene como propósito definir, categorizar y relacionar las Zonas Regulatorias en el contexto de la movilidad inteligente y la gestión urbana (Smart Cities). Se ha diseñado como una extensión modular de la ontología del Sector Público de España (esadm)."
-  }, {
-    "@language" : "en",
-    "@value" : "This ontology aims to define, categorize, and relate Regulatory Zones in the context of smart mobility and urban management (Smart Cities). It is designed as a modular extension of the Spanish Public Sector ontology (esadm)."
-  } ],
-  "http://purl.org/dc/terms/issued" : [ {
-    "@type" : "http://www.w3.org/2001/XMLSchema#date",
-    "@value" : "2026-01-27"
-  } ],
-  "http://purl.org/dc/terms/license" : [ {
-    "@id" : "https://creativecommons.org/licenses/by/4.0/"
-  } ],
-  "http://purl.org/dc/terms/title" : [ {
-    "@language" : "en",
-    "@value" : "Base Zoning Ontology"
-  }, {
-    "@language" : "es",
-    "@value" : "Ontología base de Zonas"
-  } ],
-  "http://purl.org/vocab/vann/preferredNamespacePrefix" : [ {
-    "@value" : "edintzone"
-  } ],
-  "http://purl.org/vocab/vann/preferredNamespaceUri" : [ {
-    "@value" : "https://edint.es/def/zone#"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
-    "@language" : "es",
-    "@value" : "Actualmente, existen vocabularios para divisiones administrativas (esadm) y geometrías (GeoSPARQL), pero existía un vacío semántico para representar entidades funcionales que se superponen a la trama urbana (ZBE, Carga y Descarga, etc...) sin responder a límites administrativos fijos. Esta ontología cubre dicho hueco."
-  }, {
-    "@language" : "en",
-    "@value" : "Currently, vocabularies exist for administrative divisions (esadm) and geometries (GeoSPARQL), but there was a semantic gap for representing functional entities that overlay the urban grid (LEZ, Loading/Unloading, etc.) without adhering to fixed administrative boundaries. This ontology fills that gap."
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@language" : "en",
-    "@value" : "Base Zoning Ontology for Smart Mobility Use Case."
-  }, {
-    "@language" : "es",
-    "@value" : "Ontología base de Zonas para el Caso de Uso de Movilidad Inteligente."
-  } ],
-  "http://www.w3.org/2002/07/owl#imports" : [ {
-    "@id" : "http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio_v0.5"
-  }, {
-    "@id" : "http://vocab.linkeddata.es/datosabiertos/def/urbanismo-infraestructuras/callejero_v0.3"
-  } ],
-  "http://www.w3.org/2002/07/owl#versionInfo" : [ {
-    "@value" : "0.1.0"
-  } ]
-}, {
-  "@id" : "https://edint.es/def/zone#CommercialZone",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
-  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
-    "@language" : "en",
-    "@value" : "Urban area or axis characterized by a high density of commercial and service activity, frequently supported by regional commerce regulations under the figure of Open Commercial Zone."
-  }, {
-    "@language" : "es",
-    "@value" : "Área o eje urbano caracterizado por una alta densidad de actividad comercial y de servicios, frecuentemente amparada por normativas autonómicas de comercio bajo la figura de Zona Comercial Abierta (ZCA)."
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@language" : "en",
-    "@value" : "Commercial Zone"
-  }, {
-    "@language" : "es",
-    "@value" : "Zona Comercial"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
-    "@id" : "https://edint.es/def/zone#EconomicInterestZone"
-  } ]
-}, {
-  "@id" : "https://edint.es/def/zone#EconomicInterestZone",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
-  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
-    "@language" : "en",
-    "@value" : "Area delimited by municipal regulations to promote commercial or tourist activities."
-  }, {
-    "@language" : "es",
-    "@value" : "Área delimitada por normativas municipales para fomentar actividades comerciales o turísticas."
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@language" : "en",
-    "@value" : "Economic Interest Zone"
-  }, {
-    "@language" : "es",
-    "@value" : "Zona de Interés Económico"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
-    "@id" : "https://edint.es/def/zone#RegulatedZone"
-  } ]
-}, {
-  "@id" : "https://edint.es/def/zone#FreeTradeZone",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
-  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
-    "@language" : "en",
-    "@value" : "Area of the Union customs territory where non-Community goods are considered not situated within customs territory."
-  }, {
-    "@language" : "es",
-    "@value" : "Área del territorio aduanero de la Unión donde las mercancías no comunitarias se consideran no situadas en territorio aduanero."
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@language" : "en",
-    "@value" : "Free Trade Zone"
-  }, {
-    "@language" : "es",
-    "@value" : "Zona Franca"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
-    "@id" : "https://edint.es/def/zone#EconomicInterestZone"
-  } ]
-}, {
-  "@id" : "https://edint.es/def/zone#GreenSpaceZone",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
-  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
-    "@language" : "es",
-    "@value" : "Espacio libre, parque o área natural urbana sujeta a un régimen de protección urbanística que limita su edificabilidad y regula su uso público, vital para estrategias de mitigación climática y calidad del aire."
-  }, {
-    "@language" : "en",
-    "@value" : "Open space, park, or urban natural area subject to a spatial planning protection regime that limits buildability and regulates public use, vital for climate mitigation and air quality strategies."
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@language" : "en",
-    "@value" : "Green Space Zone"
-  }, {
-    "@language" : "es",
-    "@value" : "Zona Verde"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
-    "@id" : "https://edint.es/def/zone#RegulatedZone"
-  } ]
-}, {
-  "@id" : "https://edint.es/def/zone#HighTourismInfluxZone",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
-  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
-    "@language" : "es",
-    "@value" : "Zonas con gran afluencia turística donde se aplica plena libertad de apertura comercial en domingos y festivos."
-  }, {
-    "@language" : "en",
-    "@value" : "Zones with high tourist influx where full freedom of commercial opening on Sundays and holidays applies."
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@language" : "en",
-    "@value" : "High Tourism Influx Zone"
-  }, {
-    "@language" : "es",
-    "@value" : "Zona de Gran Afluencia Turística"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
-    "@id" : "https://edint.es/def/zone#EconomicInterestZone"
-  } ]
-}, {
-  "@id" : "https://edint.es/def/zone#HistoricalCenter",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
-  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
-    "@language" : "en",
-    "@value" : "Urban area with special heritage protection where strict restrictions on access, circulation, and parking apply to preserve the historical fabric."
-  }, {
-    "@language" : "es",
-    "@value" : "Área urbana de especial protección patrimonial donde se aplican restricciones estrictas de acceso, circulación y estacionamiento para preservar la trama histórica."
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@language" : "es",
-    "@value" : "Casco Histórico"
-  }, {
-    "@language" : "en",
-    "@value" : "Historical Center"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
-    "@id" : "https://edint.es/def/zone#RegulatedZone"
-  } ]
-}, {
-  "@id" : "https://edint.es/def/zone#IndustrialZone",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
-  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
-    "@language" : "en",
-    "@value" : "Area delimited by urban planning and Cadastre intended predominantly to host industrial, logistics, and business activities."
-  }, {
-    "@language" : "es",
-    "@value" : "Área delimitada por el planeamiento urbanístico (PGOU) y el Catastro destinada predominantemente a albergar actividades industriales, logísticas y empresariales."
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@language" : "en",
-    "@value" : "Industrial Zone"
-  }, {
-    "@language" : "es",
-    "@value" : "Polígono Industrial"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
-    "@id" : "https://edint.es/def/zone#EconomicInterestZone"
-  } ]
-}, {
-  "@id" : "https://edint.es/def/zone#LeisureZone",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
-  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
-    "@language" : "en",
-    "@value" : "Area with a high concentration of leisure and hospitality establishments. Frequently subject to specific urban and environmental regulations, such as Special Acoustic Protection Zones."
-  }, {
-    "@language" : "es",
-    "@value" : "Área con alta concentración de establecimientos de ocio y hostelería. Frecuentemente sujeta a regulaciones urbanísticas y medioambientales específicas, como las Zonas de Protección Acústica Especial (ZPAE)."
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@language" : "en",
-    "@value" : "Leisure Zone"
-  }, {
-    "@language" : "es",
-    "@value" : "Zona de Ocio"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
-    "@id" : "https://edint.es/def/zone#RegulatedZone"
-  } ]
-}, {
-  "@id" : "https://edint.es/def/zone#LoadingUnloadingZone",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
-  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
-    "@language" : "es",
-    "@value" : "Zona reservada exclusivamente para la parada técnica de vehículos profesionales dedicados a la Distribución Urbana de Mercancías (DUM)."
-  }, {
-    "@language" : "en",
-    "@value" : "Zone reserved exclusively for the technical stop of professional vehicles dedicated to Urban Goods Distribution."
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@language" : "en",
-    "@value" : "Loading and Unloading Zone"
-  }, {
-    "@language" : "es",
-    "@value" : "Zona de Carga y Descarga"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
-    "@id" : "https://edint.es/def/zone#RegulatedParkingZone"
-  } ]
-}, {
-  "@id" : "https://edint.es/def/zone#LogisticsActivityZone",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
-  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
-    "@language" : "es",
-    "@value" : "Infraestructura especializada en actividades de transporte y logística. Definida legalmente como 'Centro de Transporte y Logística'."
-  }, {
-    "@language" : "en",
-    "@value" : "Infrastructure specialized in transport and logistics activities. Legally defined as 'Transport and Logistics Center'."
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@language" : "en",
-    "@value" : "Logistics Activity Zone"
-  }, {
-    "@language" : "es",
-    "@value" : "Zona de Actividad Logística"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
-    "@id" : "https://edint.es/def/zone#EconomicInterestZone"
-  } ]
-}, {
-  "@id" : "https://edint.es/def/zone#LowEmissionZone",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
-  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
-    "@language" : "es",
-    "@value" : "Zona definida por la administración donde se aplican restricciones de acceso, circulación y estacionamiento de vehículos con el objetivo de mejorar la calidad del aire."
-  }, {
-    "@language" : "en",
-    "@value" : "Zone defined by the administration where restrictions on vehicle access, circulation, and parking apply to improve air quality."
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@language" : "en",
-    "@value" : "Low Emission Zone"
-  }, {
-    "@language" : "es",
-    "@value" : "Zona de Bajas Emisiones"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
-    "@id" : "https://edint.es/def/zone#RegulatedZone"
-  } ]
-}, {
-  "@id" : "https://edint.es/def/zone#LowNoiseEmissionZone",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
-  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
-    "@language" : "es",
-    "@value" : "Zona definida por la administración donde se aplican restricciones de ruido y límites de emisión acústica para proteger la salud pública y el bienestar ciudadano."
-  }, {
-    "@language" : "en",
-    "@value" : "Zone defined by the administration where noise restrictions and acoustic emission limits apply to protect public health and citizen well-being."
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@language" : "en",
-    "@value" : "Low Noise Emission Zone"
-  }, {
-    "@language" : "es",
-    "@value" : "Zona de Bajas Emisiones de Ruido"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
-    "@id" : "https://edint.es/def/zone#RegulatedZone"
-  } ]
-}, {
-  "@id" : "https://edint.es/def/zone#ParkAndRideZone",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
-  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
-    "@language" : "en",
-    "@value" : "Strategic parking zone located on the periphery and connected to public transport networks."
-  }, {
-    "@language" : "es",
-    "@value" : "Zona de estacionamiento estratégico situado en la periferia y conectado con redes de transporte público."
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@language" : "en",
-    "@value" : "Park and Ride Zone"
-  }, {
-    "@language" : "es",
-    "@value" : "Zona de Estacionamiento Disuasorio"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
-    "@id" : "https://edint.es/def/zone#RegulatedParkingZone"
-  } ]
-}, {
-  "@id" : "https://edint.es/def/zone#PedestrianZone",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
-  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
-    "@language" : "en",
-    "@value" : "Road or area reserved entirely or partially for pedestrian traffic, with strict speed regulations for permitted vehicles and a general prohibition on parking."
-  }, {
-    "@language" : "es",
-    "@value" : "Vía o área reservada total o parcialmente para la circulación de peatones, con regulaciones estrictas de velocidad para los vehículos permitidos y prohibición general de estacionamiento."
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@language" : "en",
-    "@value" : "Pedestrian Zone"
-  }, {
-    "@language" : "es",
-    "@value" : "Zona Peatonal"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
-    "@id" : "https://edint.es/def/zone#RegulatedZone"
-  } ]
-}, {
-  "@id" : "https://edint.es/def/zone#ReducedMobilityParkingZone",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
-  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
-    "@language" : "en",
-    "@value" : "Parking zone legally reserved for vehicles transporting Persons with Reduced Mobility (PRM), regulated by municipal and national accessibility laws."
-  }, {
-    "@language" : "es",
-    "@value" : "Zona de estacionamiento reservada legalmente para vehículos que transportan a Personas con Movilidad Reducida (PMR), regulada por normativas municipales y estatales de accesibilidad."
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@language" : "en",
-    "@value" : "Reduced Mobility Parking Zone"
-  }, {
-    "@language" : "es",
-    "@value" : "Zona de Estacionamiento PMR"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
-    "@id" : "https://edint.es/def/zone#RegulatedParkingZone"
-  } ]
-}, {
-  "@id" : "https://edint.es/def/zone#RegulatedParkingZone",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
-  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
-    "@language" : "en",
-    "@value" : "Public road zone where parking is subject to time regulation, fee payment, or other restrictions."
-  }, {
-    "@language" : "es",
-    "@value" : "Zona de la vía pública donde el estacionamiento está sujeto a regulación horaria, pago de tasas u otras restricciones."
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@language" : "en",
-    "@value" : "Regulated Parking Zone"
-  }, {
-    "@language" : "es",
-    "@value" : "Zona de Estacionamiento Regulado"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
-    "@id" : "https://edint.es/def/zone#RegulatedZone"
-  } ]
-}, {
-  "@id" : "https://edint.es/def/zone#RegulatedZone",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
-  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
-    "@language" : "es",
-    "@value" : "Area a la que se aplica una regulacion o normativa particular"
-  }, {
-    "@language" : "en",
-    "@value" : "Area to which a particular regulation or policy applies"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@language" : "en",
-    "@value" : "Regulated Zone"
-  }, {
-    "@language" : "es",
-    "@value" : "Zona regulatoria"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
-    "@id" : "http://www.opengis.net/ont/geosparql#Feature"
-  }, {
-    "@id" : "_:genid1"
-  }, {
-    "@id" : "_:genid2"
-  } ]
-}, {
-  "@id" : "https://edint.es/def/zone#RegulatorySandbox",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
-  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
-    "@language" : "en",
-    "@value" : "Controlled testing environment authorized for research trials with automated vehicles or new forms of mobility."
-  }, {
-    "@language" : "es",
-    "@value" : "Espacio controlado de pruebas autorizado para la realización de ensayos de investigación con vehículos automatizados o nuevas formas de movilidad."
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@language" : "en",
-    "@value" : "Regulatory Sandbox"
-  }, {
-    "@language" : "es",
-    "@value" : "Sandbox Regulatorio"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
-    "@id" : "https://edint.es/def/zone#EconomicInterestZone"
-  } ]
-}, {
-  "@id" : "https://edint.es/def/zone#ResidentialParkingZone",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
-  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
-    "@language" : "es",
-    "@value" : "Zona destinada prioritaria o exclusivamente al estacionamiento de vehículos de residentes empadronados."
-  }, {
-    "@language" : "en",
-    "@value" : "Zone intended primarily or exclusively for parking vehicles of registered residents."
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@language" : "en",
-    "@value" : "Residential Parking Zone"
-  }, {
-    "@language" : "es",
-    "@value" : "Zona de Estacionamiento Residencial"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
-    "@id" : "https://edint.es/def/zone#RegulatedParkingZone"
-  } ]
-}, {
-  "@id" : "https://edint.es/def/zone#RestrictedAccessZone",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
-  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
-    "@language" : "en",
-    "@value" : "Urban area (such as Residential Priority Areas) where vehicle access is limited to residents, public transport, or authorized vehicles for reasons of traffic flow, safety, or road capacity."
-  }, {
-    "@language" : "es",
-    "@value" : "Área urbana (como las Áreas de Prioridad Residencial - APR) donde el acceso de vehículos está limitado a residentes, transporte público o vehículos autorizados por motivos de fluidez, seguridad o capacidad viaria."
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@language" : "en",
-    "@value" : "Restricted Access Zone"
-  }, {
-    "@language" : "es",
-    "@value" : "Zona de Acceso Restringido"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
-    "@id" : "https://edint.es/def/zone#RegulatedZone"
-  } ]
-}, {
-  "@id" : "https://edint.es/def/zone#ScienceTechnologyPark",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
-  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
-    "@language" : "es",
-    "@value" : "Espacio físico para el fomento de la I+D+i y la transferencia de conocimiento."
-  }, {
-    "@language" : "en",
-    "@value" : "Physical space for promoting R&D&I and knowledge transfer."
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@language" : "es",
-    "@value" : "Parque Científico y Tecnológico"
-  }, {
-    "@language" : "en",
-    "@value" : "Science and Technology Park"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
-    "@id" : "https://edint.es/def/zone#EconomicInterestZone"
-  } ]
-}, {
-  "@id" : "https://edint.es/def/zone#ShortTermParkingZone",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
-  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
-    "@language" : "es",
-    "@value" : "Zona destinada principalmente a usuarios visitantes con limitación temporal estricta y tarificación para favorecer la alta rotación."
-  }, {
-    "@language" : "en",
-    "@value" : "Zone intended primarily for visitors with strict time limits and fees to encourage high vehicle turnover."
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@language" : "en",
-    "@value" : "Short-term Parking Zone"
-  }, {
-    "@language" : "es",
-    "@value" : "Zona de Estacionamiento de Rotación"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
-    "@id" : "https://edint.es/def/zone#RegulatedParkingZone"
-  } ]
-}, {
-  "@id" : "https://edint.es/def/zone#StreetVendingZone",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
-  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
-    "@language" : "es",
-    "@value" : "Zona acotada para la modalidad de venta realizada fuera de establecimiento comercial permanente (mercadillos)."
-  }, {
-    "@language" : "en",
-    "@value" : "Zone demarcated for sales conducted outside of permanent commercial establishments (street markets)."
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@language" : "en",
-    "@value" : "Street Vending Zone"
-  }, {
-    "@language" : "es",
-    "@value" : "Zona de Venta Ambulante"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
-    "@id" : "https://edint.es/def/zone#EconomicInterestZone"
-  } ]
-}, {
-  "@id" : "https://edint.es/def/zone#composedOf",
-  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
-  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
-    "@language" : "es",
-    "@value" : "Relación que permite definir una Zona Regulatoria mediante uno o más entidades administrativas (Via, Distrito, Municipio...)."
-  }, {
-    "@language" : "en",
-    "@value" : "Relationship that allows defining a Regulated Zone via one or more administrative entities (Street, District, Municipality...)."
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "https://edint.es/def/zone#RegulatedZone"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@language" : "en",
-    "@value" : "composed of"
-  }, {
-    "@language" : "es",
-    "@value" : "compuesta por"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
-    "@id" : "http://dbpedia.org/ontology/GovernmentalAdministrativeRegion"
-  }, {
-    "@id" : "http://www.geonames.org/ontology#Feature"
-  } ]
-}, {
-  "@id" : "https://edint.es/def/zone#endDate",
-  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
-  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
-    "@language" : "en",
-    "@value" : "Date when the zone regulation ceases to be effective."
-  }, {
-    "@language" : "es",
-    "@value" : "Fecha en la que la regulación de la zona deja de ser efectiva (derogación o fin de periodo)."
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "https://edint.es/def/zone#RegulatedZone"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@language" : "en",
-    "@value" : "end date"
-  }, {
-    "@language" : "es",
-    "@value" : "fecha de fin de vigor"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
-    "@id" : "http://www.w3.org/2001/XMLSchema#date"
-  } ]
-}, {
-  "@id" : "https://edint.es/def/zone#hasRegulatedZone",
-  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
-  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
-    "@language" : "en",
-    "@value" : "Inverse property of 'locatedIn'. Links a municipality with the regulated zones it contains."
-  }, {
-    "@language" : "es",
-    "@value" : "Propiedad inversa de 'ubicado'. Vincula un municipio con las zonas regulatorias que contiene."
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio#Municipio"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@language" : "en",
-    "@value" : "has regulated zone"
-  }, {
-    "@language" : "es",
-    "@value" : "tiene zona regulatoria"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
-    "@id" : "https://edint.es/def/zone#RegulatedZone"
-  } ],
-  "http://www.w3.org/2002/07/owl#inverseOf" : [ {
-    "@id" : "https://edint.es/def/zone#locatedIn"
-  } ]
-}, {
-  "@id" : "https://edint.es/def/zone#legalReference",
-  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
-  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
-    "@language" : "es",
-    "@value" : "Enlace al documento oficial (Boletín, Ordenanza) que establece la creación de la zona."
-  }, {
-    "@language" : "en",
-    "@value" : "Link to the official document (Bulletin, Ordinance) establishing the zone."
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "https://edint.es/def/zone#RegulatedZone"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@language" : "en",
-    "@value" : "legal reference"
-  }, {
-    "@language" : "es",
-    "@value" : "referencia legal"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
-    "@id" : "http://www.w3.org/2001/XMLSchema#anyURI"
-  } ]
-}, {
-  "@id" : "https://edint.es/def/zone#locatedIn",
-  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
-  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
-    "@language" : "es",
-    "@value" : "Relaciona una zona regulatoria con el municipio administrativo al que pertenece."
-  }, {
-    "@language" : "en",
-    "@value" : "Relates a regulated zone to the administrative municipality it belongs to."
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "https://edint.es/def/zone#RegulatedZone"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@language" : "en",
-    "@value" : "located in municipality"
-  }, {
-    "@language" : "es",
-    "@value" : "ubicado en municipio"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
-    "@id" : "http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio#Municipio"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
-    "@id" : "http://www.opengis.net/ont/geosparql#sfWithin"
-  } ]
-}, {
-  "@id" : "https://edint.es/def/zone#managedBy",
-  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
-  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
-    "@language" : "es",
-    "@value" : "Organización (pública o privada) encargada de la gestión y operación de la zona."
-  }, {
-    "@language" : "en",
-    "@value" : "Organization (public or private) responsible for the management and operation of the zone."
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "https://edint.es/def/zone#RegulatedZone"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@language" : "es",
-    "@value" : "entidad gestora"
-  }, {
-    "@language" : "en",
-    "@value" : "managed by"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
-    "@id" : "http://www.w3.org/ns/org#Organization"
-  } ]
-}, {
-  "@id" : "https://edint.es/def/zone#scheduleDescription",
-  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
-  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
-    "@language" : "es",
-    "@value" : "Descripción textual del horario de funcionamiento de la zona (ej. \"Lunes a Viernes de 07:00 a 20:00\")."
-  }, {
-    "@language" : "en",
-    "@value" : "Textual description of the zone's operating schedule (e.g., \"Monday to Friday from 07:00 to 20:00\")."
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "https://edint.es/def/zone#RegulatedZone"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@language" : "es",
-    "@value" : "horario descriptivo"
-  }, {
-    "@language" : "en",
-    "@value" : "schedule description"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
-    "@id" : "http://www.w3.org/2001/XMLSchema#string"
-  } ]
-}, {
-  "@id" : "https://edint.es/def/zone#startDate",
-  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
-  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
-    "@language" : "en",
-    "@value" : "Date from which the zone regulation becomes effective."
-  }, {
-    "@language" : "es",
-    "@value" : "Fecha a partir de la cual la regulación de la zona comienza a ser efectiva."
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "https://edint.es/def/zone#RegulatedZone"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@language" : "en",
-    "@value" : "entry into force date"
-  }, {
-    "@language" : "es",
-    "@value" : "fecha de entrada en vigor"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
-    "@id" : "http://www.w3.org/2001/XMLSchema#date"
-  } ]
-}, {
-  "@id" : "http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio#Municipio",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ]
-}, {
-  "@id" : "http://www.geonames.org/ontology#Feature",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ]
-}, {
-  "@id" : "http://www.opengis.net/ont/geosparql#Feature",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ]
-}, {
-  "@id" : "http://www.opengis.net/ont/geosparql#asWKT",
-  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
-  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
-    "@language" : "en",
-    "@value" : "Geometry representation in Well-Known Text format."
-  }, {
-    "@language" : "es",
-    "@value" : "Representación de la geometría en formato Well-Known Text."
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "http://www.opengis.net/ont/sf#Geometry"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@language" : "en",
-    "@value" : "as WKT"
-  }, {
-    "@language" : "es",
-    "@value" : "como WKT"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
-    "@id" : "http://www.opengis.net/ont/geosparql#wktLiteral"
-  } ]
-}, {
-  "@id" : "http://www.opengis.net/ont/geosparql#hasGeometry",
-  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
-  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@language" : "en",
-    "@value" : "has geometry"
-  }, {
-    "@language" : "es",
-    "@value" : "tiene geometría"
-  } ]
-}, {
-  "@id" : "http://www.opengis.net/ont/geosparql#sfWithin",
-  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ]
-}, {
-  "@id" : "http://www.opengis.net/ont/geosparql#wktLiteral",
-  "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Datatype" ]
-}, {
-  "@id" : "http://www.opengis.net/ont/sf#Geometry",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ]
-}, {
-  "@id" : "http://www.w3.org/2001/XMLSchema#date",
-  "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Datatype" ]
-}, {
-  "@id" : "http://www.w3.org/ns/org#Organization",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ]
-} ]
+[
+  {
+    "@id": "_:genid1",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Restriction"
+    ],
+    "http://www.w3.org/2002/07/owl#onProperty": [
+      {
+        "@id": "http://www.opengis.net/ont/geosparql#hasGeometry"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#someValuesFrom": [
+      {
+        "@id": "http://www.opengis.net/ont/sf#Geometry"
+      }
+    ]
+  },
+  {
+    "@id": "_:genid2",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Restriction"
+    ],
+    "http://www.w3.org/2002/07/owl#onClass": [
+      {
+        "@id": "http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio#Municipio"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#onProperty": [
+      {
+        "@id": "http://vocab.linkeddata.es/datosabiertos/def/common/zone#locatedIn"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#qualifiedCardinality": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#nonNegativeInteger",
+        "@value": "1"
+      }
+    ]
+  },
+  {
+    "@id": "http://dbpedia.org/ontology/GovernmentalAdministrativeRegion",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ]
+  },
+  {
+    "@id": "http://purl.org/dc/elements/1.1/abstract",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#AnnotationProperty"
+    ]
+  },
+  {
+    "@id": "http://purl.org/dc/elements/1.1/creator",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#AnnotationProperty"
+    ]
+  },
+  {
+    "@id": "http://purl.org/dc/elements/1.1/description",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#AnnotationProperty"
+    ]
+  },
+  {
+    "@id": "http://purl.org/dc/elements/1.1/title",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#AnnotationProperty"
+    ]
+  },
+  {
+    "@id": "http://purl.org/dc/terms/issued",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#AnnotationProperty"
+    ]
+  },
+  {
+    "@id": "http://purl.org/vocab/vann/preferredNamespacePrefix",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#AnnotationProperty"
+    ]
+  },
+  {
+    "@id": "http://purl.org/vocab/vann/preferredNamespaceUri",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#AnnotationProperty"
+    ]
+  },
+  {
+    "@id": "http://vocab.linkeddata.es/datosabiertos/def/common/zone#",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Ontology"
+    ],
+    "http://purl.org/dc/elements/1.1/abstract": [
+      {
+        "@language": "es",
+        "@value": "Esta ontología tiene como propósito definir, categorizar y relacionar las Zonas Regulatorias en el contexto de la movilidad inteligente y la gestión urbana (Smart Cities). Se ha diseñado como una extensión modular de la ontología del Sector Público de España (esadm)."
+      },
+      {
+        "@language": "en",
+        "@value": "This ontology aims to define, categorize, and relate Regulatory Zones in the context of smart mobility and urban management (Smart Cities). It is designed as a modular extension of the Spanish Public Sector ontology (esadm)."
+      }
+    ],
+    "http://purl.org/dc/elements/1.1/creator": [
+      {
+        "@value": "OEG-UPM"
+      }
+    ],
+    "http://purl.org/dc/elements/1.1/title": [
+      {
+        "@language": "en",
+        "@value": "Base Zoning Ontology"
+      },
+      {
+        "@language": "es",
+        "@value": "Ontología base de Zonas"
+      }
+    ],
+    "http://purl.org/dc/terms/issued": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#date",
+        "@value": "2026-01-27"
+      }
+    ],
+    "http://purl.org/vocab/vann/preferredNamespacePrefix": [
+      {
+        "@value": "edintzone"
+      }
+    ],
+    "http://purl.org/vocab/vann/preferredNamespaceUri": [
+      {
+        "@value": "http://vocab.linkeddata.es/datosabiertos/def/common/zone#"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "es",
+        "@value": "Actualmente, existen vocabularios para divisiones administrativas (esadm) y geometrías (GeoSPARQL), pero existía un vacío semántico para representar entidades funcionales que se superponen a la trama urbana (ZBE, Carga y Descarga, etc...) sin responder a límites administrativos fijos. Esta ontología cubre dicho hueco."
+      },
+      {
+        "@language": "en",
+        "@value": "Currently, vocabularies exist for administrative divisions (esadm) and geometries (GeoSPARQL), but there was a semantic gap for representing functional entities that overlay the urban grid (LEZ, Loading/Unloading, etc.) without adhering to fixed administrative boundaries. This ontology fills that gap."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "Base Zoning Ontology for Smart Mobility Use Case."
+      },
+      {
+        "@language": "es",
+        "@value": "Ontología base de Zonas para el Caso de Uso de Movilidad Inteligente."
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#imports": [
+      {
+        "@id": "http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio_v0.5"
+      },
+      {
+        "@id": "http://vocab.linkeddata.es/datosabiertos/def/urbanismo-infraestructuras/callejero_v0.3"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#versionInfo": [
+      {
+        "@value": "0.1.0"
+      }
+    ]
+  },
+  {
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Urban area or axis characterized by a high density of commercial and service activity, frequently supported by regional commerce regulations under the figure of Open Commercial Zone."
+      },
+      {
+        "@language": "es",
+        "@value": "Área o eje urbano caracterizado por una alta densidad de actividad comercial y de servicios, frecuentemente amparada por normativas autonómicas de comercio bajo la figura de Zona Comercial Abierta (ZCA)."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "Commercial Zone"
+      },
+      {
+        "@language": "es",
+        "@value": "Zona Comercial"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {}
+    ]
+  },
+  {
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Area delimited by municipal regulations to promote commercial or tourist activities."
+      },
+      {
+        "@language": "es",
+        "@value": "Área delimitada por normativas municipales para fomentar actividades comerciales o turísticas."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "Economic Interest Zone"
+      },
+      {
+        "@language": "es",
+        "@value": "Zona de Interés Económico"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "http://vocab.linkeddata.es/datosabiertos/def/common/zone#RegulatedZone"
+      }
+    ]
+  },
+  {
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Area of the Union customs territory where non-Community goods are considered not situated within customs territory."
+      },
+      {
+        "@language": "es",
+        "@value": "Área del territorio aduanero de la Unión donde las mercancías no comunitarias se consideran no situadas en territorio aduanero."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "Free Trade Zone"
+      },
+      {
+        "@language": "es",
+        "@value": "Zona Franca"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {}
+    ]
+  },
+  {
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "es",
+        "@value": "Espacio libre, parque o área natural urbana sujeta a un régimen de protección urbanística que limita su edificabilidad y regula su uso público, vital para estrategias de mitigación climática y calidad del aire."
+      },
+      {
+        "@language": "en",
+        "@value": "Open space, park, or urban natural area subject to a spatial planning protection regime that limits buildability and regulates public use, vital for climate mitigation and air quality strategies."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "Green Space Zone"
+      },
+      {
+        "@language": "es",
+        "@value": "Zona Verde"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "http://vocab.linkeddata.es/datosabiertos/def/common/zone#RegulatedZone"
+      }
+    ]
+  },
+  {
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "es",
+        "@value": "Zonas con gran afluencia turística donde se aplica plena libertad de apertura comercial en domingos y festivos."
+      },
+      {
+        "@language": "en",
+        "@value": "Zones with high tourist influx where full freedom of commercial opening on Sundays and holidays applies."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "High Tourism Influx Zone"
+      },
+      {
+        "@language": "es",
+        "@value": "Zona de Gran Afluencia Turística"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {}
+    ]
+  },
+  {
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Urban area with special heritage protection where strict restrictions on access, circulation, and parking apply to preserve the historical fabric."
+      },
+      {
+        "@language": "es",
+        "@value": "Área urbana de especial protección patrimonial donde se aplican restricciones estrictas de acceso, circulación y estacionamiento para preservar la trama histórica."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "es",
+        "@value": "Casco Histórico"
+      },
+      {
+        "@language": "en",
+        "@value": "Historical Center"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "http://vocab.linkeddata.es/datosabiertos/def/common/zone#RegulatedZone"
+      }
+    ]
+  },
+  {
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Area delimited by urban planning and Cadastre intended predominantly to host industrial, logistics, and business activities."
+      },
+      {
+        "@language": "es",
+        "@value": "Área delimitada por el planeamiento urbanístico (PGOU) y el Catastro destinada predominantemente a albergar actividades industriales, logísticas y empresariales."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "Industrial Zone"
+      },
+      {
+        "@language": "es",
+        "@value": "Polígono Industrial"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {}
+    ]
+  },
+  {
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Area with a high concentration of leisure and hospitality establishments. Frequently subject to specific urban and environmental regulations, such as Special Acoustic Protection Zones."
+      },
+      {
+        "@language": "es",
+        "@value": "Área con alta concentración de establecimientos de ocio y hostelería. Frecuentemente sujeta a regulaciones urbanísticas y medioambientales específicas, como las Zonas de Protección Acústica Especial (ZPAE)."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "Leisure Zone"
+      },
+      {
+        "@language": "es",
+        "@value": "Zona de Ocio"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "http://vocab.linkeddata.es/datosabiertos/def/common/zone#RegulatedZone"
+      }
+    ]
+  },
+  {
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "es",
+        "@value": "Zona reservada exclusivamente para la parada técnica de vehículos profesionales dedicados a la Distribución Urbana de Mercancías (DUM)."
+      },
+      {
+        "@language": "en",
+        "@value": "Zone reserved exclusively for the technical stop of professional vehicles dedicated to Urban Goods Distribution."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "Loading and Unloading Zone"
+      },
+      {
+        "@language": "es",
+        "@value": "Zona de Carga y Descarga"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {}
+    ]
+  },
+  {
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "es",
+        "@value": "Infraestructura especializada en actividades de transporte y logística. Definida legalmente como 'Centro de Transporte y Logística'."
+      },
+      {
+        "@language": "en",
+        "@value": "Infrastructure specialized in transport and logistics activities. Legally defined as 'Transport and Logistics Center'."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "Logistics Activity Zone"
+      },
+      {
+        "@language": "es",
+        "@value": "Zona de Actividad Logística"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {}
+    ]
+  },
+  {
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "es",
+        "@value": "Zona definida por la administración donde se aplican restricciones de acceso, circulación y estacionamiento de vehículos con el objetivo de mejorar la calidad del aire."
+      },
+      {
+        "@language": "en",
+        "@value": "Zone defined by the administration where restrictions on vehicle access, circulation, and parking apply to improve air quality."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "Low Emission Zone"
+      },
+      {
+        "@language": "es",
+        "@value": "Zona de Bajas Emisiones"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "http://vocab.linkeddata.es/datosabiertos/def/common/zone#RegulatedZone"
+      }
+    ]
+  },
+  {
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "es",
+        "@value": "Zona definida por la administración donde se aplican restricciones de ruido y límites de emisión acústica para proteger la salud pública y el bienestar ciudadano."
+      },
+      {
+        "@language": "en",
+        "@value": "Zone defined by the administration where noise restrictions and acoustic emission limits apply to protect public health and citizen well-being."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "Low Noise Emission Zone"
+      },
+      {
+        "@language": "es",
+        "@value": "Zona de Bajas Emisiones de Ruido"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "http://vocab.linkeddata.es/datosabiertos/def/common/zone#RegulatedZone"
+      }
+    ]
+  },
+  {
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Strategic parking zone located on the periphery and connected to public transport networks."
+      },
+      {
+        "@language": "es",
+        "@value": "Zona de estacionamiento estratégico situado en la periferia y conectado con redes de transporte público."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "Park and Ride Zone"
+      },
+      {
+        "@language": "es",
+        "@value": "Zona de Estacionamiento Disuasorio"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {}
+    ]
+  },
+  {
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Road or area reserved entirely or partially for pedestrian traffic, with strict speed regulations for permitted vehicles and a general prohibition on parking."
+      },
+      {
+        "@language": "es",
+        "@value": "Vía o área reservada total o parcialmente para la circulación de peatones, con regulaciones estrictas de velocidad para los vehículos permitidos y prohibición general de estacionamiento."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "Pedestrian Zone"
+      },
+      {
+        "@language": "es",
+        "@value": "Zona Peatonal"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "http://vocab.linkeddata.es/datosabiertos/def/common/zone#RegulatedZone"
+      }
+    ]
+  },
+  {
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Parking zone legally reserved for vehicles transporting Persons with Reduced Mobility (PRM), regulated by municipal and national accessibility laws."
+      },
+      {
+        "@language": "es",
+        "@value": "Zona de estacionamiento reservada legalmente para vehículos que transportan a Personas con Movilidad Reducida (PMR), regulada por normativas municipales y estatales de accesibilidad."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "Reduced Mobility Parking Zone"
+      },
+      {
+        "@language": "es",
+        "@value": "Zona de Estacionamiento PMR"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {}
+    ]
+  },
+  {
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Public road zone where parking is subject to time regulation, fee payment, or other restrictions."
+      },
+      {
+        "@language": "es",
+        "@value": "Zona de la vía pública donde el estacionamiento está sujeto a regulación horaria, pago de tasas u otras restricciones."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "Regulated Parking Zone"
+      },
+      {
+        "@language": "es",
+        "@value": "Zona de Estacionamiento Regulado"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "http://vocab.linkeddata.es/datosabiertos/def/common/zone#RegulatedZone"
+      }
+    ]
+  },
+  {
+    "@id": "http://vocab.linkeddata.es/datosabiertos/def/common/zone#RegulatedZone",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "es",
+        "@value": "Area a la que se aplica una regulacion o normativa particular"
+      },
+      {
+        "@language": "en",
+        "@value": "Area to which a particular regulation or policy applies"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "Regulated Zone"
+      },
+      {
+        "@language": "es",
+        "@value": "Zona regulatoria"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "http://www.opengis.net/ont/geosparql#Feature"
+      },
+      {
+        "@id": "_:genid1"
+      },
+      {
+        "@id": "_:genid2"
+      }
+    ]
+  },
+  {
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Controlled testing environment authorized for research trials with automated vehicles or new forms of mobility."
+      },
+      {
+        "@language": "es",
+        "@value": "Espacio controlado de pruebas autorizado para la realización de ensayos de investigación con vehículos automatizados o nuevas formas de movilidad."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "Regulatory Sandbox"
+      },
+      {
+        "@language": "es",
+        "@value": "Sandbox Regulatorio"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {}
+    ]
+  },
+  {
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "es",
+        "@value": "Zona destinada prioritaria o exclusivamente al estacionamiento de vehículos de residentes empadronados."
+      },
+      {
+        "@language": "en",
+        "@value": "Zone intended primarily or exclusively for parking vehicles of registered residents."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "Residential Parking Zone"
+      },
+      {
+        "@language": "es",
+        "@value": "Zona de Estacionamiento Residencial"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {}
+    ]
+  },
+  {
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Urban area (such as Residential Priority Areas) where vehicle access is limited to residents, public transport, or authorized vehicles for reasons of traffic flow, safety, or road capacity."
+      },
+      {
+        "@language": "es",
+        "@value": "Área urbana (como las Áreas de Prioridad Residencial - APR) donde el acceso de vehículos está limitado a residentes, transporte público o vehículos autorizados por motivos de fluidez, seguridad o capacidad viaria."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "Restricted Access Zone"
+      },
+      {
+        "@language": "es",
+        "@value": "Zona de Acceso Restringido"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "http://vocab.linkeddata.es/datosabiertos/def/common/zone#RegulatedZone"
+      }
+    ]
+  },
+  {
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "es",
+        "@value": "Espacio físico para el fomento de la I+D+i y la transferencia de conocimiento."
+      },
+      {
+        "@language": "en",
+        "@value": "Physical space for promoting R&D&I and knowledge transfer."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "es",
+        "@value": "Parque Científico y Tecnológico"
+      },
+      {
+        "@language": "en",
+        "@value": "Science and Technology Park"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {}
+    ]
+  },
+  {
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "es",
+        "@value": "Zona destinada principalmente a usuarios visitantes con limitación temporal estricta y tarificación para favorecer la alta rotación."
+      },
+      {
+        "@language": "en",
+        "@value": "Zone intended primarily for visitors with strict time limits and fees to encourage high vehicle turnover."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "Short-term Parking Zone"
+      },
+      {
+        "@language": "es",
+        "@value": "Zona de Estacionamiento de Rotación"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {}
+    ]
+  },
+  {
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "es",
+        "@value": "Zona acotada para la modalidad de venta realizada fuera de establecimiento comercial permanente (mercadillos)."
+      },
+      {
+        "@language": "en",
+        "@value": "Zone demarcated for sales conducted outside of permanent commercial establishments (street markets)."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "Street Vending Zone"
+      },
+      {
+        "@language": "es",
+        "@value": "Zona de Venta Ambulante"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {}
+    ]
+  },
+  {
+    "@id": "http://vocab.linkeddata.es/datosabiertos/def/common/zone#composedOf",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "es",
+        "@value": "Relación que permite definir una Zona Regulatoria mediante uno o más entidades administrativas (Via, Distrito, Municipio...)."
+      },
+      {
+        "@language": "en",
+        "@value": "Relationship that allows defining a Regulated Zone via one or more administrative entities (Street, District, Municipality...)."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "http://vocab.linkeddata.es/datosabiertos/def/common/zone#RegulatedZone"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "composed of"
+      },
+      {
+        "@language": "es",
+        "@value": "compuesta por"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://dbpedia.org/ontology/GovernmentalAdministrativeRegion"
+      },
+      {
+        "@id": "http://www.geonames.org/ontology#Feature"
+      }
+    ]
+  },
+  {
+    "@id": "http://vocab.linkeddata.es/datosabiertos/def/common/zone#endDate",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#DatatypeProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Date when the zone regulation ceases to be effective."
+      },
+      {
+        "@language": "es",
+        "@value": "Fecha en la que la regulación de la zona deja de ser efectiva (derogación o fin de periodo)."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "http://vocab.linkeddata.es/datosabiertos/def/common/zone#RegulatedZone"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "end date"
+      },
+      {
+        "@language": "es",
+        "@value": "fecha de fin de vigor"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://www.w3.org/2001/XMLSchema#date"
+      }
+    ]
+  },
+  {
+    "@id": "http://vocab.linkeddata.es/datosabiertos/def/common/zone#hasRegulatedZone",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Inverse property of 'locatedIn'. Links a municipality with the regulated zones it contains."
+      },
+      {
+        "@language": "es",
+        "@value": "Propiedad inversa de 'ubicado'. Vincula un municipio con las zonas regulatorias que contiene."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio#Municipio"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "has regulated zone"
+      },
+      {
+        "@language": "es",
+        "@value": "tiene zona regulatoria"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://vocab.linkeddata.es/datosabiertos/def/common/zone#RegulatedZone"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#inverseOf": [
+      {
+        "@id": "http://vocab.linkeddata.es/datosabiertos/def/common/zone#locatedIn"
+      }
+    ]
+  },
+  {
+    "@id": "http://vocab.linkeddata.es/datosabiertos/def/common/zone#hasRegulatedZoneType",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "http://vocab.linkeddata.es/datosabiertos/def/common/zone#RegulatedZone"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@type": "http://www.w3.org/2002/07/owl#Class",
+        "http://www.w3.org/2002/07/owl#intersectionOf": [
+          {
+            "@list": [
+              {
+                "@id": "http://www.w3.org/2004/02/skos/core#Concept"
+              },
+              {
+                "@type": "http://www.w3.org/2002/07/owl#Restriction",
+                "http://www.w3.org/2002/07/owl#onProperty": [
+                  {
+                    "@id": "http://www.w3.org/2004/02/skos/core#inScheme"
+                  }
+                ],
+                "http://www.w3.org/2002/07/owl#hasValue": [
+                  {
+                    "@id": "http://vocab.linkeddata.es/datosabiertos/kos/edint/RegulatedZoneType"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Links a regulated zone to its type classification from the RegulatedZoneType SKOS concept scheme."
+      },
+      {
+        "@language": "es",
+        "@value": "Vincula una zona regulada a su clasificación de tipo del esquema de conceptos SKOS RegulatedZoneType."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "has regulated zone type"
+      },
+      {
+        "@language": "es",
+        "@value": "tiene tipo de zona regulada"
+      }
+    ]
+  },
+  {
+    "@id": "http://vocab.linkeddata.es/datosabiertos/def/common/zone#legalReference",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#DatatypeProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "es",
+        "@value": "Enlace al documento oficial (Boletín, Ordenanza) que establece la creación de la zona."
+      },
+      {
+        "@language": "en",
+        "@value": "Link to the official document (Bulletin, Ordinance) establishing the zone."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "http://vocab.linkeddata.es/datosabiertos/def/common/zone#RegulatedZone"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "legal reference"
+      },
+      {
+        "@language": "es",
+        "@value": "referencia legal"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://www.w3.org/2001/XMLSchema#anyURI"
+      }
+    ]
+  },
+  {
+    "@id": "http://vocab.linkeddata.es/datosabiertos/def/common/zone#locatedIn",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "es",
+        "@value": "Relaciona una zona regulatoria con el municipio administrativo al que pertenece."
+      },
+      {
+        "@language": "en",
+        "@value": "Relates a regulated zone to the administrative municipality it belongs to."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "http://vocab.linkeddata.es/datosabiertos/def/common/zone#RegulatedZone"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "located in municipality"
+      },
+      {
+        "@language": "es",
+        "@value": "ubicado en municipio"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio#Municipio"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
+      {
+        "@id": "http://www.opengis.net/ont/geosparql#sfWithin"
+      }
+    ]
+  },
+  {
+    "@id": "http://vocab.linkeddata.es/datosabiertos/def/common/zone#managedBy",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "es",
+        "@value": "Organización (pública o privada) encargada de la gestión y operación de la zona."
+      },
+      {
+        "@language": "en",
+        "@value": "Organization (public or private) responsible for the management and operation of the zone."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "http://vocab.linkeddata.es/datosabiertos/def/common/zone#RegulatedZone"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "es",
+        "@value": "entidad gestora"
+      },
+      {
+        "@language": "en",
+        "@value": "managed by"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://www.w3.org/ns/org#Organization"
+      }
+    ]
+  },
+  {
+    "@id": "http://vocab.linkeddata.es/datosabiertos/def/common/zone#scheduleDescription",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#DatatypeProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "es",
+        "@value": "Descripción textual del horario de funcionamiento de la zona (ej. \"Lunes a Viernes de 07:00 a 20:00\")."
+      },
+      {
+        "@language": "en",
+        "@value": "Textual description of the zone's operating schedule (e.g., \"Monday to Friday from 07:00 to 20:00\")."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "http://vocab.linkeddata.es/datosabiertos/def/common/zone#RegulatedZone"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "es",
+        "@value": "horario descriptivo"
+      },
+      {
+        "@language": "en",
+        "@value": "schedule description"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://www.w3.org/2001/XMLSchema#string"
+      }
+    ]
+  },
+  {
+    "@id": "http://vocab.linkeddata.es/datosabiertos/def/common/zone#startDate",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#DatatypeProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Date from which the zone regulation becomes effective."
+      },
+      {
+        "@language": "es",
+        "@value": "Fecha a partir de la cual la regulación de la zona comienza a ser efectiva."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "http://vocab.linkeddata.es/datosabiertos/def/common/zone#RegulatedZone"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "entry into force date"
+      },
+      {
+        "@language": "es",
+        "@value": "fecha de entrada en vigor"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://www.w3.org/2001/XMLSchema#date"
+      }
+    ]
+  },
+  {
+    "@id": "http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio#Municipio",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ]
+  },
+  {
+    "@id": "http://www.geonames.org/ontology#Feature",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ]
+  },
+  {
+    "@id": "http://www.opengis.net/ont/geosparql#Feature",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ]
+  },
+  {
+    "@id": "http://www.opengis.net/ont/geosparql#asWKT",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#DatatypeProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Geometry representation in Well-Known Text format."
+      },
+      {
+        "@language": "es",
+        "@value": "Representación de la geometría en formato Well-Known Text."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "http://www.opengis.net/ont/sf#Geometry"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "as WKT"
+      },
+      {
+        "@language": "es",
+        "@value": "como WKT"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://www.opengis.net/ont/geosparql#wktLiteral"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.opengis.net/ont/geosparql#hasGeometry",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "has geometry"
+      },
+      {
+        "@language": "es",
+        "@value": "tiene geometría"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.opengis.net/ont/geosparql#sfWithin",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ]
+  },
+  {
+    "@id": "http://www.opengis.net/ont/geosparql#wktLiteral",
+    "@type": [
+      "http://www.w3.org/2000/01/rdf-schema#Datatype"
+    ]
+  },
+  {
+    "@id": "http://www.opengis.net/ont/sf#Geometry",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ]
+  },
+  {
+    "@id": "http://www.w3.org/2001/XMLSchema#date",
+    "@type": [
+      "http://www.w3.org/2000/01/rdf-schema#Datatype"
+    ]
+  },
+  {
+    "@id": "http://www.w3.org/ns/org#Organization",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ]
+  }
+]
