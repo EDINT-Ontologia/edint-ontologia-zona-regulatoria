@@ -9,12 +9,14 @@
 <http://vocab.linkeddata.es/datosabiertos/def/common/zone#> rdf:type owl:Ontology ;
                                                              owl:imports <http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio_v0.5> ,
                                                                          <http://vocab.linkeddata.es/datosabiertos/def/urbanismo-infraestructuras/callejero_v0.3> ;
-                                                             <http://purl.org/dc/elements/1.1/abstract> "Esta ontología tiene como propósito definir, categorizar y relacionar las Zonas Regulatorias en el contexto de la movilidad inteligente y la gestión urbana (Smart Cities). Se ha diseñado como una extensión modular de la ontología del Sector Público de España (esadm)."@es ,
-                                                                                                        "This ontology aims to define, categorize, and relate Regulatory Zones in the context of smart mobility and urban management (Smart Cities). It is designed as a modular extension of the Spanish Public Sector ontology (esadm)."@en ;
-                                                             <http://purl.org/dc/elements/1.1/creator> "OEG-UPM" ;
-                                                             <http://purl.org/dc/elements/1.1/title> "Base Zoning Ontology"@en ,
-                                                                                                     "Ontología base de Zonas"@es ;
+                                                             <http://purl.org/dc/terms/created> "2026-01-27"^^xsd:date ;
+                                                             <http://purl.org/dc/terms/creator> "OEG-UPM" ;
+                                                             <http://purl.org/dc/terms/description> "Esta ontología tiene como propósito definir, categorizar y relacionar las Zonas Regulatorias en el contexto de la movilidad inteligente y la gestión urbana (Smart Cities). Se ha diseñado como una extensión modular de la ontología del Sector Público de España (esadm)."@es ,
+                                                                                                    "This ontology aims to define, categorize, and relate Regulatory Zones in the context of smart mobility and urban management (Smart Cities). It is designed as a modular extension of the Spanish Public Sector ontology (esadm)."@en ;
                                                              <http://purl.org/dc/terms/issued> "2026-01-27"^^xsd:date ;
+                                                             <http://purl.org/dc/terms/license> <https://creativecommons.org/licenses/by/4.0/> ;
+                                                             <http://purl.org/dc/terms/title> "Base Zoning Ontology"@en ,
+                                                                                              "Ontología base de Zonas"@es ;
                                                              <http://purl.org/vocab/vann/preferredNamespacePrefix> "edintzone" ;
                                                              <http://purl.org/vocab/vann/preferredNamespaceUri> "http://vocab.linkeddata.es/datosabiertos/def/common/zone#" ;
                                                              rdfs:comment "Actualmente, existen vocabularios para divisiones administrativas (esadm) y geometrías (GeoSPARQL), pero existía un vacío semántico para representar entidades funcionales que se superponen a la trama urbana (ZBE, Carga y Descarga, etc...) sin responder a límites administrativos fijos. Esta ontología cubre dicho hueco."@es ,
@@ -43,8 +45,28 @@
 <http://purl.org/dc/elements/1.1/title> rdf:type owl:AnnotationProperty .
 
 
+###  http://purl.org/dc/terms/created
+<http://purl.org/dc/terms/created> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/creator
+<http://purl.org/dc/terms/creator> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/description
+<http://purl.org/dc/terms/description> rdf:type owl:AnnotationProperty .
+
+
 ###  http://purl.org/dc/terms/issued
 <http://purl.org/dc/terms/issued> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/license
+<http://purl.org/dc/terms/license> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/title
+<http://purl.org/dc/terms/title> rdf:type owl:AnnotationProperty .
 
 
 ###  http://purl.org/vocab/vann/preferredNamespacePrefix
@@ -74,8 +96,8 @@ xsd:date rdf:type rdfs:Datatype .
 ###  http://vocab.linkeddata.es/datosabiertos/def/common/zone#composedOf
 :composedOf rdf:type owl:ObjectProperty ;
             rdfs:domain :RegulatedZone ;
-            rdfs:range <http://vocab.linkeddata.es/datosabiertos/def/urbanismo-infraestructuras/callejero#Via> ,
-                       <http://vocab.linkeddata.es/datosabiertos/def/urbanismo-infraestructuras/callejero#TramoVia> ,
+            rdfs:range <http://vocab.linkeddata.es/datosabiertos/def/urbanismo-infraestructuras/callejero#TramoVia> ,
+                       <http://vocab.linkeddata.es/datosabiertos/def/urbanismo-infraestructuras/callejero#Via> ,
                        <http://www.geonames.org/ontology#Feature> ;
             rdfs:comment "Relación que permite definir una Zona Regulatoria mediante una o más vías o tramos de vía del vocabulario Callejero."@es ,
                          "Relationship that allows defining a Regulated Zone via one or more streets or street segments from the Callejero vocabulary."@en ;
@@ -92,6 +114,23 @@ xsd:date rdf:type rdfs:Datatype .
                                "Propiedad inversa de 'ubicado'. Vincula un municipio con las zonas regulatorias que contiene."@es ;
                   rdfs:label "has regulated zone"@en ,
                              "tiene zona regulatoria"@es .
+
+
+###  http://vocab.linkeddata.es/datosabiertos/def/common/zone#hasRegulatedZoneType
+:hasRegulatedZoneType rdf:type owl:ObjectProperty ;
+                      rdfs:domain :RegulatedZone ;
+                      rdfs:range [ owl:intersectionOf ( <http://www.w3.org/2004/02/skos/core#Concept>
+                                                        [ rdf:type owl:Restriction ;
+                                                          owl:onProperty <http://www.w3.org/2004/02/skos/core#inScheme> ;
+                                                          owl:hasValue <http://vocab.linkeddata.es/datosabiertos/kos/edint/RegulatedZoneType>
+                                                        ]
+                                                      ) ;
+                                   rdf:type owl:Class
+                                 ] ;
+                      rdfs:comment "Links a regulated zone to its type classification from the RegulatedZoneType SKOS concept scheme."@en ,
+                                   "Vincula una zona regulada a su clasificación de tipo del esquema de conceptos SKOS RegulatedZoneType."@es ;
+                      rdfs:label "has regulated zone type"@en ,
+                                 "tiene tipo de zona regulada"@es .
 
 
 ###  http://vocab.linkeddata.es/datosabiertos/def/common/zone#locatedIn
@@ -115,24 +154,6 @@ xsd:date rdf:type rdfs:Datatype .
                       "managed by"@en .
 
 
-
-
-###  http://vocab.linkeddata.es/datosabiertos/def/common/zone#hasRegulatedZoneType
-:hasRegulatedZoneType rdf:type owl:ObjectProperty ;
-                      rdfs:domain :RegulatedZone ;
-                      rdfs:range [ rdf:type owl:Class ;
-                                   owl:intersectionOf ( <http://www.w3.org/2004/02/skos/core#Concept>
-                                                       [ rdf:type owl:Restriction ;
-                                                         owl:onProperty <http://www.w3.org/2004/02/skos/core#inScheme> ;
-                                                         owl:hasValue <http://vocab.linkeddata.es/datosabiertos/kos/edint/RegulatedZoneType>
-                                                       ]
-                                                     )
-                                 ] ;
-                      rdfs:comment "Links a regulated zone to its type classification from the RegulatedZoneType SKOS concept scheme."@en ,
-                                   "Vincula una zona regulada a su clasificación de tipo del esquema de conceptos SKOS RegulatedZoneType."@es ;
-                      rdfs:label "has regulated zone type"@en ,
-                                 "tiene tipo de zona regulada"@es .
-
 ###  http://www.opengis.net/ont/geosparql#hasGeometry
 <http://www.opengis.net/ont/geosparql#hasGeometry> rdf:type owl:ObjectProperty ;
                                                    rdfs:label "has geometry"@en ,
@@ -141,6 +162,10 @@ xsd:date rdf:type rdfs:Datatype .
 
 ###  http://www.opengis.net/ont/geosparql#sfWithin
 <http://www.opengis.net/ont/geosparql#sfWithin> rdf:type owl:ObjectProperty .
+
+
+###  http://www.w3.org/2004/02/skos/core#inScheme
+<http://www.w3.org/2004/02/skos/core#inScheme> rdf:type owl:ObjectProperty .
 
 
 #################################################################
@@ -201,30 +226,6 @@ xsd:date rdf:type rdfs:Datatype .
 #    Classes
 #################################################################
 
-###  http://vocab.linkeddata.es/datosabiertos/def/urbanismo-infraestructuras/callejero#Via
-<http://vocab.linkeddata.es/datosabiertos/def/urbanismo-infraestructuras/callejero#Via> rdf:type owl:Class .
-
-
-###  http://vocab.linkeddata.es/datosabiertos/def/urbanismo-infraestructuras/callejero#TramoVia
-<http://vocab.linkeddata.es/datosabiertos/def/urbanismo-infraestructuras/callejero#TramoVia> rdf:type owl:Class .
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 ###  http://vocab.linkeddata.es/datosabiertos/def/common/zone#RegulatedZone
 :RegulatedZone rdf:type owl:Class ;
                rdfs:subClassOf <http://www.opengis.net/ont/geosparql#Feature> ,
@@ -243,14 +244,16 @@ xsd:date rdf:type rdfs:Datatype .
                           "Zona regulatoria"@es .
 
 
-
-
-
-
-
-
 ###  http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio#Municipio
 <http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio#Municipio> rdf:type owl:Class .
+
+
+###  http://vocab.linkeddata.es/datosabiertos/def/urbanismo-infraestructuras/callejero#TramoVia
+<http://vocab.linkeddata.es/datosabiertos/def/urbanismo-infraestructuras/callejero#TramoVia> rdf:type owl:Class .
+
+
+###  http://vocab.linkeddata.es/datosabiertos/def/urbanismo-infraestructuras/callejero#Via
+<http://vocab.linkeddata.es/datosabiertos/def/urbanismo-infraestructuras/callejero#Via> rdf:type owl:Class .
 
 
 ###  http://www.geonames.org/ontology#Feature
@@ -265,8 +268,20 @@ xsd:date rdf:type rdfs:Datatype .
 <http://www.opengis.net/ont/sf#Geometry> rdf:type owl:Class .
 
 
+###  http://www.w3.org/2004/02/skos/core#Concept
+<http://www.w3.org/2004/02/skos/core#Concept> rdf:type owl:Class .
+
+
 ###  http://www.w3.org/ns/org#Organization
 <http://www.w3.org/ns/org#Organization> rdf:type owl:Class .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  http://vocab.linkeddata.es/datosabiertos/kos/edint/RegulatedZoneType
+<http://vocab.linkeddata.es/datosabiertos/kos/edint/RegulatedZoneType> rdf:type owl:NamedIndividual .
 
 
 ###  Generated by the OWL API (version 5.1.18) https://github.com/owlcs/owlapi/
