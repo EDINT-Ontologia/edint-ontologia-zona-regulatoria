@@ -9,7 +9,11 @@
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","url":"https://edint.es/def/zone","image":"http://vowl.visualdataweb.org/webvowl/#iri=https://edint.es/def/zone","name":"Ontología base de Zonas para el Caso de Uso de Movilidad Inteligente", "headline":"Esta ontología tiene como propósito definir, categorizar y relacionar las Zonas Regulatorias en el contexto de la movilidad inteligente y la gestión urbana (Smart Cities). Se ha diseñado como una extensión modular de la ontología del Sector Público de España (esadm).", "datePublished":"2026-01-27", "version":"v0.1.0", "license":"https://creativecommons.org/licenses/by/4.0/", "author":[{"@type":"Person","name":"Daniel Doña"},{"@type":"Person","name":"Edna Ruckhaus"},{"@type":"Person","name":"Lucía Sánchez"},{"@type":"Person","name":"Oscar Corcho"}]}</script>
 
 <script src="resources/jquery.js"></script> 
-<script src="resources/marked.min.js"></script> 
+<script src="resources/marked.min.js"></script>
+<link rel="stylesheet" href="resources/codemirror.css" media="screen">
+<script src="resources/codemirror.js"></script>
+<script src="resources/matchbrackets.js"></script>
+<script src="resources/turtle.js"></script>
     <script> 
 function loadHash() {
   jQuery(".markdown").each(function(el){jQuery(this).after(marked(jQuery(this).text())).remove()});

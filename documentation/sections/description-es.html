@@ -1,3 +1,139 @@
-<h2 id="desc" class="list">zonas: Descripci&oacute;n <span class="backlink"> volver a <a href="#toc">&iacute;ndice</a></span></h2>
-<span class="markdown">Descripci&oacute;n completa de la ontolog&iacute;a: en caso de ser posible, a&ntilde;adir un diagrama explicando c&oacute;omo las clases est&aacute;n relacionadas, ejemplos de uso, etc.</span>
+<h2 id="desc" class="list">Ontología base de Zonas para el Caso de Uso de Movilidad Inteligente.: Descripci&oacute;n <span class="backlink"> volver a <a href="#toc">&iacute;ndice</a></span></h2>
 
+<span class="markdown">Actualmente, existen vocabularios para divisiones administrativas (esadm) y geometrías (GeoSPARQL), pero existía un vacío semántico para representar entidades funcionales que se superponen a la trama urbana (ZBE, Carga y Descarga, etc...) sin responder a límites administrativos fijos. Esta ontología cubre dicho hueco.</span>
+
+<div style="padding: 25px; background-color: white; width: 100%; box-sizing: border-box; overflow: hidden;">
+    <a href="img/diagram.png" target="_blank" style="display: block;">
+        <img src="img/diagram.png" style="width: 100%; height: auto; display: block;"/>
+    </a>
+</div>
+
+Un ejemplo de entidades definidas por la ontología podría ser el siguiente:
+
+<pre>
+    <textarea style="resize:none" readonly id="code1" name="code" rows="75" cols="200">
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix org: <http://www.w3.org/ns/org#> .
+@prefix esadm: <http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio#> .
+@prefix edintzone: <https://edint.es/def/zone#> .
+
+# Custom Resource Prefixes
+@prefix ex-zona: <http://example.org/resource/zona/> .
+@prefix ex-via: <http://example.org/resource/via/> .
+@prefix ex-org: <http://example.org/resource/organization/> .
+
+#################################################################
+#    Regulatory Zone 1 - ESRO (Rotation / Blue Zone)
+#################################################################
+
+ex-zona:1-esro a edintzone:ShortTermParkingZone ;
+    rdfs:label "Zona 1 - ESRO (Estacionamiento Rotación)"@es ;
+    dc:description "Área de Zona 1 destinada a estacionamiento de rotación (zona azul). Máximo 2 horas."@es ;
+    
+    # Common Properties
+    edintzone:locatedIn <http://dbpedia.org/resource/Zaragoza> ;
+    edintzone:managedBy ex-org:z-m-ute ;
+    edintzone:scheduleDescription "Lunes a Viernes de 09:00 a 14:00 y de 17:00 a 20:00. Sábados, domingos y festivos sin regulación."^^xsd:string ;
+    edintzone:legalReference <https://www.zaragoza.es/sede/servicio/normativa/13296#tit3-capitulo4> ;
+
+    # Streets specifically listed as ESRO in Zona 1
+    edintzone:composedOf ex-via:calle-eusebio-blasco ,
+                        ex-via:calle-pedro-j-soler ,
+                        ex-via:plaza-san-pedro-nolasco ,
+                        ex-via:calle-san-andres ,
+                        ex-via:calle-san-jorge ,
+                        ex-via:calle-san-lorenzo ,
+                        ex-via:calle-santo-dominguito-de-val ,
+                        ex-via:calle-veronica .
+
+#################################################################
+#    Regulatory Zone 1 - ESRE (Residents / Orange Zone)
+#################################################################
+
+ex-zona:1-esre a edintzone:ResidentialParkingZone ;
+    rdfs:label "Zona 1 - ESRE (Estacionamiento Residentes)"@es ;
+    dc:description "Área de Zona 1 destinada prioritariamente a residentes (zona naranja)."@es ;
+    
+    # Common Properties
+    edintzone:locatedIn <http://dbpedia.org/resource/Zaragoza> ;
+    edintzone:managedBy ex-org:z-m-ute ;
+    edintzone:scheduleDescription "Lunes a Viernes de 09:00 a 14:00 y de 17:00 a 20:00. Sábados, domingos y festivos sin regulación."^^xsd:string ;
+    edintzone:legalReference <https://www.zaragoza.es/sede/servicio/normativa/13296#tit3-capitulo4> ;
+
+    # Streets specifically listed as ESRE in Zona 1
+    edintzone:composedOf ex-via:calle-mayor ,
+                        ex-via:calle-refugio .
+
+#################################################################
+#    Municipality
+#################################################################
+
+<http://dbpedia.org/resource/Zaragoza> a esadm:Municipio ;
+    rdfs:label "Zaragoza"@es ;
+    # Linking both distinct zones to the municipality
+    edintzone:hasRegulatedZone ex-zona:1-esro ,
+                            ex-zona:1-esre .
+
+#################################################################
+#    Management Organization
+#################################################################
+
+ex-org:z-m-ute a org:Organization ;
+    rdfs:label "Z+M UTE Servicio Estacionamiento Regulado de Zaragoza"@es ;
+    rdfs:comment "Unión Temporal de Empresas encargada de la gestión del servicio."@es .
+
+#################################################################
+#    Streets (Vias)
+#################################################################
+
+# ESRO Streets
+ex-via:calle-eusebio-blasco a esadm:Via ; rdfs:label "Calle Eusebio Blasco"@es .
+ex-via:calle-pedro-j-soler a esadm:Via ; rdfs:label "Calle Pedro J. Soler"@es .
+ex-via:plaza-san-pedro-nolasco a esadm:Via ; rdfs:label "Plaza San Pedro Nolasco"@es .
+ex-via:calle-san-andres a esadm:Via ; rdfs:label "Calle San Andrés"@es .
+ex-via:calle-san-jorge a esadm:Via ; rdfs:label "Calle San Jorge"@es .
+ex-via:calle-san-lorenzo a esadm:Via ; rdfs:label "Calle San Lorenzo"@es .
+ex-via:calle-santo-dominguito-de-val a esadm:Via ; rdfs:label "Calle Santo Dominguito de Val"@es .
+ex-via:calle-veronica a esadm:Via ; rdfs:label "Calle Verónica"@es .
+
+# ESRE Streets
+ex-via:calle-mayor a esadm:Via ; rdfs:label "Calle Mayor"@es .
+ex-via:calle-refugio a esadm:Via ; rdfs:label "Calle Refugio"@es .
+
+    </textarea>
+</pre>
+
+Adicionalmente, estos datos enlazados podrían consultarse empleando SPARQL como el siguiente ejemplo:
+
+<pre>
+    <textarea style="resize:none" readonly id="code2" name="code" rows="10" cols="200">
+PREFIX edintzone: <https://edint.es/def/zone#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+SELECT DISTINCT ?zona
+WHERE {
+    ?zona rdf:type ?tipo .
+    ?tipo rdfs:subClassOf* edintzone:RegulatedZone .
+}
+
+ORDER BY ?zona
+    </textarea>
+</pre>
+
+<script>
+    var editor1 = CodeMirror.fromTextArea(document.getElementById("code1"), {
+        mode: "text/turtle",
+        matchBrackets: true
+    });
+
+    var editor2 = CodeMirror.fromTextArea(document.getElementById("code2"), {
+        mode: "application/sparql-query",
+        matchBrackets: true
+    });
+</script>
