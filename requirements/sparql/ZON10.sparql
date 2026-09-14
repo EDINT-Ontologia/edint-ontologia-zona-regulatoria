@@ -1,0 +1,15 @@
+# Query: ZON10
+# Question: ¿Cuáles son las zonas de carga y descarga de un municipio concreto?
+
+# --- Query 1 ---
+PREFIX edintkos-rztype: <http://vocab.linkeddata.es/datosabiertos/kos/edint/RegulatedZoneType/>
+PREFIX edintzone: <http://vocab.linkeddata.es/datosabiertos/def/common/zone#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+
+SELECT DISTINCT ?zona
+WHERE {
+    ?zona rdf:type edintzone:RegulatedZone ;
+          edintzone:hasRegulatedZoneType edintkos-rztype:LoadingUnloadingZone ;
+          edintzone:locatedIn <URI_DEL_MUNICIPIO> .
+}
+

@@ -1,0 +1,45 @@
+# Query: ZON13
+# Question: ¿Cuáles son los horarios de funcionamiento o la programación de la regulación?
+
+# --- Query 1 ---
+PREFIX edintzone: <http://vocab.linkeddata.es/datosabiertos/def/common/zone#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+SELECT ?zona ?tipoZona ?horario
+WHERE {
+    ?zona rdf:type edintzone:RegulatedZone ;
+          edintzone:hasRegulatedZoneType ?tipoZona .
+    ?zona edintzone:scheduleDescription ?horario .
+}
+ORDER BY ?tipoZona ?zona ?horario
+
+# --- Query 2 ---
+PREFIX edintzone: <http://vocab.linkeddata.es/datosabiertos/def/common/zone#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+SELECT ?zona ?tipoZona ?nombreZona ?horario
+WHERE {
+    ?zona rdf:type edintzone:RegulatedZone ;
+          edintzone:hasRegulatedZoneType ?tipoZona .
+    ?zona edintzone:scheduleDescription ?horario .
+    OPTIONAL { ?zona rdfs:label ?nombreZona . }
+}
+ORDER BY ?tipoZona ?zona ?horario
+
+# --- Query 3 ---
+PREFIX edintzone: <http://vocab.linkeddata.es/datosabiertos/def/common/zone#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+SELECT ?zona ?tipoZona ?nombreZona ?horario
+WHERE {
+    ?zona rdf:type edintzone:RegulatedZone ;
+          edintzone:hasRegulatedZoneType ?tipoZona .
+    ?zona edintzone:scheduleDescription ?horario .
+    OPTIONAL { ?zona rdfs:label ?nombreZona . }
+    FILTER (!BOUND(?nombreZona) || lang(?nombreZona) = "" || lang(?nombreZona) = "es")
+}
+ORDER BY ?tipoZona ?zona ?horario
+

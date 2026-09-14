@@ -1,0 +1,37 @@
+# Query: ZON05
+# Question: ¿Cuáles son las zonas activas actualmente?
+
+# --- Query 1 ---
+PREFIX edintzone: <http://vocab.linkeddata.es/datosabiertos/def/common/zone#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+SELECT DISTINCT ?zona ?tipo
+WHERE {
+    ?zona rdf:type edintzone:RegulatedZone ;
+          edintzone:hasRegulatedZoneType ?tipo .
+    FILTER NOT EXISTS { ?zona edintzone:startDate ?inicio }
+    FILTER NOT EXISTS { ?zona edintzone:endDate ?fin }
+}
+ORDER BY ?zona
+
+# --- Query 2 ---
+PREFIX edintzone: <http://vocab.linkeddata.es/datosabiertos/def/common/zone#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+
+SELECT DISTINCT ?zona ?tipo ?inicio ?fin
+WHERE {
+    ?zona rdf:type edintzone:RegulatedZone ;
+          edintzone:hasRegulatedZoneType ?tipo .
+    OPTIONAL { ?zona edintzone:startDate ?inicio . }
+    OPTIONAL { ?zona edintzone:endDate ?fin . }
+    FILTER (
+        (!BOUND(?inicio) || xsd:date(?inicio) <= xsd:date(NOW()))
+        &&
+        (!BOUND(?fin) || xsd:date(?fin) >= xsd:date(NOW()))
+    )
+}
+ORDER BY ?zona
+
