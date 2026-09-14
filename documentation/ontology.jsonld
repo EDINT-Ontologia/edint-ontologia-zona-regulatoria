@@ -14,7 +14,7 @@
     "@id" : "http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio#Municipio"
   } ],
   "http://www.w3.org/2002/07/owl#onProperty" : [ {
-    "@id" : "http://vocab.linkeddata.es/datosabiertos/def/common/zone#locatedIn"
+    "@id" : "https://edint.es/def/zone#locatedIn"
   } ],
   "http://www.w3.org/2002/07/owl#qualifiedCardinality" : [ {
     "@type" : "http://www.w3.org/2001/XMLSchema#nonNegativeInteger",
@@ -36,7 +36,22 @@
   "@id" : "http://purl.org/dc/elements/1.1/title",
   "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
 }, {
+  "@id" : "http://purl.org/dc/terms/created",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
+}, {
+  "@id" : "http://purl.org/dc/terms/creator",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
+}, {
+  "@id" : "http://purl.org/dc/terms/description",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
+}, {
   "@id" : "http://purl.org/dc/terms/issued",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
+}, {
+  "@id" : "http://purl.org/dc/terms/license",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
+}, {
+  "@id" : "http://purl.org/dc/terms/title",
   "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
 }, {
   "@id" : "http://purl.org/vocab/vann/preferredNamespacePrefix",
@@ -45,34 +60,41 @@
   "@id" : "http://purl.org/vocab/vann/preferredNamespaceUri",
   "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
 }, {
-  "@id" : "http://vocab.linkeddata.es/datosabiertos/def/common/zone#",
+  "@id" : "https://edint.es/def/zone#",
   "@type" : [ "http://www.w3.org/2002/07/owl#Ontology" ],
-  "http://purl.org/dc/elements/1.1/abstract" : [ {
+  "http://purl.org/dc/terms/created" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#date",
+    "@value" : "2026-01-27"
+  } ],
+  "http://purl.org/dc/terms/creator" : [ {
+    "@value" : "OEG-UPM"
+  } ],
+  "http://purl.org/dc/terms/description" : [ {
     "@language" : "es",
     "@value" : "Esta ontología tiene como propósito definir, categorizar y relacionar las Zonas Regulatorias en el contexto de la movilidad inteligente y la gestión urbana (Smart Cities). Se ha diseñado como una extensión modular de la ontología del Sector Público de España (esadm)."
   }, {
     "@language" : "en",
     "@value" : "This ontology aims to define, categorize, and relate Regulatory Zones in the context of smart mobility and urban management (Smart Cities). It is designed as a modular extension of the Spanish Public Sector ontology (esadm)."
   } ],
-  "http://purl.org/dc/elements/1.1/creator" : [ {
-    "@value" : "OEG-UPM"
+  "http://purl.org/dc/terms/issued" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#date",
+    "@value" : "2026-01-27"
   } ],
-  "http://purl.org/dc/elements/1.1/title" : [ {
+  "http://purl.org/dc/terms/license" : [ {
+    "@id" : "https://creativecommons.org/licenses/by/4.0/"
+  } ],
+  "http://purl.org/dc/terms/title" : [ {
     "@language" : "en",
     "@value" : "Base Zoning Ontology"
   }, {
     "@language" : "es",
     "@value" : "Ontología base de Zonas"
   } ],
-  "http://purl.org/dc/terms/issued" : [ {
-    "@type" : "http://www.w3.org/2001/XMLSchema#date",
-    "@value" : "2026-01-27"
-  } ],
   "http://purl.org/vocab/vann/preferredNamespacePrefix" : [ {
     "@value" : "edintzone"
   } ],
   "http://purl.org/vocab/vann/preferredNamespaceUri" : [ {
-    "@value" : "http://vocab.linkeddata.es/datosabiertos/def/common/zone#"
+    "@value" : "https://edint.es/def/zone#"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "es",
@@ -97,7 +119,7 @@
     "@value" : "0.1.0"
   } ]
 }, {
-  "@id" : "http://vocab.linkeddata.es/datosabiertos/def/common/zone#CommercialZone",
+  "@id" : "https://edint.es/def/zone#CommercialZone",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
@@ -114,10 +136,10 @@
     "@value" : "Zona Comercial"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
-    "@id" : "http://vocab.linkeddata.es/datosabiertos/def/common/zone#EconomicInterestZone"
+    "@id" : "https://edint.es/def/zone#EconomicInterestZone"
   } ]
 }, {
-  "@id" : "http://vocab.linkeddata.es/datosabiertos/def/common/zone#EconomicInterestZone",
+  "@id" : "https://edint.es/def/zone#EconomicInterestZone",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
@@ -134,10 +156,10 @@
     "@value" : "Zona de Interés Económico"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
-    "@id" : "http://vocab.linkeddata.es/datosabiertos/def/common/zone#RegulatedZone"
+    "@id" : "https://edint.es/def/zone#RegulatedZone"
   } ]
 }, {
-  "@id" : "http://vocab.linkeddata.es/datosabiertos/def/common/zone#FreeTradeZone",
+  "@id" : "https://edint.es/def/zone#FreeTradeZone",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
@@ -154,10 +176,10 @@
     "@value" : "Zona Franca"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
-    "@id" : "http://vocab.linkeddata.es/datosabiertos/def/common/zone#EconomicInterestZone"
+    "@id" : "https://edint.es/def/zone#EconomicInterestZone"
   } ]
 }, {
-  "@id" : "http://vocab.linkeddata.es/datosabiertos/def/common/zone#GreenSpaceZone",
+  "@id" : "https://edint.es/def/zone#GreenSpaceZone",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "es",
@@ -174,10 +196,10 @@
     "@value" : "Zona Verde"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
-    "@id" : "http://vocab.linkeddata.es/datosabiertos/def/common/zone#RegulatedZone"
+    "@id" : "https://edint.es/def/zone#RegulatedZone"
   } ]
 }, {
-  "@id" : "http://vocab.linkeddata.es/datosabiertos/def/common/zone#HighTourismInfluxZone",
+  "@id" : "https://edint.es/def/zone#HighTourismInfluxZone",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "es",
@@ -194,10 +216,10 @@
     "@value" : "Zona de Gran Afluencia Turística"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
-    "@id" : "http://vocab.linkeddata.es/datosabiertos/def/common/zone#EconomicInterestZone"
+    "@id" : "https://edint.es/def/zone#EconomicInterestZone"
   } ]
 }, {
-  "@id" : "http://vocab.linkeddata.es/datosabiertos/def/common/zone#HistoricalCenter",
+  "@id" : "https://edint.es/def/zone#HistoricalCenter",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
@@ -214,10 +236,10 @@
     "@value" : "Historical Center"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
-    "@id" : "http://vocab.linkeddata.es/datosabiertos/def/common/zone#RegulatedZone"
+    "@id" : "https://edint.es/def/zone#RegulatedZone"
   } ]
 }, {
-  "@id" : "http://vocab.linkeddata.es/datosabiertos/def/common/zone#IndustrialZone",
+  "@id" : "https://edint.es/def/zone#IndustrialZone",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
@@ -234,10 +256,10 @@
     "@value" : "Polígono Industrial"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
-    "@id" : "http://vocab.linkeddata.es/datosabiertos/def/common/zone#EconomicInterestZone"
+    "@id" : "https://edint.es/def/zone#EconomicInterestZone"
   } ]
 }, {
-  "@id" : "http://vocab.linkeddata.es/datosabiertos/def/common/zone#LeisureZone",
+  "@id" : "https://edint.es/def/zone#LeisureZone",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
@@ -254,10 +276,10 @@
     "@value" : "Zona de Ocio"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
-    "@id" : "http://vocab.linkeddata.es/datosabiertos/def/common/zone#RegulatedZone"
+    "@id" : "https://edint.es/def/zone#RegulatedZone"
   } ]
 }, {
-  "@id" : "http://vocab.linkeddata.es/datosabiertos/def/common/zone#LoadingUnloadingZone",
+  "@id" : "https://edint.es/def/zone#LoadingUnloadingZone",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "es",
@@ -274,10 +296,10 @@
     "@value" : "Zona de Carga y Descarga"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
-    "@id" : "http://vocab.linkeddata.es/datosabiertos/def/common/zone#RegulatedParkingZone"
+    "@id" : "https://edint.es/def/zone#RegulatedParkingZone"
   } ]
 }, {
-  "@id" : "http://vocab.linkeddata.es/datosabiertos/def/common/zone#LogisticsActivityZone",
+  "@id" : "https://edint.es/def/zone#LogisticsActivityZone",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "es",
@@ -294,10 +316,10 @@
     "@value" : "Zona de Actividad Logística"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
-    "@id" : "http://vocab.linkeddata.es/datosabiertos/def/common/zone#EconomicInterestZone"
+    "@id" : "https://edint.es/def/zone#EconomicInterestZone"
   } ]
 }, {
-  "@id" : "http://vocab.linkeddata.es/datosabiertos/def/common/zone#LowEmissionZone",
+  "@id" : "https://edint.es/def/zone#LowEmissionZone",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "es",
@@ -314,10 +336,10 @@
     "@value" : "Zona de Bajas Emisiones"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
-    "@id" : "http://vocab.linkeddata.es/datosabiertos/def/common/zone#RegulatedZone"
+    "@id" : "https://edint.es/def/zone#RegulatedZone"
   } ]
 }, {
-  "@id" : "http://vocab.linkeddata.es/datosabiertos/def/common/zone#LowNoiseEmissionZone",
+  "@id" : "https://edint.es/def/zone#LowNoiseEmissionZone",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "es",
@@ -334,10 +356,10 @@
     "@value" : "Zona de Bajas Emisiones de Ruido"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
-    "@id" : "http://vocab.linkeddata.es/datosabiertos/def/common/zone#RegulatedZone"
+    "@id" : "https://edint.es/def/zone#RegulatedZone"
   } ]
 }, {
-  "@id" : "http://vocab.linkeddata.es/datosabiertos/def/common/zone#ParkAndRideZone",
+  "@id" : "https://edint.es/def/zone#ParkAndRideZone",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
@@ -354,10 +376,10 @@
     "@value" : "Zona de Estacionamiento Disuasorio"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
-    "@id" : "http://vocab.linkeddata.es/datosabiertos/def/common/zone#RegulatedParkingZone"
+    "@id" : "https://edint.es/def/zone#RegulatedParkingZone"
   } ]
 }, {
-  "@id" : "http://vocab.linkeddata.es/datosabiertos/def/common/zone#PedestrianZone",
+  "@id" : "https://edint.es/def/zone#PedestrianZone",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
@@ -374,10 +396,10 @@
     "@value" : "Zona Peatonal"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
-    "@id" : "http://vocab.linkeddata.es/datosabiertos/def/common/zone#RegulatedZone"
+    "@id" : "https://edint.es/def/zone#RegulatedZone"
   } ]
 }, {
-  "@id" : "http://vocab.linkeddata.es/datosabiertos/def/common/zone#ReducedMobilityParkingZone",
+  "@id" : "https://edint.es/def/zone#ReducedMobilityParkingZone",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
@@ -394,10 +416,10 @@
     "@value" : "Zona de Estacionamiento PMR"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
-    "@id" : "http://vocab.linkeddata.es/datosabiertos/def/common/zone#RegulatedParkingZone"
+    "@id" : "https://edint.es/def/zone#RegulatedParkingZone"
   } ]
 }, {
-  "@id" : "http://vocab.linkeddata.es/datosabiertos/def/common/zone#RegulatedParkingZone",
+  "@id" : "https://edint.es/def/zone#RegulatedParkingZone",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
@@ -414,10 +436,10 @@
     "@value" : "Zona de Estacionamiento Regulado"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
-    "@id" : "http://vocab.linkeddata.es/datosabiertos/def/common/zone#RegulatedZone"
+    "@id" : "https://edint.es/def/zone#RegulatedZone"
   } ]
 }, {
-  "@id" : "http://vocab.linkeddata.es/datosabiertos/def/common/zone#RegulatedZone",
+  "@id" : "https://edint.es/def/zone#RegulatedZone",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "es",
@@ -441,7 +463,7 @@
     "@id" : "_:genid2"
   } ]
 }, {
-  "@id" : "http://vocab.linkeddata.es/datosabiertos/def/common/zone#RegulatorySandbox",
+  "@id" : "https://edint.es/def/zone#RegulatorySandbox",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
@@ -458,10 +480,10 @@
     "@value" : "Sandbox Regulatorio"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
-    "@id" : "http://vocab.linkeddata.es/datosabiertos/def/common/zone#EconomicInterestZone"
+    "@id" : "https://edint.es/def/zone#EconomicInterestZone"
   } ]
 }, {
-  "@id" : "http://vocab.linkeddata.es/datosabiertos/def/common/zone#ResidentialParkingZone",
+  "@id" : "https://edint.es/def/zone#ResidentialParkingZone",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "es",
@@ -478,10 +500,10 @@
     "@value" : "Zona de Estacionamiento Residencial"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
-    "@id" : "http://vocab.linkeddata.es/datosabiertos/def/common/zone#RegulatedParkingZone"
+    "@id" : "https://edint.es/def/zone#RegulatedParkingZone"
   } ]
 }, {
-  "@id" : "http://vocab.linkeddata.es/datosabiertos/def/common/zone#RestrictedAccessZone",
+  "@id" : "https://edint.es/def/zone#RestrictedAccessZone",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
@@ -498,10 +520,10 @@
     "@value" : "Zona de Acceso Restringido"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
-    "@id" : "http://vocab.linkeddata.es/datosabiertos/def/common/zone#RegulatedZone"
+    "@id" : "https://edint.es/def/zone#RegulatedZone"
   } ]
 }, {
-  "@id" : "http://vocab.linkeddata.es/datosabiertos/def/common/zone#ScienceTechnologyPark",
+  "@id" : "https://edint.es/def/zone#ScienceTechnologyPark",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "es",
@@ -518,10 +540,10 @@
     "@value" : "Science and Technology Park"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
-    "@id" : "http://vocab.linkeddata.es/datosabiertos/def/common/zone#EconomicInterestZone"
+    "@id" : "https://edint.es/def/zone#EconomicInterestZone"
   } ]
 }, {
-  "@id" : "http://vocab.linkeddata.es/datosabiertos/def/common/zone#ShortTermParkingZone",
+  "@id" : "https://edint.es/def/zone#ShortTermParkingZone",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "es",
@@ -538,10 +560,10 @@
     "@value" : "Zona de Estacionamiento de Rotación"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
-    "@id" : "http://vocab.linkeddata.es/datosabiertos/def/common/zone#RegulatedParkingZone"
+    "@id" : "https://edint.es/def/zone#RegulatedParkingZone"
   } ]
 }, {
-  "@id" : "http://vocab.linkeddata.es/datosabiertos/def/common/zone#StreetVendingZone",
+  "@id" : "https://edint.es/def/zone#StreetVendingZone",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "es",
@@ -558,10 +580,10 @@
     "@value" : "Zona de Venta Ambulante"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
-    "@id" : "http://vocab.linkeddata.es/datosabiertos/def/common/zone#EconomicInterestZone"
+    "@id" : "https://edint.es/def/zone#EconomicInterestZone"
   } ]
 }, {
-  "@id" : "http://vocab.linkeddata.es/datosabiertos/def/common/zone#composedOf",
+  "@id" : "https://edint.es/def/zone#composedOf",
   "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "es",
@@ -571,7 +593,7 @@
     "@value" : "Relationship that allows defining a Regulated Zone via one or more administrative entities (Street, District, Municipality...)."
   } ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "http://vocab.linkeddata.es/datosabiertos/def/common/zone#RegulatedZone"
+    "@id" : "https://edint.es/def/zone#RegulatedZone"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
@@ -586,7 +608,7 @@
     "@id" : "http://www.geonames.org/ontology#Feature"
   } ]
 }, {
-  "@id" : "http://vocab.linkeddata.es/datosabiertos/def/common/zone#endDate",
+  "@id" : "https://edint.es/def/zone#endDate",
   "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
@@ -596,7 +618,7 @@
     "@value" : "Fecha en la que la regulación de la zona deja de ser efectiva (derogación o fin de periodo)."
   } ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "http://vocab.linkeddata.es/datosabiertos/def/common/zone#RegulatedZone"
+    "@id" : "https://edint.es/def/zone#RegulatedZone"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
@@ -609,7 +631,7 @@
     "@id" : "http://www.w3.org/2001/XMLSchema#date"
   } ]
 }, {
-  "@id" : "http://vocab.linkeddata.es/datosabiertos/def/common/zone#hasRegulatedZone",
+  "@id" : "https://edint.es/def/zone#hasRegulatedZone",
   "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
@@ -629,13 +651,13 @@
     "@value" : "tiene zona regulatoria"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
-    "@id" : "http://vocab.linkeddata.es/datosabiertos/def/common/zone#RegulatedZone"
+    "@id" : "https://edint.es/def/zone#RegulatedZone"
   } ],
   "http://www.w3.org/2002/07/owl#inverseOf" : [ {
-    "@id" : "http://vocab.linkeddata.es/datosabiertos/def/common/zone#locatedIn"
+    "@id" : "https://edint.es/def/zone#locatedIn"
   } ]
 }, {
-  "@id" : "http://vocab.linkeddata.es/datosabiertos/def/common/zone#legalReference",
+  "@id" : "https://edint.es/def/zone#legalReference",
   "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "es",
@@ -645,7 +667,7 @@
     "@value" : "Link to the official document (Bulletin, Ordinance) establishing the zone."
   } ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "http://vocab.linkeddata.es/datosabiertos/def/common/zone#RegulatedZone"
+    "@id" : "https://edint.es/def/zone#RegulatedZone"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
@@ -658,7 +680,7 @@
     "@id" : "http://www.w3.org/2001/XMLSchema#anyURI"
   } ]
 }, {
-  "@id" : "http://vocab.linkeddata.es/datosabiertos/def/common/zone#locatedIn",
+  "@id" : "https://edint.es/def/zone#locatedIn",
   "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "es",
@@ -668,7 +690,7 @@
     "@value" : "Relates a regulated zone to the administrative municipality it belongs to."
   } ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "http://vocab.linkeddata.es/datosabiertos/def/common/zone#RegulatedZone"
+    "@id" : "https://edint.es/def/zone#RegulatedZone"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
@@ -684,7 +706,7 @@
     "@id" : "http://www.opengis.net/ont/geosparql#sfWithin"
   } ]
 }, {
-  "@id" : "http://vocab.linkeddata.es/datosabiertos/def/common/zone#managedBy",
+  "@id" : "https://edint.es/def/zone#managedBy",
   "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "es",
@@ -694,7 +716,7 @@
     "@value" : "Organization (public or private) responsible for the management and operation of the zone."
   } ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "http://vocab.linkeddata.es/datosabiertos/def/common/zone#RegulatedZone"
+    "@id" : "https://edint.es/def/zone#RegulatedZone"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "es",
@@ -707,7 +729,7 @@
     "@id" : "http://www.w3.org/ns/org#Organization"
   } ]
 }, {
-  "@id" : "http://vocab.linkeddata.es/datosabiertos/def/common/zone#scheduleDescription",
+  "@id" : "https://edint.es/def/zone#scheduleDescription",
   "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "es",
@@ -717,7 +739,7 @@
     "@value" : "Textual description of the zone's operating schedule (e.g., \"Monday to Friday from 07:00 to 20:00\")."
   } ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "http://vocab.linkeddata.es/datosabiertos/def/common/zone#RegulatedZone"
+    "@id" : "https://edint.es/def/zone#RegulatedZone"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "es",
@@ -730,7 +752,7 @@
     "@id" : "http://www.w3.org/2001/XMLSchema#string"
   } ]
 }, {
-  "@id" : "http://vocab.linkeddata.es/datosabiertos/def/common/zone#startDate",
+  "@id" : "https://edint.es/def/zone#startDate",
   "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
@@ -740,7 +762,7 @@
     "@value" : "Fecha a partir de la cual la regulación de la zona comienza a ser efectiva."
   } ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "http://vocab.linkeddata.es/datosabiertos/def/common/zone#RegulatedZone"
+    "@id" : "https://edint.es/def/zone#RegulatedZone"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
