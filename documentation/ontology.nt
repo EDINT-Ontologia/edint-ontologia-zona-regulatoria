@@ -11,7 +11,8 @@
 <http://vocab.linkeddata.es/datosabiertos/def/common/zone#managedBy> <http://www.w3.org/2000/01/rdf-schema#label> "managed by"@en .
 <http://vocab.linkeddata.es/datosabiertos/def/common/zone#legalReference> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
 _:n3c331c3a3b8242c1b255352741f6793cb6 <http://www.w3.org/2002/07/owl#onClass> <http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio#Municipio> .
-<http://dbpedia.org/ontology/GovernmentalAdministrativeRegion> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://vocab.linkeddata.es/datosabiertos/def/urbanismo-infraestructuras/callejero#Via> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://vocab.linkeddata.es/datosabiertos/def/urbanismo-infraestructuras/callejero#TramoVia> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 _:n3c331c3a3b8242c1b255352741f6793cb5 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
 <http://vocab.linkeddata.es/datosabiertos/def/common/zone#endDate> <http://www.w3.org/2000/01/rdf-schema#comment> "Date when the zone regulation ceases to be effective."@en .
 <http://vocab.linkeddata.es/datosabiertos/def/common/zone#hasRegulatedZoneType> <http://www.w3.org/2000/01/rdf-schema#domain> <http://vocab.linkeddata.es/datosabiertos/def/common/zone#RegulatedZone> .
@@ -57,7 +58,8 @@ _:n3c331c3a3b8242c1b255352741f6793cb2 <http://www.w3.org/2002/07/owl#hasValue> <
 <http://vocab.linkeddata.es/datosabiertos/def/common/zone#composedOf> <http://www.w3.org/2000/01/rdf-schema#comment> "Relationship that allows defining a Regulated Zone via one or more administrative entities (Street, District, Municipality...)."@en .
 <http://www.opengis.net/ont/geosparql#hasGeometry> <http://www.w3.org/2000/01/rdf-schema#label> "has geometry"@en .
 <http://vocab.linkeddata.es/datosabiertos/def/common/zone#> <http://purl.org/vocab/vann/preferredNamespaceUri> "http://vocab.linkeddata.es/datosabiertos/def/common/zone#" .
-<http://vocab.linkeddata.es/datosabiertos/def/common/zone#composedOf> <http://www.w3.org/2000/01/rdf-schema#range> <http://dbpedia.org/ontology/GovernmentalAdministrativeRegion> .
+<http://vocab.linkeddata.es/datosabiertos/def/common/zone#composedOf> <http://www.w3.org/2000/01/rdf-schema#range> <http://vocab.linkeddata.es/datosabiertos/def/urbanismo-infraestructuras/callejero#TramoVia> .
+<http://vocab.linkeddata.es/datosabiertos/def/common/zone#composedOf> <http://www.w3.org/2000/01/rdf-schema#range> <http://vocab.linkeddata.es/datosabiertos/def/urbanismo-infraestructuras/callejero#Via> .
 <http://vocab.linkeddata.es/datosabiertos/def/common/zone#RegulatedZone> <http://www.w3.org/2000/01/rdf-schema#comment> "Area to which a particular regulation or policy applies"@en .
 <http://vocab.linkeddata.es/datosabiertos/def/common/zone#scheduleDescription> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
 <http://vocab.linkeddata.es/datosabiertos/def/common/zone#hasRegulatedZoneType> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
