@@ -1,0 +1,45 @@
+# Query: ZON14
+# Question: ¿Cuál es la base legal u ordenanza que creó esta zona?
+
+# --- Query 1 ---
+PREFIX edintzone: <http://vocab.linkeddata.es/datosabiertos/def/common/zone#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+SELECT ?zona ?tipoZona ?referenciaLegal
+WHERE {
+    ?zona rdf:type edintzone:RegulatedZone ;
+          edintzone:hasRegulatedZoneType ?tipoZona .
+    ?zona edintzone:legalReference ?referenciaLegal .
+}
+ORDER BY ?tipoZona ?zona ?referenciaLegal
+
+# --- Query 2 ---
+PREFIX edintzone: <http://vocab.linkeddata.es/datosabiertos/def/common/zone#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+SELECT ?zona ?tipoZona ?nombreZona ?referenciaLegal
+WHERE {
+    ?zona rdf:type edintzone:RegulatedZone ;
+          edintzone:hasRegulatedZoneType ?tipoZona .
+    ?zona edintzone:legalReference ?referenciaLegal .
+    OPTIONAL { ?zona rdfs:label ?nombreZona . }
+}
+ORDER BY ?tipoZona ?zona ?referenciaLegal
+
+# --- Query 3 ---
+PREFIX edintzone: <http://vocab.linkeddata.es/datosabiertos/def/common/zone#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+SELECT ?zona ?tipoZona ?nombreZona ?referenciaLegal
+WHERE {
+    ?zona rdf:type edintzone:RegulatedZone ;
+          edintzone:hasRegulatedZoneType ?tipoZona .
+    ?zona edintzone:legalReference ?referenciaLegal .
+    OPTIONAL { ?zona rdfs:label ?nombreZona . }
+    FILTER (!BOUND(?nombreZona) || lang(?nombreZona) = "" || lang(?nombreZona) = "es")
+}
+ORDER BY ?tipoZona ?zona ?referenciaLegal
+

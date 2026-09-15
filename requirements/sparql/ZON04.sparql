@@ -1,0 +1,17 @@
+# Query: ZON04
+# Question: ¿Qué organización gestiona cada zona?
+
+# --- Query 1 ---
+PREFIX edintzone: <http://vocab.linkeddata.es/datosabiertos/def/common/zone#>
+PREFIX org: <http://www.w3.org/ns/org#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+SELECT ?zona ?organizacion
+WHERE {
+    ?zona rdf:type edintzone:RegulatedZone ;
+          edintzone:hasRegulatedZoneType ?tipoZona .
+    ?zona edintzone:managedBy ?organizacion .
+}
+ORDER BY ?tipoZona ?zona ?organizacion
+
