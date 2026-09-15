@@ -17,7 +17,8 @@
 #    Regulatory Zone 1 - ESRO (Rotation / Blue Zone)
 #################################################################
 
-ex-zona:1-esro a edintzone:ShortTermParkingZone ;
+ex-zona:1-esro a edintzone:RegulatedZone ;
+    edintzone:hasRegulatedZoneType <http://vocab.linkeddata.es/datosabiertos/kos/edint/RegulatedZoneType/ShortTermParkingZone> ;
     rdfs:label "Zona 1 - ESRO (Estacionamiento Rotación)"@es ;
     dc:description "Área de Zona 1 destinada a estacionamiento de rotación (zona azul). Máximo 2 horas."@es ;
     
@@ -41,7 +42,8 @@ ex-zona:1-esro a edintzone:ShortTermParkingZone ;
 #    Regulatory Zone 1 - ESRE (Residents / Orange Zone)
 #################################################################
 
-ex-zona:1-esre a edintzone:ResidentialParkingZone ;
+ex-zona:1-esre a edintzone:RegulatedZone ;
+    edintzone:hasRegulatedZoneType <http://vocab.linkeddata.es/datosabiertos/kos/edint/RegulatedZoneType/ResidentialParkingZone> ;
     rdfs:label "Zona 1 - ESRE (Estacionamiento Residentes)"@es ;
     dc:description "Área de Zona 1 destinada prioritariamente a residentes (zona naranja)."@es ;
     

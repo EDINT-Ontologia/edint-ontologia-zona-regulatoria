@@ -12,7 +12,8 @@
 #################################################################
 
 :SER_Madrid_Centro
-    a edintzone:RegulatedParkingZone ;
+    a edintzone:RegulatedZone ;
+    edintzone:hasRegulatedZoneType <http://vocab.linkeddata.es/datosabiertos/kos/edint/RegulatedZoneType/RegulatedParkingZone> ;
     rdfs:label "Zona SER Madrid - Centro"@es ;
     edintzone:locatedIn :Municipio_Madrid ;
     edintzone:managedBy :Ayuntamiento_Madrid ;
