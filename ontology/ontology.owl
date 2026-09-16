@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <rdf:RDF xmlns="https://edint.es/def/zona-regulatoria#"
-     xml:base="http://vocab.linkeddata.es/datosabiertos/def/common/zone"
+     xml:base="https://edint.es/def/zona-regulatoria#"
      xmlns:ns="http://creativecommons.org/ns#"
      xmlns:sf="http://www.opengis.net/ont/sf#"
      xmlns:geo="http://www.opengis.net/ont/geosparql#"
