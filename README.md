@@ -8,7 +8,7 @@ Actualmente, existen vocabularios para divisiones administrativas (esadm) y geom
 
 # Prefijo y espacio de nombres (Prefix and namespace)
 
-El prefijo de la ontología *Zonas Regulatorias* es: `edintzone` publicado bajo el espacio de nombres: [http://vocab.linkeddata.es/datosabiertos/def/common/zone#](http://vocab.linkeddata.es/datosabiertos/def/common/zone#)
+El prefijo de la ontología *Zonas Regulatorias* es: `edintzone` publicado bajo el espacio de nombres: [https://edint.es/def/zona-regulatoria#](https://edint.es/def/zona-regulatoria#)
 
 # Modelo conceptual (Ontology conceptualization)
 

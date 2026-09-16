@@ -3,7 +3,7 @@
 
 # --- Query 1 ---
 PREFIX edintkos-rztype: <http://vocab.linkeddata.es/datosabiertos/kos/edint/RegulatedZoneType/>
-PREFIX edintzone: <http://vocab.linkeddata.es/datosabiertos/def/common/zone#>
+PREFIX edintzone: <https://edint.es/def/zona-regulatoria#>
 PREFIX esadm: <http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio#>
 PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 
@@ -17,7 +17,7 @@ ORDER BY ?zbe
 
 # --- Query 2 ---
 PREFIX edintkos-rztype: <http://vocab.linkeddata.es/datosabiertos/kos/edint/RegulatedZoneType/>
-PREFIX edintzone: <http://vocab.linkeddata.es/datosabiertos/def/common/zone#>
+PREFIX edintzone: <https://edint.es/def/zona-regulatoria#>
 PREFIX esadm: <http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio#>
 PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
@@ -33,7 +33,7 @@ ORDER BY ?zbe ?nombreMunicipio
 
 # --- Query 3 ---
 PREFIX edintkos-rztype: <http://vocab.linkeddata.es/datosabiertos/kos/edint/RegulatedZoneType/>
-PREFIX edintzone: <http://vocab.linkeddata.es/datosabiertos/def/common/zone#>
+PREFIX edintzone: <https://edint.es/def/zona-regulatoria#>
 PREFIX esadm: <http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio#>
 PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
