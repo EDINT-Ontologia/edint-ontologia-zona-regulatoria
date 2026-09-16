@@ -50,6 +50,7 @@
         <rdfs:label xml:lang="en">Base Zoning Ontology for Smart Mobility Use Case.</rdfs:label>
         <rdfs:label xml:lang="es">Ontología base de Zonas para el Caso de Uso de Movilidad Inteligente.</rdfs:label>
         <owl:versionInfo>0.2.1</owl:versionInfo>
+        <owl:priorVersion rdf:resource="https://github.com/EDINT-Ontologia/edint-ontologia-zona-regulatoria/releases/tag/v0.2.0"/>
         <dcterms:publisher rdf:resource="https://www.femp.es/"/>
     <dcterms:bibliographicCitation xml:lang="es">Ontología EDINT de Zonas Regulatorias. EDINT. Revision: v0.1.0.</dcterms:bibliographicCitation>
     <schema:creativeWorkStatus xml:lang="en">Ontology Specification</schema:creativeWorkStatus>
