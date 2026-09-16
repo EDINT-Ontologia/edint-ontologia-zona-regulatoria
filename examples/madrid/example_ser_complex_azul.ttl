@@ -30,7 +30,7 @@
 
 :SER_Madrid_ZonaAzul_Calles
     a sf:Geometry ;
-    geo:asWKT <https://example.org/geometries/example_ser_complex_azul_geo.wkt> . .
+    geo:asWKT <https://example.org/geometries/example_ser_complex_azul_geo.wkt> .
 
 #################################################################
 # Municipality (Minimal Instance)

@@ -1,0 +1,219 @@
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix edintkos: <https://edint.es/kos/> .
+@prefix edintkos-rztype: <https://edint.es/kos/RegulatedZoneType/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix cc: <http://creativecommons.org/ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# ---------------------------------------------------------------------------
+# CONCEPT SCHEME
+# ---------------------------------------------------------------------------
+edintkos:RegulatedZoneType a skos:ConceptScheme ;
+    dct:issued "2026-08-04"^^xsd:date ;
+    dct:modified "2026-08-04"^^xsd:date ;
+    cc:license <https://creativecommons.org/licenses/by/4.0/> ;
+    rdfs:comment "This concept scheme belongs to the set of controlled SKOS-based thesauri used by the ontologies from the EDINT data space."@en ;
+    rdfs:comment "Este esquema de conceptos pertenece al conjunto de tesauros SKOS usados por las ontologías del espacio de datos EDINT."@es ;
+    rdfs:label "Regulated Zone Type"@en ;
+    rdfs:label "Tipo de Zona Regulada"@es ;
+    dct:title "Concept scheme grouping regulated zone types with a multi-level hierarchy"@en ;
+    dct:title "Esquema de conceptos agrupando tipos de zona regulada con una jerarquía de varios niveles"@es ;
+    skos:note "Hierarchical vocabulary of regulated zone types, organised by domain: economic interest, parking, environmental protection, and access restriction."@en ;
+    skos:note "Vocabulario jerárquico de tipos de zona regulada, organizado por dominio: interés económico, estacionamiento, protección medioambiental y restricción de acceso."@es .
+
+# ===========================================================================
+# LEVEL 1 — TOP CONCEPTS
+# ===========================================================================
+
+# ---------------------------------------------------------------------------
+# Economic Interest Zones
+# ---------------------------------------------------------------------------
+edintkos-rztype:EconomicInterestZone a skos:Concept ;
+    skos:inScheme edintkos:RegulatedZoneType ;
+    skos:prefLabel "Economic Interest Zone"@en ;
+    skos:prefLabel "Zona de Interés Económico"@es ;
+    skos:definition "Area delimited by municipal regulations to promote commercial or tourist activities."@en ;
+    skos:definition "Área delimitada por regulaciones municipales para promover actividades comerciales o turísticas."@es ;
+    skos:narrower edintkos-rztype:CommercialZone ;
+    skos:narrower edintkos-rztype:FreeTradeZone ;
+    skos:narrower edintkos-rztype:HighTourismInfluxZone ;
+    skos:narrower edintkos-rztype:IndustrialZone ;
+    skos:narrower edintkos-rztype:LogisticsActivityZone ;
+    skos:narrower edintkos-rztype:RegulatorySandbox ;
+    skos:narrower edintkos-rztype:ScienceTechnologyPark ;
+    skos:narrower edintkos-rztype:StreetVendingZone .
+
+edintkos-rztype:CommercialZone a skos:Concept ;
+    skos:inScheme edintkos:RegulatedZoneType ;
+    skos:broader edintkos-rztype:EconomicInterestZone ;
+    skos:prefLabel "Commercial Zone"@en ;
+    skos:prefLabel "Zona Comercial"@es ;
+    skos:definition "Urban area or axis characterized by a high density of commercial and service activity, frequently supported by regional commerce regulations under the figure of Open Commercial Zone."@en ;
+    skos:definition "Área o eje urbano caracterizado por una alta densidad de actividad comercial y de servicios, frecuentemente respaldado por regulaciones de comercio regional bajo la figura de Zona Comercial Abierta."@es .
+
+edintkos-rztype:FreeTradeZone a skos:Concept ;
+    skos:inScheme edintkos:RegulatedZoneType ;
+    skos:broader edintkos-rztype:EconomicInterestZone ;
+    skos:prefLabel "Free Trade Zone"@en ;
+    skos:prefLabel "Zona Franca"@es ;
+    skos:definition "Area of the Union customs territory where non-Community goods are considered not situated within customs territory."@en ;
+    skos:definition "Área del territorio aduanero de la Unión donde las mercancías no comunitarias se consideran no situadas en territorio aduanero."@es .
+
+edintkos-rztype:HighTourismInfluxZone a skos:Concept ;
+    skos:inScheme edintkos:RegulatedZoneType ;
+    skos:broader edintkos-rztype:EconomicInterestZone ;
+    skos:prefLabel "High Tourism Influx Zone"@en ;
+    skos:prefLabel "Zona de Gran Afluencia Turística"@es ;
+    skos:definition "Zonas con gran afluencia turística donde se aplica plena libertad de apertura comercial en domingos y festivos."@es ;
+    skos:definition "Zones with high tourist influx where full freedom of commercial opening on Sundays and holidays applies."@en .
+
+edintkos-rztype:IndustrialZone a skos:Concept ;
+    skos:inScheme edintkos:RegulatedZoneType ;
+    skos:broader edintkos-rztype:EconomicInterestZone ;
+    skos:prefLabel "Industrial Zone"@en ;
+    skos:prefLabel "Zona Industrial"@es ;
+    skos:definition "Area delimited by urban planning and Cadastre intended predominantly to host industrial, logistics, and business activities."@en ;
+    skos:definition "Área delimitada por planeamiento urbanístico y Catastro destinada predominantemente a albergar actividades industriales, logísticas y empresariales."@es .
+
+edintkos-rztype:LogisticsActivityZone a skos:Concept ;
+    skos:inScheme edintkos:RegulatedZoneType ;
+    skos:broader edintkos-rztype:EconomicInterestZone ;
+    skos:prefLabel "Logistics Activity Zone"@en ;
+    skos:prefLabel "Zona de Actividad Logística"@es ;
+    skos:definition "Infraestructura especializada en actividades de transporte y logística. Definida legalmente como 'Centro de Transporte y Logística'."@es ;
+    skos:definition "Specialised infrastructure for transport and logistics activities. Legally defined as 'Transport and Logistics Centre'."@en .
+
+edintkos-rztype:RegulatorySandbox a skos:Concept ;
+    skos:inScheme edintkos:RegulatedZoneType ;
+    skos:broader edintkos-rztype:EconomicInterestZone ;
+    skos:prefLabel "Regulatory Sandbox"@en ;
+    skos:prefLabel "Aprendizaje Tecnológico"@es ;
+    skos:definition "Controlled testing environment authorized for research trials with automated vehicles or new forms of mobility."@en ;
+    skos:definition "Entorno de pruebas controlado autorizado para ensayos de investigación con vehículos automatizados o nuevas formas de movilidad."@es .
+
+edintkos-rztype:ScienceTechnologyPark a skos:Concept ;
+    skos:inScheme edintkos:RegulatedZoneType ;
+    skos:broader edintkos-rztype:EconomicInterestZone ;
+    skos:prefLabel "Science and Technology Park"@en ;
+    skos:prefLabel "Parque Científico y Tecnológico"@es ;
+    skos:definition "Espacio físico para el fomento de la I+D+i y la transferencia de conocimiento."@es ;
+    skos:definition "Physical space for the promotion of R&D&i and knowledge transfer."@en .
+
+edintkos-rztype:StreetVendingZone a skos:Concept ;
+    skos:inScheme edintkos:RegulatedZoneType ;
+    skos:broader edintkos-rztype:EconomicInterestZone ;
+    skos:prefLabel "Street Vending Zone"@en ;
+    skos:prefLabel "Zona de Venta Ambulante"@es ;
+    skos:definition "Zona acotada para la modalidad de venta realizada fuera de establecimiento comercial permanente (mercadillos)."@es ;
+    skos:definition "Delimited zone for the modality of selling carried out outside a permanent commercial establishment (street markets)."@en .
+
+# ---------------------------------------------------------------------------
+# Regulated Parking Zones
+# ---------------------------------------------------------------------------
+edintkos-rztype:RegulatedParkingZone a skos:Concept ;
+    skos:inScheme edintkos:RegulatedZoneType ;
+    skos:prefLabel "Regulated Parking Zone"@en ;
+    skos:prefLabel "Zona de Estacionamiento Regulado"@es ;
+    skos:definition "Public road zone where parking is subject to time regulation, fee payment, or other restrictions."@en ;
+    skos:definition "Zona de la vía pública donde el estacionamiento está sujeto a regulación horaria, pago de tasas u otras restricciones."@es ;
+    skos:narrower edintkos-rztype:LoadingUnloadingZone ;
+    skos:narrower edintkos-rztype:ParkAndRideZone ;
+    skos:narrower edintkos-rztype:ReducedMobilityParkingZone ;
+    skos:narrower edintkos-rztype:ResidentialParkingZone ;
+    skos:narrower edintkos-rztype:ShortTermParkingZone .
+
+edintkos-rztype:LoadingUnloadingZone a skos:Concept ;
+    skos:inScheme edintkos:RegulatedZoneType ;
+    skos:broader edintkos-rztype:RegulatedParkingZone ;
+    skos:prefLabel "Loading and Unloading Zone"@en ;
+    skos:prefLabel "Zona de Carga y Descarga"@es ;
+    skos:definition "Zona reservada exclusivamente para la parada técnica de vehículos profesionales dedicados a la Distribución Urbana de Mercancías (DUM)."@es ;
+    skos:definition "Zone reserved exclusively for the technical stop of professional vehicles dedicated to Urban Goods Distribution (UGD)."@en .
+
+edintkos-rztype:ParkAndRideZone a skos:Concept ;
+    skos:inScheme edintkos:RegulatedZoneType ;
+    skos:broader edintkos-rztype:RegulatedParkingZone ;
+    skos:prefLabel "Park and Ride Zone"@en ;
+    skos:prefLabel "Zona Park and Ride"@es ;
+    skos:definition "Strategic parking zone located on the periphery and connected to public transport networks."@en ;
+    skos:definition "Zona de aparcamiento estratégica situada en la periferia y conectada con redes de transporte público."@es .
+
+edintkos-rztype:ReducedMobilityParkingZone a skos:Concept ;
+    skos:inScheme edintkos:RegulatedZoneType ;
+    skos:broader edintkos-rztype:RegulatedParkingZone ;
+    skos:prefLabel "Reduced Mobility Parking Zone"@en ;
+    skos:prefLabel "Zona de Estacionamiento para Movilidad Reducida"@es ;
+    skos:definition "Parking zone legally reserved for vehicles transporting Persons with Reduced Mobility (PRM), regulated by municipal and national accessibility laws."@en ;
+    skos:definition "Zona de estacionamiento reservada legalmente para vehículos que transportan Personas con Movilidad Reducida (PMR), regulada por normativas municipales y nacionales de accesibilidad."@es .
+
+edintkos-rztype:ResidentialParkingZone a skos:Concept ;
+    skos:inScheme edintkos:RegulatedZoneType ;
+    skos:broader edintkos-rztype:RegulatedParkingZone ;
+    skos:prefLabel "Residential Parking Zone"@en ;
+    skos:prefLabel "Zona de Estacionamiento de Residentes"@es ;
+    skos:definition "Zona destinada prioritaria o exclusivamente al estacionamiento de vehículos de residentes empadronados."@es ;
+    skos:definition "Zone intended primarily or exclusively for parking of vehicles of registered residents."@en .
+
+edintkos-rztype:ShortTermParkingZone a skos:Concept ;
+    skos:inScheme edintkos:RegulatedZoneType ;
+    skos:broader edintkos-rztype:RegulatedParkingZone ;
+    skos:prefLabel "Short-term Parking Zone"@en ;
+    skos:prefLabel "Zona de Estacionamiento de Corta Duración"@es ;
+    skos:definition "Zona destinada principalmente a usuarios visitantes con limitación temporal estricta y tarificación para favorecer la alta rotación."@es ;
+    skos:definition "Zone intended mainly for visiting users with strict time limitation and pricing to favour high turnover."@en .
+
+# ---------------------------------------------------------------------------
+# Environmental Protection Zones
+# ---------------------------------------------------------------------------
+edintkos-rztype:GreenSpaceZone a skos:Concept ;
+    skos:inScheme edintkos:RegulatedZoneType ;
+    skos:prefLabel "Green Space Zone"@en ;
+    skos:prefLabel "Espacio Libre / Zona Verde"@es ;
+    skos:definition "Espacio libre, parque o área natural urbana sujeta a un régimen de protección urbanística que limita su edificabilidad y regula su uso público, vital para estrategias de mitigación climática y calidad del aire."@es ;
+    skos:definition "Open space, park or urban natural area subject to urban planning protection that limits its buildability and regulates its public use, vital for climate mitigation and air quality strategies."@en .
+
+edintkos-rztype:LowEmissionZone a skos:Concept ;
+    skos:inScheme edintkos:RegulatedZoneType ;
+    skos:prefLabel "Low Emission Zone"@en ;
+    skos:prefLabel "Zona de Bajas Emisiones"@es ;
+    skos:definition "Zona definida por la administración donde se aplican restricciones de acceso, circulación y estacionamiento de vehículos con el objetivo de mejorar la calidad del aire."@es ;
+    skos:definition "Zone defined by the administration where restrictions on vehicle access, circulation and parking are applied with the objective of improving air quality."@en .
+
+edintkos-rztype:LowNoiseEmissionZone a skos:Concept ;
+    skos:inScheme edintkos:RegulatedZoneType ;
+    skos:prefLabel "Low Noise Emission Zone"@en ;
+    skos:prefLabel "Zona de Bajas Emisiones de Ruido"@es ;
+    skos:definition "Zona definida por la administración donde se aplican restricciones de ruido y límites de emisión acústica para proteger la salud pública y el bienestar ciudadano."@es ;
+    skos:definition "Zone defined by the administration where noise restrictions and acoustic emission limits are applied to protect public health and citizen welfare."@en .
+
+# ---------------------------------------------------------------------------
+# Access Restriction Zones
+# ---------------------------------------------------------------------------
+edintkos-rztype:HistoricalCenter a skos:Concept ;
+    skos:inScheme edintkos:RegulatedZoneType ;
+    skos:prefLabel "Historical Center"@en ;
+    skos:prefLabel "Casco Histórico"@es ;
+    skos:definition "Urban area with special heritage protection where strict restrictions on access, circulation, and parking apply to preserve the historical fabric."@en ;
+    skos:definition "Área urbana con especial protección patrimonial donde se aplican restricciones estrictas de acceso, circulación y estacionamiento para preservar el tejido histórico."@es .
+
+edintkos-rztype:LeisureZone a skos:Concept ;
+    skos:inScheme edintkos:RegulatedZoneType ;
+    skos:prefLabel "Leisure Zone"@en ;
+    skos:prefLabel "Zona de Ocio"@es ;
+    skos:definition "Area with a high concentration of leisure and hospitality establishments. Frequently subject to specific urban and environmental regulations, such as Special Acoustic Protection Zones."@en ;
+    skos:definition "Área con alta concentración de establecimientos de ocio y hostelería. Frecuentemente sujeta a normativas urbanísticas y medioambientales específicas, como Zonas de Especial Protección Acústica."@es .
+
+edintkos-rztype:PedestrianZone a skos:Concept ;
+    skos:inScheme edintkos:RegulatedZoneType ;
+    skos:prefLabel "Pedestrian Zone"@en ;
+    skos:prefLabel "Zona Peatonal"@es ;
+    skos:definition "Road or area reserved entirely or partially for pedestrian traffic, with strict speed regulations for permitted vehicles and a general prohibition on parking."@en ;
+    skos:definition "Vía o área reservada total o parcialmente al tráfico peatonal, con regulaciones estrictas de velocidad para los vehículos permitidos y prohibición general de estacionamiento."@es .
+
+edintkos-rztype:RestrictedAccessZone a skos:Concept ;
+    skos:inScheme edintkos:RegulatedZoneType ;
+    skos:prefLabel "Restricted Access Zone"@en ;
+    skos:prefLabel "Zona de Acceso Restringido"@es ;
+    skos:definition "Urban area (such as Residential Priority Areas) where vehicle access is limited to residents, public transport, or authorized vehicles for reasons of traffic flow, safety, or road capacity."@en ;
+    skos:definition "Área urbana (como las Zonas de Prioridad Residencial) donde el acceso de vehículos se limita a residentes, transporte público o vehículos autorizados por motivos de flujo de tráfico, seguridad o capacidad de la vía."@es .
