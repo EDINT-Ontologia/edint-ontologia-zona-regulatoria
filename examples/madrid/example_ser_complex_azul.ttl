@@ -1,5 +1,5 @@
 @prefix : <http://example.org/resource/> .
-@prefix edintzone: <http://vocab.linkeddata.es/datosabiertos/def/common/zone#> .
+@prefix edintzone: <https://edint.es/def/zona-regulatoria#> .
 @prefix esadm: <http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio#> .
 @prefix geo: <http://www.opengis.net/ont/geosparql#> .
 @prefix sf: <http://www.opengis.net/ont/sf#> .

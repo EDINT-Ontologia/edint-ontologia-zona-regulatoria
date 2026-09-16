@@ -40,7 +40,7 @@ Sources: [SHP files](https://geoportal.madrid.es/fsdescargas/IDEAM_WBGEOPORTAL/M
 
 ```sparql
 PREFIX : <http://example.org/resource/>
-PREFIX edintzone: <http://vocab.linkeddata.es/datosabiertos/def/common/zone#>
+PREFIX edintzone: <https://edint.es/def/zona-regulatoria#>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 
 SELECT ?zone ?label WHERE {
@@ -56,7 +56,7 @@ SELECT ?zone ?label WHERE {
 
 ```sparql
 PREFIX : <http://example.org/resource/>
-PREFIX edintzone: <http://vocab.linkeddata.es/datosabiertos/def/common/zone#>
+PREFIX edintzone: <https://edint.es/def/zona-regulatoria#>
 PREFIX geo: <http://www.opengis.net/ont/geosparql#>
 
 SELECT ?zone ?wkt WHERE {

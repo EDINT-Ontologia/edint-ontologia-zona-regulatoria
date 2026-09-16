@@ -38,7 +38,7 @@ The example transforms the flat list of streets from the website into a linked d
 *Which streets belong to a Short Term Parking Zone in Zaragoza?*
 
 ```sparql
-PREFIX edintzone: <http://vocab.linkeddata.es/datosabiertos/def/common/zone#>
+PREFIX edintzone: <https://edint.es/def/zona-regulatoria#>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 
 SELECT ?streetLabel WHERE {

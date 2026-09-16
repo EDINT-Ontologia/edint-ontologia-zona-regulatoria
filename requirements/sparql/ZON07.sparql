@@ -2,7 +2,7 @@
 # Question: ¿Cuál es la geometría de cada zona?
 
 # --- Query 1 ---
-PREFIX edintzone: <http://vocab.linkeddata.es/datosabiertos/def/common/zone#>
+PREFIX edintzone: <https://edint.es/def/zona-regulatoria#>
 PREFIX geo: <http://www.opengis.net/ont/geosparql#>
 PREFIX sf: <http://www.opengis.net/ont/sf#>
 PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
