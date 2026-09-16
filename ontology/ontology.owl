@@ -16,7 +16,7 @@
      xmlns:edintzone="https://edint.es/def/zona-regulatoria#"
      xmlns:schema="http://schema.org/"
      xmlns:bibo="http://purl.org/ontology/bibo/" xmlns:foaf="http://xmlns.com/foaf/0.1/">    <owl:Ontology rdf:about="https://edint.es/def/zona-regulatoria#">
-        <owl:versionIRI rdf:resource="https://edint.es/def/zona-regulatoria/0.1.0"/>
+        <owl:versionIRI rdf:resource="https://edint.es/def/zona-regulatoria/0.2.1"/>
         <owl:imports rdf:resource="http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio_v0.5"/>
         <owl:imports rdf:resource="http://vocab.linkeddata.es/datosabiertos/def/urbanismo-infraestructuras/callejero_v0.3"/>
         <owl:imports rdf:resource="http://www.opengis.net/ont/geosparql"/>
@@ -49,7 +49,7 @@
         <rdfs:comment xml:lang="en">Currently, vocabularies exist for administrative divisions (esadm) and geometries (GeoSPARQL), but there was a semantic gap for representing functional entities that overlay the urban grid (LEZ, Loading/Unloading, etc.) without adhering to fixed administrative boundaries. This ontology fills that gap.</rdfs:comment>
         <rdfs:label xml:lang="en">Base Zoning Ontology for Smart Mobility Use Case.</rdfs:label>
         <rdfs:label xml:lang="es">Ontología base de Zonas para el Caso de Uso de Movilidad Inteligente.</rdfs:label>
-        <owl:versionInfo>0.1.0</owl:versionInfo>
+        <owl:versionInfo>0.2.1</owl:versionInfo>
         <dcterms:publisher rdf:resource="https://www.femp.es/"/>
     <dcterms:bibliographicCitation xml:lang="es">Ontología EDINT de Zonas Regulatorias. EDINT. Revision: v0.1.0.</dcterms:bibliographicCitation>
     <schema:creativeWorkStatus xml:lang="en">Ontology Specification</schema:creativeWorkStatus>
