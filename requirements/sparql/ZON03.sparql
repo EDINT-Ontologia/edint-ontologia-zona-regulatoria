@@ -2,7 +2,7 @@
 # Question: ¿Cuáles son las zonas de estacionamiento y sus horarios?
 
 # --- Query 1 ---
-PREFIX edintkos-rztype: <http://vocab.linkeddata.es/datosabiertos/kos/edint/RegulatedZoneType/>
+PREFIX edintkos-rztype: <https://edint.es/kos/RegulatedZoneType/>
 PREFIX edintzone: <http://vocab.linkeddata.es/datosabiertos/def/common/zone#>
 PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
@@ -17,7 +17,7 @@ WHERE {
 ORDER BY ?tipo ?zona ?horario
 
 # --- Query 2 ---
-PREFIX edintkos-rztype: <http://vocab.linkeddata.es/datosabiertos/kos/edint/RegulatedZoneType/>
+PREFIX edintkos-rztype: <https://edint.es/kos/RegulatedZoneType/>
 PREFIX edintzone: <http://vocab.linkeddata.es/datosabiertos/def/common/zone#>
 PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 PREFIX skos: <http://www.w3.org/2004/02/skos/core#>

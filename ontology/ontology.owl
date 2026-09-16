@@ -190,7 +190,7 @@
                     <rdf:Description rdf:about="http://www.w3.org/2004/02/skos/core#Concept"/>
                     <owl:Restriction>
                         <owl:onProperty rdf:resource="http://www.w3.org/2004/02/skos/core#inScheme"/>
-                        <owl:hasValue rdf:resource="http://vocab.linkeddata.es/datosabiertos/kos/edint/RegulatedZoneType"/>
+                        <owl:hasValue rdf:resource="https://edint.es/kos/RegulatedZoneType"/>
                     </owl:Restriction>
                 </owl:intersectionOf>
             </owl:Class>
@@ -360,9 +360,9 @@
 
     <owl:Class rdf:about="http://www.w3.org/ns/org#Organization"/>
 
-    <!-- http://vocab.linkeddata.es/datosabiertos/kos/edint/RegulatedZoneType -->
+    <!-- https://edint.es/kos/RegulatedZoneType -->
 
-    <owl:NamedIndividual rdf:about="http://vocab.linkeddata.es/datosabiertos/kos/edint/RegulatedZoneType"/>
+    <owl:NamedIndividual rdf:about="https://edint.es/kos/RegulatedZoneType"/>
 
 </rdf:RDF>
 
