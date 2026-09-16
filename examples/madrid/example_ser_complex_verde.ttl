@@ -13,7 +13,7 @@
 
 :SER_Madrid_ZonaVerde
     a edintzone:RegulatedZone ;
-    edintzone:hasRegulatedZoneType <http://vocab.linkeddata.es/datosabiertos/kos/edint/RegulatedZoneType/RegulatedParkingZone> ;
+    edintzone:hasRegulatedZoneType <https://edint.es/kos/RegulatedZoneType/RegulatedParkingZone> ;
     rdfs:label "Zona SER Madrid - Centro"@es ;
     edintzone:locatedIn :Municipio_Madrid ;
     edintzone:managedBy :Ayuntamiento_Madrid ;
@@ -30,7 +30,7 @@
 
 :SER_Madrid_ZonaAzul_Calles
     a sf:Geometry ;
-    geo:asWKT <https://example.org/geometries/example_ser_complex_verde_geo.wkt> . .
+    geo:asWKT <https://example.org/geometries/example_ser_complex_verde_geo.wkt> .
 
 
 #################################################################

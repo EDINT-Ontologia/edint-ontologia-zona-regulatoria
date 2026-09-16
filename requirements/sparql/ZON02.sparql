@@ -2,7 +2,7 @@
 # Question: ¿Cuál es el municipio de cada zona de bajas emisiones?
 
 # --- Query 1 ---
-PREFIX edintkos-rztype: <http://vocab.linkeddata.es/datosabiertos/kos/edint/RegulatedZoneType/>
+PREFIX edintkos-rztype: <https://edint.es/kos/RegulatedZoneType/>
 PREFIX edintzone: <https://edint.es/def/zona-regulatoria#>
 PREFIX esadm: <http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio#>
 PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
@@ -16,7 +16,7 @@ WHERE {
 ORDER BY ?zbe
 
 # --- Query 2 ---
-PREFIX edintkos-rztype: <http://vocab.linkeddata.es/datosabiertos/kos/edint/RegulatedZoneType/>
+PREFIX edintkos-rztype: <https://edint.es/kos/RegulatedZoneType/>
 PREFIX edintzone: <https://edint.es/def/zona-regulatoria#>
 PREFIX esadm: <http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio#>
 PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
@@ -32,7 +32,7 @@ WHERE {
 ORDER BY ?zbe ?nombreMunicipio
 
 # --- Query 3 ---
-PREFIX edintkos-rztype: <http://vocab.linkeddata.es/datosabiertos/kos/edint/RegulatedZoneType/>
+PREFIX edintkos-rztype: <https://edint.es/kos/RegulatedZoneType/>
 PREFIX edintzone: <https://edint.es/def/zona-regulatoria#>
 PREFIX esadm: <http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio#>
 PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
