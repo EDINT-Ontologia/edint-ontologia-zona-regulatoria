@@ -13,7 +13,9 @@
      xmlns:vann="http://purl.org/vocab/vann/"
      xmlns:esadm="http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio#"
      xmlns:dcterms="http://purl.org/dc/terms/"
-     xmlns:edintzone="https://edint.es/def/zona-regulatoria#">
+     xmlns:edintzone="https://edint.es/def/zona-regulatoria#"
+     xmlns:schema="http://schema.org/"
+     xmlns:bibo="http://purl.org/ontology/bibo/">
     <owl:Ontology rdf:about="https://edint.es/def/zona-regulatoria#">
         <owl:imports rdf:resource="http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio_v0.5"/>
         <owl:imports rdf:resource="http://vocab.linkeddata.es/datosabiertos/def/urbanismo-infraestructuras/callejero_v0.3"/>
@@ -32,7 +34,12 @@
         <rdfs:label xml:lang="en">Base Zoning Ontology for Smart Mobility Use Case.</rdfs:label>
         <rdfs:label xml:lang="es">Ontología base de Zonas para el Caso de Uso de Movilidad Inteligente.</rdfs:label>
         <owl:versionInfo>0.1.0</owl:versionInfo>
-    </owl:Ontology>
+        <dcterms:publisher rdf:resource="https://www.femp.es/"/>
+    <dcterms:bibliographicCitation xml:lang="es">Ontología base de Zonas para el Caso de Uso de Movilidad Inteligente. EDINT. Revision: v0.1.0.</dcterms:bibliographicCitation>
+    <schema:creativeWorkStatus xml:lang="en">Ontology Specification</schema:creativeWorkStatus>
+    <dcterms:abstract xml:lang="es">Esta ontología tiene como propósito definir, categorizar y relacionar las Zonas Regulatorias en el contexto de la movilidad inteligente y la gestión urbana (Smart Cities). Se ha diseñado como una extensión modular de la ontología del Sector Público de España (esadm). Cubre el vacío semántico para representar entidades funcionales que se superponen a la trama urbana (como Zonas de Bajas Emisiones, Carga y Descarga, o Sandboxes regulatorios) sin responder necesariamente a límites administrativos fijos.</dcterms:abstract>
+    <dcterms:abstract xml:lang="en">This ontology aims to define, categorize, and relate Regulatory Zones in the context of smart mobility and urban management (Smart Cities). It is designed as a modular extension of the Spanish Public Sector ontology (esadm).</dcterms:abstract>
+</owl:Ontology>
     
 
 
