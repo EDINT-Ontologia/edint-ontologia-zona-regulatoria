@@ -1,10 +1,13 @@
-# Madrid Regulated Parking Example
+# Madrid Regulated Zone Examples
 
 ![Madrid map](./mapa_madrid.png)
 
 ## Context
 
-This examples set demonstrates how to model the **Servicio de Estacionamiento Regulado (SER)** of Madrid using the **Base Zoning Ontology (`edintzone`)**. It shows how a real municipal regulated parking system can be represented as linked data using GeoSPARQL geometries from GeoJSON or GIS data.
+This examples set demonstrates how to model regulated zones of Madrid using the **Base Zoning Ontology (`edintzone`)**. It shows how real municipal regulations can be represented as linked data using GeoSPARQL geometries from GeoJSON or GIS data.
+
+- **Servicio de Estacionamiento Regulado (SER)**: regulated parking zones.
+- **Zona de Bajas Emisiones (ZBE)**: low emission zone.
 
 ## Single polygon case
 
@@ -33,6 +36,19 @@ In this case, roads are defined as geometrical lines and the zone as the collect
 Data processing for this case included importing the geometry into QGIS for initial exploration, exporting the required parts as CSV (including WKT for the objects already) and finally collecting the WKT with a Python script. Check the `./data` folder for details.
 
 Sources: [SHP files](https://geoportal.madrid.es/fsdescargas/IDEAM_WBGEOPORTAL/MOVILIDAD/ZONA_SER/SHP_ZIP.zip)
+
+## Low Emission Zone (ZBE)
+
+The ZBE is modeled as a `edintzone:RegulatedZone` whose type is the SKOS
+concept `edintkos-rztype:LowEmissionZone`, instead of a parking subclass. The
+whole zone is a single `geo:wktLiteral` (a `MULTIPOLYGON`) kept inline in the
+example, so the file is self-contained.
+
+Source: [DGT national ZBE dataset](https://nap.dgt.es/datex2/v3/dgt/zbe/ControledZonePublication/Madrid.xml)
+(DATEX II v3 `ControlledZonePublication`), which describes the controlled zone
+as `openLR` polygons. `./data/datex2zbe2ttl.py` converts that publication into
+`example_zbe.ttl`, aggregating the polygons of the *"Madrid (Madrid ZBE)"* zone
+and simplifying them (~100 m tolerance) to keep the example readable.
 
 ## Example Query (SPARQL)
 
@@ -67,3 +83,22 @@ SELECT ?zone ?wkt WHERE {
 ```
 
 ---
+
+### 3️⃣ Which low emission zone covers Madrid?
+
+```sparql
+PREFIX : <http://example.org/resource/>
+PREFIX edintzone: <https://edint.es/def/zona-regulatoria#>
+PREFIX edintkos-rztype: <https://edint.es/kos/RegulatedZoneType/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+SELECT ?zbe ?label WHERE {
+  ?zbe a edintzone:RegulatedZone ;
+       edintzone:hasRegulatedZoneType edintkos-rztype:LowEmissionZone ;
+       edintzone:locatedIn :Municipio_Madrid ;
+       rdfs:label ?label .
+}
+```
+
+---
+
