@@ -3,7 +3,7 @@
 
 # --- Query 1 ---
 PREFIX edintkos-rztype: <https://edint.es/kos/RegulatedZoneType/>
-PREFIX edintzone: <http://vocab.linkeddata.es/datosabiertos/def/common/zone#>
+PREFIX edintzone: <https://edint.es/def/zona-regulatoria#>
 PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 
 SELECT DISTINCT ?zona

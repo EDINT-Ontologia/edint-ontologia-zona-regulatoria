@@ -6,7 +6,7 @@
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix org: <http://www.w3.org/ns/org#> .
 @prefix esadm: <http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio#> .
-@prefix edintzone: <http://vocab.linkeddata.es/datosabiertos/def/common/zone#> .
+@prefix edintzone: <https://edint.es/def/zona-regulatoria#> .
 
 # Custom Resource Prefixes
 @prefix ex-zona: <http://example.org/resource/zona/> .
