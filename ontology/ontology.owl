@@ -403,7 +403,63 @@
         <widoco:turtleSerialization>ontology.ttl</widoco:turtleSerialization>
         <widoco:ntSerialization>ontology.nt</widoco:ntSerialization>
         <widoco:jsonldSerialization>ontology.jsonld</widoco:jsonldSerialization>
-    </owl:Ontology>
+            <widoco:vocabularyLabel>
+            <rdf:Description>
+                <widoco:vocabularyIRI rdf:resource="http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio"/>
+                <rdfs:label xml:lang="es">Territorio (esadm)</rdfs:label>
+                <rdfs:label xml:lang="en">Territory (esadm)</rdfs:label>
+            </rdf:Description>
+        </widoco:vocabularyLabel>
+        <widoco:vocabularyLabel>
+            <rdf:Description>
+                <widoco:vocabularyIRI rdf:resource="http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio_v0.5"/>
+                <rdfs:label xml:lang="es">Territorio (esadm) v0.5</rdfs:label>
+                <rdfs:label xml:lang="en">Territory (esadm) v0.5</rdfs:label>
+            </rdf:Description>
+        </widoco:vocabularyLabel>
+        <widoco:vocabularyLabel>
+            <rdf:Description>
+                <widoco:vocabularyIRI rdf:resource="http://vocab.linkeddata.es/datosabiertos/def/urbanismo-infraestructuras/callejero"/>
+                <rdfs:label xml:lang="es">Callejero (escjr)</rdfs:label>
+                <rdfs:label xml:lang="en">Street catalogue (escjr)</rdfs:label>
+            </rdf:Description>
+        </widoco:vocabularyLabel>
+        <widoco:vocabularyLabel>
+            <rdf:Description>
+                <widoco:vocabularyIRI rdf:resource="http://vocab.linkeddata.es/datosabiertos/def/urbanismo-infraestructuras/callejero_v0.3"/>
+                <rdfs:label xml:lang="es">Callejero (escjr) v0.3</rdfs:label>
+                <rdfs:label xml:lang="en">Street catalogue (escjr) v0.3</rdfs:label>
+            </rdf:Description>
+        </widoco:vocabularyLabel>
+        <widoco:vocabularyLabel>
+            <rdf:Description>
+                <widoco:vocabularyIRI rdf:resource="http://www.geonames.org/ontology"/>
+                <rdfs:label xml:lang="es">GeoNames</rdfs:label>
+                <rdfs:label xml:lang="en">GeoNames</rdfs:label>
+            </rdf:Description>
+        </widoco:vocabularyLabel>
+        <widoco:vocabularyLabel>
+            <rdf:Description>
+                <widoco:vocabularyIRI rdf:resource="http://www.opengis.net/ont/geosparql"/>
+                <rdfs:label xml:lang="es">GeoSPARQL</rdfs:label>
+                <rdfs:label xml:lang="en">GeoSPARQL</rdfs:label>
+            </rdf:Description>
+        </widoco:vocabularyLabel>
+        <widoco:vocabularyLabel>
+            <rdf:Description>
+                <widoco:vocabularyIRI rdf:resource="http://www.opengis.net/ont/sf"/>
+                <rdfs:label xml:lang="es">OGC Simple Features</rdfs:label>
+                <rdfs:label xml:lang="en">OGC Simple Features</rdfs:label>
+            </rdf:Description>
+        </widoco:vocabularyLabel>
+        <widoco:vocabularyLabel>
+            <rdf:Description>
+                <widoco:vocabularyIRI rdf:resource="http://www.w3.org/ns/org"/>
+                <rdfs:label xml:lang="es">ORG</rdfs:label>
+                <rdfs:label xml:lang="en">ORG</rdfs:label>
+            </rdf:Description>
+        </widoco:vocabularyLabel>
+</owl:Ontology>
 </rdf:RDF>
 
 
