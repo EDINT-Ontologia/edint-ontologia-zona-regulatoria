@@ -59,7 +59,8 @@
             <foaf:homepage rdf:resource="https://www.femp.es/"/>
             <schema:affiliation>Federación Española de Municipios y Provincias</schema:affiliation>
         </dcterms:publisher>
-    <dcterms:bibliographicCitation xml:lang="es">Ontología EDINT de Zonas Regulatorias. EDINT. Revision: v0.1.0.</dcterms:bibliographicCitation>
+    <dcterms:bibliographicCitation xml:lang="es">Ontología EDINT de Zonas Regulatorias. EDINT. Revision: v0.2.1.</dcterms:bibliographicCitation>
+    <dcterms:bibliographicCitation xml:lang="en">EDINT Regulated Zone Ontology. EDINT. Revision: v0.2.1.</dcterms:bibliographicCitation>
     <schema:creativeWorkStatus xml:lang="en">Ontology Specification</schema:creativeWorkStatus>
     <dcterms:abstract xml:lang="es">Esta ontología tiene como propósito definir, categorizar y relacionar las Zonas Regulatorias en el contexto de la movilidad inteligente y la gestión urbana (Smart Cities). Se ha diseñado como una extensión modular de la ontología del Sector Público de España (esadm). Cubre el vacío semántico para representar entidades funcionales que se superponen a la trama urbana (como Zonas de Bajas Emisiones, Carga y Descarga, o Sandboxes regulatorios) sin responder necesariamente a límites administrativos fijos.</dcterms:abstract>
     <dcterms:abstract xml:lang="en">This ontology aims to define, categorize, and relate Regulatory Zones in the context of smart mobility and urban management (Smart Cities). It is designed as a modular extension of the Spanish Public Sector ontology (esadm).</dcterms:abstract>
