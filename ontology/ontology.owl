@@ -54,6 +54,7 @@
         <dcterms:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2026-09-17</dcterms:modified>
         <owl:priorVersion rdf:resource="https://github.com/EDINT-Ontologia/edint-ontologia-zona-regulatoria/releases/tag/v0.2.0"/>
         <schema:codeRepository rdf:resource="https://github.com/EDINT-Ontologia/edint-ontologia-zona-regulatoria"/>
+        <schema:funding>Espacio de Datos para las Infraestructuras Urbanas Inteligentes (EDINT)</schema:funding>
         <dcterms:publisher rdf:parseType="Resource">
             <foaf:name>FEMP</foaf:name>
             <foaf:homepage rdf:resource="https://www.femp.es/"/>
