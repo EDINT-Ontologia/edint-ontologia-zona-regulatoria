@@ -2,15 +2,16 @@
 @prefix dc: <http://purl.org/dc/terms/> .
 @prefix foaf: <http://xmlns.com/foaf/0.1/> .
 @prefix : <> .
-<http://vocab.linkeddata.es/datosabiertos/def/common/zone#> a prov:Entity;
-	 dc:title "Ontología base de Zonas para el Caso de Uso de Movilidad Inteligente";
+<..\index-en.html> a prov:Entity;
+	 dc:title "EDINT Regulated Zone Ontology";
 	 prov:wasAttributedTo :agent0;
 	 prov:wasAttributedTo :agent1;
 	 prov:wasAttributedTo :agent2;
 	 prov:wasAttributedTo :agent3;
 	 prov:wasAttributedTo <https://github.com/dgarijo/Widoco/>,<http://www.essepuntato.it/lode/>;
-	 prov:specializationOf <http://vocab.linkeddata.es/datosabiertos/def/common/zone#>;
-	 prov:wasGeneratedAt "Date created";
+	 prov:specializationOf <https://edint.es/def/zona-regulatoria>;
+	 prov:wasRevisionOf <https://github.com/EDINT-Ontologia/edint-ontologia-zona-regulatoria/releases/tag/v0.2.0>;
+	 prov:wasGeneratedAt "2026-01-27";
 .
 :agent0 a prov:Agent; foaf:name "Daniel Doña".
 :agent1 a prov:Agent; foaf:name "Edna Ruckhaus".
