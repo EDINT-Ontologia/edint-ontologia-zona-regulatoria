@@ -1,27 +1,104 @@
-@prefix : <http://vocab.linkeddata.es/datosabiertos/def/common/zone#> .
+@prefix : <https://edint.es/def/zona-regulatoria#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix xml: <http://www.w3.org/XML/1998/namespace> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
-@base <http://vocab.linkeddata.es/datosabiertos/def/common/zone#> .
+@base <https://edint.es/def/zona-regulatoria#> .
 
-<http://vocab.linkeddata.es/datosabiertos/def/common/zone#> rdf:type owl:Ontology ;
-                                                             owl:imports <http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio_v0.5> ,
-                                                                         <http://vocab.linkeddata.es/datosabiertos/def/urbanismo-infraestructuras/callejero_v0.3> ;
-                                                             <http://purl.org/dc/elements/1.1/abstract> "Esta ontología tiene como propósito definir, categorizar y relacionar las Zonas Regulatorias en el contexto de la movilidad inteligente y la gestión urbana (Smart Cities). Se ha diseñado como una extensión modular de la ontología del Sector Público de España (esadm)."@es ,
-                                                                                                        "This ontology aims to define, categorize, and relate Regulatory Zones in the context of smart mobility and urban management (Smart Cities). It is designed as a modular extension of the Spanish Public Sector ontology (esadm)."@en ;
-                                                             <http://purl.org/dc/elements/1.1/creator> "OEG-UPM" ;
-                                                             <http://purl.org/dc/elements/1.1/title> "Base Zoning Ontology"@en ,
-                                                                                                     "Ontología base de Zonas"@es ;
-                                                             <http://purl.org/dc/terms/issued> "2026-01-27"^^xsd:date ;
-                                                             <http://purl.org/vocab/vann/preferredNamespacePrefix> "edintzone" ;
-                                                             <http://purl.org/vocab/vann/preferredNamespaceUri> "http://vocab.linkeddata.es/datosabiertos/def/common/zone#" ;
-                                                             rdfs:comment "Actualmente, existen vocabularios para divisiones administrativas (esadm) y geometrías (GeoSPARQL), pero existía un vacío semántico para representar entidades funcionales que se superponen a la trama urbana (ZBE, Carga y Descarga, etc...) sin responder a límites administrativos fijos. Esta ontología cubre dicho hueco."@es ,
-                                                                          "Currently, vocabularies exist for administrative divisions (esadm) and geometries (GeoSPARQL), but there was a semantic gap for representing functional entities that overlay the urban grid (LEZ, Loading/Unloading, etc.) without adhering to fixed administrative boundaries. This ontology fills that gap."@en ;
-                                                             rdfs:label "Base Zoning Ontology for Smart Mobility Use Case."@en ,
-                                                                        "Ontología base de Zonas para el Caso de Uso de Movilidad Inteligente."@es ;
-                                                             owl:versionInfo "0.1.0" .
+<https://edint.es/def/zona-regulatoria#> rdf:type owl:Ontology ;
+                                          owl:versionIRI <https://edint.es/def/zona-regulatoria/0.2.1> ;
+                                          owl:imports <http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio_v0.5> ,
+                                                      <http://vocab.linkeddata.es/datosabiertos/def/urbanismo-infraestructuras/callejero_v0.3> ,
+                                                      <http://www.opengis.net/ont/geosparql> ;
+                                          <http://purl.org/dc/terms/abstract> "Esta ontología tiene como propósito definir, categorizar y relacionar las Zonas Regulatorias en el contexto de la movilidad inteligente y la gestión urbana (Smart Cities). Se ha diseñado como una extensión modular de la ontología del Sector Público de España (esadm). Cubre el vacío semántico para representar entidades funcionales que se superponen a la trama urbana (como Zonas de Bajas Emisiones, Carga y Descarga, o Sandboxes regulatorios) sin responder necesariamente a límites administrativos fijos."@es ,
+                                                                              "This ontology aims to define, categorize, and relate Regulatory Zones in the context of smart mobility and urban management (Smart Cities). It is designed as a modular extension of the Spanish Public Sector ontology (esadm)."@en ;
+                                          <http://purl.org/dc/terms/bibliographicCitation> "EDINT Regulated Zone Ontology. EDINT. Revision: v0.2.1."@en ,
+                                                                                           "Ontología EDINT de Zonas Regulatorias. EDINT. Revisión: v0.2.1."@es ;
+                                          <http://purl.org/dc/terms/created> "2026-01-27"^^xsd:date ;
+                                          <http://purl.org/dc/terms/creator> _:genid1 ,
+                                                                             _:genid2 ,
+                                                                             _:genid3 ,
+                                                                             _:genid4 ;
+                                          <http://purl.org/dc/terms/description> "Esta ontología tiene como propósito definir, categorizar y relacionar las Zonas Regulatorias en el contexto de la movilidad inteligente y la gestión urbana (Smart Cities). Se ha diseñado como una extensión modular de la ontología del Sector Público de España (esadm)."@es ,
+                                                                                 "This ontology aims to define, categorize, and relate Regulatory Zones in the context of smart mobility and urban management (Smart Cities). It is designed as a modular extension of the Spanish Public Sector ontology (esadm)."@en ;
+                                          <http://purl.org/dc/terms/issued> "2026-09-17"^^xsd:date ;
+                                          <http://purl.org/dc/terms/license> <https://creativecommons.org/licenses/by/4.0/> ;
+                                          <http://purl.org/dc/terms/modified> "2026-09-17"^^xsd:date ;
+                                          <http://purl.org/dc/terms/publisher> _:genid5 ;
+                                          <http://purl.org/dc/terms/title> "EDINT Regulated Zone Ontology"@en ,
+                                                                           "Ontología EDINT de Zonas Regulatorias"@es ;
+                                          <http://purl.org/vocab/vann/preferredNamespacePrefix> "edintzone" ;
+                                          <http://purl.org/vocab/vann/preferredNamespaceUri> "https://edint.es/def/zona-regulatoria#" ;
+                                          <http://schema.org/codeRepository> <https://github.com/EDINT-Ontologia/edint-ontologia-zona-regulatoria> ;
+                                          <http://schema.org/creativeWorkStatus> "Ontology Specification"@en ;
+                                          <http://schema.org/funding> "Espacio de Datos para las Infraestructuras Urbanas Inteligentes (EDINT)" ;
+                                          rdfs:comment "Actualmente, existen vocabularios para divisiones administrativas (esadm) y geometrías (GeoSPARQL), pero existía un vacío semántico para representar entidades funcionales que se superponen a la trama urbana (ZBE, Carga y Descarga, etc...) sin responder a límites administrativos fijos. Esta ontología cubre dicho hueco."@es ,
+                                                       "Currently, vocabularies exist for administrative divisions (esadm) and geometries (GeoSPARQL), but there was a semantic gap for representing functional entities that overlay the urban grid (LEZ, Loading/Unloading, etc.) without adhering to fixed administrative boundaries. This ontology fills that gap."@en ;
+                                          rdfs:label "Regulated Zones"@en ,
+                                                     "Zonas Regulatorias"@es ;
+                                          owl:priorVersion <https://github.com/EDINT-Ontologia/edint-ontologia-zona-regulatoria/releases/tag/v0.2.0> ;
+                                          owl:versionInfo "0.2.1" ;
+                                          <https://w3id.org/widoco/vocab#jsonldSerialization> "ontology.jsonld" ;
+                                          <https://w3id.org/widoco/vocab#ntSerialization> "ontology.nt" ;
+                                          <https://w3id.org/widoco/vocab#rdfxmlSerialization> "ontology.rdf" ;
+                                          <https://w3id.org/widoco/vocab#turtleSerialization> "ontology.ttl" ;
+                                          <https://w3id.org/widoco/vocab#vocabularyLabel> _:genid6 ,
+                                                                                          _:genid7 ,
+                                                                                          _:genid8 ,
+                                                                                          _:genid9 ,
+                                                                                          _:genid10 ,
+                                                                                          _:genid11 ,
+                                                                                          _:genid12 ,
+                                                                                          _:genid13 .
+
+_:genid1 <http://schema.org/affiliation> <https://oeg.fi.upm.es/> ;
+          <http://xmlns.com/foaf/0.1/name> "Daniel Doña" .
+
+_:genid2 <http://schema.org/affiliation> <https://oeg.fi.upm.es/> ;
+          <http://xmlns.com/foaf/0.1/name> "Edna Ruckhaus" .
+
+_:genid3 <http://schema.org/affiliation> <https://oeg.fi.upm.es/> ;
+          <http://xmlns.com/foaf/0.1/name> "Lucía Sánchez" .
+
+_:genid4 <http://schema.org/affiliation> <https://oeg.fi.upm.es/> ;
+          <http://xmlns.com/foaf/0.1/name> "Oscar Corcho" .
+
+_:genid5 <http://schema.org/affiliation> "Federación Española de Municipios y Provincias" ;
+          <http://xmlns.com/foaf/0.1/homepage> <https://www.femp.es/> ;
+          <http://xmlns.com/foaf/0.1/name> "FEMP" .
+
+_:genid6 rdfs:label "ORG"@en ,
+                     "ORG"@es ;
+          <https://w3id.org/widoco/vocab#vocabularyIRI> <http://www.w3.org/ns/org> .
+
+_:genid7 rdfs:label "OGC Simple Features"@en ,
+                     "OGC Simple Features"@es ;
+          <https://w3id.org/widoco/vocab#vocabularyIRI> <http://www.opengis.net/ont/sf> .
+
+_:genid8 rdfs:label "GeoSPARQL"@en ,
+                     "GeoSPARQL"@es ;
+          <https://w3id.org/widoco/vocab#vocabularyIRI> <http://www.opengis.net/ont/geosparql> .
+
+_:genid9 rdfs:label "Territorio (esadm)"@es ,
+                     "Territory (esadm)"@en ;
+          <https://w3id.org/widoco/vocab#vocabularyIRI> <http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio> .
+
+_:genid10 rdfs:label "GeoNames"@en ,
+                      "GeoNames"@es ;
+           <https://w3id.org/widoco/vocab#vocabularyIRI> <http://www.geonames.org/ontology> .
+
+_:genid11 rdfs:label "Callejero (escjr) v0.3"@es ,
+                      "Street catalogue (escjr) v0.3"@en ;
+           <https://w3id.org/widoco/vocab#vocabularyIRI> <http://vocab.linkeddata.es/datosabiertos/def/urbanismo-infraestructuras/callejero_v0.3> .
+
+_:genid12 rdfs:label "Territorio (esadm) v0.5"@es ,
+                      "Territory (esadm) v0.5"@en ;
+           <https://w3id.org/widoco/vocab#vocabularyIRI> <http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio_v0.5> .
+
+_:genid13 rdfs:label "Callejero (escjr)"@es ,
+                      "Street catalogue (escjr)"@en ;
+           <https://w3id.org/widoco/vocab#vocabularyIRI> <http://vocab.linkeddata.es/datosabiertos/def/urbanismo-infraestructuras/callejero> .
 
 #################################################################
 #    Annotation properties
@@ -43,8 +120,44 @@
 <http://purl.org/dc/elements/1.1/title> rdf:type owl:AnnotationProperty .
 
 
+###  http://purl.org/dc/terms/abstract
+<http://purl.org/dc/terms/abstract> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/bibliographicCitation
+<http://purl.org/dc/terms/bibliographicCitation> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/created
+<http://purl.org/dc/terms/created> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/creator
+<http://purl.org/dc/terms/creator> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/description
+<http://purl.org/dc/terms/description> rdf:type owl:AnnotationProperty .
+
+
 ###  http://purl.org/dc/terms/issued
 <http://purl.org/dc/terms/issued> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/license
+<http://purl.org/dc/terms/license> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/modified
+<http://purl.org/dc/terms/modified> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/publisher
+<http://purl.org/dc/terms/publisher> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/title
+<http://purl.org/dc/terms/title> rdf:type owl:AnnotationProperty .
 
 
 ###  http://purl.org/vocab/vann/preferredNamespacePrefix
@@ -53,6 +166,54 @@
 
 ###  http://purl.org/vocab/vann/preferredNamespaceUri
 <http://purl.org/vocab/vann/preferredNamespaceUri> rdf:type owl:AnnotationProperty .
+
+
+###  http://schema.org/affiliation
+<http://schema.org/affiliation> rdf:type owl:AnnotationProperty .
+
+
+###  http://schema.org/codeRepository
+<http://schema.org/codeRepository> rdf:type owl:AnnotationProperty .
+
+
+###  http://schema.org/creativeWorkStatus
+<http://schema.org/creativeWorkStatus> rdf:type owl:AnnotationProperty .
+
+
+###  http://schema.org/funding
+<http://schema.org/funding> rdf:type owl:AnnotationProperty .
+
+
+###  http://xmlns.com/foaf/0.1/homepage
+<http://xmlns.com/foaf/0.1/homepage> rdf:type owl:AnnotationProperty .
+
+
+###  http://xmlns.com/foaf/0.1/name
+<http://xmlns.com/foaf/0.1/name> rdf:type owl:AnnotationProperty .
+
+
+###  https://w3id.org/widoco/vocab#jsonldSerialization
+<https://w3id.org/widoco/vocab#jsonldSerialization> rdf:type owl:AnnotationProperty .
+
+
+###  https://w3id.org/widoco/vocab#ntSerialization
+<https://w3id.org/widoco/vocab#ntSerialization> rdf:type owl:AnnotationProperty .
+
+
+###  https://w3id.org/widoco/vocab#rdfxmlSerialization
+<https://w3id.org/widoco/vocab#rdfxmlSerialization> rdf:type owl:AnnotationProperty .
+
+
+###  https://w3id.org/widoco/vocab#turtleSerialization
+<https://w3id.org/widoco/vocab#turtleSerialization> rdf:type owl:AnnotationProperty .
+
+
+###  https://w3id.org/widoco/vocab#vocabularyIRI
+<https://w3id.org/widoco/vocab#vocabularyIRI> rdf:type owl:AnnotationProperty .
+
+
+###  https://w3id.org/widoco/vocab#vocabularyLabel
+<https://w3id.org/widoco/vocab#vocabularyLabel> rdf:type owl:AnnotationProperty .
 
 
 #################################################################
@@ -71,68 +232,6 @@ xsd:date rdf:type rdfs:Datatype .
 #    Object Properties
 #################################################################
 
-###  http://vocab.linkeddata.es/datosabiertos/def/common/zone#composedOf
-:composedOf rdf:type owl:ObjectProperty ;
-            rdfs:domain :RegulatedZone ;
-            rdfs:range <http://vocab.linkeddata.es/datosabiertos/def/urbanismo-infraestructuras/callejero#Via> ,
-                       <http://vocab.linkeddata.es/datosabiertos/def/urbanismo-infraestructuras/callejero#TramoVia> ,
-                       <http://www.geonames.org/ontology#Feature> ;
-            rdfs:comment "Relación que permite definir una Zona Regulatoria mediante una o más vías o tramos de vía del vocabulario Callejero."@es ,
-                         "Relationship that allows defining a Regulated Zone via one or more streets or street segments from the Callejero vocabulary."@en ;
-            rdfs:label "composed of"@en ,
-                       "compuesta por"@es .
-
-
-###  http://vocab.linkeddata.es/datosabiertos/def/common/zone#hasRegulatedZone
-:hasRegulatedZone rdf:type owl:ObjectProperty ;
-                  owl:inverseOf :locatedIn ;
-                  rdfs:domain <http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio#Municipio> ;
-                  rdfs:range :RegulatedZone ;
-                  rdfs:comment "Inverse property of 'locatedIn'. Links a municipality with the regulated zones it contains."@en ,
-                               "Propiedad inversa de 'ubicado'. Vincula un municipio con las zonas regulatorias que contiene."@es ;
-                  rdfs:label "has regulated zone"@en ,
-                             "tiene zona regulatoria"@es .
-
-
-###  http://vocab.linkeddata.es/datosabiertos/def/common/zone#locatedIn
-:locatedIn rdf:type owl:ObjectProperty ;
-           rdfs:subPropertyOf <http://www.opengis.net/ont/geosparql#sfWithin> ;
-           rdfs:domain :RegulatedZone ;
-           rdfs:range <http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio#Municipio> ;
-           rdfs:comment "Relaciona una zona regulatoria con el municipio administrativo al que pertenece."@es ,
-                        "Relates a regulated zone to the administrative municipality it belongs to."@en ;
-           rdfs:label "located in municipality"@en ,
-                      "ubicado en municipio"@es .
-
-
-###  http://vocab.linkeddata.es/datosabiertos/def/common/zone#managedBy
-:managedBy rdf:type owl:ObjectProperty ;
-           rdfs:domain :RegulatedZone ;
-           rdfs:range <http://www.w3.org/ns/org#Organization> ;
-           rdfs:comment "Organización (pública o privada) encargada de la gestión y operación de la zona."@es ,
-                        "Organization (public or private) responsible for the management and operation of the zone."@en ;
-           rdfs:label "entidad gestora"@es ,
-                      "managed by"@en .
-
-
-
-
-###  http://vocab.linkeddata.es/datosabiertos/def/common/zone#hasRegulatedZoneType
-:hasRegulatedZoneType rdf:type owl:ObjectProperty ;
-                      rdfs:domain :RegulatedZone ;
-                      rdfs:range [ rdf:type owl:Class ;
-                                   owl:intersectionOf ( <http://www.w3.org/2004/02/skos/core#Concept>
-                                                       [ rdf:type owl:Restriction ;
-                                                         owl:onProperty <http://www.w3.org/2004/02/skos/core#inScheme> ;
-                                                         owl:hasValue <http://vocab.linkeddata.es/datosabiertos/kos/edint/RegulatedZoneType>
-                                                       ]
-                                                     )
-                                 ] ;
-                      rdfs:comment "Links a regulated zone to its type classification from the RegulatedZoneType SKOS concept scheme."@en ,
-                                   "Vincula una zona regulada a su clasificación de tipo del esquema de conceptos SKOS RegulatedZoneType."@es ;
-                      rdfs:label "has regulated zone type"@en ,
-                                 "tiene tipo de zona regulada"@es .
-
 ###  http://www.opengis.net/ont/geosparql#hasGeometry
 <http://www.opengis.net/ont/geosparql#hasGeometry> rdf:type owl:ObjectProperty ;
                                                    rdfs:label "has geometry"@en ,
@@ -143,49 +242,74 @@ xsd:date rdf:type rdfs:Datatype .
 <http://www.opengis.net/ont/geosparql#sfWithin> rdf:type owl:ObjectProperty .
 
 
+###  http://www.w3.org/2004/02/skos/core#inScheme
+<http://www.w3.org/2004/02/skos/core#inScheme> rdf:type owl:ObjectProperty .
+
+
+###  https://edint.es/def/zona-regulatoria#composedOf
+:composedOf rdf:type owl:ObjectProperty ;
+            rdfs:domain :RegulatedZone ;
+            rdfs:range <http://vocab.linkeddata.es/datosabiertos/def/urbanismo-infraestructuras/callejero#TramoVia> ,
+                       <http://vocab.linkeddata.es/datosabiertos/def/urbanismo-infraestructuras/callejero#Via> ,
+                       <http://www.geonames.org/ontology#Feature> ;
+            rdfs:comment "Relación que permite definir una Zona Regulatoria mediante una o más vías o tramos de vía del vocabulario Callejero."@es ,
+                         "Relationship that allows defining a Regulated Zone via one or more streets or street segments from the Callejero vocabulary."@en ;
+            rdfs:label "composed of"@en ,
+                       "compuesta por"@es .
+
+
+###  https://edint.es/def/zona-regulatoria#hasRegulatedZone
+:hasRegulatedZone rdf:type owl:ObjectProperty ;
+                  owl:inverseOf :locatedIn ;
+                  rdfs:domain <http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio#Municipio> ;
+                  rdfs:range :RegulatedZone ;
+                  rdfs:comment "Inverse property of 'locatedIn'. Links a municipality with the regulated zones it contains."@en ,
+                               "Propiedad inversa de 'ubicado'. Vincula un municipio con las zonas regulatorias que contiene."@es ;
+                  rdfs:label "has regulated zone"@en ,
+                             "tiene zona regulatoria"@es .
+
+
+###  https://edint.es/def/zona-regulatoria#hasRegulatedZoneType
+:hasRegulatedZoneType rdf:type owl:ObjectProperty ;
+                      rdfs:domain :RegulatedZone ;
+                      rdfs:range [ owl:intersectionOf ( <http://www.w3.org/2004/02/skos/core#Concept>
+                                                        [ rdf:type owl:Restriction ;
+                                                          owl:onProperty <http://www.w3.org/2004/02/skos/core#inScheme> ;
+                                                          owl:hasValue <https://edint.es/kos/RegulatedZoneType>
+                                                        ]
+                                                      ) ;
+                                   rdf:type owl:Class
+                                 ] ;
+                      rdfs:comment "Links a regulated zone to its type classification from the RegulatedZoneType SKOS concept scheme."@en ,
+                                   "Vincula una zona regulada a su clasificación de tipo del esquema de conceptos SKOS RegulatedZoneType."@es ;
+                      rdfs:label "has regulated zone type"@en ,
+                                 "tiene tipo de zona regulada"@es .
+
+
+###  https://edint.es/def/zona-regulatoria#locatedIn
+:locatedIn rdf:type owl:ObjectProperty ;
+           rdfs:subPropertyOf <http://www.opengis.net/ont/geosparql#sfWithin> ;
+           rdfs:domain :RegulatedZone ;
+           rdfs:range <http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio#Municipio> ;
+           rdfs:comment "Relaciona una zona regulatoria con el municipio administrativo al que pertenece."@es ,
+                        "Relates a regulated zone to the administrative municipality it belongs to."@en ;
+           rdfs:label "located in municipality"@en ,
+                      "ubicado en municipio"@es .
+
+
+###  https://edint.es/def/zona-regulatoria#managedBy
+:managedBy rdf:type owl:ObjectProperty ;
+           rdfs:domain :RegulatedZone ;
+           rdfs:range <http://www.w3.org/ns/org#Organization> ;
+           rdfs:comment "Organización (pública o privada) encargada de la gestión y operación de la zona."@es ,
+                        "Organization (public or private) responsible for the management and operation of the zone."@en ;
+           rdfs:label "entidad gestora"@es ,
+                      "managed by"@en .
+
+
 #################################################################
 #    Data properties
 #################################################################
-
-###  http://vocab.linkeddata.es/datosabiertos/def/common/zone#endDate
-:endDate rdf:type owl:DatatypeProperty ;
-         rdfs:domain :RegulatedZone ;
-         rdfs:range xsd:date ;
-         rdfs:comment "Date when the zone regulation ceases to be effective."@en ,
-                      "Fecha en la que la regulación de la zona deja de ser efectiva (derogación o fin de periodo)."@es ;
-         rdfs:label "end date"@en ,
-                    "fecha de fin de vigor"@es .
-
-
-###  http://vocab.linkeddata.es/datosabiertos/def/common/zone#legalReference
-:legalReference rdf:type owl:DatatypeProperty ;
-                rdfs:domain :RegulatedZone ;
-                rdfs:range xsd:anyURI ;
-                rdfs:comment "Enlace al documento oficial (Boletín, Ordenanza) que establece la creación de la zona."@es ,
-                             "Link to the official document (Bulletin, Ordinance) establishing the zone."@en ;
-                rdfs:label "legal reference"@en ,
-                           "referencia legal"@es .
-
-
-###  http://vocab.linkeddata.es/datosabiertos/def/common/zone#scheduleDescription
-:scheduleDescription rdf:type owl:DatatypeProperty ;
-                     rdfs:domain :RegulatedZone ;
-                     rdfs:range xsd:string ;
-                     rdfs:comment "Descripción textual del horario de funcionamiento de la zona (ej. \"Lunes a Viernes de 07:00 a 20:00\")."@es ,
-                                  "Textual description of the zone's operating schedule (e.g., \"Monday to Friday from 07:00 to 20:00\")."@en ;
-                     rdfs:label "horario descriptivo"@es ,
-                                "schedule description"@en .
-
-
-###  http://vocab.linkeddata.es/datosabiertos/def/common/zone#startDate
-:startDate rdf:type owl:DatatypeProperty ;
-           rdfs:domain :RegulatedZone ;
-           rdfs:range xsd:date ;
-           rdfs:comment "Date from which the zone regulation becomes effective."@en ,
-                        "Fecha a partir de la cual la regulación de la zona comienza a ser efectiva."@es ;
-           rdfs:label "entry into force date"@en ,
-                      "fecha de entrada en vigor"@es .
-
 
 ###  http://www.opengis.net/ont/geosparql#asWKT
 <http://www.opengis.net/ont/geosparql#asWKT> rdf:type owl:DatatypeProperty ;
@@ -197,35 +321,83 @@ xsd:date rdf:type rdfs:Datatype .
                                                         "como WKT"@es .
 
 
+###  https://edint.es/def/zona-regulatoria#endDate
+:endDate rdf:type owl:DatatypeProperty ;
+         rdfs:domain :RegulatedZone ;
+         rdfs:range xsd:date ;
+         rdfs:comment "Date when the zone regulation ceases to be effective."@en ,
+                      "Fecha en la que la regulación de la zona deja de ser efectiva (derogación o fin de periodo)."@es ;
+         rdfs:label "end date"@en ,
+                    "fecha de fin de vigor"@es .
+
+
+###  https://edint.es/def/zona-regulatoria#legalReference
+:legalReference rdf:type owl:DatatypeProperty ;
+                rdfs:domain :RegulatedZone ;
+                rdfs:range xsd:anyURI ;
+                rdfs:comment "Enlace al documento oficial (Boletín, Ordenanza) que establece la creación de la zona."@es ,
+                             "Link to the official document (Bulletin, Ordinance) establishing the zone."@en ;
+                rdfs:label "legal reference"@en ,
+                           "referencia legal"@es .
+
+
+###  https://edint.es/def/zona-regulatoria#scheduleDescription
+:scheduleDescription rdf:type owl:DatatypeProperty ;
+                     rdfs:domain :RegulatedZone ;
+                     rdfs:range xsd:string ;
+                     rdfs:comment "Descripción textual del horario de funcionamiento de la zona (ej. \"Lunes a Viernes de 07:00 a 20:00\")."@es ,
+                                  "Textual description of the zone's operating schedule (e.g., \"Monday to Friday from 07:00 to 20:00\")."@en ;
+                     rdfs:label "horario descriptivo"@es ,
+                                "schedule description"@en .
+
+
+###  https://edint.es/def/zona-regulatoria#startDate
+:startDate rdf:type owl:DatatypeProperty ;
+           rdfs:domain :RegulatedZone ;
+           rdfs:range xsd:date ;
+           rdfs:comment "Date from which the zone regulation becomes effective."@en ,
+                        "Fecha a partir de la cual la regulación de la zona comienza a ser efectiva."@es ;
+           rdfs:label "entry into force date"@en ,
+                      "fecha de entrada en vigor"@es .
+
+
 #################################################################
 #    Classes
 #################################################################
 
-###  http://vocab.linkeddata.es/datosabiertos/def/urbanismo-infraestructuras/callejero#Via
-<http://vocab.linkeddata.es/datosabiertos/def/urbanismo-infraestructuras/callejero#Via> rdf:type owl:Class .
+###  http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio#Municipio
+<http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio#Municipio> rdf:type owl:Class .
 
 
 ###  http://vocab.linkeddata.es/datosabiertos/def/urbanismo-infraestructuras/callejero#TramoVia
 <http://vocab.linkeddata.es/datosabiertos/def/urbanismo-infraestructuras/callejero#TramoVia> rdf:type owl:Class .
 
 
+###  http://vocab.linkeddata.es/datosabiertos/def/urbanismo-infraestructuras/callejero#Via
+<http://vocab.linkeddata.es/datosabiertos/def/urbanismo-infraestructuras/callejero#Via> rdf:type owl:Class .
 
 
+###  http://www.geonames.org/ontology#Feature
+<http://www.geonames.org/ontology#Feature> rdf:type owl:Class .
 
 
+###  http://www.opengis.net/ont/geosparql#Feature
+<http://www.opengis.net/ont/geosparql#Feature> rdf:type owl:Class .
 
 
+###  http://www.opengis.net/ont/sf#Geometry
+<http://www.opengis.net/ont/sf#Geometry> rdf:type owl:Class .
 
 
+###  http://www.w3.org/2004/02/skos/core#Concept
+<http://www.w3.org/2004/02/skos/core#Concept> rdf:type owl:Class .
 
 
+###  http://www.w3.org/ns/org#Organization
+<http://www.w3.org/ns/org#Organization> rdf:type owl:Class .
 
 
-
-
-
-
-###  http://vocab.linkeddata.es/datosabiertos/def/common/zone#RegulatedZone
+###  https://edint.es/def/zona-regulatoria#RegulatedZone
 :RegulatedZone rdf:type owl:Class ;
                rdfs:subClassOf <http://www.opengis.net/ont/geosparql#Feature> ,
                                [ rdf:type owl:Restriction ;
@@ -243,30 +415,19 @@ xsd:date rdf:type rdfs:Datatype .
                           "Zona regulatoria"@es .
 
 
+#################################################################
+#    Individuals
+#################################################################
+
+###  https://edint.es/kos/RegulatedZoneType
+<https://edint.es/kos/RegulatedZoneType> rdf:type owl:NamedIndividual .
 
 
+#################################################################
+#    Annotations
+#################################################################
 
-
-
-
-###  http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio#Municipio
-<http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio#Municipio> rdf:type owl:Class .
-
-
-###  http://www.geonames.org/ontology#Feature
-<http://www.geonames.org/ontology#Feature> rdf:type owl:Class .
-
-
-###  http://www.opengis.net/ont/geosparql#Feature
-<http://www.opengis.net/ont/geosparql#Feature> rdf:type owl:Class .
-
-
-###  http://www.opengis.net/ont/sf#Geometry
-<http://www.opengis.net/ont/sf#Geometry> rdf:type owl:Class .
-
-
-###  http://www.w3.org/ns/org#Organization
-<http://www.w3.org/ns/org#Organization> rdf:type owl:Class .
+<https://oeg.fi.upm.es/> <http://xmlns.com/foaf/0.1/name> "Ontology Engineering Group, UPM" .
 
 
 ###  Generated by the OWL API (version 5.1.18) https://github.com/owlcs/owlapi/
