@@ -40,14 +40,14 @@
             <schema:affiliation rdf:resource="https://oeg.fi.upm.es/"/>
         </dcterms:creator>
         <dcterms:title xml:lang="en">EDINT Regulated Zone Ontology</dcterms:title>
+        <rdfs:label xml:lang="es">Zonas Regulatorias</rdfs:label>
+        <rdfs:label xml:lang="en">Regulated Zones</rdfs:label>
         <dcterms:title xml:lang="es">Ontología EDINT de Zonas Regulatorias</dcterms:title>
         <dcterms:license rdf:resource="https://creativecommons.org/licenses/by/4.0/"/>
         <vann:preferredNamespacePrefix>edintzone</vann:preferredNamespacePrefix>
         <vann:preferredNamespaceUri>https://edint.es/def/zona-regulatoria#</vann:preferredNamespaceUri>
         <rdfs:comment xml:lang="es">Actualmente, existen vocabularios para divisiones administrativas (esadm) y geometrías (GeoSPARQL), pero existía un vacío semántico para representar entidades funcionales que se superponen a la trama urbana (ZBE, Carga y Descarga, etc...) sin responder a límites administrativos fijos. Esta ontología cubre dicho hueco.</rdfs:comment>
         <rdfs:comment xml:lang="en">Currently, vocabularies exist for administrative divisions (esadm) and geometries (GeoSPARQL), but there was a semantic gap for representing functional entities that overlay the urban grid (LEZ, Loading/Unloading, etc.) without adhering to fixed administrative boundaries. This ontology fills that gap.</rdfs:comment>
-        <rdfs:label xml:lang="en">Base Zoning Ontology for Smart Mobility Use Case.</rdfs:label>
-        <rdfs:label xml:lang="es">Ontología base de Zonas para el Caso de Uso de Movilidad Inteligente.</rdfs:label>
         <owl:versionInfo>0.2.1</owl:versionInfo>
         <dcterms:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2026-01-27</dcterms:created>
         <dcterms:issued rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2026-09-17</dcterms:issued>
