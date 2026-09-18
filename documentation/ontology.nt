@@ -1,80 +1,79 @@
-<https://edint.es/def/zona-regulatoria#> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Ontology> .
-<https://edint.es/def/zona-regulatoria#> <http://www.w3.org/2002/07/owl#versionIRI> <https://edint.es/def/zona-regulatoria/0.2.1> .
-<https://edint.es/def/zona-regulatoria#> <http://www.w3.org/2002/07/owl#imports> <http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio_v0.5> .
-<https://edint.es/def/zona-regulatoria#> <http://www.w3.org/2002/07/owl#imports> <http://vocab.linkeddata.es/datosabiertos/def/urbanismo-infraestructuras/callejero_v0.3> .
-<https://edint.es/def/zona-regulatoria#> <http://www.w3.org/2002/07/owl#imports> <http://www.opengis.net/ont/geosparql> .
-<https://edint.es/def/zona-regulatoria#> <http://purl.org/dc/terms/abstract> "Esta ontología tiene como propósito definir, categorizar y relacionar las Zonas Regulatorias en el contexto de la movilidad inteligente y la gestión urbana (Smart Cities). Se ha diseñado como una extensión modular de la ontología del Sector Público de España (esadm). Cubre el vacío semántico para representar entidades funcionales que se superponen a la trama urbana (como Zonas de Bajas Emisiones, Carga y Descarga, o Sandboxes regulatorios) sin responder necesariamente a límites administrativos fijos."@es .
-<https://edint.es/def/zona-regulatoria#> <http://purl.org/dc/terms/abstract> "This ontology aims to define, categorize, and relate Regulatory Zones in the context of smart mobility and urban management (Smart Cities). It is designed as a modular extension of the Spanish Public Sector ontology (esadm)."@en .
-<https://edint.es/def/zona-regulatoria#> <http://purl.org/dc/terms/bibliographicCitation> "EDINT Regulated Zone Ontology. EDINT. Revision: v0.2.1."@en .
-<https://edint.es/def/zona-regulatoria#> <http://purl.org/dc/terms/bibliographicCitation> "Ontología EDINT de Zonas Regulatorias. EDINT. Revisión: v0.2.1."@es .
-<https://edint.es/def/zona-regulatoria#> <http://purl.org/dc/terms/created> "2026-01-27"^^<http://www.w3.org/2001/XMLSchema#date> .
-<https://edint.es/def/zona-regulatoria#> <http://purl.org/dc/terms/creator> _:genid1 .
+<http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio_v0.5> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Ontology> .
+<http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio_v0.5> <http://www.w3.org/2002/07/owl#imports> <http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio_v0.5> .
+<http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio_v0.5> <http://www.w3.org/2002/07/owl#imports> <http://vocab.linkeddata.es/datosabiertos/def/urbanismo-infraestructuras/callejero_v0.3> .
+<http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio_v0.5> <http://www.w3.org/2002/07/owl#imports> <http://www.opengis.net/ont/geosparql> .
+<http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio_v0.5> <http://purl.org/dc/terms/abstract> "Esta ontología tiene como propósito definir, categorizar y relacionar las Zonas Regulatorias en el contexto de la movilidad inteligente y la gestión urbana (Smart Cities). Se ha diseñado como una extensión modular de la ontología del Sector Público de España (esadm). Cubre el vacío semántico para representar entidades funcionales que se superponen a la trama urbana (como Zonas de Bajas Emisiones, Carga y Descarga, o Sandboxes regulatorios) sin responder necesariamente a límites administrativos fijos."@es .
+<http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio_v0.5> <http://purl.org/dc/terms/abstract> "This ontology aims to define, categorize, and relate Regulatory Zones in the context of smart mobility and urban management (Smart Cities). It is designed as a modular extension of the Spanish Public Sector ontology (esadm)."@en .
+<http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio_v0.5> <http://purl.org/dc/terms/bibliographicCitation> "EDINT Regulated Zone Ontology. EDINT. Revision: v0.2.1."@en .
+<http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio_v0.5> <http://purl.org/dc/terms/bibliographicCitation> "Ontología EDINT de Zonas Regulatorias. EDINT. Revisión: v0.2.1."@es .
+<http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio_v0.5> <http://purl.org/dc/terms/created> "2026-01-27"^^<http://www.w3.org/2001/XMLSchema#date> .
+<http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio_v0.5> <http://purl.org/dc/terms/creator> _:genid1 .
+_:genid1 <https://schema.org/affiliation> <https://oeg.fi.upm.es/> .
 _:genid1 <http://xmlns.com/foaf/0.1/name> "Daniel Doña" .
-_:genid1 <http://schema.org/affiliation> <https://oeg.fi.upm.es/> .
-<https://edint.es/def/zona-regulatoria#> <http://purl.org/dc/terms/creator> _:genid2 .
+<http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio_v0.5> <http://purl.org/dc/terms/creator> _:genid2 .
+_:genid2 <https://schema.org/affiliation> <https://oeg.fi.upm.es/> .
 _:genid2 <http://xmlns.com/foaf/0.1/name> "Edna Ruckhaus" .
-_:genid2 <http://schema.org/affiliation> <https://oeg.fi.upm.es/> .
-<https://edint.es/def/zona-regulatoria#> <http://purl.org/dc/terms/creator> _:genid3 .
+<http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio_v0.5> <http://purl.org/dc/terms/creator> _:genid3 .
+_:genid3 <https://schema.org/affiliation> <https://oeg.fi.upm.es/> .
 _:genid3 <http://xmlns.com/foaf/0.1/name> "Lucía Sánchez" .
-_:genid3 <http://schema.org/affiliation> <https://oeg.fi.upm.es/> .
-<https://edint.es/def/zona-regulatoria#> <http://purl.org/dc/terms/creator> _:genid4 .
+<http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio_v0.5> <http://purl.org/dc/terms/creator> _:genid4 .
+_:genid4 <https://schema.org/affiliation> <https://oeg.fi.upm.es/> .
 _:genid4 <http://xmlns.com/foaf/0.1/name> "Oscar Corcho" .
-_:genid4 <http://schema.org/affiliation> <https://oeg.fi.upm.es/> .
-<https://edint.es/def/zona-regulatoria#> <http://purl.org/dc/terms/description> "Esta ontología tiene como propósito definir, categorizar y relacionar las Zonas Regulatorias en el contexto de la movilidad inteligente y la gestión urbana (Smart Cities). Se ha diseñado como una extensión modular de la ontología del Sector Público de España (esadm)."@es .
-<https://edint.es/def/zona-regulatoria#> <http://purl.org/dc/terms/description> "This ontology aims to define, categorize, and relate Regulatory Zones in the context of smart mobility and urban management (Smart Cities). It is designed as a modular extension of the Spanish Public Sector ontology (esadm)."@en .
-<https://edint.es/def/zona-regulatoria#> <http://purl.org/dc/terms/issued> "2026-09-17"^^<http://www.w3.org/2001/XMLSchema#date> .
-<https://edint.es/def/zona-regulatoria#> <http://purl.org/dc/terms/license> <https://creativecommons.org/licenses/by/4.0/> .
-<https://edint.es/def/zona-regulatoria#> <http://purl.org/dc/terms/modified> "2026-09-17"^^<http://www.w3.org/2001/XMLSchema#date> .
-<https://edint.es/def/zona-regulatoria#> <http://purl.org/dc/terms/publisher> _:genid5 .
+<http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio_v0.5> <http://purl.org/dc/terms/description> "Esta ontología tiene como propósito definir, categorizar y relacionar las Zonas Regulatorias en el contexto de la movilidad inteligente y la gestión urbana (Smart Cities). Se ha diseñado como una extensión modular de la ontología del Sector Público de España (esadm)."@es .
+<http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio_v0.5> <http://purl.org/dc/terms/description> "This ontology aims to define, categorize, and relate Regulatory Zones in the context of smart mobility and urban management (Smart Cities). It is designed as a modular extension of the Spanish Public Sector ontology (esadm)."@en .
+<http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio_v0.5> <http://purl.org/dc/terms/issued> "2026-09-17"^^<http://www.w3.org/2001/XMLSchema#date> .
+<http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio_v0.5> <http://purl.org/dc/terms/license> <https://creativecommons.org/licenses/by/4.0/> .
+<http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio_v0.5> <http://purl.org/dc/terms/modified> "2026-09-17"^^<http://www.w3.org/2001/XMLSchema#date> .
+<http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio_v0.5> <http://purl.org/dc/terms/publisher> _:genid5 .
+_:genid5 <https://schema.org/affiliation> "Federación Española de Municipios y Provincias" .
 _:genid5 <http://xmlns.com/foaf/0.1/name> "FEMP" .
 _:genid5 <http://xmlns.com/foaf/0.1/homepage> <https://www.femp.es/> .
-_:genid5 <http://schema.org/affiliation> "Federación Española de Municipios y Provincias" .
-<https://edint.es/def/zona-regulatoria#> <http://purl.org/dc/terms/title> "EDINT Regulated Zone Ontology"@en .
-<https://edint.es/def/zona-regulatoria#> <http://purl.org/dc/terms/title> "Ontología EDINT de Zonas Regulatorias"@es .
-<https://edint.es/def/zona-regulatoria#> <http://purl.org/vocab/vann/preferredNamespacePrefix> "edintzone" .
-<https://edint.es/def/zona-regulatoria#> <http://purl.org/vocab/vann/preferredNamespaceUri> "https://edint.es/def/zona-regulatoria#" .
-<https://edint.es/def/zona-regulatoria#> <http://schema.org/codeRepository> <https://github.com/EDINT-Ontologia/edint-ontologia-zona-regulatoria> .
-<https://edint.es/def/zona-regulatoria#> <http://schema.org/creativeWorkStatus> "Ontology Specification"@en .
-<https://edint.es/def/zona-regulatoria#> <http://schema.org/funding> "Espacio de Datos para las Infraestructuras Urbanas Inteligentes (EDINT)" .
-<https://edint.es/def/zona-regulatoria#> <http://www.w3.org/2000/01/rdf-schema#comment> "Actualmente, existen vocabularios para divisiones administrativas (esadm) y geometrías (GeoSPARQL), pero existía un vacío semántico para representar entidades funcionales que se superponen a la trama urbana (ZBE, Carga y Descarga, etc...) sin responder a límites administrativos fijos. Esta ontología cubre dicho hueco."@es .
-<https://edint.es/def/zona-regulatoria#> <http://www.w3.org/2000/01/rdf-schema#comment> "Currently, vocabularies exist for administrative divisions (esadm) and geometries (GeoSPARQL), but there was a semantic gap for representing functional entities that overlay the urban grid (LEZ, Loading/Unloading, etc.) without adhering to fixed administrative boundaries. This ontology fills that gap."@en .
-<https://edint.es/def/zona-regulatoria#> <http://www.w3.org/2000/01/rdf-schema#label> "Regulated Zones"@en .
-<https://edint.es/def/zona-regulatoria#> <http://www.w3.org/2000/01/rdf-schema#label> "Zonas Regulatorias"@es .
-<https://edint.es/def/zona-regulatoria#> <http://www.w3.org/2002/07/owl#priorVersion> <https://github.com/EDINT-Ontologia/edint-ontologia-zona-regulatoria/releases/tag/v0.2.0> .
-<https://edint.es/def/zona-regulatoria#> <http://www.w3.org/2002/07/owl#versionInfo> "0.2.1" .
-<https://edint.es/def/zona-regulatoria#> <https://w3id.org/widoco/vocab#jsonldSerialization> "ontology.jsonld" .
-<https://edint.es/def/zona-regulatoria#> <https://w3id.org/widoco/vocab#ntSerialization> "ontology.nt" .
-<https://edint.es/def/zona-regulatoria#> <https://w3id.org/widoco/vocab#rdfxmlSerialization> "ontology.rdf" .
-<https://edint.es/def/zona-regulatoria#> <https://w3id.org/widoco/vocab#turtleSerialization> "ontology.ttl" .
-<https://edint.es/def/zona-regulatoria#> <https://w3id.org/widoco/vocab#vocabularyLabel> _:genid6 .
+<http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio_v0.5> <http://purl.org/dc/terms/title> "EDINT Regulated Zone Ontology"@en .
+<http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio_v0.5> <http://purl.org/dc/terms/title> "Ontología EDINT de Zonas Regulatorias"@es .
+<http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio_v0.5> <http://purl.org/vocab/vann/preferredNamespacePrefix> "edintzone" .
+<http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio_v0.5> <http://purl.org/vocab/vann/preferredNamespaceUri> <https://edint.es/def/zona-regulatoria#> .
+<http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio_v0.5> <http://www.w3.org/2000/01/rdf-schema#comment> "Actualmente, existen vocabularios para divisiones administrativas (esadm) y geometrías (GeoSPARQL), pero existía un vacío semántico para representar entidades funcionales que se superponen a la trama urbana (ZBE, Carga y Descarga, etc...) sin responder a límites administrativos fijos. Esta ontología cubre dicho hueco."@es .
+<http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio_v0.5> <http://www.w3.org/2000/01/rdf-schema#comment> "Currently, vocabularies exist for administrative divisions (esadm) and geometries (GeoSPARQL), but there was a semantic gap for representing functional entities that overlay the urban grid (LEZ, Loading/Unloading, etc.) without adhering to fixed administrative boundaries. This ontology fills that gap."@en .
+<http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio_v0.5> <http://www.w3.org/2000/01/rdf-schema#label> "Regulated Zones"@en .
+<http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio_v0.5> <http://www.w3.org/2000/01/rdf-schema#label> "Zonas Regulatorias"@es .
+<http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio_v0.5> <http://www.w3.org/2002/07/owl#priorVersion> <https://github.com/EDINT-Ontologia/edint-ontologia-zona-regulatoria/releases/tag/v0.2.0> .
+<http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio_v0.5> <http://www.w3.org/2002/07/owl#versionInfo> "0.2.1" .
+<http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio_v0.5> <https://schema.org/codeRepository> <https://github.com/EDINT-Ontologia/edint-ontologia-zona-regulatoria> .
+<http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio_v0.5> <https://schema.org/creativeWorkStatus> "Ontology Specification"@en .
+<http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio_v0.5> <https://schema.org/funding> "Espacio de Datos para las Infraestructuras Urbanas Inteligentes (EDINT)" .
+<http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio_v0.5> <https://w3id.org/widoco/vocab#jsonldSerialization> "ontology.jsonld" .
+<http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio_v0.5> <https://w3id.org/widoco/vocab#ntSerialization> "ontology.nt" .
+<http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio_v0.5> <https://w3id.org/widoco/vocab#rdfxmlSerialization> "ontology.rdf" .
+<http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio_v0.5> <https://w3id.org/widoco/vocab#turtleSerialization> "ontology.ttl" .
+<http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio_v0.5> <https://w3id.org/widoco/vocab#vocabularyLabel> _:genid6 .
 _:genid6 <https://w3id.org/widoco/vocab#vocabularyIRI> <http://www.w3.org/ns/org> .
 _:genid6 <http://www.w3.org/2000/01/rdf-schema#label> "ORG"@es .
 _:genid6 <http://www.w3.org/2000/01/rdf-schema#label> "ORG"@en .
-<https://edint.es/def/zona-regulatoria#> <https://w3id.org/widoco/vocab#vocabularyLabel> _:genid7 .
+<http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio_v0.5> <https://w3id.org/widoco/vocab#vocabularyLabel> _:genid7 .
 _:genid7 <https://w3id.org/widoco/vocab#vocabularyIRI> <http://www.opengis.net/ont/sf> .
 _:genid7 <http://www.w3.org/2000/01/rdf-schema#label> "OGC Simple Features"@es .
 _:genid7 <http://www.w3.org/2000/01/rdf-schema#label> "OGC Simple Features"@en .
-<https://edint.es/def/zona-regulatoria#> <https://w3id.org/widoco/vocab#vocabularyLabel> _:genid8 .
+<http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio_v0.5> <https://w3id.org/widoco/vocab#vocabularyLabel> _:genid8 .
 _:genid8 <https://w3id.org/widoco/vocab#vocabularyIRI> <http://www.opengis.net/ont/geosparql> .
 _:genid8 <http://www.w3.org/2000/01/rdf-schema#label> "GeoSPARQL"@es .
 _:genid8 <http://www.w3.org/2000/01/rdf-schema#label> "GeoSPARQL"@en .
-<https://edint.es/def/zona-regulatoria#> <https://w3id.org/widoco/vocab#vocabularyLabel> _:genid9 .
+<http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio_v0.5> <https://w3id.org/widoco/vocab#vocabularyLabel> _:genid9 .
 _:genid9 <https://w3id.org/widoco/vocab#vocabularyIRI> <http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio> .
 _:genid9 <http://www.w3.org/2000/01/rdf-schema#label> "Territory (esadm)"@en .
 _:genid9 <http://www.w3.org/2000/01/rdf-schema#label> "Territorio (esadm)"@es .
-<https://edint.es/def/zona-regulatoria#> <https://w3id.org/widoco/vocab#vocabularyLabel> _:genid10 .
+<http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio_v0.5> <https://w3id.org/widoco/vocab#vocabularyLabel> _:genid10 .
 _:genid10 <https://w3id.org/widoco/vocab#vocabularyIRI> <http://www.geonames.org/ontology> .
 _:genid10 <http://www.w3.org/2000/01/rdf-schema#label> "GeoNames"@es .
 _:genid10 <http://www.w3.org/2000/01/rdf-schema#label> "GeoNames"@en .
-<https://edint.es/def/zona-regulatoria#> <https://w3id.org/widoco/vocab#vocabularyLabel> _:genid11 .
+<http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio_v0.5> <https://w3id.org/widoco/vocab#vocabularyLabel> _:genid11 .
 _:genid11 <https://w3id.org/widoco/vocab#vocabularyIRI> <http://vocab.linkeddata.es/datosabiertos/def/urbanismo-infraestructuras/callejero_v0.3> .
 _:genid11 <http://www.w3.org/2000/01/rdf-schema#label> "Street catalogue (escjr) v0.3"@en .
 _:genid11 <http://www.w3.org/2000/01/rdf-schema#label> "Callejero (escjr) v0.3"@es .
-<https://edint.es/def/zona-regulatoria#> <https://w3id.org/widoco/vocab#vocabularyLabel> _:genid12 .
+<http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio_v0.5> <https://w3id.org/widoco/vocab#vocabularyLabel> _:genid12 .
 _:genid12 <https://w3id.org/widoco/vocab#vocabularyIRI> <http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio_v0.5> .
 _:genid12 <http://www.w3.org/2000/01/rdf-schema#label> "Territory (esadm) v0.5"@en .
 _:genid12 <http://www.w3.org/2000/01/rdf-schema#label> "Territorio (esadm) v0.5"@es .
-<https://edint.es/def/zona-regulatoria#> <https://w3id.org/widoco/vocab#vocabularyLabel> _:genid13 .
+<http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio_v0.5> <https://w3id.org/widoco/vocab#vocabularyLabel> _:genid13 .
 _:genid13 <https://w3id.org/widoco/vocab#vocabularyIRI> <http://vocab.linkeddata.es/datosabiertos/def/urbanismo-infraestructuras/callejero> .
 _:genid13 <http://www.w3.org/2000/01/rdf-schema#label> "Street catalogue (escjr)"@en .
 _:genid13 <http://www.w3.org/2000/01/rdf-schema#label> "Callejero (escjr)"@es .
@@ -135,23 +134,23 @@ _:genid13 <http://www.w3.org/2000/01/rdf-schema#label> "Callejero (escjr)"@es .
 # http://purl.org/vocab/vann/preferredNamespaceUri
 <http://purl.org/vocab/vann/preferredNamespaceUri> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
 # 
-# http://schema.org/affiliation
-<http://schema.org/affiliation> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
-# 
-# http://schema.org/codeRepository
-<http://schema.org/codeRepository> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
-# 
-# http://schema.org/creativeWorkStatus
-<http://schema.org/creativeWorkStatus> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
-# 
-# http://schema.org/funding
-<http://schema.org/funding> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
-# 
 # http://xmlns.com/foaf/0.1/homepage
 <http://xmlns.com/foaf/0.1/homepage> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
 # 
 # http://xmlns.com/foaf/0.1/name
 <http://xmlns.com/foaf/0.1/name> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# https://schema.org/affiliation
+<https://schema.org/affiliation> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# https://schema.org/codeRepository
+<https://schema.org/codeRepository> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# https://schema.org/creativeWorkStatus
+<https://schema.org/creativeWorkStatus> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# https://schema.org/funding
+<https://schema.org/funding> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
 # 
 # https://w3id.org/widoco/vocab#jsonldSerialization
 <https://w3id.org/widoco/vocab#jsonldSerialization> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
