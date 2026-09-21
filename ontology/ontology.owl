@@ -18,8 +18,8 @@
      xmlns:bibo="http://purl.org/ontology/bibo/" xmlns:foaf="http://xmlns.com/foaf/0.1/"
      xmlns:widoco="https://w3id.org/widoco/vocab#">    <owl:Ontology rdf:about="https://edint.es/def/zona-regulatoria#">
         <owl:versionIRI rdf:resource="https://edint.es/def/zona-regulatoria/0.2.1"/>
-        <owl:imports rdf:resource="http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio_v0.5"/>
-        <owl:imports rdf:resource="http://vocab.linkeddata.es/datosabiertos/def/urbanismo-infraestructuras/callejero_v0.3"/>
+        <owl:imports rdf:resource="http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio"/>
+        <owl:imports rdf:resource="http://vocab.linkeddata.es/datosabiertos/def/urbanismo-infraestructuras/callejero"/>
         <owl:imports rdf:resource="http://www.opengis.net/ont/geosparql"/>
         <dcterms:description xml:lang="es">Esta ontología tiene como propósito definir, categorizar y relacionar las Zonas Regulatorias en el contexto de la movilidad inteligente y la gestión urbana (Smart Cities). Se ha diseñado como una extensión modular de la ontología del Sector Público de España (esadm).</dcterms:description>
         <dcterms:description xml:lang="en">This ontology aims to define, categorize, and relate Regulatory Zones in the context of smart mobility and urban management (Smart Cities). It is designed as a modular extension of the Spanish Public Sector ontology (esadm).</dcterms:description>
@@ -415,23 +415,9 @@
         </widoco:vocabularyLabel>
         <widoco:vocabularyLabel>
             <rdf:Description>
-                <widoco:vocabularyIRI rdf:resource="http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio_v0.5"/>
-                <rdfs:label xml:lang="es">Territorio (esadm) v0.5</rdfs:label>
-                <rdfs:label xml:lang="en">Territory (esadm) v0.5</rdfs:label>
-            </rdf:Description>
-        </widoco:vocabularyLabel>
-        <widoco:vocabularyLabel>
-            <rdf:Description>
                 <widoco:vocabularyIRI rdf:resource="http://vocab.linkeddata.es/datosabiertos/def/urbanismo-infraestructuras/callejero"/>
                 <rdfs:label xml:lang="es">Callejero (escjr)</rdfs:label>
                 <rdfs:label xml:lang="en">Street catalogue (escjr)</rdfs:label>
-            </rdf:Description>
-        </widoco:vocabularyLabel>
-        <widoco:vocabularyLabel>
-            <rdf:Description>
-                <widoco:vocabularyIRI rdf:resource="http://vocab.linkeddata.es/datosabiertos/def/urbanismo-infraestructuras/callejero_v0.3"/>
-                <rdfs:label xml:lang="es">Callejero (escjr) v0.3</rdfs:label>
-                <rdfs:label xml:lang="en">Street catalogue (escjr) v0.3</rdfs:label>
             </rdf:Description>
         </widoco:vocabularyLabel>
         <widoco:vocabularyLabel>
