@@ -1,4 +1,4 @@
-<h2 id="desc" class="list">Ontología base de Zonas para el Caso de Uso de Movilidad Inteligente.: Descripci&oacute;n <span class="backlink"> volver a <a href="#toc">&iacute;ndice</a></span></h2>
+<h2 id="desc" class="list">Zonas Regulatorias: Descripci&oacute;n <span class="backlink"> volver a <a href="#toc">&iacute;ndice</a></span></h2>
 
 <span class="markdown">Actualmente, existen vocabularios para divisiones administrativas (esadm) y geometrías (GeoSPARQL), pero existía un vacío semántico para representar entidades funcionales que se superponen a la trama urbana (ZBE, Carga y Descarga, etc...) sin responder a límites administrativos fijos. Esta ontología cubre dicho hueco.</span>
 
@@ -20,7 +20,7 @@ Un ejemplo de entidades definidas por la ontología podría ser el siguiente:
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix org: <http://www.w3.org/ns/org#> .
 @prefix esadm: <http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio#> .
-@prefix edintzone: <http://vocab.linkeddata.es/datosabiertos/def/common/zone#> .
+@prefix edintzone: <https://edint.es/def/zona-regulatoria#> .
 
 # Custom Resource Prefixes
 @prefix ex-zona: <http://example.org/resource/zona/> .
@@ -112,7 +112,7 @@ Adicionalmente, estos datos enlazados podrían consultarse empleando SPARQL como
 
 <pre>
     <textarea style="resize:none" readonly id="code2" name="code" rows="10" cols="200">
-PREFIX edintzone: <http://vocab.linkeddata.es/datosabiertos/def/common/zone#>
+PREFIX edintzone: <https://edint.es/def/zona-regulatoria#>
 PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 
