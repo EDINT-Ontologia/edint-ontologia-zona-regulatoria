@@ -1,0 +1,94 @@
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix org: <http://www.w3.org/ns/org#> .
+@prefix esadm: <http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio#> .
+@prefix geo: <http://www.opengis.net/ont/geosparql#> .
+@prefix sf: <http://www.opengis.net/ont/sf#> .
+@prefix edintzone: <https://edint.es/def/zona-regulatoria#> .
+
+@prefix ex-zona: <http://example.org/resource/zona/> .
+@prefix ex-via: <http://example.org/resource/via/> .
+@prefix ex-org: <http://example.org/resource/organization/> .
+
+#################################################################
+#    Low Emission Zone - Madrid (ZBE Madrid)
+#################################################################
+
+ex-zona:zbe-madrid a edintzone:RegulatedZone ;
+    edintzone:hasRegulatedZoneType <https://edint.es/kos/RegulatedZoneType/LowEmissionZone> ;
+    rdfs:label "Zona de Bajas Emisiones Madrid"@es ;
+    dc:description "ZBE que restringe el acceso a los vehículos más contaminantes en el área del centro histórico de Madrid."@es ;
+    edintzone:locatedIn <http://dbpedia.org/resource/Madrid> ;
+    edintzone:managedBy ex-org:ayuntamiento-madrid ;
+    edintzone:startDate "2018-08-01"^^xsd:date ;
+    edintzone:scheduleDescription "Lunes a viernes de 07:00 a 21:00; sábados, domingos y festivos sin restricción."^^xsd:string ;
+    edintzone:legalReference <https://www.boe.es/diario_boe/txt.php?id=BOE-A-2017-9405> ;
+    edintzone:composedOf ex-via:m-30-perimeter ;
+    geo:hasGeometry ex-zona:zbe-madrid-geom .
+
+#################################################################
+#    Low Emission Zone - Zaragoza (ZBE Zaragoza)
+#################################################################
+
+ex-zona:zbe-zaragoza a edintzone:RegulatedZone ;
+    edintzone:hasRegulatedZoneType <https://edint.es/kos/RegulatedZoneType/LowEmissionZone> ;
+    rdfs:label "Zona de Bajas Emisiones Zaragoza"@es ;
+    dc:description "ZBE de Zaragoza que limita la circulación de vehículos según Euroclassifications."@es ;
+    edintzone:locatedIn <http://dbpedia.org/resource/Zaragoza> ;
+    edintzone:managedBy ex-org:ayuntamiento-zaragoza ;
+    edintzone:startDate "2021-01-01"^^xsd:date ;
+    edintzone:scheduleDescription "Aplicación permanente las 24 horas del día."^^xsd:string ;
+    edintzone:legalReference <https://www.boe.es/diario_boe/txt.php?id=BOE-A-2017-9405> ;
+    edintzone:composedOf ex-via:piadua-zaragoza ;
+    geo:hasGeometry ex-zona:zbe-zaragoza-geom .
+
+#################################################################
+#    Geometry - ZBE Madrid
+#################################################################
+
+ex-zona:zbe-madrid-geom a sf:Geometry ;
+    geo:asWKT """POLYGON((-3.6200 40.4100, -3.6200 40.4600, -3.5400 40.4600, -3.5400 40.4100, -3.6200 40.4100))"""^^geo:wktLiteral .
+
+#################################################################
+#    Geometry - ZBE Zaragoza
+#################################################################
+
+ex-zona:zbe-zaragoza-geom a sf:Geometry ;
+    geo:asWKT """POLYGON((-0.9100 41.6300, -0.9100 41.6800, -0.8600 41.6800, -0.8600 41.6300, -0.9100 41.6300))"""^^geo:wktLiteral .
+
+#################################################################
+#    Municipality - Madrid
+#################################################################
+
+<http://dbpedia.org/resource/Madrid> a esadm:Municipio ;
+    rdfs:label "Madrid"@es ;
+    edintzone:hasRegulatedZone ex-zona:zbe-madrid ,
+                               ex-zona:zbe-zaragoza .
+
+#################################################################
+#    Management Organizations
+#################################################################
+
+ex-org:ayuntamiento-madrid a org:Organization ;
+    rdfs:label "Ayuntamiento de Madrid"@es ;
+    rdfs:comment "Organismo gestor de la ZBE de Madrid."@es .
+
+ex-org:ayuntamiento-zaragoza a org:Organization ;
+    rdfs:label "Ayuntamiento de Zaragoza"@es ;
+    rdfs:comment "Organismo gestor de la ZBE de Zaragoza."@es .
+
+#################################################################
+#    Streets (Vías)
+#################################################################
+
+ex-via:m-30-perimeter a esadm:Via ;
+    rdfs:label "Perímetro M-30"@es ;
+    dc:description "Vía que delimita el perímetro de la ZBE Madrid."@es .
+
+ex-via:piadua-zaragoza a esadm:Via ;
+    rdfs:label "PIADUA Zaragoza"@es ;
+    dc:description "Plan de Improbación de la Dignidad Urbana y el Ambiente en Zaragoza."@es .

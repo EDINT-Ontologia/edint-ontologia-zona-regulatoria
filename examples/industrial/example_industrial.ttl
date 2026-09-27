@@ -1,0 +1,60 @@
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix org: <http://www.w3.org/ns/org#> .
+@prefix esadm: <http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio#> .
+@prefix geo: <http://www.opengis.net/ont/geosparql#> .
+@prefix sf: <http://www.opengis.net/ont/sf#> .
+@prefix edintzone: <https://edint.es/def/zona-regulatoria#> .
+
+@prefix ex-zona: <http://example.org/resource/zona/> .
+@prefix ex-via: <http://example.org/resource/via/> .
+@prefix ex-org: <http://example.org/resource/organization/> .
+
+#################################################################
+#    Industrial Zone - Valencia
+#################################################################
+
+ex-zona:industrial-valencia a edintzone:RegulatedZone ;
+    edintzone:hasRegulatedZoneType <https://edint.es/kos/RegulatedZoneType/IndustrialZone> ;
+    rdfs:label "Polígono Industrial Paterna Valencia"@es ;
+    dc:description "Zona de interés económico tipo industrial en el polígono de Paterna, Valencia."@es ;
+    edintzone:locatedIn <http://dbpedia.org/resource/Valencia> ;
+    edintzone:managedBy ex-org:ayto-valencia ;
+    edintzone:startDate "2020-01-01"^^xsd:date ;
+    edintzone:scheduleDescription "Acceso restringido a vehículos autorizados de la zona industrial."^^xsd:string ;
+    edintzone:legalReference <https://www.valencia.es/portales/web/valencia/organizacion/municipios-entidades-locales/comarques/horta-nord/paterna/> ;
+    edintzone:composedOf ex-via:calle-ingeniero-ferrer ;
+    geo:hasGeometry ex-zona:industrial-valencia-geom .
+
+#################################################################
+#    Geometry - Industrial Valencia
+#################################################################
+
+ex-zona:industrial-valencia-geom a sf:Geometry ;
+    geo:asWKT """POLYGON((-0.4100 39.5000, -0.4100 39.5100, -0.4000 39.5100, -0.4000 39.5000, -0.4100 39.5000))"""^^geo:wktLiteral .
+
+#################################################################
+#    Municipality - Valencia
+#################################################################
+
+<http://dbpedia.org/resource/Valencia> a esadm:Municipio ;
+    rdfs:label "Valencia"@es ;
+    edintzone:hasRegulatedZone ex-zona:industrial-valencia .
+
+#################################################################
+#    Management Organizations
+#################################################################
+
+ex-org:ayto-valencia a org:Organization ;
+    rdfs:label "Ayuntamiento de Valencia"@es .
+
+#################################################################
+#    Streets (Vías)
+#################################################################
+
+ex-via:calle-ingeniero-ferrer a esadm:Via ;
+    rdfs:label "Calle Ingeniero Ferrer"@es .
