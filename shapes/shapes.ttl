@@ -1,0 +1,218 @@
+@prefix : <https://edint.es/def/zona-regulatoria#> .
+@prefix esadm: <http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio#> .
+@prefix geo: <http://www.opengis.net/ont/geosparql#> .
+@prefix org: <http://www.w3.org/ns/org#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sf: <http://www.opengis.net/ont/sf#> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<https://astrea.linkeddata.es/shapes#3348f96caa15fb50d86f0a2231585642> a sh:PropertyShape ;
+    rdfs:label "has geometry"@en,
+        "tiene geometría"@es ;
+    sh:name "has geometry"@en,
+        "tiene geometría"@es ;
+    sh:nodeKind sh:BlankNodeOrIRI ;
+    sh:path geo:hasGeometry .
+
+<https://astrea.linkeddata.es/shapes#467f9b0187d4c9cb09e9552fd853c424> a sh:PropertyShape ;
+    sh:nodeKind sh:BlankNodeOrIRI ;
+    sh:path geo:sfWithin .
+
+<https://astrea.linkeddata.es/shapes#6ddc0b40525de8d44aa81deabedaa0bf> a sh:NodeShape ;
+    sh:nodeKind sh:IRI ;
+    sh:targetClass <http://www.geonames.org/ontology#Feature> .
+
+<https://astrea.linkeddata.es/shapes#74ac90c9c816d92423aaedea3c4d9dd8> a sh:NodeShape ;
+    sh:nodeKind sh:IRI ;
+    sh:targetClass org:Organization .
+
+<https://astrea.linkeddata.es/shapes#773ee1c13e884ec4f5e6535d912e7461> sh:nodeKind sh:Literal .
+
+<https://astrea.linkeddata.es/shapes#8538a79b4037451a4a00ba17d21640e9> a sh:NodeShape ;
+    sh:nodeKind sh:IRI ;
+    sh:targetClass <http://vocab.linkeddata.es/datosabiertos/def/urbanismo-infraestructuras/callejero#TramoVia> .
+
+<https://astrea.linkeddata.es/shapes#8c9f0a3ef50fe390869f7c693885d425> a sh:NodeShape ;
+    sh:nodeKind sh:IRI ;
+    sh:targetClass geo:Feature .
+
+<https://astrea.linkeddata.es/shapes#9494a5e4502c50cda36778f3e1dd5577> a sh:NodeShape ;
+    sh:nodeKind sh:IRI ;
+    sh:targetClass <http://vocab.linkeddata.es/datosabiertos/def/urbanismo-infraestructuras/callejero#Via> .
+
+<https://astrea.linkeddata.es/shapes#a2e690957054ec7df991df784803e773> rdfs:label "Links a regulated zone to its type classification from the RegulatedZoneType SKOS concept scheme."@en,
+        "has regulated zone type"@en,
+        "Vincula una zona regulada a su clasificación de tipo del esquema de conceptos SKOS RegulatedZoneType."@es,
+        "tiene tipo de zona regulada"@es ;
+    sh:description "Links a regulated zone to its type classification from the RegulatedZoneType SKOS concept scheme."@en,
+        "Vincula una zona regulada a su clasificación de tipo del esquema de conceptos SKOS RegulatedZoneType."@es ;
+    sh:name "has regulated zone type"@en,
+        "tiene tipo de zona regulada"@es ;
+    sh:nodeKind sh:BlankNodeOrIRI .
+
+<https://astrea.linkeddata.es/shapes#b8840ae319dd17775a4c3ff2c43caeca> sh:nodeKind sh:Literal .
+
+<https://astrea.linkeddata.es/shapes#de2fa1af89dfd5df63d132ae742481df> a sh:NodeShape ;
+    sh:nodeKind sh:IRI ;
+    sh:property <https://astrea.linkeddata.es/shapes#ea758cf93a4a6fcb568c859d464061d1> ;
+    sh:targetClass sf:Geometry .
+
+<https://astrea.linkeddata.es/shapes#f097725592be6811a9535c15104cbb83> a sh:NodeShape ;
+    rdfs:label "Regulated Zone"@en,
+        "Zona regulatoria"@es ;
+    sh:description "Area to which a particular regulation or policy applies"@en,
+        "Area a la que se aplica una regulacion o normativa particular"@es ;
+    sh:name "Regulated Zone"@en,
+        "Zona regulatoria"@es ;
+    sh:nodeKind sh:IRI ;
+    sh:property <https://astrea.linkeddata.es/shapes#12252540380e57d6e3965eab6d95b09b>,
+        <https://astrea.linkeddata.es/shapes#1cbfc6b5293434365909e4166df49c39>,
+        <https://astrea.linkeddata.es/shapes#5be7e90bac39cafb624fbfa0afb2351f>,
+        <https://astrea.linkeddata.es/shapes#c34cf25e80486acd2405cebc566f56f8>,
+        <https://astrea.linkeddata.es/shapes#d9fda79c3da7088bdaa60271c8f49238>,
+        <https://astrea.linkeddata.es/shapes#dcee448e886d9c6d90709f0466cbbd5b>,
+        <https://astrea.linkeddata.es/shapes#f2f8e642db1802bd2108b5033e293d3c>,
+        <https://astrea.linkeddata.es/shapes#f5f809079635252ac2c4c141692f59de>,
+        <https://astrea.linkeddata.es/shapes#f7c592213ad33ec575dbc16899beae79> ;
+    sh:targetClass :RegulatedZone .
+
+<https://astrea.linkeddata.es/shapes#fbbdec372458b6ca648be3b4d8fb667e> a sh:NodeShape ;
+    sh:nodeKind sh:IRI ;
+    sh:property <https://astrea.linkeddata.es/shapes#529574321a070f2a0aa0aac7112713d2> ;
+    sh:targetClass esadm:Municipio .
+
+<https://astrea.linkeddata.es/shapes#12252540380e57d6e3965eab6d95b09b> a sh:PropertyShape ;
+    rdfs:label "Relationship that allows defining a Regulated Zone via one or more streets or street segments from the Callejero vocabulary."@en,
+        "composed of"@en,
+        "Relación que permite definir una Zona Regulatoria mediante una o más vías o tramos de vía del vocabulario Callejero."@es,
+        "compuesta por"@es ;
+    sh:class <http://vocab.linkeddata.es/datosabiertos/def/urbanismo-infraestructuras/callejero#TramoVia>,
+        <http://vocab.linkeddata.es/datosabiertos/def/urbanismo-infraestructuras/callejero#Via>,
+        <http://www.geonames.org/ontology#Feature> ;
+    sh:description "Relationship that allows defining a Regulated Zone via one or more streets or street segments from the Callejero vocabulary."@en,
+        "Relación que permite definir una Zona Regulatoria mediante una o más vías o tramos de vía del vocabulario Callejero."@es ;
+    sh:name "composed of"@en,
+        "compuesta por"@es ;
+    sh:nodeKind sh:BlankNodeOrIRI ;
+    sh:path :composedOf .
+
+<https://astrea.linkeddata.es/shapes#1cbfc6b5293434365909e4166df49c39> a sh:PropertyShape ;
+    rdfs:label "Date when the zone regulation ceases to be effective."@en,
+        "end date"@en,
+        "Fecha en la que la regulación de la zona deja de ser efectiva (derogación o fin de periodo)."@es,
+        "fecha de fin de vigor"@es ;
+    sh:datatype xsd:date ;
+    sh:description "Date when the zone regulation ceases to be effective."@en,
+        "Fecha en la que la regulación de la zona deja de ser efectiva (derogación o fin de periodo)."@es ;
+    sh:name "end date"@en,
+        "fecha de fin de vigor"@es ;
+    sh:nodeKind sh:Literal ;
+    sh:path :endDate ;
+    sh:pattern "-?([1-9][0-9]{3,}|0[0-9]{3})-(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])(Z|(\\+|-)((0[0-9]|1[0-3]):[0-5][0-9]|14:00))?" .
+
+<https://astrea.linkeddata.es/shapes#529574321a070f2a0aa0aac7112713d2> a sh:PropertyShape ;
+    rdfs:label "Inverse property of 'locatedIn'. Links a municipality with the regulated zones it contains."@en,
+        "has regulated zone"@en,
+        "Propiedad inversa de 'ubicado'. Vincula un municipio con las zonas regulatorias que contiene."@es,
+        "tiene zona regulatoria"@es ;
+    sh:class :RegulatedZone ;
+    sh:description "Inverse property of 'locatedIn'. Links a municipality with the regulated zones it contains."@en,
+        "Propiedad inversa de 'ubicado'. Vincula un municipio con las zonas regulatorias que contiene."@es ;
+    sh:name "has regulated zone"@en,
+        "tiene zona regulatoria"@es ;
+    sh:nodeKind sh:BlankNodeOrIRI ;
+    sh:path :hasRegulatedZone .
+
+<https://astrea.linkeddata.es/shapes#5be7e90bac39cafb624fbfa0afb2351f> a sh:PropertyShape ;
+    rdfs:label "Date from which the zone regulation becomes effective."@en,
+        "entry into force date"@en,
+        "Fecha a partir de la cual la regulación de la zona comienza a ser efectiva."@es,
+        "fecha de entrada en vigor"@es ;
+    sh:datatype xsd:date ;
+    sh:description "Date from which the zone regulation becomes effective."@en,
+        "Fecha a partir de la cual la regulación de la zona comienza a ser efectiva."@es ;
+    sh:name "entry into force date"@en,
+        "fecha de entrada en vigor"@es ;
+    sh:nodeKind sh:Literal ;
+    sh:path :startDate ;
+    sh:pattern "-?([1-9][0-9]{3,}|0[0-9]{3})-(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])(Z|(\\+|-)((0[0-9]|1[0-3]):[0-5][0-9]|14:00))?" .
+
+<https://astrea.linkeddata.es/shapes#c34cf25e80486acd2405cebc566f56f8> a sh:PropertyShape ;
+    sh:nodeKind sh:IRIOrLiteral ;
+    sh:path geo:hasGeometry .
+
+<https://astrea.linkeddata.es/shapes#d9fda79c3da7088bdaa60271c8f49238> a sh:PropertyShape ;
+    sh:nodeKind sh:IRIOrLiteral ;
+    sh:path :locatedIn ;
+    sh:qualifiedMaxCount 1 ;
+    sh:qualifiedMinCount 1 ;
+    sh:qualifiedValueShape [ sh:class esadm:Municipio ] .
+
+<https://astrea.linkeddata.es/shapes#dcee448e886d9c6d90709f0466cbbd5b> a sh:PropertyShape ;
+    rdfs:label "Organization (public or private) responsible for the management and operation of the zone."@en,
+        "managed by"@en,
+        "Organización (pública o privada) encargada de la gestión y operación de la zona."@es,
+        "entidad gestora"@es ;
+    sh:class org:Organization ;
+    sh:description "Organization (public or private) responsible for the management and operation of the zone."@en,
+        "Organización (pública o privada) encargada de la gestión y operación de la zona."@es ;
+    sh:name "managed by"@en,
+        "entidad gestora"@es ;
+    sh:nodeKind sh:BlankNodeOrIRI ;
+    sh:path :managedBy .
+
+<https://astrea.linkeddata.es/shapes#ea758cf93a4a6fcb568c859d464061d1> a sh:PropertyShape ;
+    rdfs:label "Geometry representation in Well-Known Text format."@en,
+        "as WKT"@en,
+        "Representación de la geometría en formato Well-Known Text."@es,
+        "como WKT"@es ;
+    sh:datatype geo:wktLiteral ;
+    sh:description "Geometry representation in Well-Known Text format."@en,
+        "Representación de la geometría en formato Well-Known Text."@es ;
+    sh:name "as WKT"@en,
+        "como WKT"@es ;
+    sh:nodeKind sh:Literal ;
+    sh:path geo:asWKT .
+
+<https://astrea.linkeddata.es/shapes#f2f8e642db1802bd2108b5033e293d3c> a sh:PropertyShape ;
+    rdfs:label "Textual description of the zone's operating schedule (e.g., \"Monday to Friday from 07:00 to 20:00\")."@en,
+        "schedule description"@en,
+        "Descripción textual del horario de funcionamiento de la zona (ej. \"Lunes a Viernes de 07:00 a 20:00\")."@es,
+        "horario descriptivo"@es ;
+    sh:datatype xsd:string ;
+    sh:description "Textual description of the zone's operating schedule (e.g., \"Monday to Friday from 07:00 to 20:00\")."@en,
+        "Descripción textual del horario de funcionamiento de la zona (ej. \"Lunes a Viernes de 07:00 a 20:00\")."@es ;
+    sh:name "schedule description"@en,
+        "horario descriptivo"@es ;
+    sh:nodeKind sh:Literal ;
+    sh:path :scheduleDescription ;
+    sh:pattern ".*" .
+
+<https://astrea.linkeddata.es/shapes#f5f809079635252ac2c4c141692f59de> a sh:PropertyShape ;
+    rdfs:label "Link to the official document (Bulletin, Ordinance) establishing the zone."@en,
+        "legal reference"@en,
+        "Enlace al documento oficial (Boletín, Ordenanza) que establece la creación de la zona."@es,
+        "referencia legal"@es ;
+    sh:datatype xsd:anyURI ;
+    sh:description "Link to the official document (Bulletin, Ordinance) establishing the zone."@en,
+        "Enlace al documento oficial (Boletín, Ordenanza) que establece la creación de la zona."@es ;
+    sh:name "legal reference"@en,
+        "referencia legal"@es ;
+    sh:nodeKind sh:Literal ;
+    sh:path :legalReference ;
+    sh:pattern "^(([^:/?#]+):)?(//([^/?#]*))?([^?#]*)(\\?([^#]*))?(#(.*))?" .
+
+<https://astrea.linkeddata.es/shapes#f7c592213ad33ec575dbc16899beae79> a sh:PropertyShape ;
+    rdfs:label "Relates a regulated zone to the administrative municipality it belongs to."@en,
+        "located in municipality"@en,
+        "Relaciona una zona regulatoria con el municipio administrativo al que pertenece."@es,
+        "ubicado en municipio"@es ;
+    sh:class esadm:Municipio ;
+    sh:description "Relates a regulated zone to the administrative municipality it belongs to."@en,
+        "Relaciona una zona regulatoria con el municipio administrativo al que pertenece."@es ;
+    sh:name "located in municipality"@en,
+        "ubicado en municipio"@es ;
+    sh:nodeKind sh:BlankNodeOrIRI ;
+    sh:path :locatedIn .
+
