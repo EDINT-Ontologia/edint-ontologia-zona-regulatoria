@@ -23,7 +23,7 @@ ex-zona:1-esro a edintzone:RegulatedZone ;
     dc:description "Área de Zona 1 destinada a estacionamiento de rotación (zona azul). Máximo 2 horas."@es ;
     
     # Common Properties
-    edintzone:locatedIn <http://dbpedia.org/resource/Zaragoza> ;
+    edintzone:locatedIn ex-zona:municipio-zaragoza ;
     edintzone:managedBy ex-org:z-m-ute ;
     edintzone:scheduleDescription "Lunes a Viernes de 09:00 a 14:00 y de 17:00 a 20:00. Sábados, domingos y festivos sin regulación."^^xsd:string ;
     edintzone:legalReference <https://www.zaragoza.es/sede/servicio/normativa/13296#tit3-capitulo4> ;
@@ -48,7 +48,7 @@ ex-zona:1-esre a edintzone:RegulatedZone ;
     dc:description "Área de Zona 1 destinada prioritariamente a residentes (zona naranja)."@es ;
     
     # Common Properties
-    edintzone:locatedIn <http://dbpedia.org/resource/Zaragoza> ;
+    edintzone:locatedIn ex-zona:municipio-zaragoza ;
     edintzone:managedBy ex-org:z-m-ute ;
     edintzone:scheduleDescription "Lunes a Viernes de 09:00 a 14:00 y de 17:00 a 20:00. Sábados, domingos y festivos sin regulación."^^xsd:string ;
     edintzone:legalReference <https://www.zaragoza.es/sede/servicio/normativa/13296#tit3-capitulo4> ;
@@ -61,7 +61,8 @@ ex-zona:1-esre a edintzone:RegulatedZone ;
 #    Municipality
 #################################################################
 
-<http://dbpedia.org/resource/Zaragoza> a esadm:Municipio ;
+ex-zona:municipio-zaragoza a esadm:Municipio ;
+    owl:sameAs <http://dbpedia.org/resource/Zaragoza> ;
     rdfs:label "Zaragoza"@es ;
     # Linking both distinct zones to the municipality
     edintzone:hasRegulatedZone ex-zona:1-esro ,

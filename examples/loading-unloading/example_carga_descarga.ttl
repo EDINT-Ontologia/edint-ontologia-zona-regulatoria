@@ -22,7 +22,7 @@ ex-zona:carga-descarga-madrid a edintzone:RegulatedZone ;
     edintzone:hasRegulatedZoneType <https://edint.es/kos/RegulatedZoneType/LoadingUnloadingZone> ;
     rdfs:label "Zona de Carga y Descarga Madrid Centro"@es ;
     dc:description "Zona exclusiva para parada técnica de vehículos profesionales de DUM en Madrid centro."@es ;
-    edintzone:locatedIn <http://dbpedia.org/resource/Madrid> ;
+    edintzone:locatedIn ex-zona:municipio-madrid ;
     edintzone:managedBy ex-org:ayuntamiento-madrid ;
     edintzone:scheduleDescription "Lunes a viernes de 07:00 a 15:00. Máximo 15 minutos por parada."^^xsd:string ;
     edintzone:legalReference <https://www.madrid.es/portales/munimadrid/es/Inicio/Movilidad-y-transportes/Ordenanza-de-Movilidad-Sostenible/?vgnextfmt=default&vgnextoid=d73fff17a1151610VgnVCM1000001d4a900aRCRD&vgnextchannel=220e31d3b28fe410VgnVCM1000000b205a0aRCRD&idCapitulo=10613950> ;
@@ -38,7 +38,7 @@ ex-zona:carga-descarga-bcn a edintzone:RegulatedZone ;
     edintzone:hasRegulatedZoneType <https://edint.es/kos/RegulatedZoneType/LoadingUnloadingZone> ;
     rdfs:label "Zona de Carga y Descarga Barcelona Eixample"@es ;
     dc:description "Zona exclusiva para distribución urbana de mercancías en el Eixample de Barcelona."@es ;
-    edintzone:locatedIn <http://dbpedia.org/resource/Barcelona> ;
+    edintzone:locatedIn ex-zona:municipio-barcelona ;
     edintzone:managedBy ex-org:ajuntament-barcelona ;
     edintzone:scheduleDescription "Lunes a viernes de 07:00 a 14:00. Máximo 20 minutos por parada."^^xsd:string ;
     edintzone:legalReference <https://portalweb.metropolib.es/Paginas/Normalizacion/Ordenanzas/2023/Ordenanza-Movilidad-Sostenible.pdf> ;
@@ -63,7 +63,8 @@ ex-zona:carga-descarga-bcn-geom a sf:Geometry ;
 #    Municipality - Madrid
 #################################################################
 
-<http://dbpedia.org/resource/Madrid> a esadm:Municipio ;
+ex-zona:municipio-madrid a esadm:Municipio ;
+    owl:sameAs <http://dbpedia.org/resource/Madrid> ;
     rdfs:label "Madrid"@es ;
     edintzone:hasRegulatedZone ex-zona:carga-descarga-madrid .
 
@@ -71,7 +72,8 @@ ex-zona:carga-descarga-bcn-geom a sf:Geometry ;
 #    Municipality - Barcelona
 #################################################################
 
-<http://dbpedia.org/resource/Barcelona> a esadm:Municipio ;
+ex-zona:municipio-barcelona a esadm:Municipio ;
+    owl:sameAs <http://dbpedia.org/resource/Barcelona> ;
     rdfs:label "Barcelona"@es ;
     edintzone:hasRegulatedZone ex-zona:carga-descarga-bcn .
 

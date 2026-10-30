@@ -22,7 +22,7 @@ ex-zona:superilla-mercat a edintzone:RegulatedZone ;
     edintzone:hasRegulatedZoneType <https://edint.es/kos/RegulatedZoneType/TrafficCalmingZone> ;
     rdfs:label "Superilla Mercat de la Libertat"@es ;
     dc:description "Zona de pacificación del tráfico en el barrio del Poblenou, Barcelona, con límite de 10 km/h y prioridad para peatones."@es ;
-    edintzone:locatedIn <http://dbpedia.org/resource/Barcelona> ;
+    edintzone:locatedIn ex-zona:municipio-barcelona ;
     edintzone:managedBy ex-org:ajuntament-barcelona ;
     edintzone:startDate "2023-03-01"^^xsd:date ;
     edintzone:scheduleDescription "Aplicación permanente; tráfico local únicamente a 10 km/h."^^xsd:string ;
@@ -41,7 +41,7 @@ ex-zona:calmaria-centro a edintzone:RegulatedZone ;
     edintzone:hasRegulatedZoneType <https://edint.es/kos/RegulatedZoneType/TrafficCalmingZone> ;
     rdfs:label "Zona de Pacificación Centro Vitoria-Gasteiz"@es ;
     dc:description "Pacificación del tráfico en el centro histórico de Vitoria-Gasteiz con medida de zona 30."@es ;
-    edintzone:locatedIn <http://dbpedia.org/resource/Vitoria-Gasteiz> ;
+    edintzone:locatedIn ex-zona:municipio-vitoria-gasteiz ;
     edintzone:managedBy ex-org:ayto-vitoria ;
     edintzone:startDate "2019-06-01"^^xsd:date ;
     edintzone:scheduleDescription "Lunes a domingo de 00:00 a 23:59, límite 30 km/h."^^xsd:string ;
@@ -68,7 +68,8 @@ ex-zona:calmaria-centro-geom a sf:Geometry ;
 #    Municipality - Barcelona
 #################################################################
 
-<http://dbpedia.org/resource/Barcelona> a esadm:Municipio ;
+ex-zona:municipio-barcelona a esadm:Municipio ;
+    owl:sameAs <http://dbpedia.org/resource/Barcelona> ;
     rdfs:label "Barcelona"@es ;
     edintzone:hasRegulatedZone ex-zona:superilla-mercat .
 
@@ -76,7 +77,8 @@ ex-zona:calmaria-centro-geom a sf:Geometry ;
 #    Municipality - Vitoria-Gasteiz
 #################################################################
 
-<http://dbpedia.org/resource/Vitoria-Gasteiz> a esadm:Municipio ;
+ex-zona:municipio-vitoria-gasteiz a esadm:Municipio ;
+    owl:sameAs <http://dbpedia.org/resource/Vitoria-Gasteiz> ;
     rdfs:label "Vitoria-Gasteiz"@es ;
     edintzone:hasRegulatedZone ex-zona:calmaria-centro .
 

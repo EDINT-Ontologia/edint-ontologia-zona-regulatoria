@@ -22,7 +22,7 @@ ex-zona:industrial-valencia a edintzone:RegulatedZone ;
     edintzone:hasRegulatedZoneType <https://edint.es/kos/RegulatedZoneType/IndustrialZone> ;
     rdfs:label "Polígono Industrial Paterna Valencia"@es ;
     dc:description "Zona de interés económico tipo industrial en el polígono de Paterna, Valencia."@es ;
-    edintzone:locatedIn <http://dbpedia.org/resource/Valencia> ;
+    edintzone:locatedIn ex-zona:municipio-valencia ;
     edintzone:managedBy ex-org:ayto-valencia ;
     edintzone:startDate "2020-01-01"^^xsd:date ;
     edintzone:scheduleDescription "Acceso restringido a vehículos autorizados de la zona industrial."^^xsd:string ;
@@ -41,7 +41,8 @@ ex-zona:industrial-valencia-geom a sf:Geometry ;
 #    Municipality - Valencia
 #################################################################
 
-<http://dbpedia.org/resource/Valencia> a esadm:Municipio ;
+ex-zona:municipio-valencia a esadm:Municipio ;
+    owl:sameAs <http://dbpedia.org/resource/Valencia> ;
     rdfs:label "Valencia"@es ;
     edintzone:hasRegulatedZone ex-zona:industrial-valencia .
 
