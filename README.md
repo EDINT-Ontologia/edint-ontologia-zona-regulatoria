@@ -4,19 +4,19 @@
 
 Esta ontología tiene como propósito definir, categorizar y relacionar las Zonas Regulatorias en el contexto de la movilidad inteligente y la gestión urbana (Smart Cities). Se ha diseñado como una extensión modular de la ontología del Sector Público de España (esadm).
 
-# Propósito y alcance de la ontología (Purpose and scope of the ontology)
+## Propósito y alcance de la ontología (Purpose and scope of the ontology)
 
 Actualmente, existen vocabularios para divisiones administrativas (esadm) y geometrías (GeoSPARQL), pero existía un vacío semántico para representar entidades funcionales que se superponen a la trama urbana (ZBE, Carga y Descarga, etc...) sin responder a límites administrativos fijos. Esta ontología cubre dicho hueco.
 
-# Prefijo y espacio de nombres (Prefix and namespace)
+## Prefijo y espacio de nombres (Prefix and namespace)
 
 El prefijo de la ontología *Zonas Regulatorias* es: `edintzone` publicado bajo el espacio de nombres: [https://edint.es/def/zona-regulatoria#](https://edint.es/def/zona-regulatoria#)
 
-# Modelo conceptual (Ontology conceptualization)
+## Modelo conceptual (Ontology conceptualization)
 
 ![Ontology Conceptualization Diagram](diagrams/diagram.png)
 
-# Estructura del repositorio (Repository structure)
+## Estructura del repositorio (Repository structure)
 
 | Folder | Description |
 |--------|--------------|
@@ -28,11 +28,11 @@ El prefijo de la ontología *Zonas Regulatorias* es: `edintzone` publicado bajo 
 | **requirements/** | Contains all documents used to define the ontology’s requirements: data example, competency questions, functional requirements, use cases, etc. |
 | **shapes/** | Contains the SHACL shapes used to define and validate ontology constraints. |
 
-# Mantenimiento y evolución (Maintenance and evolution)
+## Mantenimiento y evolución (Maintenance and evolution)
 
 Para manejar las incidencias o mejoras sugeridas con respecto a la ontología, recomendamos seguir las guías proporcionadas en ([Issues Management](./ISSUES.md)) para generar una incidencia.
 
-# Financiación (Funding)
+## Financiación (Funding)
 
 Esta ontología ha sido desarrollada en el contexto del Espacio de Datos para las Infraestructuras Urbanas Inteligentes ([EDINT](https://edint.es)).
 

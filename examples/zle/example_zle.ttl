@@ -92,3 +92,18 @@ ex-via:m-30-perimeter a esadm:Via ;
 ex-via:piadua-zaragoza a esadm:Via ;
     rdfs:label "PIADUA Zaragoza"@es ;
     dc:description "Plan de Improbación de la Dignidad Urbana y el Ambiente en Zaragoza."@es .
+
+#################################################################
+#    Economic Interest Zone - Comercio con peaje urbano (ej. ZIE)
+#################################################################
+
+ex-zona:zie-comercio-centro a edintzone:RegulatedZone ;
+    edintzone:hasRegulatedZoneType <https://edint.es/kos/RegulatedZoneType/EconomicInterestZone> ;
+    rdfs:label "Zona de Interés Económico del centro comercial"@es ,
+               "Commercial district economic interest zone"@en ;
+    dc:description "Zona de interés económico que grava el acceso al eje comercial principal para proteger la actividad del pequeño comercio."@es ;
+    edintzone:locatedIn <http://dbpedia.org/resource/Madrid> ;
+    edintzone:managedBy ex-org:ayuntamiento-madrid ;
+    edintzone:startDate "2021-01-15"^^xsd:date ;
+    edintzone:scheduleDescription "De lunes a sábado de 10:00 a 20:00, coincidiendo con el horario comercial."^^xsd:string ;
+    edintzone:legalReference <https://www.boe.es/buscar/act.php?id=BOE-A-2021-19928> .
