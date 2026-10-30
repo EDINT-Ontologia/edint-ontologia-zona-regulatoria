@@ -1,0 +1,101 @@
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix org: <http://www.w3.org/ns/org#> .
+@prefix esadm: <http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio#> .
+@prefix geo: <http://www.opengis.net/ont/geosparql#> .
+@prefix sf: <http://www.opengis.net/ont/sf#> .
+@prefix edintzone: <https://edint.es/def/zona-regulatoria#> .
+
+@prefix ex-zona: <http://example.org/resource/zona/> .
+@prefix ex-via: <http://example.org/resource/via/> .
+@prefix ex-org: <http://example.org/resource/organization/> .
+
+#################################################################
+#    Congestion Zone - London (Central)
+#################################################################
+
+ex-zona:congestion-london a edintzone:RegulatedZone ;
+    edintzone:hasRegulatedZoneType <https://edint.es/kos/RegulatedZoneType/CongestionZone> ;
+    rdfs:label "Zona de Congestión Londres Centro"@es ;
+    dc:description "Zona de congestión del centro de Londres que aplica un peaje por entrada durante las horas pico."@es ;
+    edintzone:locatedIn <http://dbpedia.org/resource/London> ;
+    edintzone:managedBy ex-org:Transport_for_London ;
+    edintzone:startDate "2003-02-17"^^xsd:date ;
+    edintzone:scheduleDescription "Lunes a viernes de 07:00 a 18:00; sábados, domingos y festivos sin carga."^^xsd:string ;
+    edintzone:legalReference <https://tfl.gov.uk/corporate/policies-and-publications/congestion-charge> ;
+    edintzone:composedOf ex-via:zone-central-london ;
+    geo:hasGeometry ex-zona:congestion-london-geom .
+
+#################################################################
+#    Congestion Zone - Stockholm (City Tunnel)
+#################################################################
+
+ex-zona:congestion-stockholm a edintzone:RegulatedZone ;
+    edintzone:hasRegulatedZoneType <https://edint.es/kos/RegulatedZoneType/CongestionZone> ;
+    rdfs:label "Zona de Congestión Estocolmo Centro"@es ;
+    dc:description "Peaje de congestión en Estocolmo que cobra tarifas variables según la hora y el nivel de tráfico."@es ;
+    edintzone:locatedIn <http://dbpedia.org/resource/Stockholm> ;
+    edintzone:managedBy ex-org:Trafi_k_Stockholm ;
+    edintzone:startDate "2007-08-01"^^xsd:date ;
+    edintzone:scheduleDescription "Lunes a viernes de 06:30 a 18:29; todos los días del año excepto vísperas de festivos."^^xsd:string ;
+    edintzone:legalReference <https://www.trafikkontoret.stockholm/kop-och-ruta/trafikavgift/> ;
+    edintzone:composedOf ex-via:zone-stoc-centro ;
+    geo:hasGeometry ex-zona:congestion-stockholm-geom .
+
+#################################################################
+#    Geometry - Congestion London
+#################################################################
+
+ex-zona:congestion-london-geom a sf:Geometry ;
+    geo:asWKT """POLYGON((-0.2100 51.5000, -0.2100 51.5250, -0.0750 51.5250, -0.0750 51.5000, -0.2100 51.5000))"""^^geo:wktLiteral .
+
+#################################################################
+#    Geometry - Congestion Stockholm
+#################################################################
+
+ex-zona:congestion-stockholm-geom a sf:Geometry ;
+    geo:asWKT """POLYGON((17.9900 59.3000, 17.9900 59.3450, 18.1200 59.3450, 18.1200 59.3000, 17.9900 59.3000))"""^^geo:wktLiteral .
+
+#################################################################
+#    Municipality - London
+#################################################################
+
+<http://dbpedia.org/resource/London> a esadm:Municipio ;
+    rdfs:label "Londres"@es ;
+    edintzone:hasRegulatedZone ex-zona:congestion-london .
+
+#################################################################
+#    Municipality - Stockholm
+#################################################################
+
+<http://dbpedia.org/resource/Stockholm> a esadm:Municipio ;
+    rdfs:label "Estocolmo"@es ;
+    edintzone:hasRegulatedZone ex-zona:congestion-stockholm .
+
+#################################################################
+#    Management Organizations
+#################################################################
+
+ex-org:Transport_for_London a org:Organization ;
+    rdfs:label "Transport for London"@es ;
+    rdfs:comment "Organismo gestor de la zona de congestión de Londres."@es .
+
+ex-org:Trafi_k_Stockholm a org:Organization ;
+    rdfs:label "Trafikkontoret Stockholm"@es ;
+    rdfs:comment "Organismo gestor del peaje de congestión de Estocolmo."@es .
+
+#################################################################
+#    Streets (Vías)
+#################################################################
+
+ex-via:zone-central-london a esadm:Via ;
+    rdfs:label "Zona Central Londres"@es ;
+    dc:description "Área del centro de Londres cubierta por el congestion charge."@es .
+
+ex-via:zone-stoc-centro a esadm:Via ;
+    rdfs:label "Zona Centro Estocolmo"@es ;
+    dc:description "Área del centro de Estocolmo cubierta por el peaje de congestión."@es .

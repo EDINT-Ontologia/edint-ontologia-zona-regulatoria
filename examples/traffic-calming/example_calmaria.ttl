@@ -1,0 +1,115 @@
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix org: <http://www.w3.org/ns/org#> .
+@prefix esadm: <http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio#> .
+@prefix geo: <http://www.opengis.net/ont/geosparql#> .
+@prefix sf: <http://www.opengis.net/ont/sf#> .
+@prefix edintzone: <https://edint.es/def/zona-regulatoria#> .
+
+@prefix ex-zona: <http://example.org/resource/zona/> .
+@prefix ex-via: <http://example.org/resource/via/> .
+@prefix ex-org: <http://example.org/resource/organization/> .
+
+#################################################################
+#    Traffic Calming Zone - Barcelona (Superilla)
+#################################################################
+
+ex-zona:superilla-mercat a edintzone:RegulatedZone ;
+    edintzone:hasRegulatedZoneType <https://edint.es/kos/RegulatedZoneType/TrafficCalmingZone> ;
+    rdfs:label "Superilla Mercat de la Libertat"@es ;
+    dc:description "Zona de pacificación del tráfico en el barrio del Poblenou, Barcelona, con límite de 10 km/h y prioridad para peatones."@es ;
+    edintzone:locatedIn <http://dbpedia.org/resource/Barcelona> ;
+    edintzone:managedBy ex-org:ajuntament-barcelona ;
+    edintzone:startDate "2023-03-01"^^xsd:date ;
+    edintzone:scheduleDescription "Aplicación permanente; tráfico local únicamente a 10 km/h."^^xsd:string ;
+    edintzone:legalReference <https://portalweb.metropolib.es/Paginas/Normalizacion/Ordenanzas/2023/Ordenanza-Movilidad-Sostenible.pdf> ;
+    edintzone:composedOf ex-via:calle-marsellaise ,
+                         ex-via:calle-santa-anna ,
+                         ex-via:calle-torrijos ,
+                         ex-via:calle-roca-benavent ;
+    geo:hasGeometry ex-zona:superilla-mercat-geom .
+
+#################################################################
+#    Traffic Calming Zone - Vitoria-Gasteiz
+#################################################################
+
+ex-zona:calmaria-centro a edintzone:RegulatedZone ;
+    edintzone:hasRegulatedZoneType <https://edint.es/kos/RegulatedZoneType/TrafficCalmingZone> ;
+    rdfs:label "Zona de Pacificación Centro Vitoria-Gasteiz"@es ;
+    dc:description "Pacificación del tráfico en el centro histórico de Vitoria-Gasteiz con medida de zona 30."@es ;
+    edintzone:locatedIn <http://dbpedia.org/resource/Vitoria-Gasteiz> ;
+    edintzone:managedBy ex-org:ayto-vitoria ;
+    edintzone:startDate "2019-06-01"^^xsd:date ;
+    edintzone:scheduleDescription "Lunes a domingo de 00:00 a 23:59, límite 30 km/h."^^xsd:string ;
+    edintzone:legalReference <https://www.vitoria-gasteiz.org/portal-web/portal-sede/portal/portal/ordenanzas-municipales/> ;
+    edintzone:composedOf ex-via:calle-espaza ,
+                         ex-via:calle-pintorerroz ;
+    geo:hasGeometry ex-zona:calmaria-centro-geom .
+
+#################################################################
+#    Geometry - Superilla Mercat
+#################################################################
+
+ex-zona:superilla-mercat-geom a sf:Geometry ;
+    geo:asWKT """POLYGON((2.1700 41.4050, 2.1700 41.4100, 2.1770 41.4100, 2.1770 41.4050, 2.1700 41.4050))"""^^geo:wktLiteral .
+
+#################################################################
+#    Geometry - Calmaria Centro Vitoria
+#################################################################
+
+ex-zona:calmaria-centro-geom a sf:Geometry ;
+    geo:asWKT """POLYGON((-2.6730 42.8470, -2.6730 42.8510, -2.6670 42.8510, -2.6670 42.8470, -2.6730 42.8470))"""^^geo:wktLiteral .
+
+#################################################################
+#    Municipality - Barcelona
+#################################################################
+
+<http://dbpedia.org/resource/Barcelona> a esadm:Municipio ;
+    rdfs:label "Barcelona"@es ;
+    edintzone:hasRegulatedZone ex-zona:superilla-mercat .
+
+#################################################################
+#    Municipality - Vitoria-Gasteiz
+#################################################################
+
+<http://dbpedia.org/resource/Vitoria-Gasteiz> a esadm:Municipio ;
+    rdfs:label "Vitoria-Gasteiz"@es ;
+    edintzone:hasRegulatedZone ex-zona:calmaria-centro .
+
+#################################################################
+#    Management Organizations
+#################################################################
+
+ex-org:ajuntament-barcelona a org:Organization ;
+    rdfs:label "Ajuntament de Barcelona"@es ;
+    rdfs:comment "Organismo gestor de las superilles de Barcelona."@es .
+
+ex-org:ayto-vitoria a org:Organization ;
+    rdfs:label "Ayuntamiento de Vitoria-Gasteiz"@es ;
+    rdfs:comment "Organismo gestor de la pacificación del tráfico en Vitoria-Gasteiz."@es .
+
+#################################################################
+#    Streets (Vías)
+#################################################################
+
+ex-via:calle-marsellaise a esadm:Via ;
+    rdfs:label "Calle Marsellaise"@es .
+
+ex-via:calle-santa-anna a esadm:Via ;
+    rdfs:label "Calle Santa Anna"@es .
+
+ex-via:calle-torrijos a esadm:Via ;
+    rdfs:label "Calle Torrijos"@es .
+
+ex-via:calle-roca-benavent a esadm:Via ;
+    rdfs:label "Calle Roca i Benavent"@es .
+
+ex-via:calle-espaza a esadm:Via ;
+    rdfs:label "Calle Espaza"@es .
+
+ex-via:calle-pintorerroz a esadm:Via ;
+    rdfs:label "Calle Pintor Rozas"@es .

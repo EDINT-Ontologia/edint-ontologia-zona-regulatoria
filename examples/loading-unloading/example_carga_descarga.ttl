@@ -1,0 +1,99 @@
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix org: <http://www.w3.org/ns/org#> .
+@prefix esadm: <http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio#> .
+@prefix geo: <http://www.opengis.net/ont/geosparql#> .
+@prefix sf: <http://www.opengis.net/ont/sf#> .
+@prefix edintzone: <https://edint.es/def/zona-regulatoria#> .
+
+@prefix ex-zona: <http://example.org/resource/zona/> .
+@prefix ex-via: <http://example.org/resource/via/> .
+@prefix ex-org: <http://example.org/resource/organization/> .
+
+#################################################################
+#    Loading Unloading Zone - Madrid
+#################################################################
+
+ex-zona:carga-descarga-madrid a edintzone:RegulatedZone ;
+    edintzone:hasRegulatedZoneType <https://edint.es/kos/RegulatedZoneType/LoadingUnloadingZone> ;
+    rdfs:label "Zona de Carga y Descarga Madrid Centro"@es ;
+    dc:description "Zona exclusiva para parada técnica de vehículos profesionales de DUM en Madrid centro."@es ;
+    edintzone:locatedIn <http://dbpedia.org/resource/Madrid> ;
+    edintzone:managedBy ex-org:ayuntamiento-madrid ;
+    edintzone:scheduleDescription "Lunes a viernes de 07:00 a 15:00. Máximo 15 minutos por parada."^^xsd:string ;
+    edintzone:legalReference <https://www.madrid.es/portales/munimadrid/es/Inicio/Movilidad-y-transportes/Ordenanza-de-Movilidad-Sostenible/?vgnextfmt=default&vgnextoid=d73fff17a1151610VgnVCM1000001d4a900aRCRD&vgnextchannel=220e31d3b28fe410VgnVCM1000000b205a0aRCRD&idCapitulo=10613950> ;
+    edintzone:composedOf ex-via:calle-alcala ,
+                         ex-via:calle-serrano ;
+    geo:hasGeometry ex-zona:carga-descarga-madrid-geom .
+
+#################################################################
+#    Loading Unloading Zone - Barcelona
+#################################################################
+
+ex-zona:carga-descarga-bcn a edintzone:RegulatedZone ;
+    edintzone:hasRegulatedZoneType <https://edint.es/kos/RegulatedZoneType/LoadingUnloadingZone> ;
+    rdfs:label "Zona de Carga y Descarga Barcelona Eixample"@es ;
+    dc:description "Zona exclusiva para distribución urbana de mercancías en el Eixample de Barcelona."@es ;
+    edintzone:locatedIn <http://dbpedia.org/resource/Barcelona> ;
+    edintzone:managedBy ex-org:ajuntament-barcelona ;
+    edintzone:scheduleDescription "Lunes a viernes de 07:00 a 14:00. Máximo 20 minutos por parada."^^xsd:string ;
+    edintzone:legalReference <https://portalweb.metropolib.es/Paginas/Normalizacion/Ordenanzas/2023/Ordenanza-Movilidad-Sostenible.pdf> ;
+    edintzone:composedOf ex-via:calle-balmes ;
+    geo:hasGeometry ex-zona:carga-descarga-bcn-geom .
+
+#################################################################
+#    Geometry - C/D Madrid
+#################################################################
+
+ex-zona:carga-descarga-madrid-geom a sf:Geometry ;
+    geo:asWKT """POLYGON((-3.6900 40.4300, -3.6900 40.4350, -3.6850 40.4350, -3.6850 40.4300, -3.6900 40.4300))"""^^geo:wktLiteral .
+
+#################################################################
+#    Geometry - C/D Barcelona
+#################################################################
+
+ex-zona:carga-descarga-bcn-geom a sf:Geometry ;
+    geo:asWKT """POLYGON((2.1550 41.3900, 2.1550 41.3950, 2.1600 41.3950, 2.1600 41.3900, 2.1550 41.3900))"""^^geo:wktLiteral .
+
+#################################################################
+#    Municipality - Madrid
+#################################################################
+
+<http://dbpedia.org/resource/Madrid> a esadm:Municipio ;
+    rdfs:label "Madrid"@es ;
+    edintzone:hasRegulatedZone ex-zona:carga-descarga-madrid .
+
+#################################################################
+#    Municipality - Barcelona
+#################################################################
+
+<http://dbpedia.org/resource/Barcelona> a esadm:Municipio ;
+    rdfs:label "Barcelona"@es ;
+    edintzone:hasRegulatedZone ex-zona:carga-descarga-bcn .
+
+#################################################################
+#    Management Organizations
+#################################################################
+
+ex-org:ayuntamiento-madrid a org:Organization ;
+    rdfs:label "Ayuntamiento de Madrid"@es .
+
+ex-org:ajuntament-barcelona a org:Organization ;
+    rdfs:label "Ajuntament de Barcelona"@es .
+
+#################################################################
+#    Streets (Vías)
+#################################################################
+
+ex-via:calle-alcala a esadm:Via ;
+    rdfs:label "Calle Alcalá"@es .
+
+ex-via:calle-serrano a esadm:Via ;
+    rdfs:label "Calle Serrano"@es .
+
+ex-via:calle-balmes a esadm:Via ;
+    rdfs:label "Calle Balmes"@es .
