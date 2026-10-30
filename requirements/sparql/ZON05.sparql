@@ -15,23 +15,22 @@ WHERE {
 }
 ORDER BY ?zona
 
-# --- Query 2 ---
-PREFIX edintzone: <https://edint.es/def/zona-regulatoria#>
-PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
-PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
-PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+# # --- Query 2 ---
+# PREFIX edintzone: <https://edint.es/def/zona-regulatoria#>
+# PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+# PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+# PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 
-SELECT DISTINCT ?zona ?tipo ?inicio ?fin
-WHERE {
-    ?zona rdf:type edintzone:RegulatedZone ;
-          edintzone:hasRegulatedZoneType ?tipo .
-    OPTIONAL { ?zona edintzone:startDate ?inicio . }
-    OPTIONAL { ?zona edintzone:endDate ?fin . }
-    FILTER (
-        (!BOUND(?inicio) || xsd:date(?inicio) <= xsd:date(NOW()))
-        &&
-        (!BOUND(?fin) || xsd:date(?fin) >= xsd:date(NOW()))
-    )
-}
-ORDER BY ?zona
-
+# SELECT DISTINCT ?zona ?tipo ?inicio ?fin
+# WHERE {
+#     ?zona rdf:type edintzone:RegulatedZone ;
+#           edintzone:hasRegulatedZoneType ?tipo .
+#     OPTIONAL { ?zona edintzone:startDate ?inicio . }
+#     OPTIONAL { ?zona edintzone:endDate ?fin . }
+#     FILTER (
+#         (!BOUND(?inicio) || xsd:date(?inicio) <= xsd:date(NOW()))
+#         &&
+#         (!BOUND(?fin) || xsd:date(?fin) >= xsd:date(NOW()))
+#     )
+# }
+# ORDER BY ?zona
