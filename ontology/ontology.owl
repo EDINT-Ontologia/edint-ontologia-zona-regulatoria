@@ -43,7 +43,7 @@
         <rdfs:label xml:lang="es">Zonas Regulatorias</rdfs:label>
         <rdfs:label xml:lang="en">Regulated Zones</rdfs:label>
         <dcterms:title xml:lang="es">Ontología EDINT de Zonas Regulatorias</dcterms:title>
-        <dcterms:license rdf:resource="https://creativecommons.org/licenses/by/4.0/"/>
+        <dcterms:license rdf:resource="https://creativecommons.org/licenses/by-sa/4.0/"/>
         <vann:preferredNamespacePrefix>edintzone</vann:preferredNamespacePrefix>
         <vann:preferredNamespaceUri rdf:resource="https://edint.es/def/zona-regulatoria#"/>
         <rdfs:comment xml:lang="es">Actualmente, existen vocabularios para divisiones administrativas (esadm) y geometrías (GeoSPARQL), pero existía un vacío semántico para representar entidades funcionales que se superponen a la trama urbana (ZBE, Carga y Descarga, etc...) sin responder a límites administrativos fijos. Esta ontología cubre dicho hueco.</rdfs:comment>

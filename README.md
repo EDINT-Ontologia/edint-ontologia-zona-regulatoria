@@ -1,5 +1,7 @@
 # Ontología EDINT de Zonas Regulatorias
 
+[![Licencia](https://img.shields.io/badge/licencia-CC%20BY--SA%204.0-blue)](./LICENSE)
+
 Esta ontología tiene como propósito definir, categorizar y relacionar las Zonas Regulatorias en el contexto de la movilidad inteligente y la gestión urbana (Smart Cities). Se ha diseñado como una extensión modular de la ontología del Sector Público de España (esadm).
 
 # Propósito y alcance de la ontología (Purpose and scope of the ontology)
