@@ -5,6 +5,7 @@
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix org: <http://www.w3.org/ns/org#> .
+@prefix callejero: <http://vocab.linkeddata.es/datosabiertos/def/urbanismo-infraestructuras/callejero#> .
 @prefix esadm: <http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio#> .
 @prefix geo: <http://www.opengis.net/ont/geosparql#> .
 @prefix sf: <http://www.opengis.net/ont/sf#> .
@@ -25,7 +26,7 @@ ex-zona:carga-descarga-madrid a edintzone:RegulatedZone ;
     edintzone:locatedIn <http://dbpedia.org/resource/Madrid> ;
     edintzone:managedBy ex-org:ayuntamiento-madrid ;
     edintzone:scheduleDescription "Lunes a viernes de 07:00 a 15:00. Máximo 15 minutos por parada."^^xsd:string ;
-    edintzone:legalReference <https://www.madrid.es/portales/munimadrid/es/Inicio/Movilidad-y-transportes/Ordenanza-de-Movilidad-Sostenible/?vgnextfmt=default&vgnextoid=d73fff17a1151610VgnVCM1000001d4a900aRCRD&vgnextchannel=220e31d3b28fe410VgnVCM1000000b205a0aRCRD&idCapitulo=10613950> ;
+    edintzone:legalReference "https://www.madrid.es/portales/munimadrid/es/Inicio/Movilidad-y-transportes/Ordenanza-de-Movilidad-Sostenible/?vgnextfmt=default&amp;vgnextoid=d73fff17a1151610VgnVCM1000001d4a900aRCRD&amp;vgnextchannel=220e31d3b28fe410VgnVCM1000000b205a0aRCRD&amp;idCapitulo=10613950"^^xsd:anyURI ;
     edintzone:composedOf ex-via:calle-alcala ,
                          ex-via:calle-serrano ;
     geo:hasGeometry ex-zona:carga-descarga-madrid-geom .
@@ -41,7 +42,7 @@ ex-zona:carga-descarga-bcn a edintzone:RegulatedZone ;
     edintzone:locatedIn <http://dbpedia.org/resource/Barcelona> ;
     edintzone:managedBy ex-org:ajuntament-barcelona ;
     edintzone:scheduleDescription "Lunes a viernes de 07:00 a 14:00. Máximo 20 minutos por parada."^^xsd:string ;
-    edintzone:legalReference <https://portalweb.metropolib.es/Paginas/Normalizacion/Ordenanzas/2023/Ordenanza-Movilidad-Sostenible.pdf> ;
+    edintzone:legalReference "https://portalweb.metropolib.es/Paginas/Normalizacion/Ordenanzas/2023/Ordenanza-Movilidad-Sostenible.pdf"^^xsd:anyURI ;
     edintzone:composedOf ex-via:calle-balmes ;
     geo:hasGeometry ex-zona:carga-descarga-bcn-geom .
 
@@ -89,11 +90,11 @@ ex-org:ajuntament-barcelona a org:Organization ;
 #    Streets (Vías)
 #################################################################
 
-ex-via:calle-alcala a esadm:Via ;
+ex-via:calle-alcala a callejero:Via ;
     rdfs:label "Calle Alcalá"@es .
 
-ex-via:calle-serrano a esadm:Via ;
+ex-via:calle-serrano a callejero:Via ;
     rdfs:label "Calle Serrano"@es .
 
-ex-via:calle-balmes a esadm:Via ;
+ex-via:calle-balmes a callejero:Via ;
     rdfs:label "Calle Balmes"@es .

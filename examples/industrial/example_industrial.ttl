@@ -5,6 +5,7 @@
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix org: <http://www.w3.org/ns/org#> .
+@prefix callejero: <http://vocab.linkeddata.es/datosabiertos/def/urbanismo-infraestructuras/callejero#> .
 @prefix esadm: <http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio#> .
 @prefix geo: <http://www.opengis.net/ont/geosparql#> .
 @prefix sf: <http://www.opengis.net/ont/sf#> .
@@ -26,7 +27,7 @@ ex-zona:industrial-valencia a edintzone:RegulatedZone ;
     edintzone:managedBy ex-org:ayto-valencia ;
     edintzone:startDate "2020-01-01"^^xsd:date ;
     edintzone:scheduleDescription "Acceso restringido a vehículos autorizados de la zona industrial."^^xsd:string ;
-    edintzone:legalReference <https://www.valencia.es/portales/web/valencia/organizacion/municipios-entidades-locales/comarques/horta-nord/paterna/> ;
+    edintzone:legalReference "https://www.valencia.es/portales/web/valencia/organizacion/municipios-entidades-locales/comarques/horta-nord/paterna/"^^xsd:anyURI ;
     edintzone:composedOf ex-via:calle-ingeniero-ferrer ;
     geo:hasGeometry ex-zona:industrial-valencia-geom .
 
@@ -56,5 +57,5 @@ ex-org:ayto-valencia a org:Organization ;
 #    Streets (Vías)
 #################################################################
 
-ex-via:calle-ingeniero-ferrer a esadm:Via ;
+ex-via:calle-ingeniero-ferrer a callejero:Via ;
     rdfs:label "Calle Ingeniero Ferrer"@es .

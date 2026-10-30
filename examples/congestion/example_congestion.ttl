@@ -5,6 +5,7 @@
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix org: <http://www.w3.org/ns/org#> .
+@prefix callejero: <http://vocab.linkeddata.es/datosabiertos/def/urbanismo-infraestructuras/callejero#> .
 @prefix esadm: <http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio#> .
 @prefix geo: <http://www.opengis.net/ont/geosparql#> .
 @prefix sf: <http://www.opengis.net/ont/sf#> .
@@ -26,7 +27,7 @@ ex-zona:congestion-london a edintzone:RegulatedZone ;
     edintzone:managedBy ex-org:Transport_for_London ;
     edintzone:startDate "2003-02-17"^^xsd:date ;
     edintzone:scheduleDescription "Lunes a viernes de 07:00 a 18:00; sábados, domingos y festivos sin carga."^^xsd:string ;
-    edintzone:legalReference <https://tfl.gov.uk/corporate/policies-and-publications/congestion-charge> ;
+    edintzone:legalReference "https://tfl.gov.uk/corporate/policies-and-publications/congestion-charge"^^xsd:anyURI ;
     edintzone:composedOf ex-via:zone-central-london ;
     geo:hasGeometry ex-zona:congestion-london-geom .
 
@@ -42,7 +43,7 @@ ex-zona:congestion-stockholm a edintzone:RegulatedZone ;
     edintzone:managedBy ex-org:Trafi_k_Stockholm ;
     edintzone:startDate "2007-08-01"^^xsd:date ;
     edintzone:scheduleDescription "Lunes a viernes de 06:30 a 18:29; todos los días del año excepto vísperas de festivos."^^xsd:string ;
-    edintzone:legalReference <https://www.trafikkontoret.stockholm/kop-och-ruta/trafikavgift/> ;
+    edintzone:legalReference "https://www.trafikkontoret.stockholm/kop-och-ruta/trafikavgift/"^^xsd:anyURI ;
     edintzone:composedOf ex-via:zone-stoc-centro ;
     geo:hasGeometry ex-zona:congestion-stockholm-geom .
 
@@ -92,10 +93,10 @@ ex-org:Trafi_k_Stockholm a org:Organization ;
 #    Streets (Vías)
 #################################################################
 
-ex-via:zone-central-london a esadm:Via ;
+ex-via:zone-central-london a callejero:Via ;
     rdfs:label "Zona Central Londres"@es ;
     dc:description "Área del centro de Londres cubierta por el congestion charge."@es .
 
-ex-via:zone-stoc-centro a esadm:Via ;
+ex-via:zone-stoc-centro a callejero:Via ;
     rdfs:label "Zona Centro Estocolmo"@es ;
     dc:description "Área del centro de Estocolmo cubierta por el peaje de congestión."@es .

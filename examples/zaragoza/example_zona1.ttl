@@ -5,6 +5,7 @@
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix org: <http://www.w3.org/ns/org#> .
+@prefix callejero: <http://vocab.linkeddata.es/datosabiertos/def/urbanismo-infraestructuras/callejero#> .
 @prefix esadm: <http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio#> .
 @prefix edintzone: <https://edint.es/def/zona-regulatoria#> .
 
@@ -26,7 +27,7 @@ ex-zona:1-esro a edintzone:RegulatedZone ;
     edintzone:locatedIn <http://dbpedia.org/resource/Zaragoza> ;
     edintzone:managedBy ex-org:z-m-ute ;
     edintzone:scheduleDescription "Lunes a Viernes de 09:00 a 14:00 y de 17:00 a 20:00. Sábados, domingos y festivos sin regulación."^^xsd:string ;
-    edintzone:legalReference <https://www.zaragoza.es/sede/servicio/normativa/13296#tit3-capitulo4> ;
+    edintzone:legalReference "https://www.zaragoza.es/sede/servicio/normativa/13296#tit3-capitulo4"^^xsd:anyURI ;
 
     # Streets specifically listed as ESRO in Zona 1
     edintzone:composedOf ex-via:calle-eusebio-blasco ,
@@ -51,7 +52,7 @@ ex-zona:1-esre a edintzone:RegulatedZone ;
     edintzone:locatedIn <http://dbpedia.org/resource/Zaragoza> ;
     edintzone:managedBy ex-org:z-m-ute ;
     edintzone:scheduleDescription "Lunes a Viernes de 09:00 a 14:00 y de 17:00 a 20:00. Sábados, domingos y festivos sin regulación."^^xsd:string ;
-    edintzone:legalReference <https://www.zaragoza.es/sede/servicio/normativa/13296#tit3-capitulo4> ;
+    edintzone:legalReference "https://www.zaragoza.es/sede/servicio/normativa/13296#tit3-capitulo4"^^xsd:anyURI ;
 
     # Streets specifically listed as ESRE in Zona 1
     edintzone:composedOf ex-via:calle-mayor ,
@@ -80,15 +81,15 @@ ex-org:z-m-ute a org:Organization ;
 #################################################################
 
 # ESRO Streets
-ex-via:calle-eusebio-blasco a esadm:Via ; rdfs:label "Calle Eusebio Blasco"@es .
-ex-via:calle-pedro-j-soler a esadm:Via ; rdfs:label "Calle Pedro J. Soler"@es .
-ex-via:plaza-san-pedro-nolasco a esadm:Via ; rdfs:label "Plaza San Pedro Nolasco"@es .
-ex-via:calle-san-andres a esadm:Via ; rdfs:label "Calle San Andrés"@es .
-ex-via:calle-san-jorge a esadm:Via ; rdfs:label "Calle San Jorge"@es .
-ex-via:calle-san-lorenzo a esadm:Via ; rdfs:label "Calle San Lorenzo"@es .
-ex-via:calle-santo-dominguito-de-val a esadm:Via ; rdfs:label "Calle Santo Dominguito de Val"@es .
-ex-via:calle-veronica a esadm:Via ; rdfs:label "Calle Verónica"@es .
+ex-via:calle-eusebio-blasco a callejero:Via ; rdfs:label "Calle Eusebio Blasco"@es .
+ex-via:calle-pedro-j-soler a callejero:Via ; rdfs:label "Calle Pedro J. Soler"@es .
+ex-via:plaza-san-pedro-nolasco a callejero:Via ; rdfs:label "Plaza San Pedro Nolasco"@es .
+ex-via:calle-san-andres a callejero:Via ; rdfs:label "Calle San Andrés"@es .
+ex-via:calle-san-jorge a callejero:Via ; rdfs:label "Calle San Jorge"@es .
+ex-via:calle-san-lorenzo a callejero:Via ; rdfs:label "Calle San Lorenzo"@es .
+ex-via:calle-santo-dominguito-de-val a callejero:Via ; rdfs:label "Calle Santo Dominguito de Val"@es .
+ex-via:calle-veronica a callejero:Via ; rdfs:label "Calle Verónica"@es .
 
 # ESRE Streets
-ex-via:calle-mayor a esadm:Via ; rdfs:label "Calle Mayor"@es .
-ex-via:calle-refugio a esadm:Via ; rdfs:label "Calle Refugio"@es .
+ex-via:calle-mayor a callejero:Via ; rdfs:label "Calle Mayor"@es .
+ex-via:calle-refugio a callejero:Via ; rdfs:label "Calle Refugio"@es .
