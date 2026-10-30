@@ -22,7 +22,7 @@ ex-zona:zbe-madrid a edintzone:RegulatedZone ;
     edintzone:hasRegulatedZoneType <https://edint.es/kos/RegulatedZoneType/LowEmissionZone> ;
     rdfs:label "Zona de Bajas Emisiones Madrid"@es ;
     dc:description "ZBE que restringe el acceso a los vehículos más contaminantes en el área del centro histórico de Madrid."@es ;
-    edintzone:locatedIn <http://dbpedia.org/resource/Madrid> ;
+    edintzone:locatedIn ex-zona:municipio-madrid ;
     edintzone:managedBy ex-org:ayuntamiento-madrid ;
     edintzone:startDate "2018-08-01"^^xsd:date ;
     edintzone:scheduleDescription "Lunes a viernes de 07:00 a 21:00; sábados, domingos y festivos sin restricción."^^xsd:string ;
@@ -38,7 +38,7 @@ ex-zona:zbe-zaragoza a edintzone:RegulatedZone ;
     edintzone:hasRegulatedZoneType <https://edint.es/kos/RegulatedZoneType/LowEmissionZone> ;
     rdfs:label "Zona de Bajas Emisiones Zaragoza"@es ;
     dc:description "ZBE de Zaragoza que limita la circulación de vehículos según Euroclassifications."@es ;
-    edintzone:locatedIn <http://dbpedia.org/resource/Zaragoza> ;
+    edintzone:locatedIn ex-zona:municipio-zaragoza ;
     edintzone:managedBy ex-org:ayuntamiento-zaragoza ;
     edintzone:startDate "2021-01-01"^^xsd:date ;
     edintzone:scheduleDescription "Aplicación permanente las 24 horas del día."^^xsd:string ;
@@ -64,7 +64,8 @@ ex-zona:zbe-zaragoza-geom a sf:Geometry ;
 #    Municipality - Madrid
 #################################################################
 
-<http://dbpedia.org/resource/Madrid> a esadm:Municipio ;
+ex-zona:municipio-madrid a esadm:Municipio ;
+    owl:sameAs <http://dbpedia.org/resource/Madrid> ;
     rdfs:label "Madrid"@es ;
     edintzone:hasRegulatedZone ex-zona:zbe-madrid ,
                                ex-zona:zbe-zaragoza .
@@ -92,3 +93,18 @@ ex-via:m-30-perimeter a esadm:Via ;
 ex-via:piadua-zaragoza a esadm:Via ;
     rdfs:label "PIADUA Zaragoza"@es ;
     dc:description "Plan de Improbación de la Dignidad Urbana y el Ambiente en Zaragoza."@es .
+
+#################################################################
+#    Economic Interest Zone - Comercio con peaje urbano (ej. ZIE)
+#################################################################
+
+ex-zona:zie-comercio-centro a edintzone:RegulatedZone ;
+    edintzone:hasRegulatedZoneType <https://edint.es/kos/RegulatedZoneType/EconomicInterestZone> ;
+    rdfs:label "Zona de Interés Económico del centro comercial"@es ,
+               "Commercial district economic interest zone"@en ;
+    dc:description "Zona de interés económico que grava el acceso al eje comercial principal para proteger la actividad del pequeño comercio."@es ;
+    edintzone:locatedIn ex-zona:municipio-madrid ;
+    edintzone:managedBy ex-org:ayuntamiento-madrid ;
+    edintzone:startDate "2021-01-15"^^xsd:date ;
+    edintzone:scheduleDescription "De lunes a sábado de 10:00 a 20:00, coincidiendo con el horario comercial."^^xsd:string ;
+    edintzone:legalReference <https://www.boe.es/buscar/act.php?id=BOE-A-2021-19928> .

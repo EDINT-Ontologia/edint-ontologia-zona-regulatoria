@@ -14,32 +14,31 @@ WHERE {
 }
 ORDER BY ?tipoZona ?zona ?referenciaLegal
 
-# --- Query 2 ---
-PREFIX edintzone: <https://edint.es/def/zona-regulatoria#>
-PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
-PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+# # --- Query 2 ---
+# PREFIX edintzone: <https://edint.es/def/zona-regulatoria#>
+# PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+# PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 
-SELECT ?zona ?tipoZona ?nombreZona ?referenciaLegal
-WHERE {
-    ?zona rdf:type edintzone:RegulatedZone ;
-          edintzone:hasRegulatedZoneType ?tipoZona .
-    ?zona edintzone:legalReference ?referenciaLegal .
-    OPTIONAL { ?zona rdfs:label ?nombreZona . }
-}
-ORDER BY ?tipoZona ?zona ?referenciaLegal
+# SELECT ?zona ?tipoZona ?nombreZona ?referenciaLegal
+# WHERE {
+#     ?zona rdf:type edintzone:RegulatedZone ;
+#           edintzone:hasRegulatedZoneType ?tipoZona .
+#     ?zona edintzone:legalReference ?referenciaLegal .
+#     OPTIONAL { ?zona rdfs:label ?nombreZona . }
+# }
+# ORDER BY ?tipoZona ?zona ?referenciaLegal
 
-# --- Query 3 ---
-PREFIX edintzone: <https://edint.es/def/zona-regulatoria#>
-PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
-PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+# # --- Query 3 ---
+# PREFIX edintzone: <https://edint.es/def/zona-regulatoria#>
+# PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+# PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 
-SELECT ?zona ?tipoZona ?nombreZona ?referenciaLegal
-WHERE {
-    ?zona rdf:type edintzone:RegulatedZone ;
-          edintzone:hasRegulatedZoneType ?tipoZona .
-    ?zona edintzone:legalReference ?referenciaLegal .
-    OPTIONAL { ?zona rdfs:label ?nombreZona . }
-    FILTER (!BOUND(?nombreZona) || lang(?nombreZona) = "" || lang(?nombreZona) = "es")
-}
-ORDER BY ?tipoZona ?zona ?referenciaLegal
-
+# SELECT ?zona ?tipoZona ?nombreZona ?referenciaLegal
+# WHERE {
+#     ?zona rdf:type edintzone:RegulatedZone ;
+#           edintzone:hasRegulatedZoneType ?tipoZona .
+#     ?zona edintzone:legalReference ?referenciaLegal .
+#     OPTIONAL { ?zona rdfs:label ?nombreZona . }
+#     FILTER (!BOUND(?nombreZona) || lang(?nombreZona) = "" || lang(?nombreZona) = "es")
+# }
+# ORDER BY ?tipoZona ?zona ?referenciaLegal

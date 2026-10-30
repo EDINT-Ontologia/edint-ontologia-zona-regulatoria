@@ -22,7 +22,7 @@ ex-zona:congestion-london a edintzone:RegulatedZone ;
     edintzone:hasRegulatedZoneType <https://edint.es/kos/RegulatedZoneType/CongestionZone> ;
     rdfs:label "Zona de Congestión Londres Centro"@es ;
     dc:description "Zona de congestión del centro de Londres que aplica un peaje por entrada durante las horas pico."@es ;
-    edintzone:locatedIn <http://dbpedia.org/resource/London> ;
+    edintzone:locatedIn ex-zona:municipio-london ;
     edintzone:managedBy ex-org:Transport_for_London ;
     edintzone:startDate "2003-02-17"^^xsd:date ;
     edintzone:scheduleDescription "Lunes a viernes de 07:00 a 18:00; sábados, domingos y festivos sin carga."^^xsd:string ;
@@ -38,7 +38,7 @@ ex-zona:congestion-stockholm a edintzone:RegulatedZone ;
     edintzone:hasRegulatedZoneType <https://edint.es/kos/RegulatedZoneType/CongestionZone> ;
     rdfs:label "Zona de Congestión Estocolmo Centro"@es ;
     dc:description "Peaje de congestión en Estocolmo que cobra tarifas variables según la hora y el nivel de tráfico."@es ;
-    edintzone:locatedIn <http://dbpedia.org/resource/Stockholm> ;
+    edintzone:locatedIn ex-zona:municipio-stockholm ;
     edintzone:managedBy ex-org:Trafi_k_Stockholm ;
     edintzone:startDate "2007-08-01"^^xsd:date ;
     edintzone:scheduleDescription "Lunes a viernes de 06:30 a 18:29; todos los días del año excepto vísperas de festivos."^^xsd:string ;
@@ -64,7 +64,8 @@ ex-zona:congestion-stockholm-geom a sf:Geometry ;
 #    Municipality - London
 #################################################################
 
-<http://dbpedia.org/resource/London> a esadm:Municipio ;
+ex-zona:municipio-london a esadm:Municipio ;
+    owl:sameAs <http://dbpedia.org/resource/London> ;
     rdfs:label "Londres"@es ;
     edintzone:hasRegulatedZone ex-zona:congestion-london .
 
@@ -72,7 +73,8 @@ ex-zona:congestion-stockholm-geom a sf:Geometry ;
 #    Municipality - Stockholm
 #################################################################
 
-<http://dbpedia.org/resource/Stockholm> a esadm:Municipio ;
+ex-zona:municipio-stockholm a esadm:Municipio ;
+    owl:sameAs <http://dbpedia.org/resource/Stockholm> ;
     rdfs:label "Estocolmo"@es ;
     edintzone:hasRegulatedZone ex-zona:congestion-stockholm .
 
