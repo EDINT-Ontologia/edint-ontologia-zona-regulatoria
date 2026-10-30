@@ -15,37 +15,36 @@ WHERE {
 }
 ORDER BY ?tipoZona ?zona ?calle
 
-# --- Query 2 ---
-PREFIX edintzone: <https://edint.es/def/zona-regulatoria#>
-PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
-PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
-PREFIX geo: <http://www.opengis.net/ont/geosparql#>
+# # --- Query 2 ---
+# PREFIX edintzone: <https://edint.es/def/zona-regulatoria#>
+# PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+# PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+# PREFIX geo: <http://www.opengis.net/ont/geosparql#>
 
-SELECT ?zona ?tipoZona ?calle ?nombreCalle
-WHERE {
-    ?zona rdf:type edintzone:RegulatedZone ;
-          edintzone:hasRegulatedZoneType ?tipoZona .
-    ?zona edintzone:composedOf ?calle .
-    OPTIONAL { ?calle rdfs:label ?nombreCalle . }
-}
-ORDER BY ?tipoZona ?zona ?nombreCalle
+# SELECT ?zona ?tipoZona ?calle ?nombreCalle
+# WHERE {
+#     ?zona rdf:type edintzone:RegulatedZone ;
+#           edintzone:hasRegulatedZoneType ?tipoZona .
+#     ?zona edintzone:composedOf ?calle .
+#     OPTIONAL { ?calle rdfs:label ?nombreCalle . }
+# }
+# ORDER BY ?tipoZona ?zona ?nombreCalle
 
-# --- Query 3 ---
-PREFIX edintzone: <https://edint.es/def/zona-regulatoria#>
-PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
-PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
-PREFIX geo: <http://www.opengis.net/ont/geosparql#>
+# # --- Query 3 ---
+# PREFIX edintzone: <https://edint.es/def/zona-regulatoria#>
+# PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+# PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+# PREFIX geo: <http://www.opengis.net/ont/geosparql#>
 
-SELECT ?zona ?tipoZona ?calle ?nombreCalle ?geometria
-WHERE {
-    ?zona rdf:type edintzone:RegulatedZone ;
-          edintzone:hasRegulatedZoneType ?tipoZona .
-    ?zona edintzone:composedOf ?calle .
-    OPTIONAL { ?calle rdfs:label ?nombreCalle . }
-    OPTIONAL {
-        ?calle geo:hasGeometry ?geoCalle .
-        ?geoCalle geo:asWKT ?geometria .
-    }
-}
-ORDER BY ?tipoZona ?zona ?nombreCalle
-
+# SELECT ?zona ?tipoZona ?calle ?nombreCalle ?geometria
+# WHERE {
+#     ?zona rdf:type edintzone:RegulatedZone ;
+#           edintzone:hasRegulatedZoneType ?tipoZona .
+#     ?zona edintzone:composedOf ?calle .
+#     OPTIONAL { ?calle rdfs:label ?nombreCalle . }
+#     OPTIONAL {
+#         ?calle geo:hasGeometry ?geoCalle .
+#         ?geoCalle geo:asWKT ?geometria .
+#     }
+# }
+# ORDER BY ?tipoZona ?zona ?nombreCalle
