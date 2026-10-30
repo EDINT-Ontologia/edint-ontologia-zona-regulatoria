@@ -5,6 +5,7 @@
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix org: <http://www.w3.org/ns/org#> .
+@prefix callejero: <http://vocab.linkeddata.es/datosabiertos/def/urbanismo-infraestructuras/callejero#> .
 @prefix esadm: <http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio#> .
 @prefix geo: <http://www.opengis.net/ont/geosparql#> .
 @prefix sf: <http://www.opengis.net/ont/sf#> .
@@ -26,7 +27,7 @@ ex-zona:superilla-mercat a edintzone:RegulatedZone ;
     edintzone:managedBy ex-org:ajuntament-barcelona ;
     edintzone:startDate "2023-03-01"^^xsd:date ;
     edintzone:scheduleDescription "Aplicación permanente; tráfico local únicamente a 10 km/h."^^xsd:string ;
-    edintzone:legalReference <https://portalweb.metropolib.es/Paginas/Normalizacion/Ordenanzas/2023/Ordenanza-Movilidad-Sostenible.pdf> ;
+    edintzone:legalReference "https://portalweb.metropolib.es/Paginas/Normalizacion/Ordenanzas/2023/Ordenanza-Movilidad-Sostenible.pdf"^^xsd:anyURI ;
     edintzone:composedOf ex-via:calle-marsellaise ,
                          ex-via:calle-santa-anna ,
                          ex-via:calle-torrijos ,
@@ -45,7 +46,7 @@ ex-zona:calmaria-centro a edintzone:RegulatedZone ;
     edintzone:managedBy ex-org:ayto-vitoria ;
     edintzone:startDate "2019-06-01"^^xsd:date ;
     edintzone:scheduleDescription "Lunes a domingo de 00:00 a 23:59, límite 30 km/h."^^xsd:string ;
-    edintzone:legalReference <https://www.vitoria-gasteiz.org/portal-web/portal-sede/portal/portal/ordenanzas-municipales/> ;
+    edintzone:legalReference "https://www.vitoria-gasteiz.org/portal-web/portal-sede/portal/portal/ordenanzas-municipales/"^^xsd:anyURI ;
     edintzone:composedOf ex-via:calle-espaza ,
                          ex-via:calle-pintorerroz ;
     geo:hasGeometry ex-zona:calmaria-centro-geom .
@@ -98,20 +99,20 @@ ex-org:ayto-vitoria a org:Organization ;
 #    Streets (Vías)
 #################################################################
 
-ex-via:calle-marsellaise a esadm:Via ;
+ex-via:calle-marsellaise a callejero:Via ;
     rdfs:label "Calle Marsellaise"@es .
 
-ex-via:calle-santa-anna a esadm:Via ;
+ex-via:calle-santa-anna a callejero:Via ;
     rdfs:label "Calle Santa Anna"@es .
 
-ex-via:calle-torrijos a esadm:Via ;
+ex-via:calle-torrijos a callejero:Via ;
     rdfs:label "Calle Torrijos"@es .
 
-ex-via:calle-roca-benavent a esadm:Via ;
+ex-via:calle-roca-benavent a callejero:Via ;
     rdfs:label "Calle Roca i Benavent"@es .
 
-ex-via:calle-espaza a esadm:Via ;
+ex-via:calle-espaza a callejero:Via ;
     rdfs:label "Calle Espaza"@es .
 
-ex-via:calle-pintorerroz a esadm:Via ;
+ex-via:calle-pintorerroz a callejero:Via ;
     rdfs:label "Calle Pintor Rozas"@es .

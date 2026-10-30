@@ -5,6 +5,7 @@
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix org: <http://www.w3.org/ns/org#> .
+@prefix callejero: <http://vocab.linkeddata.es/datosabiertos/def/urbanismo-infraestructuras/callejero#> .
 @prefix esadm: <http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio#> .
 @prefix geo: <http://www.opengis.net/ont/geosparql#> .
 @prefix sf: <http://www.opengis.net/ont/sf#> .
@@ -26,7 +27,7 @@ ex-zona:zbe-madrid a edintzone:RegulatedZone ;
     edintzone:managedBy ex-org:ayuntamiento-madrid ;
     edintzone:startDate "2018-08-01"^^xsd:date ;
     edintzone:scheduleDescription "Lunes a viernes de 07:00 a 21:00; sábados, domingos y festivos sin restricción."^^xsd:string ;
-    edintzone:legalReference <https://www.boe.es/diario_boe/txt.php?id=BOE-A-2017-9405> ;
+    edintzone:legalReference "https://www.boe.es/diario_boe/txt.php?id=BOE-A-2017-9405"^^xsd:anyURI ;
     edintzone:composedOf ex-via:m-30-perimeter ;
     geo:hasGeometry ex-zona:zbe-madrid-geom .
 
@@ -42,7 +43,7 @@ ex-zona:zbe-zaragoza a edintzone:RegulatedZone ;
     edintzone:managedBy ex-org:ayuntamiento-zaragoza ;
     edintzone:startDate "2021-01-01"^^xsd:date ;
     edintzone:scheduleDescription "Aplicación permanente las 24 horas del día."^^xsd:string ;
-    edintzone:legalReference <https://www.boe.es/diario_boe/txt.php?id=BOE-A-2017-9405> ;
+    edintzone:legalReference "https://www.boe.es/diario_boe/txt.php?id=BOE-A-2017-9405"^^xsd:anyURI ;
     edintzone:composedOf ex-via:piadua-zaragoza ;
     geo:hasGeometry ex-zona:zbe-zaragoza-geom .
 
@@ -86,11 +87,11 @@ ex-org:ayuntamiento-zaragoza a org:Organization ;
 #    Streets (Vías)
 #################################################################
 
-ex-via:m-30-perimeter a esadm:Via ;
+ex-via:m-30-perimeter a callejero:Via ;
     rdfs:label "Perímetro M-30"@es ;
     dc:description "Vía que delimita el perímetro de la ZBE Madrid."@es .
 
-ex-via:piadua-zaragoza a esadm:Via ;
+ex-via:piadua-zaragoza a callejero:Via ;
     rdfs:label "PIADUA Zaragoza"@es ;
     dc:description "Plan de Improbación de la Dignidad Urbana y el Ambiente en Zaragoza."@es .
 
