@@ -1,55 +1,53 @@
-@prefix : <http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio_v0.5#> .
+@prefix : <http://vocab.linkeddata.es/datosabiertos/def/urbanismo-infraestructuras/callejero#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix xml: <http://www.w3.org/XML/1998/namespace> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
-@base <http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio_v0.5#> .
+@base <http://vocab.linkeddata.es/datosabiertos/def/urbanismo-infraestructuras/callejero#> .
 
-<http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio_v0.5> rdf:type owl:Ontology ;
-                                                                               owl:imports <http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio_v0.5> ,
-                                                                                           <http://vocab.linkeddata.es/datosabiertos/def/urbanismo-infraestructuras/callejero_v0.3> ,
-                                                                                           <http://www.opengis.net/ont/geosparql> ;
-                                                                               <http://purl.org/dc/terms/abstract> "Esta ontología tiene como propósito definir, categorizar y relacionar las Zonas Regulatorias en el contexto de la movilidad inteligente y la gestión urbana (Smart Cities). Se ha diseñado como una extensión modular de la ontología del Sector Público de España (esadm). Cubre el vacío semántico para representar entidades funcionales que se superponen a la trama urbana (como Zonas de Bajas Emisiones, Carga y Descarga, o Sandboxes regulatorios) sin responder necesariamente a límites administrativos fijos."@es ,
-                                                                                                                   "This ontology aims to define, categorize, and relate Regulatory Zones in the context of smart mobility and urban management (Smart Cities). It is designed as a modular extension of the Spanish Public Sector ontology (esadm)."@en ;
-                                                                               <http://purl.org/dc/terms/bibliographicCitation> "EDINT Regulated Zone Ontology. EDINT. Revision: v0.2.1."@en ,
-                                                                                                                                "Ontología EDINT de Zonas Regulatorias. EDINT. Revisión: v0.2.1."@es ;
-                                                                               <http://purl.org/dc/terms/created> "2026-01-27"^^xsd:date ;
-                                                                               <http://purl.org/dc/terms/creator> _:genid1 ,
-                                                                                                                  _:genid2 ,
-                                                                                                                  _:genid3 ,
-                                                                                                                  _:genid4 ;
-                                                                               <http://purl.org/dc/terms/description> "Esta ontología tiene como propósito definir, categorizar y relacionar las Zonas Regulatorias en el contexto de la movilidad inteligente y la gestión urbana (Smart Cities). Se ha diseñado como una extensión modular de la ontología del Sector Público de España (esadm)."@es ,
-                                                                                                                      "This ontology aims to define, categorize, and relate Regulatory Zones in the context of smart mobility and urban management (Smart Cities). It is designed as a modular extension of the Spanish Public Sector ontology (esadm)."@en ;
-                                                                               <http://purl.org/dc/terms/issued> "2026-09-17"^^xsd:date ;
-                                                                               <http://purl.org/dc/terms/license> <https://creativecommons.org/licenses/by/4.0/> ;
-                                                                               <http://purl.org/dc/terms/modified> "2026-09-17"^^xsd:date ;
-                                                                               <http://purl.org/dc/terms/publisher> _:genid5 ;
-                                                                               <http://purl.org/dc/terms/title> "EDINT Regulated Zone Ontology"@en ,
-                                                                                                                "Ontología EDINT de Zonas Regulatorias"@es ;
-                                                                               <http://purl.org/vocab/vann/preferredNamespacePrefix> "edintzone" ;
-                                                                               <http://purl.org/vocab/vann/preferredNamespaceUri> <https://edint.es/def/zona-regulatoria#> ;
-                                                                               rdfs:comment "Actualmente, existen vocabularios para divisiones administrativas (esadm) y geometrías (GeoSPARQL), pero existía un vacío semántico para representar entidades funcionales que se superponen a la trama urbana (ZBE, Carga y Descarga, etc...) sin responder a límites administrativos fijos. Esta ontología cubre dicho hueco."@es ,
-                                                                                            "Currently, vocabularies exist for administrative divisions (esadm) and geometries (GeoSPARQL), but there was a semantic gap for representing functional entities that overlay the urban grid (LEZ, Loading/Unloading, etc.) without adhering to fixed administrative boundaries. This ontology fills that gap."@en ;
-                                                                               rdfs:label "Regulated Zones"@en ,
-                                                                                          "Zonas Regulatorias"@es ;
-                                                                               owl:priorVersion <https://github.com/EDINT-Ontologia/edint-ontologia-zona-regulatoria/releases/tag/v0.2.0> ;
-                                                                               owl:versionInfo "0.2.1" ;
-                                                                               <https://schema.org/codeRepository> <https://github.com/EDINT-Ontologia/edint-ontologia-zona-regulatoria> ;
-                                                                               <https://schema.org/creativeWorkStatus> "Ontology Specification"@en ;
-                                                                               <https://schema.org/funding> "Espacio de Datos para las Infraestructuras Urbanas Inteligentes (EDINT)" ;
-                                                                               <https://w3id.org/widoco/vocab#jsonldSerialization> "ontology.jsonld" ;
-                                                                               <https://w3id.org/widoco/vocab#ntSerialization> "ontology.nt" ;
-                                                                               <https://w3id.org/widoco/vocab#rdfxmlSerialization> "ontology.rdf" ;
-                                                                               <https://w3id.org/widoco/vocab#turtleSerialization> "ontology.ttl" ;
-                                                                               <https://w3id.org/widoco/vocab#vocabularyLabel> _:genid6 ,
-                                                                                                                               _:genid7 ,
-                                                                                                                               _:genid8 ,
-                                                                                                                               _:genid9 ,
-                                                                                                                               _:genid10 ,
-                                                                                                                               _:genid11 ,
-                                                                                                                               _:genid12 ,
-                                                                                                                               _:genid13 .
+<http://vocab.linkeddata.es/datosabiertos/def/urbanismo-infraestructuras/callejero> rdf:type owl:Ontology ;
+                                                                                     owl:imports <http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio> ,
+                                                                                                 <http://vocab.linkeddata.es/datosabiertos/def/urbanismo-infraestructuras/callejero> ,
+                                                                                                 <http://www.opengis.net/ont/geosparql> ;
+                                                                                     <http://purl.org/dc/terms/abstract> "Esta ontología tiene como propósito definir, categorizar y relacionar las Zonas Regulatorias en el contexto de la movilidad inteligente y la gestión urbana (Smart Cities). Se ha diseñado como una extensión modular de la ontología del Sector Público de España (esadm). Cubre el vacío semántico para representar entidades funcionales que se superponen a la trama urbana (como Zonas de Bajas Emisiones, Carga y Descarga, o Sandboxes regulatorios) sin responder necesariamente a límites administrativos fijos."@es ,
+                                                                                                                         "This ontology aims to define, categorize, and relate Regulatory Zones in the context of smart mobility and urban management (Smart Cities). It is designed as a modular extension of the Spanish Public Sector ontology (esadm)."@en ;
+                                                                                     <http://purl.org/dc/terms/bibliographicCitation> "EDINT Regulated Zone Ontology. EDINT. Revision: v0.2.1."@en ,
+                                                                                                                                      "Ontología EDINT de Zonas Regulatorias. EDINT. Revisión: v0.2.1."@es ;
+                                                                                     <http://purl.org/dc/terms/created> "2026-01-27"^^xsd:date ;
+                                                                                     <http://purl.org/dc/terms/creator> _:genid1 ,
+                                                                                                                        _:genid2 ,
+                                                                                                                        _:genid3 ,
+                                                                                                                        _:genid4 ;
+                                                                                     <http://purl.org/dc/terms/description> "Esta ontología tiene como propósito definir, categorizar y relacionar las Zonas Regulatorias en el contexto de la movilidad inteligente y la gestión urbana (Smart Cities). Se ha diseñado como una extensión modular de la ontología del Sector Público de España (esadm)."@es ,
+                                                                                                                            "This ontology aims to define, categorize, and relate Regulatory Zones in the context of smart mobility and urban management (Smart Cities). It is designed as a modular extension of the Spanish Public Sector ontology (esadm)."@en ;
+                                                                                     <http://purl.org/dc/terms/issued> "2026-09-17"^^xsd:date ;
+                                                                                     <http://purl.org/dc/terms/license> <https://creativecommons.org/licenses/by-sa/4.0/> ;
+                                                                                     <http://purl.org/dc/terms/modified> "2026-09-17"^^xsd:date ;
+                                                                                     <http://purl.org/dc/terms/publisher> _:genid5 ;
+                                                                                     <http://purl.org/dc/terms/title> "EDINT Regulated Zone Ontology"@en ,
+                                                                                                                      "Ontología EDINT de Zonas Regulatorias"@es ;
+                                                                                     <http://purl.org/vocab/vann/preferredNamespacePrefix> "edintzone" ;
+                                                                                     <http://purl.org/vocab/vann/preferredNamespaceUri> <https://edint.es/def/zona-regulatoria#> ;
+                                                                                     rdfs:comment "Actualmente, existen vocabularios para divisiones administrativas (esadm) y geometrías (GeoSPARQL), pero existía un vacío semántico para representar entidades funcionales que se superponen a la trama urbana (ZBE, Carga y Descarga, etc...) sin responder a límites administrativos fijos. Esta ontología cubre dicho hueco."@es ,
+                                                                                                  "Currently, vocabularies exist for administrative divisions (esadm) and geometries (GeoSPARQL), but there was a semantic gap for representing functional entities that overlay the urban grid (LEZ, Loading/Unloading, etc.) without adhering to fixed administrative boundaries. This ontology fills that gap."@en ;
+                                                                                     rdfs:label "Regulated Zones"@en ,
+                                                                                                "Zonas Regulatorias"@es ;
+                                                                                     owl:priorVersion <https://github.com/EDINT-Ontologia/edint-ontologia-zona-regulatoria/releases/tag/v0.2.0> ;
+                                                                                     owl:versionInfo "0.2.1" ;
+                                                                                     <https://schema.org/codeRepository> <https://github.com/EDINT-Ontologia/edint-ontologia-zona-regulatoria> ;
+                                                                                     <https://schema.org/creativeWorkStatus> "Ontology Specification"@en ;
+                                                                                     <https://schema.org/funding> "Espacio de Datos para las Infraestructuras Urbanas Inteligentes (EDINT)" ;
+                                                                                     <https://w3id.org/widoco/vocab#jsonldSerialization> "ontology.jsonld" ;
+                                                                                     <https://w3id.org/widoco/vocab#ntSerialization> "ontology.nt" ;
+                                                                                     <https://w3id.org/widoco/vocab#rdfxmlSerialization> "ontology.rdf" ;
+                                                                                     <https://w3id.org/widoco/vocab#turtleSerialization> "ontology.ttl" ;
+                                                                                     <https://w3id.org/widoco/vocab#vocabularyLabel> _:genid6 ,
+                                                                                                                                     _:genid7 ,
+                                                                                                                                     _:genid8 ,
+                                                                                                                                     _:genid9 ,
+                                                                                                                                     _:genid10 ,
+                                                                                                                                     _:genid11 .
 
 _:genid1 <http://xmlns.com/foaf/0.1/name> "Daniel Doña" ;
           <https://schema.org/affiliation> <https://oeg.fi.upm.es/> .
@@ -75,29 +73,21 @@ _:genid7 rdfs:label "OGC Simple Features"@en ,
                      "OGC Simple Features"@es ;
           <https://w3id.org/widoco/vocab#vocabularyIRI> <http://www.opengis.net/ont/sf> .
 
-_:genid8 rdfs:label "GeoSPARQL"@en ,
-                     "GeoSPARQL"@es ;
-          <https://w3id.org/widoco/vocab#vocabularyIRI> <http://www.opengis.net/ont/geosparql> .
-
-_:genid9 rdfs:label "Territorio (esadm)"@es ,
+_:genid8 rdfs:label "Territorio (esadm)"@es ,
                      "Territory (esadm)"@en ;
           <https://w3id.org/widoco/vocab#vocabularyIRI> <http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio> .
+
+_:genid9 rdfs:label "Callejero (escjr)"@es ,
+                     "Street catalogue (escjr)"@en ;
+          <https://w3id.org/widoco/vocab#vocabularyIRI> <http://vocab.linkeddata.es/datosabiertos/def/urbanismo-infraestructuras/callejero> .
 
 _:genid10 rdfs:label "GeoNames"@en ,
                       "GeoNames"@es ;
            <https://w3id.org/widoco/vocab#vocabularyIRI> <http://www.geonames.org/ontology> .
 
-_:genid11 rdfs:label "Callejero (escjr) v0.3"@es ,
-                      "Street catalogue (escjr) v0.3"@en ;
-           <https://w3id.org/widoco/vocab#vocabularyIRI> <http://vocab.linkeddata.es/datosabiertos/def/urbanismo-infraestructuras/callejero_v0.3> .
-
-_:genid12 rdfs:label "Territorio (esadm) v0.5"@es ,
-                      "Territory (esadm) v0.5"@en ;
-           <https://w3id.org/widoco/vocab#vocabularyIRI> <http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio_v0.5> .
-
-_:genid13 rdfs:label "Callejero (escjr)"@es ,
-                      "Street catalogue (escjr)"@en ;
-           <https://w3id.org/widoco/vocab#vocabularyIRI> <http://vocab.linkeddata.es/datosabiertos/def/urbanismo-infraestructuras/callejero> .
+_:genid11 rdfs:label "GeoSPARQL"@en ,
+                      "GeoSPARQL"@es ;
+           <https://w3id.org/widoco/vocab#vocabularyIRI> <http://www.opengis.net/ont/geosparql> .
 
 #################################################################
 #    Annotation properties
@@ -135,10 +125,6 @@ _:genid13 rdfs:label "Callejero (escjr)"@es ,
 <http://purl.org/dc/terms/creator> rdf:type owl:AnnotationProperty .
 
 
-###  http://purl.org/dc/terms/description
-<http://purl.org/dc/terms/description> rdf:type owl:AnnotationProperty .
-
-
 ###  http://purl.org/dc/terms/issued
 <http://purl.org/dc/terms/issued> rdf:type owl:AnnotationProperty .
 
@@ -153,10 +139,6 @@ _:genid13 rdfs:label "Callejero (escjr)"@es ,
 
 ###  http://purl.org/dc/terms/publisher
 <http://purl.org/dc/terms/publisher> rdf:type owl:AnnotationProperty .
-
-
-###  http://purl.org/dc/terms/title
-<http://purl.org/dc/terms/title> rdf:type owl:AnnotationProperty .
 
 
 ###  http://purl.org/vocab/vann/preferredNamespacePrefix
@@ -248,8 +230,8 @@ xsd:date rdf:type rdfs:Datatype .
 ###  https://edint.es/def/zona-regulatoria#composedOf
 <https://edint.es/def/zona-regulatoria#composedOf> rdf:type owl:ObjectProperty ;
                                                    rdfs:domain <https://edint.es/def/zona-regulatoria#RegulatedZone> ;
-                                                   rdfs:range <http://vocab.linkeddata.es/datosabiertos/def/urbanismo-infraestructuras/callejero#TramoVia> ,
-                                                              <http://vocab.linkeddata.es/datosabiertos/def/urbanismo-infraestructuras/callejero#Via> ,
+                                                   rdfs:range :TramoVia ,
+                                                              :Via ,
                                                               <http://www.geonames.org/ontology#Feature> ;
                                                    rdfs:comment "Relación que permite definir una Zona Regulatoria mediante una o más vías o tramos de vía del vocabulario Callejero."@es ,
                                                                 "Relationship that allows defining a Regulated Zone via one or more streets or street segments from the Callejero vocabulary."@en ;
@@ -369,11 +351,11 @@ xsd:date rdf:type rdfs:Datatype .
 
 
 ###  http://vocab.linkeddata.es/datosabiertos/def/urbanismo-infraestructuras/callejero#TramoVia
-<http://vocab.linkeddata.es/datosabiertos/def/urbanismo-infraestructuras/callejero#TramoVia> rdf:type owl:Class .
+:TramoVia rdf:type owl:Class .
 
 
 ###  http://vocab.linkeddata.es/datosabiertos/def/urbanismo-infraestructuras/callejero#Via
-<http://vocab.linkeddata.es/datosabiertos/def/urbanismo-infraestructuras/callejero#Via> rdf:type owl:Class .
+:Via rdf:type owl:Class .
 
 
 ###  http://www.geonames.org/ontology#Feature
@@ -386,10 +368,6 @@ xsd:date rdf:type rdfs:Datatype .
 
 ###  http://www.opengis.net/ont/sf#Geometry
 <http://www.opengis.net/ont/sf#Geometry> rdf:type owl:Class .
-
-
-###  http://www.w3.org/2004/02/skos/core#Concept
-<http://www.w3.org/2004/02/skos/core#Concept> rdf:type owl:Class .
 
 
 ###  http://www.w3.org/ns/org#Organization
