@@ -15,37 +15,36 @@ WHERE {
 }
 ORDER BY ?zbe
 
-# --- Query 2 ---
-PREFIX edintkos-rztype: <https://edint.es/kos/RegulatedZoneType/>
-PREFIX edintzone: <https://edint.es/def/zona-regulatoria#>
-PREFIX esadm: <http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio#>
-PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
-PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+# # --- Query 2 ---
+# PREFIX edintkos-rztype: <https://edint.es/kos/RegulatedZoneType/>
+# PREFIX edintzone: <https://edint.es/def/zona-regulatoria#>
+# PREFIX esadm: <http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio#>
+# PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+# PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 
-SELECT ?zbe ?municipio ?nombreMunicipio
-WHERE {
-    ?zbe rdf:type edintzone:RegulatedZone ;
-         edintzone:hasRegulatedZoneType edintkos-rztype:LowEmissionZone ;
-         edintzone:locatedIn ?municipio .
-    ?municipio rdfs:label ?nombreMunicipio .
-}
-ORDER BY ?zbe ?nombreMunicipio
+# SELECT ?zbe ?municipio ?nombreMunicipio
+# WHERE {
+#     ?zbe rdf:type edintzone:RegulatedZone ;
+#          edintzone:hasRegulatedZoneType edintkos-rztype:LowEmissionZone ;
+#          edintzone:locatedIn ?municipio .
+#     ?municipio rdfs:label ?nombreMunicipio .
+# }
+# ORDER BY ?zbe ?nombreMunicipio
 
-# --- Query 3 ---
-PREFIX edintkos-rztype: <https://edint.es/kos/RegulatedZoneType/>
-PREFIX edintzone: <https://edint.es/def/zona-regulatoria#>
-PREFIX esadm: <http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio#>
-PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
-PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
-PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+# # --- Query 3 ---
+# PREFIX edintkos-rztype: <https://edint.es/kos/RegulatedZoneType/>
+# PREFIX edintzone: <https://edint.es/def/zona-regulatoria#>
+# PREFIX esadm: <http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio#>
+# PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+# PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+# PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 
-SELECT ?zbe ?municipio ?nombreMunicipio
-WHERE {
-    ?zbe rdf:type edintzone:RegulatedZone ;
-         edintzone:hasRegulatedZoneType edintkos-rztype:LowEmissionZone ;
-         edintzone:locatedIn ?municipio .
-    ?municipio rdfs:label ?nombreMunicipio .
-    FILTER (lang(?nombreMunicipio) = "" || lang(?nombreMunicipio) = "es")
-}
-ORDER BY ?zbe ?nombreMunicipio
-
+# SELECT ?zbe ?municipio ?nombreMunicipio
+# WHERE {
+#     ?zbe rdf:type edintzone:RegulatedZone ;
+#          edintzone:hasRegulatedZoneType edintkos-rztype:LowEmissionZone ;
+#          edintzone:locatedIn ?municipio .
+#     ?municipio rdfs:label ?nombreMunicipio .
+#     FILTER (lang(?nombreMunicipio) = "" || lang(?nombreMunicipio) = "es")
+# }
+# ORDER BY ?zbe ?nombreMunicipio

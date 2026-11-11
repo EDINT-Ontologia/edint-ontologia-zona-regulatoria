@@ -16,18 +16,18 @@ WHERE {
 }
 ORDER BY ?tipo ?zona ?horario
 
-# --- Query 2 ---
-PREFIX edintkos-rztype: <https://edint.es/kos/RegulatedZoneType/>
-PREFIX edintzone: <https://edint.es/def/zona-regulatoria#>
-PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
-PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+# # --- Query 2 ---
+# PREFIX edintkos-rztype: <https://edint.es/kos/RegulatedZoneType/>
+# PREFIX edintzone: <https://edint.es/def/zona-regulatoria#>
+# PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+# PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
 
-SELECT DISTINCT ?zona ?tipo ?municipio ?horario
-WHERE {
-    ?zona rdf:type edintzone:RegulatedZone ;
-          edintzone:hasRegulatedZoneType ?tipo .
-    ?tipo skos:broader* edintkos-rztype:RegulatedParkingZone .
-    OPTIONAL { ?zona edintzone:scheduleDescription ?horario . }
-    OPTIONAL { ?zona edintzone:locatedIn ?municipio . }
-}
-ORDER BY ?tipo ?zona ?horario
+# SELECT DISTINCT ?zona ?tipo ?municipio ?horario
+# WHERE {
+#     ?zona rdf:type edintzone:RegulatedZone ;
+#           edintzone:hasRegulatedZoneType ?tipo .
+#     ?tipo skos:broader* edintkos-rztype:RegulatedParkingZone .
+#     OPTIONAL { ?zona edintzone:scheduleDescription ?horario . }
+#     OPTIONAL { ?zona edintzone:locatedIn ?municipio . }
+# }
+# ORDER BY ?tipo ?zona ?horario

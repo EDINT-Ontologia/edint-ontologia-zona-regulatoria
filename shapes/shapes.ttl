@@ -87,9 +87,11 @@
         "composed of"@en,
         "Relación que permite definir una Zona Regulatoria mediante una o más vías o tramos de vía del vocabulario Callejero."@es,
         "compuesta por"@es ;
-    sh:class <http://vocab.linkeddata.es/datosabiertos/def/urbanismo-infraestructuras/callejero#TramoVia>,
-        <http://vocab.linkeddata.es/datosabiertos/def/urbanismo-infraestructuras/callejero#Via>,
-        <http://www.geonames.org/ontology#Feature> ;
+    # NOTE: sh:class múltiple es conjunción en SHACL; se expresa como sh:or con las clases
+    # del rdfs:range múltiple actual de composedOf (ver issue #41, range único pendiente de decidir)
+    sh:or ( [ sh:class <http://vocab.linkeddata.es/datosabiertos/def/urbanismo-infraestructuras/callejero#TramoVia> ]
+            [ sh:class <http://vocab.linkeddata.es/datosabiertos/def/urbanismo-infraestructuras/callejero#Via> ]
+            [ sh:class <http://www.geonames.org/ontology#Feature> ] ) ;
     sh:description "Relationship that allows defining a Regulated Zone via one or more streets or street segments from the Callejero vocabulary."@en,
         "Relación que permite definir una Zona Regulatoria mediante una o más vías o tramos de vía del vocabulario Callejero."@es ;
     sh:name "composed of"@en,
