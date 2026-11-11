@@ -16,7 +16,7 @@
      xmlns:edintzone="https://edint.es/def/zona-regulatoria#"
      xmlns:schema="https://schema.org/"
      xmlns:bibo="http://purl.org/ontology/bibo/" xmlns:foaf="http://xmlns.com/foaf/0.1/"
-     xmlns:widoco="https://w3id.org/widoco/vocab#">    <owl:Ontology rdf:about="https://edint.es/def/zona-regulatoria#">
+     xmlns:widoco="https://w3id.org/widoco/vocab#">    <owl:Ontology rdf:about="https://edint.es/def/zona-regulatoria">
         <owl:versionIRI rdf:resource="https://edint.es/def/zona-regulatoria/0.2.1"/>
         <owl:imports rdf:resource="http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio"/>
         <owl:imports rdf:resource="http://vocab.linkeddata.es/datosabiertos/def/urbanismo-infraestructuras/callejero"/>
@@ -45,7 +45,7 @@
         <dcterms:title xml:lang="es">Ontología EDINT de Zonas Regulatorias</dcterms:title>
         <dcterms:license rdf:resource="https://creativecommons.org/licenses/by-sa/4.0/"/>
         <vann:preferredNamespacePrefix>edintzone</vann:preferredNamespacePrefix>
-        <vann:preferredNamespaceUri rdf:resource="https://edint.es/def/zona-regulatoria#"/>
+        <vann:preferredNamespaceUri>https://edint.es/def/zona-regulatoria#</vann:preferredNamespaceUri>
         <rdfs:comment xml:lang="es">Actualmente, existen vocabularios para divisiones administrativas (esadm) y geometrías (GeoSPARQL), pero existía un vacío semántico para representar entidades funcionales que se superponen a la trama urbana (ZBE, Carga y Descarga, etc...) sin responder a límites administrativos fijos. Esta ontología cubre dicho hueco.</rdfs:comment>
         <rdfs:comment xml:lang="en">Currently, vocabularies exist for administrative divisions (esadm) and geometries (GeoSPARQL), but there was a semantic gap for representing functional entities that overlay the urban grid (LEZ, Loading/Unloading, etc.) without adhering to fixed administrative boundaries. This ontology fills that gap.</rdfs:comment>
         <owl:versionInfo>0.2.1</owl:versionInfo>
