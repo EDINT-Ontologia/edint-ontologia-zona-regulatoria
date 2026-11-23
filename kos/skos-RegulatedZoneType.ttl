@@ -19,8 +19,8 @@ edintkos:RegulatedZoneType a skos:ConceptScheme ;
     rdfs:label "Tipo de Zona Regulada"@es ;
     dct:title "Concept scheme grouping regulated zone types with a multi-level hierarchy"@en ;
     dct:title "Esquema de conceptos agrupando tipos de zona regulada con una jerarquía de varios niveles"@es ;
-    skos:note "Hierarchical vocabulary of regulated zone types, organised by domain: economic interest, parking, environmental protection, and access restriction."@en ;
-    skos:note "Vocabulario jerárquico de tipos de zona regulada, organizado por dominio: interés económico, estacionamiento, protección medioambiental y restricción de acceso."@es .
+    skos:note "Hierarchical vocabulary of regulated zone types, organised by domain: economic interest, parking, environmental protection, access restriction, traffic calming, and congestion management."@en ;
+    skos:note "Vocabulario jerárquico de tipos de zona regulada, organizado por dominio: interés económico, estacionamiento, protección medioambiental, restricción de acceso, pacificación del tráfico y gestión de congestión."@es .
 
 # ===========================================================================
 # LEVEL 1 — TOP CONCEPTS
@@ -217,3 +217,23 @@ edintkos-rztype:RestrictedAccessZone a skos:Concept ;
     skos:prefLabel "Zona de Acceso Restringido"@es ;
     skos:definition "Urban area (such as Residential Priority Areas) where vehicle access is limited to residents, public transport, or authorized vehicles for reasons of traffic flow, safety, or road capacity."@en ;
     skos:definition "Área urbana (como las Zonas de Prioridad Residencial) donde el acceso de vehículos se limita a residentes, transporte público o vehículos autorizados por motivos de flujo de tráfico, seguridad o capacidad de la vía."@es .
+
+# ---------------------------------------------------------------------------
+# Traffic Calming Zones
+# ---------------------------------------------------------------------------
+edintkos-rztype:TrafficCalmingZone a skos:Concept ;
+    skos:inScheme edintkos:RegulatedZoneType ;
+    skos:prefLabel "Traffic Calming Zone"@en ;
+    skos:prefLabel "Zona de Pacificación del Tráfico"@es ;
+    skos:definition "Area where speed limits, road design, and access restrictions are applied to reduce vehicle speed and improve safety for pedestrians and cyclists."@en ;
+    skos:definition "Área donde se aplican límites de velocidad, diseño vial y restricciones de acceso para reducir la velocidad de los vehículos y mejorar la seguridad de peatones y ciclistas."@es .
+
+# ---------------------------------------------------------------------------
+# Congestion Zones
+# ---------------------------------------------------------------------------
+edintkos-rztype:CongestionZone a skos:Concept ;
+    skos:inScheme edintkos:RegulatedZoneType ;
+    skos:prefLabel "Congestion Zone"@en ;
+    skos:prefLabel "Zona de Congestión"@es ;
+    skos:definition "Area where access is restricted or tolls are applied during peak hours to reduce traffic congestion and improve mobility."@en ;
+    skos:definition "Área donde se restringe el acceso o se aplican peajes durante las horas punta para reducir la congestión del tráfico y mejorar la movilidad."@es .

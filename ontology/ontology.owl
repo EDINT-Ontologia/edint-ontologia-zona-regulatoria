@@ -17,13 +17,12 @@
      xmlns:vann="http://purl.org/vocab/vann/"
      xmlns:esadm="http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio#"
      xmlns:schema="https://schema.org/"
-     xmlns:widoco="https://w3id.org/widoco/vocab#"
-     xmlns:dcterms="http://purl.org/dc/terms/"
-     xmlns:edintzone="https://edint.es/def/zona-regulatoria#">
-    <owl:Ontology rdf:about="https://edint.es/def/zona-regulatoria#">
+     xmlns:bibo="http://purl.org/ontology/bibo/" xmlns:foaf="http://xmlns.com/foaf/0.1/"
+     xmlns:widoco="https://w3id.org/widoco/vocab#">
+     <owl:Ontology rdf:about="https://edint.es/def/zona-regulatoria">
         <owl:versionIRI rdf:resource="https://edint.es/def/zona-regulatoria/0.2.1"/>
-        <owl:imports rdf:resource="http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio_v0.5"/>
-        <owl:imports rdf:resource="http://vocab.linkeddata.es/datosabiertos/def/urbanismo-infraestructuras/callejero_v0.3"/>
+        <owl:imports rdf:resource="http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio"/>
+        <owl:imports rdf:resource="http://vocab.linkeddata.es/datosabiertos/def/urbanismo-infraestructuras/callejero"/>
         <owl:imports rdf:resource="http://www.opengis.net/ont/geosparql"/>
         <dcterms:abstract xml:lang="es">Esta ontología tiene como propósito definir, categorizar y relacionar las Zonas Regulatorias en el contexto de la movilidad inteligente y la gestión urbana (Smart Cities). Se ha diseñado como una extensión modular de la ontología del Sector Público de España (esadm). Cubre el vacío semántico para representar entidades funcionales que se superponen a la trama urbana (como Zonas de Bajas Emisiones, Carga y Descarga, o Sandboxes regulatorios) sin responder necesariamente a límites administrativos fijos.</dcterms:abstract>
         <dcterms:abstract xml:lang="en">This ontology aims to define, categorize, and relate Regulatory Zones in the context of smart mobility and urban management (Smart Cities). It is designed as a modular extension of the Spanish Public Sector ontology (esadm).</dcterms:abstract>
@@ -68,8 +67,9 @@
         </dcterms:publisher>
         <dcterms:title xml:lang="en">EDINT Regulated Zone Ontology</dcterms:title>
         <dcterms:title xml:lang="es">Ontología EDINT de Zonas Regulatorias</dcterms:title>
+        <dcterms:license rdf:resource="https://creativecommons.org/licenses/by-sa/4.0/"/>
         <vann:preferredNamespacePrefix>edintzone</vann:preferredNamespacePrefix>
-        <vann:preferredNamespaceUri rdf:resource="https://edint.es/def/zona-regulatoria#"/>
+        <vann:preferredNamespaceUri>https://edint.es/def/zona-regulatoria#</vann:preferredNamespaceUri>
         <rdfs:comment xml:lang="es">Actualmente, existen vocabularios para divisiones administrativas (esadm) y geometrías (GeoSPARQL), pero existía un vacío semántico para representar entidades funcionales que se superponen a la trama urbana (ZBE, Carga y Descarga, etc...) sin responder a límites administrativos fijos. Esta ontología cubre dicho hueco.</rdfs:comment>
         <rdfs:comment xml:lang="en">Currently, vocabularies exist for administrative divisions (esadm) and geometries (GeoSPARQL), but there was a semantic gap for representing functional entities that overlay the urban grid (LEZ, Loading/Unloading, etc.) without adhering to fixed administrative boundaries. This ontology fills that gap.</rdfs:comment>
         <rdfs:label xml:lang="en">Regulated Zones</rdfs:label>
@@ -79,67 +79,66 @@
         <schema:codeRepository rdf:resource="https://github.com/EDINT-Ontologia/edint-ontologia-zona-regulatoria"/>
         <schema:creativeWorkStatus xml:lang="en">Ontology Specification</schema:creativeWorkStatus>
         <schema:funding>Espacio de Datos para las Infraestructuras Urbanas Inteligentes (EDINT)</schema:funding>
-        <widoco:jsonldSerialization>ontology.jsonld</widoco:jsonldSerialization>
-        <widoco:ntSerialization>ontology.nt</widoco:ntSerialization>
+        <dcterms:publisher rdf:parseType="Resource">
+            <foaf:name>FEMP</foaf:name>
+            <foaf:homepage rdf:resource="https://www.femp.es/"/>
+            <schema:affiliation>Federación Española de Municipios y Provincias</schema:affiliation>
+        </dcterms:publisher>
+    <dcterms:bibliographicCitation xml:lang="es">Ontología EDINT de Zonas Regulatorias. EDINT. Revisión: v0.2.1.</dcterms:bibliographicCitation>
+    <dcterms:bibliographicCitation xml:lang="en">EDINT Regulated Zone Ontology. EDINT. Revision: v0.2.1.</dcterms:bibliographicCitation>
+    <schema:creativeWorkStatus xml:lang="en">Ontology Specification</schema:creativeWorkStatus>
+    <dcterms:abstract xml:lang="es">Esta ontología tiene como propósito definir, categorizar y relacionar las Zonas Regulatorias en el contexto de la movilidad inteligente y la gestión urbana (Smart Cities). Se ha diseñado como una extensión modular de la ontología del Sector Público de España (esadm). Cubre el vacío semántico para representar entidades funcionales que se superponen a la trama urbana (como Zonas de Bajas Emisiones, Carga y Descarga, o Sandboxes regulatorios) sin responder necesariamente a límites administrativos fijos.</dcterms:abstract>
+    <dcterms:abstract xml:lang="en">This ontology aims to define, categorize, and relate Regulatory Zones in the context of smart mobility and urban management (Smart Cities). It is designed as a modular extension of the Spanish Public Sector ontology (esadm).</dcterms:abstract>
         <widoco:rdfxmlSerialization>ontology.rdf</widoco:rdfxmlSerialization>
         <widoco:turtleSerialization>ontology.ttl</widoco:turtleSerialization>
-        <widoco:vocabularyLabel>
+        <widoco:ntSerialization>ontology.nt</widoco:ntSerialization>
+        <widoco:jsonldSerialization>ontology.jsonld</widoco:jsonldSerialization>
+            <widoco:vocabularyLabel>
             <rdf:Description>
-                <rdfs:label xml:lang="en">OGC Simple Features</rdfs:label>
-                <rdfs:label xml:lang="es">OGC Simple Features</rdfs:label>
-                <widoco:vocabularyIRI rdf:resource="http://www.opengis.net/ont/sf"/>
-            </rdf:Description>
-        </widoco:vocabularyLabel>
-        <widoco:vocabularyLabel>
-            <rdf:Description>
-                <rdfs:label xml:lang="es">Callejero (escjr)</rdfs:label>
-                <rdfs:label xml:lang="en">Street catalogue (escjr)</rdfs:label>
-                <widoco:vocabularyIRI rdf:resource="http://vocab.linkeddata.es/datosabiertos/def/urbanismo-infraestructuras/callejero"/>
-            </rdf:Description>
-        </widoco:vocabularyLabel>
-        <widoco:vocabularyLabel>
-            <rdf:Description>
-                <rdfs:label xml:lang="en">ORG</rdfs:label>
-                <rdfs:label xml:lang="es">ORG</rdfs:label>
-                <widoco:vocabularyIRI rdf:resource="http://www.w3.org/ns/org"/>
-            </rdf:Description>
-        </widoco:vocabularyLabel>
-        <widoco:vocabularyLabel>
-            <rdf:Description>
-                <rdfs:label xml:lang="es">Callejero (escjr) v0.3</rdfs:label>
-                <rdfs:label xml:lang="en">Street catalogue (escjr) v0.3</rdfs:label>
-                <widoco:vocabularyIRI rdf:resource="http://vocab.linkeddata.es/datosabiertos/def/urbanismo-infraestructuras/callejero_v0.3"/>
-            </rdf:Description>
-        </widoco:vocabularyLabel>
-        <widoco:vocabularyLabel>
-            <rdf:Description>
-                <rdfs:label xml:lang="en">GeoNames</rdfs:label>
-                <rdfs:label xml:lang="es">GeoNames</rdfs:label>
-                <widoco:vocabularyIRI rdf:resource="http://www.geonames.org/ontology"/>
-            </rdf:Description>
-        </widoco:vocabularyLabel>
-        <widoco:vocabularyLabel>
-            <rdf:Description>
+                <widoco:vocabularyIRI rdf:resource="http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio"/>
                 <rdfs:label xml:lang="es">Territorio (esadm)</rdfs:label>
                 <rdfs:label xml:lang="en">Territory (esadm)</rdfs:label>
-                <widoco:vocabularyIRI rdf:resource="http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio"/>
             </rdf:Description>
         </widoco:vocabularyLabel>
         <widoco:vocabularyLabel>
             <rdf:Description>
-                <rdfs:label xml:lang="en">GeoSPARQL</rdfs:label>
-                <rdfs:label xml:lang="es">GeoSPARQL</rdfs:label>
+                <widoco:vocabularyIRI rdf:resource="http://vocab.linkeddata.es/datosabiertos/def/urbanismo-infraestructuras/callejero"/>
+                <rdfs:label xml:lang="es">Callejero (escjr)</rdfs:label>
+                <rdfs:label xml:lang="en">Street catalogue (escjr)</rdfs:label>
+            </rdf:Description>
+        </widoco:vocabularyLabel>
+        <widoco:vocabularyLabel>
+            <rdf:Description>
+                <widoco:vocabularyIRI rdf:resource="http://www.geonames.org/ontology"/>
+                <rdfs:label xml:lang="es">GeoNames</rdfs:label>
+                <rdfs:label xml:lang="en">GeoNames</rdfs:label>
+            </rdf:Description>
+        </widoco:vocabularyLabel>
+        <widoco:vocabularyLabel>
+            <rdf:Description>
                 <widoco:vocabularyIRI rdf:resource="http://www.opengis.net/ont/geosparql"/>
+                <rdfs:label xml:lang="es">GeoSPARQL</rdfs:label>
+                <rdfs:label xml:lang="en">GeoSPARQL</rdfs:label>
             </rdf:Description>
         </widoco:vocabularyLabel>
         <widoco:vocabularyLabel>
             <rdf:Description>
-                <rdfs:label xml:lang="es">Territorio (esadm) v0.5</rdfs:label>
-                <rdfs:label xml:lang="en">Territory (esadm) v0.5</rdfs:label>
-                <widoco:vocabularyIRI rdf:resource="http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio_v0.5"/>
+                <widoco:vocabularyIRI rdf:resource="http://www.opengis.net/ont/sf"/>
+                <rdfs:label xml:lang="es">OGC Simple Features</rdfs:label>
+                <rdfs:label xml:lang="en">OGC Simple Features</rdfs:label>
+            </rdf:Description>
+        </widoco:vocabularyLabel>
+        <widoco:vocabularyLabel>
+            <rdf:Description>
+                <widoco:vocabularyIRI rdf:resource="http://www.w3.org/ns/org"/>
+                <rdfs:label xml:lang="es">ORG</rdfs:label>
+                <rdfs:label xml:lang="en">ORG</rdfs:label>
             </rdf:Description>
         </widoco:vocabularyLabel>
     </owl:Ontology>
+    <foaf:Organization rdf:about="https://oeg.fi.upm.es/">
+        <foaf:name>Ontology Engineering Group, UPM</foaf:name>
+    </foaf:Organization>
     
 
 
@@ -646,10 +645,7 @@
 
     <!-- https://oeg.fi.upm.es/ -->
 
-    <owl:NamedIndividual rdf:about="https://oeg.fi.upm.es/">
-        <rdf:type rdf:resource="http://xmlns.com/foaf/0.1/Organization"/>
-        <foaf:name>Ontology Engineering Group, UPM</foaf:name>
-    </owl:NamedIndividual>
+    
 </rdf:RDF>
 
 

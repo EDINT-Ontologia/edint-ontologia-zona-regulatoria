@@ -18,8 +18,8 @@
     edintzone:locatedIn :Municipio_Madrid ;
     edintzone:managedBy :Ayuntamiento_Madrid ;
     edintzone:startDate "2005-01-01"^^xsd:date ;
-    edintzone:scheduleDescription "Lunes a viernes de 09:00 a 21:00; sábados de 09:00 a 15:00; domingos y festivos sin servicio."@es ;
-    edintzone:legalReference <https://www.madrid.es/portales/munimadrid/es/Inicio/Movilidad-y-transportes/Ordenanza-de-Movilidad-Sostenible/?vgnextfmt=default&vgnextoid=d73fff17a1151610VgnVCM1000001d4a900aRCRD&vgnextchannel=220e31d3b28fe410VgnVCM1000000b205a0aRCRD&idCapitulo=10613950> ;
+    edintzone:scheduleDescription "Lunes a viernes de 09:00 a 21:00; sábados de 09:00 a 15:00; domingos y festivos sin servicio."^^xsd:string ;
+    edintzone:legalReference "https://www.madrid.es/portales/munimadrid/es/Inicio/Movilidad-y-transportes/Ordenanza-de-Movilidad-Sostenible/?vgnextfmt=default&amp;vgnextoid=d73fff17a1151610VgnVCM1000001d4a900aRCRD&amp;vgnextchannel=220e31d3b28fe410VgnVCM1000000b205a0aRCRD&amp;idCapitulo=10613950"^^xsd:anyURI ;
     geo:hasGeometry :SER_Madrid_ZonaAzul_Calles .
 
 #################################################################
@@ -30,7 +30,7 @@
 
 :SER_Madrid_ZonaAzul_Calles
     a sf:Geometry ;
-    geo:asWKT <https://example.org/geometries/example_ser_complex_azul_geo.wkt> .
+    geo:asWKT """POLYGON((-3.7038 40.4168, -3.7038 40.4200, -3.6980 40.4200, -3.6980 40.4168, -3.7038 40.4168))"""^^geo:wktLiteral .
 
 #################################################################
 # Municipality (Minimal Instance)
