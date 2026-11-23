@@ -386,7 +386,6 @@
                 <owl:unionOf rdf:parseType="Collection">
                     <rdf:Description rdf:about="http://vocab.linkeddata.es/datosabiertos/def/urbanismo-infraestructuras/callejero#TramoVia"/>
                     <rdf:Description rdf:about="http://vocab.linkeddata.es/datosabiertos/def/urbanismo-infraestructuras/callejero#Via"/>
-                    <rdf:Description rdf:about="http://www.geonames.org/ontology#Feature"/>
                 </owl:unionOf>
             </owl:Class>
         </rdfs:range>
