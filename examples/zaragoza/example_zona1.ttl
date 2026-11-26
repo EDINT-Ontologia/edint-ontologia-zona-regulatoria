@@ -10,9 +10,9 @@
 @prefix edintzone: <https://edint.es/def/zona-regulatoria#> .
 
 # Custom Resource Prefixes
-@prefix ex-zona: <http://example.org/resource/zona/> .
-@prefix ex-via: <http://example.org/resource/via/> .
-@prefix ex-org: <http://example.org/resource/organization/> .
+@prefix ex-zona: <https://example.org/resource/zona/> .
+@prefix ex-via: <https://example.org/resource/via/> .
+@prefix ex-org: <https://example.org/resource/organization/> .
 
 #################################################################
 #    Regulatory Zone 1 - ESRO (Rotation / Blue Zone)
