@@ -39,7 +39,7 @@ Sources: [SHP files](https://geoportal.madrid.es/fsdescargas/IDEAM_WBGEOPORTAL/M
 ### 1️⃣ Which regulated parking zones exist in Madrid?
 
 ```sparql
-PREFIX : <http://example.org/resource/>
+PREFIX : <https://example.org/resource/>
 PREFIX edintzone: <https://edint.es/def/zona-regulatoria#>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 
@@ -55,7 +55,7 @@ SELECT ?zone ?label WHERE {
 ### 2️⃣ Retrieve the WKT geometry of all Residential Parking Zones
 
 ```sparql
-PREFIX : <http://example.org/resource/>
+PREFIX : <https://example.org/resource/>
 PREFIX edintzone: <https://edint.es/def/zona-regulatoria#>
 PREFIX geo: <http://www.opengis.net/ont/geosparql#>
 
