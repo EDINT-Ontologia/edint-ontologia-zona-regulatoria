@@ -17,7 +17,8 @@
      xmlns:vann="http://purl.org/vocab/vann/"
      xmlns:esadm="http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio#"
      xmlns:schema="https://schema.org/"
-     xmlns:bibo="http://purl.org/ontology/bibo/" xmlns:foaf="http://xmlns.com/foaf/0.1/"
+     xmlns:dcterms="http://purl.org/dc/terms/"
+     xmlns:edintzone="https://edint.es/def/zona-regulatoria#"
      xmlns:widoco="https://w3id.org/widoco/vocab#">
      <owl:Ontology rdf:about="https://edint.es/def/zona-regulatoria">
         <owl:versionIRI rdf:resource="https://edint.es/def/zona-regulatoria/0.2.1"/>
@@ -56,7 +57,6 @@
         <dcterms:description xml:lang="es">Esta ontología tiene como propósito definir, categorizar y relacionar las Zonas Regulatorias en el contexto de la movilidad inteligente y la gestión urbana (Smart Cities). Se ha diseñado como una extensión modular de la ontología del Sector Público de España (esadm).</dcterms:description>
         <dcterms:description xml:lang="en">This ontology aims to define, categorize, and relate Regulatory Zones in the context of smart mobility and urban management (Smart Cities). It is designed as a modular extension of the Spanish Public Sector ontology (esadm).</dcterms:description>
         <dcterms:issued rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2026-09-17</dcterms:issued>
-        <dcterms:license rdf:resource="https://creativecommons.org/licenses/by/4.0/"/>
         <dcterms:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2026-09-17</dcterms:modified>
         <dcterms:publisher>
             <rdf:Description>
@@ -84,11 +84,6 @@
             <foaf:homepage rdf:resource="https://www.femp.es/"/>
             <schema:affiliation>Federación Española de Municipios y Provincias</schema:affiliation>
         </dcterms:publisher>
-    <dcterms:bibliographicCitation xml:lang="es">Ontología EDINT de Zonas Regulatorias. EDINT. Revisión: v0.2.1.</dcterms:bibliographicCitation>
-    <dcterms:bibliographicCitation xml:lang="en">EDINT Regulated Zone Ontology. EDINT. Revision: v0.2.1.</dcterms:bibliographicCitation>
-    <schema:creativeWorkStatus xml:lang="en">Ontology Specification</schema:creativeWorkStatus>
-    <dcterms:abstract xml:lang="es">Esta ontología tiene como propósito definir, categorizar y relacionar las Zonas Regulatorias en el contexto de la movilidad inteligente y la gestión urbana (Smart Cities). Se ha diseñado como una extensión modular de la ontología del Sector Público de España (esadm). Cubre el vacío semántico para representar entidades funcionales que se superponen a la trama urbana (como Zonas de Bajas Emisiones, Carga y Descarga, o Sandboxes regulatorios) sin responder necesariamente a límites administrativos fijos.</dcterms:abstract>
-    <dcterms:abstract xml:lang="en">This ontology aims to define, categorize, and relate Regulatory Zones in the context of smart mobility and urban management (Smart Cities). It is designed as a modular extension of the Spanish Public Sector ontology (esadm).</dcterms:abstract>
         <widoco:rdfxmlSerialization>ontology.rdf</widoco:rdfxmlSerialization>
         <widoco:turtleSerialization>ontology.ttl</widoco:turtleSerialization>
         <widoco:ntSerialization>ontology.nt</widoco:ntSerialization>

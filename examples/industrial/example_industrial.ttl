@@ -11,9 +11,9 @@
 @prefix sf: <http://www.opengis.net/ont/sf#> .
 @prefix edintzone: <https://edint.es/def/zona-regulatoria#> .
 
-@prefix ex-zona: <http://example.org/resource/zona/> .
-@prefix ex-via: <http://example.org/resource/via/> .
-@prefix ex-org: <http://example.org/resource/organization/> .
+@prefix ex-zona: <https://example.org/resource/zona/> .
+@prefix ex-via: <https://example.org/resource/via/> .
+@prefix ex-org: <https://example.org/resource/organization/> .
 
 #################################################################
 #    Industrial Zone - Valencia

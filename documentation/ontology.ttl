@@ -25,7 +25,8 @@
                                          <http://purl.org/dc/terms/issued> "2026-09-17"^^xsd:date ;
                                          <http://purl.org/dc/terms/license> <https://creativecommons.org/licenses/by-sa/4.0/> ;
                                          <http://purl.org/dc/terms/modified> "2026-09-17"^^xsd:date ;
-                                         <http://purl.org/dc/terms/publisher> _:genid5 ;
+                                         <http://purl.org/dc/terms/publisher> _:genid5 ,
+                                                                              _:genid6 ;
                                          <http://purl.org/dc/terms/title> "EDINT Regulated Zone Ontology"@en ,
                                                                           "Ontología EDINT de Zonas Regulatorias"@es ;
                                          <http://purl.org/vocab/vann/preferredNamespacePrefix> "edintzone" ;
@@ -43,12 +44,12 @@
                                          <https://w3id.org/widoco/vocab#ntSerialization> "ontology.nt" ;
                                          <https://w3id.org/widoco/vocab#rdfxmlSerialization> "ontology.rdf" ;
                                          <https://w3id.org/widoco/vocab#turtleSerialization> "ontology.ttl" ;
-                                         <https://w3id.org/widoco/vocab#vocabularyLabel> _:genid6 ,
-                                                                                         _:genid7 ,
+                                         <https://w3id.org/widoco/vocab#vocabularyLabel> _:genid7 ,
                                                                                          _:genid8 ,
                                                                                          _:genid9 ,
                                                                                          _:genid10 ,
-                                                                                         _:genid11 .
+                                                                                         _:genid11 ,
+                                                                                         _:genid12 .
 
 _:genid1 <http://xmlns.com/foaf/0.1/name> "Daniel Doña" ;
           <https://schema.org/affiliation> <https://oeg.fi.upm.es/> .
@@ -66,29 +67,33 @@ _:genid5 <http://xmlns.com/foaf/0.1/homepage> <https://www.femp.es/> ;
           <http://xmlns.com/foaf/0.1/name> "FEMP" ;
           <https://schema.org/affiliation> "Federación Española de Municipios y Provincias" .
 
-_:genid6 rdfs:label "ORG"@en ,
-                     "ORG"@es ;
-          <https://w3id.org/widoco/vocab#vocabularyIRI> <http://www.w3.org/ns/org> .
+_:genid6 <http://xmlns.com/foaf/0.1/homepage> <https://www.femp.es/> ;
+          <http://xmlns.com/foaf/0.1/name> "FEMP" ;
+          <https://schema.org/affiliation> "Federación Española de Municipios y Provincias" .
 
 _:genid7 rdfs:label "OGC Simple Features"@en ,
                      "OGC Simple Features"@es ;
           <https://w3id.org/widoco/vocab#vocabularyIRI> <http://www.opengis.net/ont/sf> .
 
-_:genid8 rdfs:label "Territorio (esadm)"@es ,
-                     "Territory (esadm)"@en ;
-          <https://w3id.org/widoco/vocab#vocabularyIRI> <http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio> .
+_:genid8 rdfs:label "GeoSPARQL"@en ,
+                     "GeoSPARQL"@es ;
+          <https://w3id.org/widoco/vocab#vocabularyIRI> <http://www.opengis.net/ont/geosparql> .
 
-_:genid9 rdfs:label "Callejero (escjr)"@es ,
-                     "Street catalogue (escjr)"@en ;
-          <https://w3id.org/widoco/vocab#vocabularyIRI> <http://vocab.linkeddata.es/datosabiertos/def/urbanismo-infraestructuras/callejero> .
+_:genid9 rdfs:label "ORG"@en ,
+                     "ORG"@es ;
+          <https://w3id.org/widoco/vocab#vocabularyIRI> <http://www.w3.org/ns/org> .
 
-_:genid10 rdfs:label "GeoNames"@en ,
+_:genid10 rdfs:label "Territorio (esadm)"@es ,
+                      "Territory (esadm)"@en ;
+           <https://w3id.org/widoco/vocab#vocabularyIRI> <http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio> .
+
+_:genid11 rdfs:label "Callejero (escjr)"@es ,
+                      "Street catalogue (escjr)"@en ;
+           <https://w3id.org/widoco/vocab#vocabularyIRI> <http://vocab.linkeddata.es/datosabiertos/def/urbanismo-infraestructuras/callejero> .
+
+_:genid12 rdfs:label "GeoNames"@en ,
                       "GeoNames"@es ;
            <https://w3id.org/widoco/vocab#vocabularyIRI> <http://www.geonames.org/ontology> .
-
-_:genid11 rdfs:label "GeoSPARQL"@en ,
-                      "GeoSPARQL"@es ;
-           <https://w3id.org/widoco/vocab#vocabularyIRI> <http://www.opengis.net/ont/geosparql> .
 
 #################################################################
 #    Annotation properties
@@ -126,6 +131,10 @@ _:genid11 rdfs:label "GeoSPARQL"@en ,
 <http://purl.org/dc/terms/creator> rdf:type owl:AnnotationProperty .
 
 
+###  http://purl.org/dc/terms/description
+<http://purl.org/dc/terms/description> rdf:type owl:AnnotationProperty .
+
+
 ###  http://purl.org/dc/terms/issued
 <http://purl.org/dc/terms/issued> rdf:type owl:AnnotationProperty .
 
@@ -140,6 +149,10 @@ _:genid11 rdfs:label "GeoSPARQL"@en ,
 
 ###  http://purl.org/dc/terms/publisher
 <http://purl.org/dc/terms/publisher> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/title
+<http://purl.org/dc/terms/title> rdf:type owl:AnnotationProperty .
 
 
 ###  http://purl.org/vocab/vann/preferredNamespacePrefix
@@ -231,9 +244,11 @@ xsd:date rdf:type rdfs:Datatype .
 ###  https://edint.es/def/zona-regulatoria#composedOf
 :composedOf rdf:type owl:ObjectProperty ;
             rdfs:domain :RegulatedZone ;
-            rdfs:range <http://vocab.linkeddata.es/datosabiertos/def/urbanismo-infraestructuras/callejero#TramoVia> ,
-                       <http://vocab.linkeddata.es/datosabiertos/def/urbanismo-infraestructuras/callejero#Via> ,
-                       <http://www.geonames.org/ontology#Feature> ;
+            rdfs:range [ rdf:type owl:Class ;
+                         owl:unionOf ( <http://vocab.linkeddata.es/datosabiertos/def/urbanismo-infraestructuras/callejero#TramoVia>
+                                       <http://vocab.linkeddata.es/datosabiertos/def/urbanismo-infraestructuras/callejero#Via>
+                                     )
+                       ] ;
             rdfs:comment "Relación que permite definir una Zona Regulatoria mediante una o más vías o tramos de vía del vocabulario Callejero."@es ,
                          "Relationship that allows defining a Regulated Zone via one or more streets or street segments from the Callejero vocabulary."@en ;
             rdfs:label "composed of"@en ,
@@ -371,8 +386,16 @@ xsd:date rdf:type rdfs:Datatype .
 <http://www.opengis.net/ont/sf#Geometry> rdf:type owl:Class .
 
 
+###  http://www.w3.org/2004/02/skos/core#Concept
+<http://www.w3.org/2004/02/skos/core#Concept> rdf:type owl:Class .
+
+
 ###  http://www.w3.org/ns/org#Organization
 <http://www.w3.org/ns/org#Organization> rdf:type owl:Class .
+
+
+###  http://xmlns.com/foaf/0.1/Organization
+<http://xmlns.com/foaf/0.1/Organization> rdf:type owl:Class .
 
 
 ###  https://edint.es/def/zona-regulatoria#RegulatedZone
